@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: /category/{{ category.slug }}/
+eleventyComputed:
+  title: "{{ category.name }}"
+---
+
+<header class="page-header">
+  <div class="container">
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.videos.length }} video{% if category.videos.length != 1 %}s{% endif %} in this category</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <nav class="categories-nav">
+      {% for cat in collections.categories %}
+        <a href="/category/{{ cat.slug }}/" class="category-pill{% if cat.slug == category.slug %} active{% endif %}">{{ cat.name }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="video-grid">
+      {% for video in category.videos %}
+        <article class="video-card" data-video-id="{{ video.id }}">
+          <div class="video-placeholder">
+            <img
+              src="https://img.youtube.com/vi/{{ video.id }}/mqdefault.jpg"
+              alt="{{ video.title }}"
+              loading="lazy"
+            >
+          </div>
+          <div class="video-info">
+            <span class="video-category">{{ video.category | categoryName }}</span>
+            <h3 class="video-title">
+              <a href="/video/{{ video.id }}/">{{ video.title }}</a>
+            </h3>
+            <p class="video-description">{{ video.description }}</p>
+            <p class="video-date">{{ video.dateAdded | dateFormat }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

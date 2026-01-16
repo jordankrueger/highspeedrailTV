@@ -1,0 +1,70 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: videos
+  size: 1
+  alias: video
+permalink: /video/{{ video.id }}/
+eleventyComputed:
+  title: "{{ video.title }}"
+  description: "{{ video.description }}"
+---
+
+<section class="section">
+  <div class="container">
+    <div class="featured-container">
+      <div class="featured-player">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/{{ video.id }}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="featured-info">
+        <a href="/category/{{ video.category }}/" class="video-category">{{ video.category | categoryName }}</a>
+        <h1>{{ video.title }}</h1>
+        <p>{{ video.description }}</p>
+        <p class="video-date">Added {{ video.dateAdded | dateFormat }}</p>
+        <p class="mt-lg">
+          <a href="https://www.youtube.com/watch?v={{ video.id }}" target="_blank" rel="noopener" class="category-pill">
+            Watch on YouTube →
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set relatedVideos = videos | filterByCategory(video.category) %}
+{% if relatedVideos.length > 1 %}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">More in {{ video.category | categoryName }}</h2>
+      <a href="/category/{{ video.category }}/" class="section-link">View all →</a>
+    </div>
+    <div class="video-grid">
+      {% for related in relatedVideos %}
+        {% if related.id != video.id %}
+          <article class="video-card" data-video-id="{{ related.id }}">
+            <div class="video-placeholder">
+              <img
+                src="https://img.youtube.com/vi/{{ related.id }}/mqdefault.jpg"
+                alt="{{ related.title }}"
+                loading="lazy"
+              >
+            </div>
+            <div class="video-info">
+              <h3 class="video-title">
+                <a href="/video/{{ related.id }}/">{{ related.title }}</a>
+              </h3>
+              <p class="video-description">{{ related.description }}</p>
+              <p class="video-date">{{ related.dateAdded | dateFormat }}</p>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

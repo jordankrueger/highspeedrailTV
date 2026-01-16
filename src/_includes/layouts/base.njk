@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | default("HighSpeedRail.TV") }} | HighSpeedRail.TV</title>
+  <meta name="description" content="{{ description | default("Curated videos about high-speed rail in America and around the world.") }}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🚄</span>
+        <span class="logo-text">HighSpeedRail<span class="logo-tv">.TV</span></span>
+      </a>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/categories/">Categories</a>
+        <a href="https://hsr.fyi" target="_blank" rel="noopener">hsr.fyi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-credit">Curated by <a href="https://hsr.fyi">Jordan</a> · Part of the HSR advocacy network</p>
+      <p class="footer-links">
+        <a href="https://hsr.fyi">hsr.fyi</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Lazy load YouTube embeds
+    document.addEventListener('DOMContentLoaded', function() {
+      const videoCards = document.querySelectorAll('.video-card[data-video-id]');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+            const videoId = card.dataset.videoId;
+            const placeholder = card.querySelector('.video-placeholder');
+            if (placeholder && !placeholder.querySelector('iframe')) {
+              placeholder.addEventListener('click', function() {
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                placeholder.innerHTML = '';
+                placeholder.appendChild(iframe);
+              }, { once: true });
+            }
+            observer.unobserve(card);
+          }
+        });
+      }, { rootMargin: '100px' });
+
+      videoCards.forEach(card => observer.observe(card));
+    });
+  </script>
+</body>
+</html>

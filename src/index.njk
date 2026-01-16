@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Watch the <span class="accent">future of travel</span> unfold</h1>
+      <p>Curated videos about high-speed rail in America and around the world. From myth-busting to construction updates, tours to policy talks.</p>
+    </div>
+  </div>
+</section>
+
+{% set featured = videos | getFeatured %}
+<section class="featured-video">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Video</h2>
+      <span class="featured-badge">Staff Pick</span>
+    </div>
+    <div class="featured-container">
+      <div class="featured-player">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/{{ featured.id }}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="featured-info">
+        <span class="video-category">{{ featured.category | categoryName }}</span>
+        <h2>{{ featured.title }}</h2>
+        <p>{{ featured.description }}</p>
+        <p class="video-date">Added {{ featured.dateAdded | dateFormat }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Browse by Category</h2>
+      <a href="/categories/" class="section-link">View all →</a>
+    </div>
+    <nav class="categories-nav">
+      {% for cat in videos | getCategories %}
+        <a href="/category/{{ cat.slug }}/" class="category-pill">{{ cat.name }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Recently Added</h2>
+    </div>
+    <div class="video-grid">
+      {% for video in videos | getRecent(8) %}
+        <article class="video-card" data-video-id="{{ video.id }}">
+          <div class="video-placeholder">
+            <img
+              src="https://img.youtube.com/vi/{{ video.id }}/mqdefault.jpg"
+              alt="{{ video.title }}"
+              loading="lazy"
+            >
+          </div>
+          <div class="video-info">
+            <span class="video-category">{{ video.category | categoryName }}</span>
+            <h3 class="video-title">
+              <a href="/video/{{ video.id }}/">{{ video.title }}</a>
+            </h3>
+            <p class="video-description">{{ video.description }}</p>
+            <p class="video-date">{{ video.dateAdded | dateFormat }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
