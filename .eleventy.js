@@ -1,6 +1,6 @@
 module.exports = function(eleventyConfig) {
-  // Pass through CSS (path relative to input dir)
-  eleventyConfig.addPassthroughCopy("css");
+  // Pass through CSS to output directory
+  eleventyConfig.addPassthroughCopy({"src/css": "css"});
 
   // Add date filter for formatting
   eleventyConfig.addFilter("dateFormat", (dateString) => {
