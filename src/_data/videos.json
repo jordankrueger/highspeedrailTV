@@ -1,6 +1,6 @@
 [
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-01",
     "title": "Why California High-Speed Rail Will Change Everything",
     "description": "A comprehensive look at how California's HSR project will transform transportation, reduce emissions, and connect communities across the state.",
     "category": "explainers",
@@ -8,7 +8,7 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-02",
     "title": "Debunking the Top 5 High-Speed Rail Myths",
     "description": "Separating fact from fiction on common misconceptions about HSR costs, ridership, and environmental impact.",
     "category": "myth-busting",
@@ -16,7 +16,7 @@
     "dateAdded": "2025-01-12"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-03",
     "title": "Japan's Shinkansen: 60 Years of Excellence",
     "description": "How Japan built and perfected the world's first high-speed rail network, and what America can learn from it.",
     "category": "international-hsr",
@@ -24,7 +24,7 @@
     "dateAdded": "2025-01-10"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-04",
     "title": "Central Valley Construction Update - January 2025",
     "description": "Latest progress on California HSR construction including new viaduct completions and station development.",
     "category": "construction-progress",
@@ -32,7 +32,7 @@
     "dateAdded": "2025-01-08"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-05",
     "title": "Pete Buttigieg on America's Rail Future",
     "description": "Transportation Secretary discusses federal investment in passenger rail and the path forward for HSR.",
     "category": "advocacy-speeches",
@@ -40,7 +40,7 @@
     "dateAdded": "2025-01-05"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-06",
     "title": "Riding the TGV: Paris to Lyon in 2 Hours",
     "description": "Experience France's legendary high-speed train from departure to arrival, with tips for American travelers.",
     "category": "rides-tours",
@@ -48,7 +48,7 @@
     "dateAdded": "2025-01-03"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-07",
     "title": "No, HSR Isn't Too Expensive",
     "description": "Breaking down the real costs of high-speed rail versus highways and airports, including hidden subsidies.",
     "category": "myth-busting",
@@ -56,7 +56,7 @@
     "dateAdded": "2024-12-28"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-08",
     "title": "Spain's AVE Network Explained",
     "description": "How Spain went from zero to the world's second-largest HSR network in just 30 years.",
     "category": "international-hsr",
@@ -64,7 +64,7 @@
     "dateAdded": "2024-12-22"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-09",
     "title": "Inside the Fresno HSR Station Design",
     "description": "Architectural tour of California's first purpose-built high-speed rail station.",
     "category": "construction-progress",
@@ -72,7 +72,7 @@
     "dateAdded": "2024-12-18"
   },
   {
-    "id": "REPLACE_WITH_YOUTUBE_ID",
+    "id": "sample-video-10",
     "title": "How HSR Reduces Carbon Emissions",
     "description": "The environmental case for high-speed rail, with data on per-passenger emissions vs. planes and cars.",
     "category": "explainers",
