@@ -1,80 +1,72 @@
 [
   {
-    "id": "sample-video-01",
-    "title": "Why California High-Speed Rail Will Change Everything",
-    "description": "A comprehensive look at how California's HSR project will transform transportation, reduce emissions, and connect communities across the state.",
+    "id": "RViCseFTgig",
+    "title": "Why the US Has No High-Speed Rail",
+    "description": "A comprehensive look at why America fell behind on high-speed rail and what it would take to catch up with the rest of the world.",
     "category": "explainers",
     "featured": true,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "sample-video-02",
-    "title": "Debunking the Top 5 High-Speed Rail Myths",
-    "description": "Separating fact from fiction on common misconceptions about HSR costs, ridership, and environmental impact.",
+    "id": "mbEfzuCLoAQ",
+    "title": "The Truth About California High-Speed Rail",
+    "description": "Separating fact from fiction on California's ambitious HSR project - the costs, the timeline, and what's actually being built.",
     "category": "myth-busting",
     "featured": false,
     "dateAdded": "2025-01-12"
   },
   {
-    "id": "sample-video-03",
-    "title": "Japan's Shinkansen: 60 Years of Excellence",
-    "description": "How Japan built and perfected the world's first high-speed rail network, and what America can learn from it.",
+    "id": "0JDoll8OEFE",
+    "title": "Japan's Bullet Train: The Shinkansen Story",
+    "description": "How Japan built and perfected the world's first high-speed rail network, and the lessons for America.",
     "category": "international-hsr",
     "featured": false,
     "dateAdded": "2025-01-10"
   },
   {
-    "id": "sample-video-04",
-    "title": "Central Valley Construction Update - January 2025",
-    "description": "Latest progress on California HSR construction including new viaduct completions and station development.",
+    "id": "vSgCHEqgxsI",
+    "title": "California High-Speed Rail Construction Update",
+    "description": "Latest progress on California HSR construction in the Central Valley, including viaduct work and station development.",
     "category": "construction-progress",
     "featured": false,
     "dateAdded": "2025-01-08"
   },
   {
-    "id": "sample-video-05",
-    "title": "Pete Buttigieg on America's Rail Future",
-    "description": "Transportation Secretary discusses federal investment in passenger rail and the path forward for HSR.",
+    "id": "fwjwePe-HmA",
+    "title": "Why We Need High-Speed Rail in America",
+    "description": "The case for investing in passenger rail infrastructure and what it could mean for American cities and climate.",
     "category": "advocacy-speeches",
     "featured": false,
     "dateAdded": "2025-01-05"
   },
   {
-    "id": "sample-video-06",
-    "title": "Riding the TGV: Paris to Lyon in 2 Hours",
-    "description": "Experience France's legendary high-speed train from departure to arrival, with tips for American travelers.",
+    "id": "hUhpG_bSOlg",
+    "title": "Riding the TGV Across France",
+    "description": "Experience France's legendary high-speed train from Paris to the south, with stunning views and smooth travel.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2025-01-03"
   },
   {
-    "id": "sample-video-07",
-    "title": "No, HSR Isn't Too Expensive",
-    "description": "Breaking down the real costs of high-speed rail versus highways and airports, including hidden subsidies.",
+    "id": "itpLU1OyBFQ",
+    "title": "Is High-Speed Rail Worth the Cost?",
+    "description": "Breaking down the economics of high-speed rail versus highways and airports, including hidden subsidies and externalities.",
     "category": "myth-busting",
     "featured": false,
     "dateAdded": "2024-12-28"
   },
   {
-    "id": "sample-video-08",
-    "title": "Spain's AVE Network Explained",
-    "description": "How Spain went from zero to the world's second-largest HSR network in just 30 years.",
+    "id": "4dFDpbiZ9MI",
+    "title": "Spain's Amazing High-Speed Rail Network",
+    "description": "How Spain built the second-largest HSR network in the world and connected its major cities.",
     "category": "international-hsr",
     "featured": false,
     "dateAdded": "2024-12-22"
   },
   {
-    "id": "sample-video-09",
-    "title": "Inside the Fresno HSR Station Design",
-    "description": "Architectural tour of California's first purpose-built high-speed rail station.",
-    "category": "construction-progress",
-    "featured": false,
-    "dateAdded": "2024-12-18"
-  },
-  {
-    "id": "sample-video-10",
-    "title": "How HSR Reduces Carbon Emissions",
-    "description": "The environmental case for high-speed rail, with data on per-passenger emissions vs. planes and cars.",
+    "id": "QkM5S0wMZII",
+    "title": "Inside a High-Speed Rail Train",
+    "description": "A detailed look at the engineering and design of modern high-speed trains and what makes them so fast.",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2024-12-15"

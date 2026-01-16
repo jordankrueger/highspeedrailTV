@@ -6,7 +6,7 @@ title: Home
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>Watch the <span class="accent">future of travel</span> unfold</h1>
+      <h1>Watch the <span class="accent">future of travel</span> unfold.</h1>
       <p>Curated videos about high-speed rail in America and around the world. From myth-busting to construction updates, tours to policy talks.</p>
     </div>
   </div>
@@ -16,8 +16,8 @@ title: Home
 <section class="featured-video">
   <div class="container">
     <div class="featured-header">
-      <h2 class="section-title">Featured Video</h2>
-      <span class="featured-badge">Staff Pick</span>
+      <span class="section-badge">Featured</span>
+      <h2 class="section-title">Staff Pick</h2>
     </div>
     <div class="featured-container">
       <div class="featured-player">
@@ -40,9 +40,9 @@ title: Home
 
 <section class="section categories-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" style="justify-content: center; text-align: center; flex-direction: column; gap: 0.5rem;">
+      <span class="section-badge">Explore</span>
       <h2 class="section-title">Browse by Category</h2>
-      <a href="/categories/" class="section-link">View all →</a>
     </div>
     <nav class="categories-nav">
       {% for cat in videos | getCategories %}
@@ -56,6 +56,7 @@ title: Home
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Recently Added</h2>
+      <a href="/categories/" class="section-link">View all →</a>
     </div>
     <div class="video-grid">
       {% for video in videos | getRecent(9) %}
