@@ -4,9 +4,17 @@
   "description": "Curated high-speed rail video content",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "admin": "node admin/server.js",
+    "dev": "concurrently \"npm run start\" \"npm run admin\""
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
   }
 }

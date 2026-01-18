@@ -3,3 +3,6 @@ _site/
 .DS_Store
 *.log
 .env
+
+# Admin data (queue, presets stored locally)
+admin/data/
