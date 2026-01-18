@@ -473,6 +473,7 @@ img {
   flex-wrap: wrap;
   gap: 0.65rem;
   justify-content: center;
+  margin-bottom: var(--spacing-xl);
 }
 
 .category-pill {
