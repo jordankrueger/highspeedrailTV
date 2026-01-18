@@ -144,6 +144,9 @@ function setupEventListeners() {
     }
   });
 
+  // Settings - Tracking
+  document.getElementById('save-tracking-btn').addEventListener('click', saveTrackingSettings);
+
   // Settings - Build Site
   document.getElementById('build-site-btn').addEventListener('click', buildSite);
 
@@ -197,7 +200,8 @@ async function loadInitialData() {
     loadPresets(),
     loadPublishedVideos(),
     loadBlocklist(),
-    loadFooterLinks()
+    loadFooterLinks(),
+    loadTrackingSettings()
   ]);
   populatePresetSelect();
   populateCategorySelect();
@@ -1546,6 +1550,54 @@ async function deleteFooterLink(id) {
     await loadFooterLinks();
   } catch (e) {
     showToast('Failed to remove link: ' + e.message, 'error');
+  }
+}
+
+// Tracking Settings
+async function loadTrackingSettings() {
+  try {
+    const res = await fetch('/api/settings/tracking');
+    const data = await res.json();
+    document.getElementById('ga-measurement-id').value = data.googleAnalyticsId || '';
+    document.getElementById('gsc-verification').value = data.googleSearchConsoleCode || '';
+  } catch (e) {
+    console.error('Failed to load tracking settings:', e);
+  }
+}
+
+async function saveTrackingSettings() {
+  const btn = document.getElementById('save-tracking-btn');
+  const status = document.getElementById('tracking-status');
+
+  const googleAnalyticsId = document.getElementById('ga-measurement-id').value.trim();
+  const googleSearchConsoleCode = document.getElementById('gsc-verification').value.trim();
+
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+  status.textContent = '';
+
+  try {
+    const res = await fetch('/api/settings/tracking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ googleAnalyticsId, googleSearchConsoleCode })
+    });
+
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error);
+    }
+
+    status.textContent = '✓ Tracking settings saved! Remember to rebuild the site.';
+    status.className = 'build-status success';
+    showToast('Tracking settings saved', 'success');
+  } catch (e) {
+    status.textContent = '✗ Failed to save: ' + e.message;
+    status.className = 'build-status error';
+    showToast('Failed to save tracking settings: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Save Tracking Settings';
   }
 }
 

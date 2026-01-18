@@ -670,6 +670,33 @@ app.put('/api/settings/footer-links/:id', requireAuth, async (req, res) => {
   res.json(settings.footerLinks[index]);
 });
 
+// Tracking settings routes
+app.get('/api/settings/tracking', requireAuth, async (req, res) => {
+  const settings = await readJSON(SETTINGS_PATH);
+  res.json({
+    googleAnalyticsId: settings.googleAnalyticsId || '',
+    googleSearchConsoleCode: settings.googleSearchConsoleCode || ''
+  });
+});
+
+app.post('/api/settings/tracking', requireAuth, async (req, res) => {
+  const { googleAnalyticsId, googleSearchConsoleCode } = req.body;
+  const settings = await readJSON(SETTINGS_PATH);
+
+  // Clean up the Google Search Console code - extract just the verification code if full meta tag is provided
+  let cleanedGSCCode = googleSearchConsoleCode || '';
+  const gscMatch = cleanedGSCCode.match(/content=["']?([^"'\s>]+)/);
+  if (gscMatch) {
+    cleanedGSCCode = gscMatch[1];
+  }
+
+  settings.googleAnalyticsId = googleAnalyticsId || '';
+  settings.googleSearchConsoleCode = cleanedGSCCode;
+
+  await writeJSON(SETTINGS_PATH, settings);
+  res.json({ success: true, googleAnalyticsId: settings.googleAnalyticsId, googleSearchConsoleCode: settings.googleSearchConsoleCode });
+});
+
 // Build site endpoint
 app.post('/api/build', requireAuth, async (req, res) => {
   const { exec } = require('child_process');

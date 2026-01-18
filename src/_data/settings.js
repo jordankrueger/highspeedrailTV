@@ -14,7 +14,9 @@ module.exports = function() {
         { id: 1, label: 'hsr.fyi', url: 'https://hsr.fyi' },
         { id: 2, label: 'HSR Alliance', url: 'https://www.hsrail.org' },
         { id: 3, label: 'CA HSR Authority', url: 'https://hsr.ca.gov' }
-      ]
+      ],
+      googleAnalyticsId: '',
+      googleSearchConsoleCode: ''
     };
   }
 };

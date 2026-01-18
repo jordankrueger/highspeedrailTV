@@ -1,5 +1,629 @@
 [
   {
+    "id": "vrV6wap3Dck",
+    "title": "South Korea's NEWEST High Speed Train - The 320km/h KTX Cheong-Ryong",
+    "description": "First ride on South Korea's newest high-speed train, the KTX Cheong-Ryong, capable of 320km/h speeds on the Seoul to Busan route.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "3_gxGdSf32k",
+    "title": "Meet the Future of European Rail: Germany's ICE 5 and France's TGV M",
+    "description": "Exploring the next generation of high-speed trains with Germany's ICE 5 and France's TGV M, featuring improved efficiency, capacity, and passenger experience.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "1BEy2bcFCyg",
+    "title": "The U.S. South Central High Speed Rail Corridor At True High Speed",
+    "description": "Detailed analysis of potential high-speed rail connecting Fort Worth, Dallas, and Little Rock as part of the federal South Central HSR corridor vision.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "8001Y7v3FYo",
+    "title": "8 HOURS on Britain's Highland Chieftain - Inverness to London High-Speed Journey",
+    "description": "An epic 8-hour journey on LNER's Highland Chieftain service from Scotland's Highlands to London, showcasing one of Britain's most scenic high-speed rail routes.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "50jZjM0wE0g",
+    "title": "Brussels to Frankfurt at 300km/h on the INCREDIBLE BRAND NEW ICE 3neo!",
+    "description": "First-class journey on Germany's newest ICE 3neo high-speed train from Brussels to Frankfurt, showcasing the latest improvements to international rail service.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ffdJAM5RZro",
+    "title": "Stew's U.S. High Speed Rail News | October 2024",
+    "description": "Monthly roundup of developments in American high-speed rail projects including Brightline West, California HSR, Acela, and regional initiatives across the country.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "gCGdxHm7jSA",
+    "title": "Germany's Most Iconic High-Speed Train! Is the ICE 1 Still Good 30 Years Later?",
+    "description": "A journey on Germany's original ICE 1 high-speed train from Hamburg to Bremen, evaluating whether this iconic 30-year-old design remains competitive today.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "0IfyQwoMut4",
+    "title": "Siemens Truck Trolley: Dynamic Charging at Komatsu Proving Grounds",
+    "description": "Industry-first demonstration of dynamic charging technology for battery electric vehicles using overhead electrification systems at a mining facility.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "QTPPJBLF3aU",
+    "title": "High Speed Rail Between Chicago and St. Louis | Illinois HSR",
+    "description": "A detailed proposal for high-speed rail connecting Chicago and St. Louis, examining routing options, technology choices, and the potential for transforming Midwest passenger rail.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "eoErWVfZK-U",
+    "title": "Can the UK save High Speed 2?",
+    "description": "Examining the challenges facing Britain's HS2 project after major cancellations and exploring potential solutions to revive this crucial high-speed rail initiative.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "H3SiNusMFJM",
+    "title": "Sydney to Melbourne High Speed Rail Investigation | Australian HSR",
+    "description": "An in-depth analysis of potential high-speed rail between Australia's two largest cities, examining routes, feasibility, and the compelling case for connecting 40% of the nation's population.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "2na6Doi2MJU",
+    "title": "Illinois HSR | Chicago to St. Louis #train #highspeedtrain #highspeedrail #railroad #transit",
+    "description": "Will Illinois build HSR? The Illinois HSR Commission is studying the issue from Chicago to St. Louis, Missouri right now.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Gy6bc7sfY8Q",
+    "title": "Cascadia High Speed Rail #highspeedrail #highspeedtrain #trains #railway #transit #transport",
+    "description": "1 way HSR in the Pacific Northwest could look",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "YhtjbtE_5jA",
+    "title": "California High-Speed Rail Replica Railcar on Display at State Fair",
+    "description": "California's high-speed rail program showcases a replica railcar at the California State Fair, bringing the project closer to the public.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "pqZVYXul4so",
+    "title": "Canada Had High Speed Rail In The '70s. What Happened?",
+    "description": "An exploration of Canada's high-speed rail history from forty years ago and what led to changes in the system.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Pv2_LzhcG3Y",
+    "title": "High-Speed Rail Project to Connect Las Vegas to Additional California Stops",
+    "description": "Coverage of expanding high-speed rail plans that could connect Las Vegas to multiple destinations throughout California.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "uBUYDvu9XgU",
+    "title": "Riding China's FASTEST Bullet Train from Shanghai to Beijing",
+    "description": "Experience the world's fastest bullet train traveling over 400km/h on the high-speed rail connection between Shanghai and Beijing.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "vMGA_FS_VPw",
+    "title": "Brightline West unveils high-speed train renderings, announces NY facility",
+    "description": "A glimpse into the future of a high-speed rail project set to connect Las Vegas to Southern California was released to the public on Monday.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "yITYgCJcD2o",
+    "title": "The American Government's Massive Plan to Build More Passenger Rail",
+    "description": "An in-depth look at Corridor ID, the federal framework for funding new passenger rail lines across America thanks to the Biden Infrastructure Bill.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "dYHlVxgEMGc",
+    "title": "China's High-Speed Trains are UNBELIEVABLE | First Class Experience",
+    "description": "A detailed tour of China's high-speed rail first class and business class, showcasing the facilities, food, and impressive experience on one of the world's fastest trains.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "jhHPhafaaRI",
+    "title": "High-Speed Trains: The Pursuit of Speed and Technical Excellence",
+    "description": "Documentary exploring the evolution of high-speed rail technology, from France's TGV breaking world records to the continuous pursuit of faster trains.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Up4Oh3TDKOE",
+    "title": "Construction Begins on Las Vegas to Los Angeles High-Speed Rail Line",
+    "description": "Construction starts on the $12 billion Brightline West high-speed rail project connecting Las Vegas to the Los Angeles area, with service expected by 2028.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "XcWUH6QILOY",
+    "title": "Proposed high-speed rail line would take travelers from NYC to Boston in under two hours",
+    "description": "Exploring the latest high-speed train proposal that could connect New York City to Boston in under two hours, making this dream a reality.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Iy9K-hP7YkQ",
+    "title": "High-Speed Rail Act: 5 proposed bullet train routes across US | USA TODAY",
+    "description": "Bullet train travel coming to US? 5 routes proposed by \"American High-Speed Rail Act.\"\n\n\n#trains #railways #travel",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "SY2w_yvFsJc",
+    "title": "High Speed Rail for Canada? Not Quite.",
+    "description": "Breaking down Canada's High Frequency Rail project between Toronto and Quebec City and explaining its limitations compared to true HSR.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "VnaoXsWTdR4",
+    "title": "High-Speed Rail is Coming to Canada?!",
+    "description": "Covering the exciting announcement about High-Frequency Rail procurement for the Toronto-Montreal-Quebec City corridor with speeds up to 200 km/h.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "y6UQN86bjvE",
+    "title": "More High Speed Rail for the USA... But Is It Enough?",
+    "description": "Analyzing the Connect 2035 plan for the Northeast Corridor and its potential to transform high-speed rail in the region.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "80fhtgLS4Tw",
+    "title": "Sweden's High Speed Rail Explained",
+    "description": "An informative look at Sweden's high-speed rail network and how it serves the country's transportation needs.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "qUf5_zwWbPQ",
+    "title": "The US High Speed Rail System Explained",
+    "description": "A comprehensive overview of high-speed rail development in the United States, including current systems and future prospects.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "y9PbYE15_WQ",
+    "title": "Why High-Speed Rail is the Better Alternative to Flights",
+    "description": "Making the case for high-speed rail as a superior transportation option compared to air travel for medium-distance journeys.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "qQpedv0-ZWU",
+    "title": "Fast trains for small countries! | Belgium & the Netherlands High Speed Rail Explained",
+    "description": "Examining how Belgium and the Netherlands have developed effective high-speed rail networks that provide diverse services across smaller countries.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "O4eNLjb0I7E",
+    "title": "High Speed Rail Might Finally be a Reality in Canada! | Ontario Northlander Returns!",
+    "description": "Breaking down exciting developments in Canadian passenger rail including potential high-speed rail and the return of the Ontario Northlander service.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "EBQzfbqFKN0",
+    "title": "Shinkansen: The World's Greatest High Speed Railway | Japan High Speed Rail Explained",
+    "description": "An in-depth look at Japan's remarkable Shinkansen network featuring 400m trains running every 3 minutes at speeds over 300 km/h.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "J949O1KQhuk",
+    "title": "The Nation That Mastered High Speed Rail | Spain High Speed Rail",
+    "description": "Exploring Spain's massive high-speed railway system and its unique engineering features that make it a marvel of modern transportation.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Y86JBL37m4M",
+    "title": "ICE: Germany's High Speed Rail System Explained",
+    "description": "A comprehensive look at Germany's ICE high-speed rail network, its beautiful trains, and the challenges of serving a polycentric country.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "xPczVsuIlsE",
+    "title": "Amtrak is bringing High Speed Rail to Texas?! | Texas Central Railway",
+    "description": "An exploration of the ambitious Texas Central Railway project that could bring the first 200mph+ high-speed rail line to the United States.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "_jy5MT5qV1c",
+    "title": "Canada's High Frequency Rail Should be High Speed Too",
+    "description": "Arguing that Canada's High Frequency Rail project should embrace true high-speed technology, examining why fast and frequent rail service is achievable.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "HZbJV7Qu-jo",
+    "title": "TGV: The Centrepiece of European High Speed Rail",
+    "description": "France's TGV high-speed rail system and its pioneering role in global HSR development, examining its network reach and worldwide influence.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "IMUcV_nxsWY",
+    "title": "High-Speed Rail for Australia: Is it Impossible?",
+    "description": "Analyzing the potential for high-speed rail in Australia and exploring how the country could make HSR a reality despite current challenges.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "dLAJrRuqlkw",
+    "title": "The UK's High-Speed Rail Successes & Misfires",
+    "description": "Examining the United Kingdom's high-speed rail achievements and setbacks, including the fastest average train speeds in Europe and future network changes.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "L-tp3SGwLjo",
+    "title": "The Fastest Thing Since High-Speed Rail?",
+    "description": "Exploring the growing trend of high-speed metro systems around the world and how they complement traditional high-speed rail networks.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "9_OPXF1bX9o",
+    "title": "California High-Speed Rail Project: All You Should Know",
+    "description": "A detailed examination of California's ambitious high-speed rail project, covering its scope, challenges, costs, and current construction progress.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "wDR5Iwoh3Vk",
+    "title": "Indonesia's High-Speed Rail Project: Messed Up Diplomatic Triangle",
+    "description": "The Jakarta-Bandung high-speed railway project in Indonesia, examining the geopolitical competition between China and Japan and the project's significance for regional transportation.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "qIQYbtZKIVU",
+    "title": "Brightline East and West: Chance for the US to Get High-Speed Rail (Finally)",
+    "description": "Exploring Brightline's privately-funded high-speed rail initiatives in Florida and planned expansion to California, representing America's HSR potential.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Rjvnpeqaj5s",
+    "title": "Can Australia Ever Build High-Speed Rail?",
+    "description": "Examining Australia's decades-long pursuit of high-speed rail, analyzing proposed corridors, past initiatives, and the barriers preventing HSR development.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "tQbSYIdKUrA",
+    "title": "High Speed 1: The Channel Tunnel Rail Link (CTRL)",
+    "description": "The development story of High Speed 1, the high-speed rail line connecting London to the Channel Tunnel, covering planning challenges and construction milestones.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "7_Gj-VD-8SM",
+    "title": "High-Speed Revolution in Europe: French TGV Network",
+    "description": "Exploring France's pioneering TGV high-speed rail system, from its origins with gas turbine trains to becoming Europe's first major HSR network.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "uXtaWSnmvTg",
+    "title": "High-Speed Rail Linking Two Islam's Holiest Cities",
+    "description": "The story of Saudi Arabia's Haramain high-speed railway project connecting Mecca and Medina, overcoming challenging desert conditions to serve millions of pilgrims.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "xkNHqzg4Hg4",
+    "title": "High-Speed Rail in Canada: Will It Ever Happen?",
+    "description": "An examination of Canada's long-standing high-speed rail proposals, exploring the political, economic, and infrastructure challenges preventing HSR development.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "-grrRbL6DDo",
+    "title": "Story Behind German High Speed Rail System",
+    "description": "A comprehensive look at Germany's high-speed rail network development, covering the ICE system's history, planning challenges, and step-by-step network expansion.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "KRsI_l_4y1A",
+    "title": "High Speed Rail Service or Not: Journey from Amtrak's Acela to Avelia Liberty",
+    "description": "An educational exploration of Amtrak's high-speed rail service evolution from Acela to the new Avelia Liberty trainsets along the Northeast Corridor.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "sl2lgSS6Igo",
+    "title": "Korea's Story of High-Speed Rail Technology",
+    "description": "How South Korea developed its KTX high-speed rail system through technology transfer and domestic industry development.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "1L2Mi8q97nU",
+    "title": "The Largest High-Speed Rail Network in Europe",
+    "description": "Spain's unique approach to high-speed rail development, featuring multiple train technologies and a Madrid-centered radial network design.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "JPB-M_0RcbE",
+    "title": "Egypt's Ambitious Plan to Introduce High Speed Rail",
+    "description": "Egypt's €8 billion partnership with Siemens to build what will become the world's sixth largest high-speed rail system.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Nore9EXNmjQ",
+    "title": "China's High-Speed Rail Network: Explained",
+    "description": "An in-depth look at the construction and development of China's massive high-speed rail network and its impact on transportation.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "s_i-zXNt2p4",
+    "title": "Evolution of Chinese High-Speed Trains: Explained",
+    "description": "The story of China's journey from importing foreign HSR technology to developing their own domestic high-speed train technology.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "95YdunwuVO8",
+    "title": "What Makes Italian High-Speed Rail So Special?",
+    "description": "Examining the factors behind Italy's remarkably successful high-speed rail system, including geography, network design, and market dynamics.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ruSFTE7N_AQ",
+    "title": "Exploring Italian High-Speed Trains in 15 minutes",
+    "description": "A detailed look at the impressive high-speed train fleets operated by Trenitalia and Italo in Italy's successful HSR market.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "8YYqUaDPT0U",
+    "title": "Shinkansen 0-Series High-Speed Trains",
+    "description": "A brief look at Japan's iconic Shinkansen 0-Series, the pioneering high-speed trains that launched the bullet train era.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "aBrpw57WPTQ",
+    "title": "European Railway Rivalry: Who Will Dominate the High Speed Tracks?",
+    "description": "Exploring the competitive landscape of high-speed rail operators across Europe and how liberalization has improved services for travelers.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "KnGjwOCie3c",
+    "title": "Is This the New High-Speed Rail Nightmare on the American Continent?",
+    "description": "Examining the ambitious Cascadia high-speed rail project that aims to connect Vancouver, Seattle, and Portland with 350 kph service.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "_F7TB8ZvJjw",
+    "title": "Russian High-Speed Trains Are Doomed, Here's Why!",
+    "description": "An analysis of how Russia's dependency on foreign technology for their Sapsan high-speed trains affects their long-term railway operations.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "-ARbEa8b-jo",
+    "title": "Mallard's Speed Record",
+    "description": "The story of the LNER Mallard locomotive that holds the world speed record for steam locomotives at 126mph, achieved in 1938.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ULUkxamzVIU",
+    "title": "Cascadia HSR Forecasted Ridership #usa #railway",
+    "description": "The video transcription discusses the results of a ridership model survey for the High-Speed Rail (HSR) system, indicating that it is expected to capture 12-20% of total intercity trips. The system ma",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "SP3avbQW504",
+    "title": "Cascadia's HSR Project: Challenges and Opportunities #usa #railway",
+    "description": "The video discusses the challenges faced by a proposed transportation project similar to Texas Central's approach. The main issue is deciding whether stations should be on the outskirts of downtowns o",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "citdNAfaqnE",
+    "title": "Can California's High-Speed Rail Ever Be Completed? (2024 Project Update)",
+    "description": "The latest updates on California's high-speed rail project, including progress made and challenges ahead.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "x1_h9l-Sjgo",
+    "title": "Taiwan's High-Speed Rail: Combination of Japanese-European Technology",
+    "description": "A comprehensive look at Taiwan's highly successful high-speed rail system and its innovative technological approach.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Z6KtcnHXNKA",
+    "title": "Can America Build Another Northeast Corridor?",
+    "description": "An examination of which American regions have the potential to develop successful high-speed rail corridors.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "CppQ800cFHU",
+    "title": "North America Needs High Speed Rail",
+    "description": "A discussion on why North America desperately needs to invest in high-speed rail infrastructure.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "0JDoll8OEFE",
+    "title": "Why China Is so Good at Building Railways",
+    "description": "An exploration of the factors behind China's remarkable success in building the world's largest high-speed rail network.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "dmpyV4Yf8b0",
+    "title": "The Surprising Success of Private Passenger Rail",
+    "description": "An analysis of how private passenger rail companies have succeeded where traditional models have struggled.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "YASnP4ZfD2M",
+    "title": "We're building high-speed rail in America.",
+    "description": "Secretary Pete Buttigieg discusses America's high-speed rail future and the Brightline West project.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "vummKkiwgRo",
+    "title": "The World's Most Underrated High-Speed Rail System? | Korea Train Express",
+    "description": "An in-depth look at South Korea's impressive but underrated high-speed rail network and its rapid expansion.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "FnOe-ExjUNQ",
+    "title": "Why Indonesia's NEW high-speed train surprised me!",
+    "description": "A first-hand ride experience on Indonesia's impressive new Whoosh high-speed rail service from Jakarta to Bandung.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "T31yrpNwMVc",
+    "title": "Billionaire Breaks Ground On The U.S.'s First High-Speed Rail",
+    "description": "Coverage of the groundbreaking ceremony for Brightline West, marking a major milestone in American high-speed rail development.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "HV60ZxASpK4",
+    "title": "Flying an airplane over the California High Speed Rail route",
+    "description": "An aerial perspective documenting the construction progress of California's ambitious high-speed rail project.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "w3cuHF8agTk",
+    "title": "The Top 10 High Speed Rail Systems in the World!",
+    "description": "A comprehensive ranking and analysis of the world's most impressive high-speed rail networks.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "nJmqaXEebto",
+    "title": "What If The United States Had A National High Speed Rail Network?",
+    "description": "An educational exploration of how a comprehensive high-speed rail network could transform transportation in the United States.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
     "id": "Kn3vjG43dik",
     "title": "Amtrak Envisions World-Class High-Speed Rail",
     "description": "Amtrak presents their vision for developing world-class high-speed rail infrastructure and services.",
