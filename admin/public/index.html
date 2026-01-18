@@ -133,6 +133,7 @@
           <div class="tab-header">
             <h2>Review Queue</h2>
             <div class="header-actions">
+              <button id="ai-review-btn" class="btn-primary">🤖 AI Review</button>
               <button id="bulk-import-btn" class="btn-secondary">+ Bulk Import</button>
               <div class="view-toggle">
                 <button class="view-btn active" data-view="grid">Grid</button>
@@ -151,6 +152,29 @@ https://youtube.com/shorts/def456"></textarea>
               <button id="bulk-submit-btn" class="btn-primary">Import Videos</button>
             </div>
             <div id="bulk-import-status"></div>
+          </div>
+          <!-- AI Review Panel -->
+          <div id="ai-review-panel" class="ai-review-panel hidden">
+            <div class="ai-review-header">
+              <h3>🤖 AI Review Results</h3>
+              <button id="ai-review-close" class="btn-secondary">Close</button>
+            </div>
+            <div id="ai-review-loading" class="ai-review-loading hidden">
+              <div class="spinner"></div>
+              <p>Claude is reviewing your queue...</p>
+            </div>
+            <div id="ai-review-results" class="ai-review-results hidden">
+              <div class="ai-review-summary">
+                <span id="ai-approve-count" class="approve-count">0 to approve</span>
+                <span id="ai-reject-count" class="reject-count">0 to reject</span>
+              </div>
+              <div class="ai-review-actions">
+                <button id="ai-accept-all" class="btn-primary">✓ Accept All Recommendations</button>
+                <button id="ai-approve-only" class="btn-secondary">Approve Only (skip rejections)</button>
+              </div>
+              <div id="ai-review-list" class="ai-review-list"></div>
+            </div>
+            <div id="ai-review-error" class="ai-review-error hidden"></div>
           </div>
           <div id="queue-content" class="video-grid"></div>
         </section>

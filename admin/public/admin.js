@@ -12,6 +12,7 @@ let currentVideoForModal = null;
 let viewMode = 'grid';
 let editingCategorySlug = null;
 let editingPresetId = null;
+let aiReviewResults = null;
 
 // DOM Elements
 const loginScreen = document.getElementById('login-screen');
@@ -87,6 +88,12 @@ function setupEventListeners() {
   document.getElementById('bulk-import-btn').addEventListener('click', toggleBulkImport);
   document.getElementById('bulk-cancel-btn').addEventListener('click', toggleBulkImport);
   document.getElementById('bulk-submit-btn').addEventListener('click', handleBulkImport);
+
+  // AI Review
+  document.getElementById('ai-review-btn').addEventListener('click', startAIReview);
+  document.getElementById('ai-review-close').addEventListener('click', closeAIReview);
+  document.getElementById('ai-accept-all').addEventListener('click', acceptAllAIRecommendations);
+  document.getElementById('ai-approve-only').addEventListener('click', approveOnlyAIRecommendations);
 
   // Blocklist
   document.getElementById('add-channel-btn').addEventListener('click', () => {
@@ -1105,4 +1112,243 @@ async function handleBulkImport() {
     await loadQueue();
     showToast(`Added ${results.success.length} video(s) to queue`, 'success');
   }
+}
+
+// AI Review Functions
+async function startAIReview() {
+  if (queue.length === 0) {
+    showToast('Queue is empty - add some videos first', 'error');
+    return;
+  }
+
+  const panel = document.getElementById('ai-review-panel');
+  const loading = document.getElementById('ai-review-loading');
+  const results = document.getElementById('ai-review-results');
+  const errorDiv = document.getElementById('ai-review-error');
+
+  // Show panel and loading state
+  panel.classList.remove('hidden');
+  loading.classList.remove('hidden');
+  results.classList.add('hidden');
+  errorDiv.classList.add('hidden');
+
+  // Hide the queue content while reviewing
+  document.getElementById('queue-content').classList.add('hidden');
+
+  try {
+    const res = await fetch('/api/ai-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    aiReviewResults = data.reviews || [];
+    renderAIReviewResults();
+  } catch (e) {
+    loading.classList.add('hidden');
+    errorDiv.classList.remove('hidden');
+    errorDiv.innerHTML = `<p>AI Review failed: ${e.message}</p><button class="btn-secondary" onclick="closeAIReview()">Close</button>`;
+  }
+}
+
+function renderAIReviewResults() {
+  const loading = document.getElementById('ai-review-loading');
+  const results = document.getElementById('ai-review-results');
+  const listContainer = document.getElementById('ai-review-list');
+
+  loading.classList.add('hidden');
+  results.classList.remove('hidden');
+
+  const approvals = aiReviewResults.filter(r => r.action === 'approve');
+  const rejections = aiReviewResults.filter(r => r.action === 'reject');
+
+  document.getElementById('ai-approve-count').textContent = `${approvals.length} to approve`;
+  document.getElementById('ai-reject-count').textContent = `${rejections.length} to reject`;
+
+  // Render the review list
+  let html = '';
+
+  if (approvals.length > 0) {
+    html += '<div class="ai-review-section"><h4>✓ Recommended to Approve</h4>';
+    html += approvals.map(review => {
+      const video = queue.find(v => v.id === review.id);
+      return `
+        <div class="ai-review-item approve" data-id="${review.id}">
+          <div class="ai-review-item-header">
+            <img src="${video?.thumbnail || `https://img.youtube.com/vi/${review.id}/mqdefault.jpg`}" alt="">
+            <div class="ai-review-item-info">
+              <h5>${escapeHtml(review.suggestedTitle || video?.title || 'Unknown')}</h5>
+              <p class="category-tag">${getCategoryName(review.category)}</p>
+              <p class="ai-reason">${escapeHtml(review.reason)}</p>
+            </div>
+            <div class="ai-review-item-actions">
+              <button class="btn-small btn-reject" onclick="toggleAIReviewItem('${review.id}', 'reject')">✗ Reject Instead</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    html += '</div>';
+  }
+
+  if (rejections.length > 0) {
+    html += '<div class="ai-review-section"><h4>✗ Recommended to Reject</h4>';
+    html += rejections.map(review => {
+      const video = queue.find(v => v.id === review.id);
+      return `
+        <div class="ai-review-item reject" data-id="${review.id}">
+          <div class="ai-review-item-header">
+            <img src="${video?.thumbnail || `https://img.youtube.com/vi/${review.id}/mqdefault.jpg`}" alt="">
+            <div class="ai-review-item-info">
+              <h5>${escapeHtml(video?.title || 'Unknown')}</h5>
+              <p class="ai-reason">${escapeHtml(review.reason)}</p>
+            </div>
+            <div class="ai-review-item-actions">
+              <button class="btn-small btn-approve" onclick="toggleAIReviewItem('${review.id}', 'approve')">✓ Approve Instead</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    html += '</div>';
+  }
+
+  listContainer.innerHTML = html;
+}
+
+function toggleAIReviewItem(videoId, newAction) {
+  const review = aiReviewResults.find(r => r.id === videoId);
+  if (!review) return;
+
+  if (newAction === 'approve' && review.action === 'reject') {
+    // Need to pick a category - use first available
+    review.action = 'approve';
+    review.category = review.category || categories[0]?.slug || 'explainers';
+    const video = queue.find(v => v.id === videoId);
+    review.suggestedTitle = video?.title || '';
+    review.suggestedDescription = video?.description?.slice(0, 200) || '';
+    review.reason = 'Manually changed to approve';
+  } else if (newAction === 'reject' && review.action === 'approve') {
+    review.action = 'reject';
+    review.reason = 'Manually changed to reject';
+  }
+
+  renderAIReviewResults();
+}
+
+async function acceptAllAIRecommendations() {
+  const approvals = aiReviewResults.filter(r => r.action === 'approve');
+  const rejections = aiReviewResults.filter(r => r.action === 'reject');
+
+  if (approvals.length === 0 && rejections.length === 0) {
+    showToast('No recommendations to apply', 'error');
+    return;
+  }
+
+  const btn = document.getElementById('ai-accept-all');
+  btn.disabled = true;
+  btn.textContent = 'Applying...';
+
+  try {
+    // Apply approvals
+    if (approvals.length > 0) {
+      const approvalData = approvals.map(r => ({
+        id: r.id,
+        category: r.category,
+        title: r.suggestedTitle,
+        description: r.suggestedDescription
+      }));
+
+      const res = await fetch('/api/ai-review/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ approvals: approvalData })
+      });
+
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error);
+      }
+    }
+
+    // Apply rejections
+    if (rejections.length > 0) {
+      const rejectionIds = rejections.map(r => r.id);
+
+      const res = await fetch('/api/ai-review/reject', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rejections: rejectionIds })
+      });
+
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error);
+      }
+    }
+
+    showToast(`Applied: ${approvals.length} approved, ${rejections.length} rejected`, 'success');
+    closeAIReview();
+    await loadQueue();
+    await loadPublishedVideos();
+  } catch (e) {
+    showToast('Failed to apply recommendations: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '✓ Accept All Recommendations';
+  }
+}
+
+async function approveOnlyAIRecommendations() {
+  const approvals = aiReviewResults.filter(r => r.action === 'approve');
+
+  if (approvals.length === 0) {
+    showToast('No videos to approve', 'error');
+    return;
+  }
+
+  const btn = document.getElementById('ai-approve-only');
+  btn.disabled = true;
+  btn.textContent = 'Approving...';
+
+  try {
+    const approvalData = approvals.map(r => ({
+      id: r.id,
+      category: r.category,
+      title: r.suggestedTitle,
+      description: r.suggestedDescription
+    }));
+
+    const res = await fetch('/api/ai-review/apply', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ approvals: approvalData })
+    });
+
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error);
+    }
+
+    showToast(`Approved ${approvals.length} videos (rejections left in queue)`, 'success');
+    closeAIReview();
+    await loadQueue();
+    await loadPublishedVideos();
+  } catch (e) {
+    showToast('Failed to apply approvals: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Approve Only (skip rejections)';
+  }
+}
+
+function closeAIReview() {
+  document.getElementById('ai-review-panel').classList.add('hidden');
+  document.getElementById('queue-content').classList.remove('hidden');
+  aiReviewResults = null;
 }

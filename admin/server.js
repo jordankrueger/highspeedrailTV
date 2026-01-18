@@ -4,6 +4,35 @@ const path = require('path');
 const fs = require('fs').promises;
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
+// Anthropic API helper (using native fetch instead of SDK)
+async function callClaude(messages, maxTokens = 4096) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY not configured');
+  }
+
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01'
+    },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: maxTokens,
+      messages: messages
+    })
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error?.message || 'API request failed');
+  }
+
+  return response.json();
+}
+
 const app = express();
 const PORT = process.env.ADMIN_PORT || 3000;
 
@@ -542,6 +571,157 @@ app.delete('/api/videos/:id', requireAuth, async (req, res) => {
   videos = videos.filter(v => v.id !== id);
   await writeJSON(VIDEOS_PATH, videos);
   res.json({ success: true });
+});
+
+// AI Review endpoint
+app.post('/api/ai-review', requireAuth, async (req, res) => {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return res.status(500).json({ error: 'Anthropic API key not configured. Add ANTHROPIC_API_KEY to your .env file.' });
+  }
+
+  try {
+    const queue = await readJSON(QUEUE_PATH);
+    const categories = await readJSON(CATEGORIES_PATH);
+
+    if (queue.length === 0) {
+      return res.json({ reviews: [], message: 'Queue is empty' });
+    }
+
+    // Build the prompt with queue videos and categories
+    const categoryList = categories.map(c => `- ${c.slug}: ${c.name} - ${c.description}`).join('\n');
+
+    const videoList = queue.map((v, i) => {
+      const views = parseInt(v.viewCount || 0);
+      return `Video ${i + 1}:
+- ID: ${v.id}
+- Title: ${v.title}
+- Channel: ${v.channelTitle}
+- Description: ${v.description || 'No description'}
+- Views: ${views.toLocaleString()}
+- Published: ${v.publishedAt}`;
+    }).join('\n\n');
+
+    const prompt = `You are a content curator for HighSpeedRail.tv, a website that showcases positive content about high-speed rail and trains.
+
+CATEGORIES AVAILABLE:
+${categoryList}
+
+VIDEOS TO REVIEW:
+${videoList}
+
+REVIEW CRITERIA:
+1. REJECT if views < 10,000
+2. REJECT if the video is NOT positive about high-speed rail / trains OR is actively against HSR development
+3. Be LENIENT on topic - videos about trains, transit, infrastructure, and related topics are OK even if not specifically about HSR
+4. Accept videos that are educational, advocacy, ride experiences, construction updates, or generally pro-transit
+
+For each video, respond with a JSON object in this exact format:
+{
+  "reviews": [
+    {
+      "id": "VIDEO_ID",
+      "action": "approve" or "reject",
+      "category": "category-slug" (only if approving),
+      "reason": "Brief explanation of your decision",
+      "suggestedTitle": "Cleaned up title if needed" (only if approving),
+      "suggestedDescription": "Brief 1-2 sentence description" (only if approving)
+    }
+  ]
+}
+
+Respond ONLY with valid JSON, no additional text.`;
+
+    const message = await callClaude([
+      { role: 'user', content: prompt }
+    ]);
+
+    // Parse the response
+    const responseText = message.content[0].text;
+    let reviews;
+
+    try {
+      reviews = JSON.parse(responseText);
+    } catch (parseError) {
+      // Try to extract JSON from the response
+      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        reviews = JSON.parse(jsonMatch[0]);
+      } else {
+        throw new Error('Could not parse AI response as JSON');
+      }
+    }
+
+    res.json(reviews);
+  } catch (error) {
+    console.error('AI Review error:', error);
+    res.status(500).json({ error: error.message || 'AI review failed' });
+  }
+});
+
+// Bulk approve endpoint for AI recommendations
+app.post('/api/ai-review/apply', requireAuth, async (req, res) => {
+  const { approvals } = req.body; // Array of { id, category, title, description }
+
+  if (!approvals || !Array.isArray(approvals)) {
+    return res.status(400).json({ error: 'Invalid approvals data' });
+  }
+
+  try {
+    let queue = await readJSON(QUEUE_PATH);
+    const videos = await readJSON(VIDEOS_PATH);
+    let approved = 0;
+
+    for (const approval of approvals) {
+      const queueItem = queue.find(v => v.id === approval.id);
+      if (!queueItem) continue;
+
+      // Remove from queue
+      queue = queue.filter(v => v.id !== approval.id);
+
+      // Add to videos
+      videos.unshift({
+        id: approval.id,
+        title: approval.title || queueItem.title,
+        description: approval.description || queueItem.description?.slice(0, 200) || '',
+        category: approval.category,
+        featured: false,
+        dateAdded: new Date().toISOString().split('T')[0]
+      });
+
+      approved++;
+    }
+
+    await writeJSON(QUEUE_PATH, queue);
+    await writeJSON(VIDEOS_PATH, videos);
+
+    res.json({ success: true, approved });
+  } catch (error) {
+    console.error('Bulk approve error:', error);
+    res.status(500).json({ error: 'Failed to apply approvals' });
+  }
+});
+
+// Bulk reject endpoint for AI recommendations
+app.post('/api/ai-review/reject', requireAuth, async (req, res) => {
+  const { rejections } = req.body; // Array of video IDs to reject
+
+  if (!rejections || !Array.isArray(rejections)) {
+    return res.status(400).json({ error: 'Invalid rejections data' });
+  }
+
+  try {
+    let queue = await readJSON(QUEUE_PATH);
+    const originalLength = queue.length;
+
+    queue = queue.filter(v => !rejections.includes(v.id));
+
+    await writeJSON(QUEUE_PATH, queue);
+
+    res.json({ success: true, rejected: originalLength - queue.length });
+  } catch (error) {
+    console.error('Bulk reject error:', error);
+    res.status(500).json({ error: 'Failed to apply rejections' });
+  }
 });
 
 // Serve admin page
