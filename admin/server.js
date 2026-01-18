@@ -344,6 +344,12 @@ app.post('/api/queue', requireAuth, async (req, res) => {
   res.json({ success: true });
 });
 
+// Clear entire queue
+app.post('/api/queue/clear', requireAuth, async (req, res) => {
+  await writeJSON(QUEUE_PATH, []);
+  res.json({ success: true });
+});
+
 app.delete('/api/queue/:id', requireAuth, async (req, res) => {
   const { id } = req.params;
   let queue = await readJSON(QUEUE_PATH);
@@ -573,7 +579,7 @@ app.delete('/api/videos/:id', requireAuth, async (req, res) => {
   res.json({ success: true });
 });
 
-// AI Review endpoint
+// AI Review endpoint with streaming progress
 app.post('/api/ai-review', requireAuth, async (req, res) => {
   if (!process.env.ANTHROPIC_API_KEY) {
     return res.status(500).json({ error: 'Anthropic API key not configured. Add ANTHROPIC_API_KEY to your .env file.' });
@@ -587,21 +593,43 @@ app.post('/api/ai-review', requireAuth, async (req, res) => {
       return res.json({ reviews: [], message: 'Queue is empty' });
     }
 
-    // Build the prompt with queue videos and categories
+    // Set up Server-Sent Events for progress
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+
     const categoryList = categories.map(c => `- ${c.slug}: ${c.name} - ${c.description}`).join('\n');
 
-    const videoList = queue.map((v, i) => {
-      const views = parseInt(v.viewCount || 0);
-      return `Video ${i + 1}:
+    // Process in batches of 15 videos
+    const BATCH_SIZE = 15;
+    const allReviews = [];
+    const totalBatches = Math.ceil(queue.length / BATCH_SIZE);
+
+    for (let i = 0; i < queue.length; i += BATCH_SIZE) {
+      const batch = queue.slice(i, i + BATCH_SIZE);
+      const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+
+      // Send progress update
+      res.write(`data: ${JSON.stringify({
+        type: 'progress',
+        batch: batchNum,
+        totalBatches,
+        processed: i,
+        total: queue.length
+      })}\n\n`);
+
+      const videoList = batch.map((v, idx) => {
+        const views = parseInt(v.viewCount || 0);
+        return `Video ${i + idx + 1}:
 - ID: ${v.id}
 - Title: ${v.title}
 - Channel: ${v.channelTitle}
 - Description: ${v.description || 'No description'}
 - Views: ${views.toLocaleString()}
 - Published: ${v.publishedAt}`;
-    }).join('\n\n');
+      }).join('\n\n');
 
-    const prompt = `You are a content curator for HighSpeedRail.tv, a website that showcases positive content about high-speed rail and trains.
+      const prompt = `You are a content curator for HighSpeedRail.tv, a website that showcases positive content about high-speed rail and trains.
 
 CATEGORIES AVAILABLE:
 ${categoryList}
@@ -631,30 +659,38 @@ For each video, respond with a JSON object in this exact format:
 
 Respond ONLY with valid JSON, no additional text.`;
 
-    const message = await callClaude([
-      { role: 'user', content: prompt }
-    ]);
+      const message = await callClaude([
+        { role: 'user', content: prompt }
+      ]);
 
-    // Parse the response
-    const responseText = message.content[0].text;
-    let reviews;
+      // Parse the response
+      const responseText = message.content[0].text;
+      let batchReviews;
 
-    try {
-      reviews = JSON.parse(responseText);
-    } catch (parseError) {
-      // Try to extract JSON from the response
-      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-      if (jsonMatch) {
-        reviews = JSON.parse(jsonMatch[0]);
-      } else {
-        throw new Error('Could not parse AI response as JSON');
+      try {
+        batchReviews = JSON.parse(responseText);
+      } catch (parseError) {
+        const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+          batchReviews = JSON.parse(jsonMatch[0]);
+        } else {
+          console.error('Failed to parse batch response:', responseText);
+          continue;
+        }
+      }
+
+      if (batchReviews.reviews) {
+        allReviews.push(...batchReviews.reviews);
       }
     }
 
-    res.json(reviews);
+    // Send final result
+    res.write(`data: ${JSON.stringify({ type: 'complete', reviews: allReviews })}\n\n`);
+    res.end();
   } catch (error) {
     console.error('AI Review error:', error);
-    res.status(500).json({ error: error.message || 'AI review failed' });
+    res.write(`data: ${JSON.stringify({ type: 'error', error: error.message || 'AI review failed' })}\n\n`);
+    res.end();
   }
 });
 

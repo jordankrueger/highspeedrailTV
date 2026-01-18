@@ -95,6 +95,9 @@ function setupEventListeners() {
   document.getElementById('ai-accept-all').addEventListener('click', acceptAllAIRecommendations);
   document.getElementById('ai-approve-only').addEventListener('click', approveOnlyAIRecommendations);
 
+  // Clear Queue
+  document.getElementById('clear-queue-btn').addEventListener('click', clearQueue);
+
   // Blocklist
   document.getElementById('add-channel-btn').addEventListener('click', () => {
     const input = document.getElementById('add-channel-input');
@@ -466,6 +469,30 @@ async function removeFromQueue(videoId) {
     closeAllModals();
   } catch (e) {
     showToast('Failed to remove', 'error');
+  }
+}
+
+async function clearQueue() {
+  if (queue.length === 0) {
+    showToast('Queue is already empty', 'info');
+    return;
+  }
+
+  if (!confirm(`Are you sure you want to remove all ${queue.length} videos from the queue? This cannot be undone.`)) {
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/queue/clear', { method: 'POST' });
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error);
+    }
+    showToast('Queue cleared', 'success');
+    await loadQueue();
+    if (currentTab === 'search') renderSearchResults();
+  } catch (e) {
+    showToast('Failed to clear queue: ' + e.message, 'error');
   }
 }
 
@@ -1125,6 +1152,7 @@ async function startAIReview() {
   const loading = document.getElementById('ai-review-loading');
   const results = document.getElementById('ai-review-results');
   const errorDiv = document.getElementById('ai-review-error');
+  const loadingText = loading.querySelector('p');
 
   // Show panel and loading state
   panel.classList.remove('hidden');
@@ -1135,20 +1163,51 @@ async function startAIReview() {
   // Hide the queue content while reviewing
   document.getElementById('queue-content').classList.add('hidden');
 
+  // Update initial loading text
+  loadingText.textContent = `Claude is reviewing ${queue.length} videos...`;
+
   try {
     const res = await fetch('/api/ai-review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     });
 
-    const data = await res.json();
+    // Handle SSE stream
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
 
-    if (data.error) {
-      throw new Error(data.error);
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      buffer += decoder.decode(value, { stream: true });
+
+      // Process complete SSE messages
+      const lines = buffer.split('\n\n');
+      buffer = lines.pop(); // Keep incomplete message in buffer
+
+      for (const line of lines) {
+        if (line.startsWith('data: ')) {
+          try {
+            const data = JSON.parse(line.slice(6));
+
+            if (data.type === 'progress') {
+              // Update loading text with progress
+              loadingText.textContent = `Claude is reviewing your queue... Batch ${data.batch} of ${data.totalBatches} (${data.processed}/${data.total} videos)`;
+            } else if (data.type === 'complete') {
+              aiReviewResults = data.reviews || [];
+              renderAIReviewResults();
+              return;
+            } else if (data.type === 'error') {
+              throw new Error(data.error);
+            }
+          } catch (parseError) {
+            console.error('Failed to parse SSE message:', parseError);
+          }
+        }
+      }
     }
-
-    aiReviewResults = data.reviews || [];
-    renderAIReviewResults();
   } catch (e) {
     loading.classList.add('hidden');
     errorDiv.classList.remove('hidden');

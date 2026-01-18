@@ -744,6 +744,22 @@ body {
   border-color: var(--text);
 }
 
+.btn-danger {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: white;
+}
+
 /* Hidden count */
 .hidden-count {
   color: var(--text-muted);
