@@ -237,6 +237,7 @@ app.get('/api/youtube/search', requireAuth, async (req, res) => {
   }
 });
 
+// Get video details by ID (for bulk import)
 app.get('/api/youtube/video/:id', requireAuth, async (req, res) => {
   const { id } = req.params;
   const apiKey = process.env.YOUTUBE_API_KEY;
@@ -255,25 +256,31 @@ app.get('/api/youtube/video/:id', requireAuth, async (req, res) => {
     const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?${params}`);
     const data = await response.json();
 
-    if (data.items.length === 0) {
+    if (data.error) {
+      return res.status(400).json({ error: data.error.message });
+    }
+
+    if (!data.items || data.items.length === 0) {
       return res.status(404).json({ error: 'Video not found' });
     }
 
     const item = data.items[0];
-    res.json({
+    const video = {
       id: item.id,
       title: item.snippet.title,
       description: item.snippet.description,
-      thumbnail: item.snippet.thumbnails.maxres?.url || item.snippet.thumbnails.high.url,
+      thumbnail: item.snippet.thumbnails.medium?.url || item.snippet.thumbnails.default?.url,
       channelTitle: item.snippet.channelTitle,
       publishedAt: item.snippet.publishedAt,
-      duration: item.contentDetails.duration,
-      viewCount: item.statistics.viewCount,
-      likeCount: item.statistics.likeCount
-    });
+      duration: item.contentDetails?.duration,
+      viewCount: item.statistics?.viewCount,
+      likeCount: item.statistics?.likeCount
+    };
+
+    res.json(video);
   } catch (error) {
     console.error('YouTube API error:', error);
-    res.status(500).json({ error: 'Failed to fetch video details' });
+    res.status(500).json({ error: 'Failed to fetch video' });
   }
 });
 

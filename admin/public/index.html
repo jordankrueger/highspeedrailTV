@@ -132,10 +132,25 @@
         <section id="queue-tab" class="tab-content">
           <div class="tab-header">
             <h2>Review Queue</h2>
-            <div class="view-toggle">
-              <button class="view-btn active" data-view="grid">Grid</button>
-              <button class="view-btn" data-view="detail">Detail</button>
+            <div class="header-actions">
+              <button id="bulk-import-btn" class="btn-secondary">+ Bulk Import</button>
+              <div class="view-toggle">
+                <button class="view-btn active" data-view="grid">Grid</button>
+                <button class="view-btn" data-view="detail">Detail</button>
+              </div>
             </div>
+          </div>
+          <div id="bulk-import-panel" class="bulk-import-panel hidden">
+            <h3>Bulk Import Videos</h3>
+            <p class="section-desc">Paste YouTube URLs (one per line, or comma-separated). Supports youtube.com/watch, youtu.be, and youtube.com/shorts links.</p>
+            <textarea id="bulk-urls" rows="6" placeholder="https://www.youtube.com/watch?v=abc123
+https://youtu.be/xyz789
+https://youtube.com/shorts/def456"></textarea>
+            <div class="bulk-import-actions">
+              <button id="bulk-cancel-btn" class="btn-secondary">Cancel</button>
+              <button id="bulk-submit-btn" class="btn-primary">Import Videos</button>
+            </div>
+            <div id="bulk-import-status"></div>
           </div>
           <div id="queue-content" class="video-grid"></div>
         </section>

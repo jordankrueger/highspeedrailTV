@@ -83,6 +83,11 @@ function setupEventListeners() {
   // Modal actions
   document.getElementById('modal-reject-btn').addEventListener('click', handleReject);
 
+  // Bulk Import
+  document.getElementById('bulk-import-btn').addEventListener('click', toggleBulkImport);
+  document.getElementById('bulk-cancel-btn').addEventListener('click', toggleBulkImport);
+  document.getElementById('bulk-submit-btn').addEventListener('click', handleBulkImport);
+
   // Blocklist
   document.getElementById('add-channel-btn').addEventListener('click', () => {
     const input = document.getElementById('add-channel-input');
@@ -983,5 +988,121 @@ async function unblockKeyword(keyword) {
     if (searchResults.length > 0) renderSearchResults();
   } catch (e) {
     showToast('Failed to unblock keyword', 'error');
+  }
+}
+
+// Bulk Import
+function toggleBulkImport() {
+  const panel = document.getElementById('bulk-import-panel');
+  panel.classList.toggle('hidden');
+  if (!panel.classList.contains('hidden')) {
+    document.getElementById('bulk-urls').value = '';
+    document.getElementById('bulk-import-status').innerHTML = '';
+  }
+}
+
+function extractVideoId(url) {
+  // Handle various YouTube URL formats
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/,
+    /^([a-zA-Z0-9_-]{11})$/ // Just the ID itself
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
+}
+
+async function handleBulkImport() {
+  const textarea = document.getElementById('bulk-urls');
+  const statusDiv = document.getElementById('bulk-import-status');
+  const submitBtn = document.getElementById('bulk-submit-btn');
+
+  // Parse URLs - split by newlines, commas, or spaces
+  const input = textarea.value.trim();
+  if (!input) {
+    showToast('Please enter some YouTube URLs', 'error');
+    return;
+  }
+
+  const urls = input.split(/[\n,\s]+/).filter(u => u.trim());
+  const videoIds = [...new Set(urls.map(extractVideoId).filter(Boolean))]; // Dedupe
+
+  if (videoIds.length === 0) {
+    showToast('No valid YouTube URLs found', 'error');
+    return;
+  }
+
+  submitBtn.disabled = true;
+  statusDiv.innerHTML = `<p class="pending">Processing ${videoIds.length} video(s)...</p>`;
+
+  const results = { success: [], failed: [], skipped: [] };
+
+  for (const videoId of videoIds) {
+    // Check if already in queue or published
+    if (queue.some(v => v.id === videoId)) {
+      results.skipped.push({ id: videoId, reason: 'Already in queue' });
+      continue;
+    }
+    if (publishedVideos.some(v => v.id === videoId)) {
+      results.skipped.push({ id: videoId, reason: 'Already published' });
+      continue;
+    }
+
+    try {
+      // Fetch video details
+      const res = await fetch(`/api/youtube/video/${videoId}`);
+      if (!res.ok) {
+        const error = await res.json();
+        results.failed.push({ id: videoId, reason: error.error || 'Not found' });
+        continue;
+      }
+
+      const video = await res.json();
+
+      // Add to queue
+      const queueRes = await fetch('/api/queue', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ video })
+      });
+
+      if (queueRes.ok) {
+        results.success.push({ id: videoId, title: video.title });
+      } else {
+        const error = await queueRes.json();
+        results.failed.push({ id: videoId, reason: error.error });
+      }
+    } catch (e) {
+      results.failed.push({ id: videoId, reason: 'Network error' });
+    }
+
+    // Update status as we go
+    statusDiv.innerHTML = `
+      <p class="pending">Processing... ${results.success.length + results.failed.length + results.skipped.length}/${videoIds.length}</p>
+    `;
+  }
+
+  // Show final results
+  let html = '';
+  if (results.success.length > 0) {
+    html += `<p class="success">✓ Added ${results.success.length} video(s) to queue</p>`;
+  }
+  if (results.skipped.length > 0) {
+    html += `<p class="pending">⊘ Skipped ${results.skipped.length} (already in queue/published)</p>`;
+  }
+  if (results.failed.length > 0) {
+    html += `<p class="error">✗ Failed: ${results.failed.map(f => f.id).join(', ')}</p>`;
+  }
+  statusDiv.innerHTML = html;
+
+  submitBtn.disabled = false;
+
+  // Refresh queue
+  if (results.success.length > 0) {
+    await loadQueue();
+    showToast(`Added ${results.success.length} video(s) to queue`, 'success');
   }
 }
