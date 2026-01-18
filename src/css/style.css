@@ -673,6 +673,40 @@ img {
   }
 }
 
+/* Network Banner */
+.network-banner {
+  background: #151515;
+  padding: 0.85rem 0;
+  text-align: center;
+}
+
+.network-banner a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.network-banner a:hover {
+  color: var(--white);
+}
+
+.network-banner-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.network-banner-icon svg {
+  display: block;
+}
+
 /* Utility Classes */
 .text-center {
   text-align: center;
