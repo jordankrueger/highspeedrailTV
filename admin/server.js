@@ -58,6 +58,7 @@ const QUEUE_PATH = path.join(__dirname, 'data', 'queue.json');
 const PRESETS_PATH = path.join(__dirname, 'data', 'presets.json');
 const CATEGORIES_PATH = path.join(__dirname, 'data', 'categories.json');
 const BLOCKLIST_PATH = path.join(__dirname, 'data', 'blocklist.json');
+const SETTINGS_PATH = path.join(__dirname, 'data', 'settings.json');
 
 // Ensure data directory exists
 async function ensureDataDir() {
@@ -121,6 +122,20 @@ async function initDataFiles() {
       ]
     };
     await fs.writeFile(BLOCKLIST_PATH, JSON.stringify(defaultBlocklist, null, 2));
+  }
+
+  // Initialize settings
+  try {
+    await fs.access(SETTINGS_PATH);
+  } catch {
+    const defaultSettings = {
+      footerLinks: [
+        { id: 1, label: 'hsr.fyi', url: 'https://hsr.fyi' },
+        { id: 2, label: 'HSR Alliance', url: 'https://www.hsrail.org' },
+        { id: 3, label: 'CA HSR Authority', url: 'https://hsr.ca.gov' }
+      ]
+    };
+    await fs.writeFile(SETTINGS_PATH, JSON.stringify(defaultSettings, null, 2));
   }
 }
 
@@ -577,6 +592,96 @@ app.delete('/api/videos/:id', requireAuth, async (req, res) => {
   videos = videos.filter(v => v.id !== id);
   await writeJSON(VIDEOS_PATH, videos);
   res.json({ success: true });
+});
+
+// Set featured video
+app.post('/api/videos/:id/feature', requireAuth, async (req, res) => {
+  const { id } = req.params;
+  const videos = await readJSON(VIDEOS_PATH);
+
+  const index = videos.findIndex(v => v.id === id);
+  if (index === -1) {
+    return res.status(404).json({ error: 'Video not found' });
+  }
+
+  // Unfeature all videos, then feature the selected one
+  videos.forEach(v => v.featured = false);
+  videos[index].featured = true;
+
+  await writeJSON(VIDEOS_PATH, videos);
+  res.json({ success: true, featured: videos[index] });
+});
+
+// Settings routes
+app.get('/api/settings', requireAuth, async (req, res) => {
+  const settings = await readJSON(SETTINGS_PATH);
+  res.json(settings);
+});
+
+app.get('/api/settings/footer-links', requireAuth, async (req, res) => {
+  const settings = await readJSON(SETTINGS_PATH);
+  res.json(settings.footerLinks || []);
+});
+
+app.post('/api/settings/footer-links', requireAuth, async (req, res) => {
+  const { label, url } = req.body;
+
+  if (!label || !url) {
+    return res.status(400).json({ error: 'Label and URL are required' });
+  }
+
+  const settings = await readJSON(SETTINGS_PATH);
+  const newLink = {
+    id: Date.now(),
+    label,
+    url
+  };
+
+  settings.footerLinks = settings.footerLinks || [];
+  settings.footerLinks.push(newLink);
+
+  await writeJSON(SETTINGS_PATH, settings);
+  res.json(newLink);
+});
+
+app.delete('/api/settings/footer-links/:id', requireAuth, async (req, res) => {
+  const { id } = req.params;
+  const settings = await readJSON(SETTINGS_PATH);
+
+  settings.footerLinks = (settings.footerLinks || []).filter(l => l.id !== parseInt(id));
+
+  await writeJSON(SETTINGS_PATH, settings);
+  res.json({ success: true });
+});
+
+app.put('/api/settings/footer-links/:id', requireAuth, async (req, res) => {
+  const { id } = req.params;
+  const { label, url } = req.body;
+  const settings = await readJSON(SETTINGS_PATH);
+
+  const index = (settings.footerLinks || []).findIndex(l => l.id === parseInt(id));
+  if (index === -1) {
+    return res.status(404).json({ error: 'Link not found' });
+  }
+
+  settings.footerLinks[index] = { ...settings.footerLinks[index], label, url };
+
+  await writeJSON(SETTINGS_PATH, settings);
+  res.json(settings.footerLinks[index]);
+});
+
+// Build site endpoint
+app.post('/api/build', requireAuth, async (req, res) => {
+  const { exec } = require('child_process');
+  const projectRoot = path.join(__dirname, '..');
+
+  exec('npm run build', { cwd: projectRoot }, (error, stdout, stderr) => {
+    if (error) {
+      console.error('Build error:', error);
+      return res.status(500).json({ error: 'Build failed', details: stderr });
+    }
+    res.json({ success: true, output: stdout });
+  });
 });
 
 // AI Review endpoint with streaming progress

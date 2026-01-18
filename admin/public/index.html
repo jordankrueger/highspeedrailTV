@@ -34,6 +34,7 @@
           <button class="nav-btn" data-tab="categories">Categories</button>
           <button class="nav-btn" data-tab="presets">Presets</button>
           <button class="nav-btn" data-tab="blocklist">Blocklist</button>
+          <button class="nav-btn" data-tab="settings">Settings</button>
         </nav>
         <button id="logout-btn" class="logout-btn">Sign Out</button>
       </header>
@@ -186,6 +187,15 @@ https://youtube.com/shorts/def456"></textarea>
             <h2>Published Videos</h2>
             <p class="subtitle" id="video-count">0 videos</p>
           </div>
+
+          <!-- Featured Video Section -->
+          <div id="featured-section" class="featured-section hidden">
+            <div class="featured-header-bar">
+              <h3>⭐ Staff Pick (Featured on Homepage)</h3>
+            </div>
+            <div id="featured-video-card" class="featured-video-card"></div>
+          </div>
+
           <div id="published-content" class="video-grid"></div>
         </section>
 
@@ -233,6 +243,46 @@ https://youtube.com/shorts/def456"></textarea>
                 <button id="add-keyword-btn" class="btn-primary">Block Keyword</button>
               </div>
               <div id="blocked-keywords-list" class="blocklist-items"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Settings Tab -->
+        <section id="settings-tab" class="tab-content">
+          <div class="tab-header">
+            <h2>Site Settings</h2>
+          </div>
+
+          <div class="settings-sections">
+            <!-- Footer Links Section -->
+            <div class="settings-section">
+              <h3>Footer Links</h3>
+              <p class="section-desc">Manage the links that appear in the footer "Network" column</p>
+
+              <div id="footer-links-list" class="footer-links-list"></div>
+
+              <div class="add-footer-link-form">
+                <h4>Add New Link</h4>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="new-link-label">Label</label>
+                    <input type="text" id="new-link-label" placeholder="e.g. HSR Alliance">
+                  </div>
+                  <div class="form-group">
+                    <label for="new-link-url">URL</label>
+                    <input type="url" id="new-link-url" placeholder="https://example.com">
+                  </div>
+                  <button id="add-footer-link-btn" class="btn-primary">Add Link</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Build Section -->
+            <div class="settings-section">
+              <h3>Build Site</h3>
+              <p class="section-desc">Rebuild the site to apply changes (new videos, footer links, etc.)</p>
+              <button id="build-site-btn" class="btn-primary">🔨 Rebuild Site</button>
+              <p id="build-status" class="build-status"></p>
             </div>
           </div>
         </section>

@@ -74,9 +74,9 @@
         <div class="footer-col">
           <h4>Network</h4>
           <ul>
-            <li><a href="https://hsr.fyi" target="_blank" rel="noopener">hsr.fyi</a></li>
-            <li><a href="https://www.hsrail.org" target="_blank" rel="noopener">HSR Alliance</a></li>
-            <li><a href="https://hsr.ca.gov" target="_blank" rel="noopener">CA HSR Authority</a></li>
+            {% for link in settings.footerLinks %}
+            <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
+            {% endfor %}
           </ul>
         </div>
       </div>

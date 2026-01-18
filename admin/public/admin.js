@@ -8,6 +8,7 @@ let categories = [];
 let presets = [];
 let publishedVideos = [];
 let blocklist = { channels: [], keywords: [] };
+let footerLinks = [];
 let currentVideoForModal = null;
 let viewMode = 'grid';
 let editingCategorySlug = null;
@@ -128,6 +129,24 @@ function setupEventListeners() {
     }
   });
 
+  // Settings - Footer Links
+  document.getElementById('add-footer-link-btn').addEventListener('click', addFooterLink);
+  document.getElementById('new-link-label').addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('add-footer-link-btn').click();
+    }
+  });
+  document.getElementById('new-link-url').addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('add-footer-link-btn').click();
+    }
+  });
+
+  // Settings - Build Site
+  document.getElementById('build-site-btn').addEventListener('click', buildSite);
+
   // Close modal on backdrop click
   document.querySelectorAll('.modal').forEach(modal => {
     modal.addEventListener('click', e => {
@@ -177,7 +196,8 @@ async function loadInitialData() {
     loadCategories(),
     loadPresets(),
     loadPublishedVideos(),
-    loadBlocklist()
+    loadBlocklist(),
+    loadFooterLinks()
   ]);
   populatePresetSelect();
   populateCategorySelect();
@@ -510,17 +530,44 @@ async function loadPublishedVideos() {
 
 function renderPublishedVideos() {
   const container = document.getElementById('published-content');
+  const featuredSection = document.getElementById('featured-section');
+  const featuredCard = document.getElementById('featured-video-card');
 
   if (publishedVideos.length === 0) {
     container.innerHTML = '<div class="empty-state"><h3>No published videos</h3><p>Approve videos from the queue to add them to your site</p></div>';
+    featuredSection.classList.add('hidden');
     return;
   }
 
-  container.innerHTML = publishedVideos.map(video => `
+  // Find featured video
+  const featuredVideo = publishedVideos.find(v => v.featured);
+  const otherVideos = publishedVideos.filter(v => !v.featured);
+
+  // Render featured section
+  if (featuredVideo) {
+    featuredSection.classList.remove('hidden');
+    featuredCard.innerHTML = `
+      <div class="video-thumbnail">
+        <img src="https://img.youtube.com/vi/${featuredVideo.id}/mqdefault.jpg" alt="${escapeHtml(featuredVideo.title)}">
+      </div>
+      <div class="video-info">
+        <h3>${escapeHtml(featuredVideo.title)}</h3>
+        <p>${escapeHtml(featuredVideo.description || '')}</p>
+        <p class="channel">${getCategoryName(featuredVideo.category)} · Added ${formatDate(featuredVideo.dateAdded)}</p>
+        <div class="video-actions">
+          <button class="btn-view" onclick="window.open('/video/${featuredVideo.id}/', '_blank')">View on Site</button>
+        </div>
+      </div>
+    `;
+  } else {
+    featuredSection.classList.add('hidden');
+  }
+
+  // Render other videos with "Set as Featured" button
+  container.innerHTML = otherVideos.map(video => `
     <div class="video-card" data-id="${video.id}">
       <div class="video-thumbnail">
         <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" alt="${escapeHtml(video.title)}">
-        ${video.featured ? '<span class="video-status published">Featured</span>' : ''}
       </div>
       <div class="video-info">
         <h3>${escapeHtml(video.title)}</h3>
@@ -530,10 +577,25 @@ function renderPublishedVideos() {
         </div>
       </div>
       <div class="video-actions">
-        <button class="btn-view" onclick="window.open('/video/${video.id}/', '_blank')">View on Site</button>
+        <button class="btn-featured" onclick="setFeaturedVideo('${video.id}')">⭐ Set as Featured</button>
+        <button class="btn-view" onclick="window.open('/video/${video.id}/', '_blank')">View</button>
       </div>
     </div>
   `).join('');
+}
+
+async function setFeaturedVideo(videoId) {
+  try {
+    const res = await fetch(`/api/videos/${videoId}/feature`, { method: 'POST' });
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error);
+    }
+    showToast('Featured video updated!', 'success');
+    await loadPublishedVideos();
+  } catch (e) {
+    showToast('Failed to set featured: ' + e.message, 'error');
+  }
 }
 
 // Categories
@@ -1410,4 +1472,110 @@ function closeAIReview() {
   document.getElementById('ai-review-panel').classList.add('hidden');
   document.getElementById('queue-content').classList.remove('hidden');
   aiReviewResults = null;
+}
+
+// Footer Links Management
+async function loadFooterLinks() {
+  try {
+    const res = await fetch('/api/settings/footer-links');
+    footerLinks = await res.json();
+    renderFooterLinks();
+  } catch (e) {
+    console.error('Failed to load footer links:', e);
+  }
+}
+
+function renderFooterLinks() {
+  const container = document.getElementById('footer-links-list');
+
+  if (footerLinks.length === 0) {
+    container.innerHTML = '<p class="empty-list">No footer links configured</p>';
+    return;
+  }
+
+  container.innerHTML = footerLinks.map(link => `
+    <div class="footer-link-item" data-id="${link.id}">
+      <div class="link-info">
+        <span class="link-label">${escapeHtml(link.label)}</span>
+        <span class="link-url">${escapeHtml(link.url)}</span>
+      </div>
+      <div class="link-actions">
+        <button class="btn-remove-small" onclick="deleteFooterLink(${link.id})">&times;</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function addFooterLink() {
+  const labelInput = document.getElementById('new-link-label');
+  const urlInput = document.getElementById('new-link-url');
+
+  const label = labelInput.value.trim();
+  const url = urlInput.value.trim();
+
+  if (!label || !url) {
+    showToast('Please enter both label and URL', 'error');
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/settings/footer-links', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ label, url })
+    });
+
+    if (!res.ok) {
+      const error = await res.json();
+      throw new Error(error.error);
+    }
+
+    showToast('Footer link added', 'success');
+    labelInput.value = '';
+    urlInput.value = '';
+    await loadFooterLinks();
+  } catch (e) {
+    showToast('Failed to add link: ' + e.message, 'error');
+  }
+}
+
+async function deleteFooterLink(id) {
+  try {
+    await fetch(`/api/settings/footer-links/${id}`, { method: 'DELETE' });
+    showToast('Footer link removed', 'success');
+    await loadFooterLinks();
+  } catch (e) {
+    showToast('Failed to remove link: ' + e.message, 'error');
+  }
+}
+
+// Build Site
+async function buildSite() {
+  const btn = document.getElementById('build-site-btn');
+  const status = document.getElementById('build-status');
+
+  btn.disabled = true;
+  btn.textContent = '🔨 Building...';
+  status.textContent = 'Building site...';
+  status.className = 'build-status pending';
+
+  try {
+    const res = await fetch('/api/build', { method: 'POST' });
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.error || 'Build failed');
+    }
+
+    status.textContent = '✓ Site rebuilt successfully!';
+    status.className = 'build-status success';
+    showToast('Site rebuilt successfully!', 'success');
+  } catch (e) {
+    status.textContent = '✗ Build failed: ' + e.message;
+    status.className = 'build-status error';
+    showToast('Build failed: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '🔨 Rebuild Site';
+  }
 }
