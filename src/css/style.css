@@ -592,6 +592,112 @@ img {
   margin-top: var(--spacing-2xl);
 }
 
+/* Footer Subscribe */
+.footer-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-subscribe-text h3 {
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.footer-subscribe-text p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-subscribe-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-subscribe-input {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-primary);
+  width: 220px;
+}
+
+.footer-subscribe-input::placeholder {
+  color: var(--text-light);
+}
+
+.footer-subscribe-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(224, 122, 95, 0.5);
+}
+
+.footer-subscribe-btn {
+  padding: 0.7rem 1.25rem;
+  background: var(--coral);
+  color: var(--white);
+  border: none;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-subscribe-btn:hover {
+  background: var(--coral-dark);
+}
+
+.footer-rss {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-rss:hover {
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .footer-subscribe {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-subscribe-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-subscribe-input {
+    width: 100%;
+  }
+
+  .footer-subscribe-btn {
+    width: 100%;
+  }
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
@@ -727,116 +833,6 @@ img {
   display: block;
 }
 
-/* Subscribe CTA */
-.subscribe-cta {
-  background: var(--teal);
-  padding: var(--spacing-2xl) 0;
-  margin-top: var(--spacing-2xl);
-}
-
-.cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.cta-text h2 {
-  font-family: var(--font-serif);
-  font-size: 1.85rem;
-  font-weight: 600;
-  color: var(--white);
-  margin: 0 0 var(--spacing-sm);
-  letter-spacing: -0.01em;
-}
-
-.cta-text p {
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 var(--spacing-lg);
-  font-size: 1.05rem;
-}
-
-.cta-form {
-  display: flex;
-  gap: 0.75rem;
-  max-width: 450px;
-  margin: 0 auto var(--spacing-md);
-}
-
-.cta-input {
-  flex: 1;
-  padding: 0.9rem 1.25rem;
-  border: none;
-  border-radius: 100px;
-  font-size: 1rem;
-  font-family: var(--font-sans);
-  background: var(--white);
-  color: var(--text-primary);
-}
-
-.cta-input::placeholder {
-  color: var(--text-light);
-}
-
-.cta-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.4);
-}
-
-.cta-button {
-  padding: 0.9rem 1.75rem;
-  background: var(--coral);
-  color: var(--white);
-  border: none;
-  border-radius: 100px;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: var(--font-sans);
-  cursor: pointer;
-  transition: background 0.2s ease;
-  white-space: nowrap;
-}
-
-.cta-button:hover {
-  background: var(--coral-dark);
-}
-
-.cta-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.cta-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.cta-link:hover {
-  color: var(--white);
-}
-
-.cta-link svg {
-  flex-shrink: 0;
-}
-
-@media (max-width: 520px) {
-  .cta-form {
-    flex-direction: column;
-  }
-
-  .cta-button {
-    width: 100%;
-  }
-
-  .cta-text h2 {
-    font-size: 1.5rem;
-  }
-}
 
 /* Utility Classes */
 .text-center {
