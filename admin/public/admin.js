@@ -53,6 +53,12 @@ function setupEventListeners() {
     if (e.key === 'Enter') handleSearch();
   });
   document.getElementById('run-preset-btn').addEventListener('click', runPreset);
+  document.getElementById('browse-recent-btn').addEventListener('click', browseRecent);
+
+  // Filter change - re-render results when hide toggle changes
+  document.getElementById('filter-hide-published').addEventListener('change', () => {
+    if (searchResults.length > 0) renderSearchResults();
+  });
 
   // View toggle
   document.querySelectorAll('.view-btn').forEach(btn => {
@@ -142,13 +148,50 @@ function switchTab(tab) {
 }
 
 // YouTube Search
+function getFilters() {
+  const dateFilter = document.getElementById('filter-date').value;
+  const order = document.getElementById('filter-order').value;
+  const duration = document.getElementById('filter-duration').value;
+  const minViews = document.getElementById('filter-views').value;
+  const hidePublished = document.getElementById('filter-hide-published').checked;
+
+  // Calculate publishedAfter date based on selection
+  let publishedAfter = null;
+  if (dateFilter !== 'all') {
+    const now = new Date();
+    switch (dateFilter) {
+      case '2y': now.setFullYear(now.getFullYear() - 2); break;
+      case '1y': now.setFullYear(now.getFullYear() - 1); break;
+      case '6m': now.setMonth(now.getMonth() - 6); break;
+      case '3m': now.setMonth(now.getMonth() - 3); break;
+      case '1m': now.setMonth(now.getMonth() - 1); break;
+    }
+    publishedAfter = now.toISOString();
+  }
+
+  return {
+    publishedAfter,
+    order,
+    videoDuration: duration,
+    minViews: parseInt(minViews),
+    hidePublished
+  };
+}
+
 async function handleSearch() {
   const query = document.getElementById('search-input').value.trim();
-  if (!query) return;
-
   currentSearchQuery = query;
   nextPageToken = null;
   await performSearch(query);
+}
+
+async function browseRecent() {
+  // Search with HSR-related terms but sorted by date
+  document.getElementById('search-input').value = '';
+  document.getElementById('filter-order').value = 'date';
+  currentSearchQuery = 'high speed rail OR bullet train OR HSR';
+  nextPageToken = null;
+  await performSearch(currentSearchQuery);
 }
 
 async function runPreset() {
@@ -162,12 +205,25 @@ async function runPreset() {
   await performSearch(preset.query, preset.maxResults);
 }
 
-async function performSearch(query, maxResults = 10, pageToken = null) {
+async function performSearch(query, maxResults = 20, pageToken = null) {
   const resultsContainer = document.getElementById('search-results');
   resultsContainer.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
 
+  const filters = getFilters();
+
   try {
-    const params = new URLSearchParams({ q: query, maxResults });
+    const params = new URLSearchParams({ maxResults });
+
+    // Add query if provided
+    if (query && query.trim()) {
+      params.append('q', query);
+    }
+
+    // Add filters
+    if (filters.publishedAfter) params.append('publishedAfter', filters.publishedAfter);
+    params.append('order', filters.order);
+    params.append('videoDuration', filters.videoDuration);
+    if (filters.minViews > 0) params.append('minViews', filters.minViews);
     if (pageToken) params.append('pageToken', pageToken);
 
     const res = await fetch(`/api/youtube/search?${params}`);
@@ -188,13 +244,27 @@ async function performSearch(query, maxResults = 10, pageToken = null) {
 
 function renderSearchResults() {
   const container = document.getElementById('search-results');
+  const hidePublished = document.getElementById('filter-hide-published').checked;
 
-  if (searchResults.length === 0) {
-    container.innerHTML = '<div class="empty-state"><h3>No results found</h3><p>Try a different search term</p></div>';
+  // Filter out published/queued videos if checkbox is checked
+  let videosToShow = searchResults;
+  if (hidePublished) {
+    videosToShow = searchResults.filter(video => {
+      const isQueued = queue.some(q => q.id === video.id);
+      const isPublished = publishedVideos.some(v => v.id === video.id);
+      return !isQueued && !isPublished;
+    });
+  }
+
+  if (videosToShow.length === 0) {
+    const message = hidePublished && searchResults.length > 0
+      ? '<div class="empty-state"><h3>All results already in your library</h3><p>Uncheck "Hide published/queued" to see them, or try a different search</p></div>'
+      : '<div class="empty-state"><h3>No results found</h3><p>Try a different search term or adjust filters</p></div>';
+    container.innerHTML = message;
     return;
   }
 
-  container.innerHTML = searchResults.map(video => {
+  container.innerHTML = videosToShow.map(video => {
     const isQueued = queue.some(q => q.id === video.id);
     const isPublished = publishedVideos.some(v => v.id === video.id);
     const status = isPublished ? 'published' : (isQueued ? 'queued' : null);
@@ -224,10 +294,14 @@ function renderSearchResults() {
     `;
   }).join('');
 
+  // Show count of hidden videos
+  const hiddenCount = searchResults.length - videosToShow.length;
+  const hiddenNote = hiddenCount > 0 ? `<p class="hidden-count">${hiddenCount} already in your library (hidden)</p>` : '';
+
   // Pagination
   const pagination = document.getElementById('search-pagination');
-  pagination.innerHTML = nextPageToken ?
-    `<button onclick="loadMoreResults()">Load More Results</button>` : '';
+  pagination.innerHTML = hiddenNote + (nextPageToken ?
+    `<button onclick="loadMoreResults()">Load More Results</button>` : '');
 }
 
 async function loadMoreResults() {

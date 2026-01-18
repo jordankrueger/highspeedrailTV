@@ -121,7 +121,16 @@ app.get('/api/auth-status', (req, res) => {
 
 // YouTube API routes
 app.get('/api/youtube/search', requireAuth, async (req, res) => {
-  const { q, maxResults = 10, pageToken } = req.query;
+  const {
+    q,
+    maxResults = 10,
+    pageToken,
+    publishedAfter,
+    publishedBefore,
+    order = 'date',
+    videoDuration = 'medium',
+    minViews = 0
+  } = req.query;
   const apiKey = process.env.YOUTUBE_API_KEY;
 
   if (!apiKey) {
@@ -131,13 +140,25 @@ app.get('/api/youtube/search', requireAuth, async (req, res) => {
   try {
     const params = new URLSearchParams({
       part: 'snippet',
-      q: q,
       type: 'video',
       maxResults: maxResults,
-      order: 'relevance',
-      videoDuration: 'medium', // Filter out shorts and very long videos
+      order: order,
+      videoDuration: videoDuration,
       key: apiKey
     });
+
+    // Only add query if provided (allows browsing without search terms)
+    if (q && q.trim()) {
+      params.append('q', q);
+    }
+
+    // Date filters
+    if (publishedAfter) {
+      params.append('publishedAfter', publishedAfter);
+    }
+    if (publishedBefore) {
+      params.append('publishedBefore', publishedBefore);
+    }
 
     if (pageToken) {
       params.append('pageToken', pageToken);
@@ -164,7 +185,7 @@ app.get('/api/youtube/search', requireAuth, async (req, res) => {
     const detailsData = await detailsResponse.json();
 
     // Merge details with search results
-    const videos = data.items.map(item => {
+    let videos = data.items.map(item => {
       const details = detailsData.items.find(d => d.id === item.id.videoId) || {};
       return {
         id: item.id.videoId,
@@ -178,6 +199,11 @@ app.get('/api/youtube/search', requireAuth, async (req, res) => {
         likeCount: details.statistics?.likeCount
       };
     });
+
+    // Filter by minimum views if specified
+    if (minViews > 0) {
+      videos = videos.filter(v => parseInt(v.viewCount || 0) >= parseInt(minViews));
+    }
 
     res.json({
       videos,
