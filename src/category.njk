@@ -13,6 +13,14 @@ eleventyComputed:
   <div class="container">
     <h1>{{ category.name }}</h1>
     <p>{{ category.videos.length }} video{% if category.videos.length != 1 %}s{% endif %} in this category</p>
+    <a href="/category/{{ category.slug }}/feed.xml" class="rss-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 11a9 9 0 0 1 9 9"></path>
+        <path d="M4 4a16 16 0 0 1 16 16"></path>
+        <circle cx="5" cy="19" r="1"></circle>
+      </svg>
+      Subscribe to this category
+    </a>
   </div>
 </header>
 

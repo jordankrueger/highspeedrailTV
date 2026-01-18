@@ -523,6 +523,25 @@ img {
   font-size: 1.1rem;
 }
 
+.rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--spacing-sm);
+  color: var(--coral);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.rss-link:hover {
+  color: var(--coral-dark);
+}
+
+.rss-link svg {
+  flex-shrink: 0;
+}
+
 /* Categories List Page */
 .categories-grid {
   display: grid;
@@ -706,6 +725,117 @@ img {
 
 .network-banner-icon svg {
   display: block;
+}
+
+/* Subscribe CTA */
+.subscribe-cta {
+  background: var(--teal);
+  padding: var(--spacing-2xl) 0;
+  margin-top: var(--spacing-2xl);
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-text h2 {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0 0 var(--spacing-sm);
+  letter-spacing: -0.01em;
+}
+
+.cta-text p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 var(--spacing-lg);
+  font-size: 1.05rem;
+}
+
+.cta-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 450px;
+  margin: 0 auto var(--spacing-md);
+}
+
+.cta-input {
+  flex: 1;
+  padding: 0.9rem 1.25rem;
+  border: none;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  background: var(--white);
+  color: var(--text-primary);
+}
+
+.cta-input::placeholder {
+  color: var(--text-light);
+}
+
+.cta-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.4);
+}
+
+.cta-button {
+  padding: 0.9rem 1.75rem;
+  background: var(--coral);
+  color: var(--white);
+  border: none;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background: var(--coral-dark);
+}
+
+.cta-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.cta-link:hover {
+  color: var(--white);
+}
+
+.cta-link svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 520px) {
+  .cta-form {
+    flex-direction: column;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+
+  .cta-text h2 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Utility Classes */

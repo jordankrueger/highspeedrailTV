@@ -1,0 +1,34 @@
+---
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: /category/{{ category.slug }}/feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HighSpeedRail.TV - {{ category.name }}</title>
+  <subtitle>{{ category.name }} videos about high-speed rail.</subtitle>
+  <link href="https://highspeedrail.tv/category/{{ category.slug }}/feed.xml" rel="self"/>
+  <link href="https://highspeedrail.tv/category/{{ category.slug }}/"/>
+  <updated>{% if category.videos.length > 0 %}{{ category.videos[0].dateAdded }}T12:00:00Z{% else %}2025-01-01T12:00:00Z{% endif %}</updated>
+  <id>https://highspeedrail.tv/category/{{ category.slug }}/</id>
+  <author>
+    <name>HighSpeedRail.TV</name>
+  </author>
+  {% for video in category.videos | slice(0, 20) %}
+  <entry>
+    <title>{{ video.title | escape }}</title>
+    <link href="https://highspeedrail.tv/video/{{ video.id }}/"/>
+    <id>https://highspeedrail.tv/video/{{ video.id }}/</id>
+    <updated>{{ video.dateAdded }}T12:00:00Z</updated>
+    <summary>{{ video.description | escape }}</summary>
+    <content type="html">
+      &lt;p&gt;{{ video.description | escape }}&lt;/p&gt;
+      &lt;p&gt;&lt;a href="https://www.youtube.com/watch?v={{ video.id }}"&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+    </content>
+    <category term="{{ video.category }}"/>
+  </entry>
+  {% endfor %}
+</feed>

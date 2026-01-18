@@ -6,6 +6,7 @@
   <title>{{ title | default("HighSpeedRail.TV") }} | HighSpeedRail.TV</title>
   <meta name="description" content="{{ description | default("Curated videos about high-speed rail in America and around the world.") }}">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="alternate" type="application/atom+xml" title="HighSpeedRail.TV Feed" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -46,6 +47,10 @@
   <main class="site-main">
     {{ content | safe }}
   </main>
+
+  {% if not hideSubscribeCta %}
+  {% include "subscribe-cta.njk" %}
+  {% endif %}
 
   <footer class="site-footer">
     <div class="container">

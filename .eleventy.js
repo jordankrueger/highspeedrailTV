@@ -12,6 +12,14 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // ISO date format for RSS feeds
+  eleventyConfig.addFilter("dateISO", (item) => {
+    if (item && item.dateAdded) {
+      return item.dateAdded + 'T12:00:00Z';
+    }
+    return '2025-01-01T12:00:00Z';
+  });
+
   // Filter videos by category
   eleventyConfig.addFilter("filterByCategory", (videos, category) => {
     return videos.filter(v => v.category === category);

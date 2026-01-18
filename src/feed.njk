@@ -1,0 +1,30 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HighSpeedRail.TV</title>
+  <subtitle>Curated videos about high-speed rail in America and around the world.</subtitle>
+  <link href="https://highspeedrail.tv/feed.xml" rel="self"/>
+  <link href="https://highspeedrail.tv/"/>
+  <updated>{{ videos | getRecent(1) | first | default({dateAdded: "2025-01-01"}) | dateISO }}</updated>
+  <id>https://highspeedrail.tv/</id>
+  <author>
+    <name>HighSpeedRail.TV</name>
+  </author>
+  {% for video in videos | getRecent(20) %}
+  <entry>
+    <title>{{ video.title | escape }}</title>
+    <link href="https://highspeedrail.tv/video/{{ video.id }}/"/>
+    <id>https://highspeedrail.tv/video/{{ video.id }}/</id>
+    <updated>{{ video.dateAdded }}T12:00:00Z</updated>
+    <summary>{{ video.description | escape }}</summary>
+    <content type="html">
+      &lt;p&gt;{{ video.description | escape }}&lt;/p&gt;
+      &lt;p&gt;&lt;a href="https://www.youtube.com/watch?v={{ video.id }}"&gt;Watch on YouTube&lt;/a&gt;&lt;/p&gt;
+    </content>
+    <category term="{{ video.category }}"/>
+  </entry>
+  {% endfor %}
+</feed>
