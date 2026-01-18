@@ -48,36 +48,37 @@
     {{ content | safe }}
   </main>
 
+  <!-- Subscribe CTA Section -->
+  <section class="subscribe-cta">
+    <div class="subscribe-cta-overlay"></div>
+    <div class="subscribe-cta-content">
+      <h2>Stay on track</h2>
+      <p>Get new videos in your inbox. No spam, just trains.</p>
+      <form
+        action="https://embeds.beehiiv.com/subscribe"
+        method="POST"
+        class="subscribe-cta-form"
+        target="_blank"
+      >
+        <input type="hidden" name="publication_id" value="pub_2c161570-34a5-4b92-a94d-0446aed324fb">
+        <input type="hidden" name="utm_source" value="highspeedrail.tv">
+        <input type="hidden" name="utm_medium" value="website">
+        <input type="email" name="email" placeholder="Enter your email" required class="subscribe-cta-input">
+        <button type="submit" class="subscribe-cta-btn">Subscribe</button>
+      </form>
+      <a href="/feed.xml" class="subscribe-cta-rss">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+        or subscribe via RSS
+      </a>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="container">
-      <!-- Subscribe Section -->
-      <div class="footer-subscribe">
-        <div class="footer-subscribe-text">
-          <h3>Stay on track</h3>
-          <p>Get new videos in your inbox. No spam, just trains.</p>
-        </div>
-        <form
-          action="https://embeds.beehiiv.com/subscribe"
-          method="POST"
-          class="footer-subscribe-form"
-          target="_blank"
-        >
-          <input type="hidden" name="publication_id" value="pub_2c161570-34a5-4b92-a94d-0446aed324fb">
-          <input type="hidden" name="utm_source" value="highspeedrail.tv">
-          <input type="hidden" name="utm_medium" value="website">
-          <input type="email" name="email" placeholder="Enter your email" required class="footer-subscribe-input">
-          <button type="submit" class="footer-subscribe-btn">Subscribe</button>
-        </form>
-        <a href="/feed.xml" class="footer-rss">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 11a9 9 0 0 1 9 9"></path>
-            <path d="M4 4a16 16 0 0 1 16 16"></path>
-            <circle cx="5" cy="19" r="1"></circle>
-          </svg>
-          RSS Feed
-        </a>
-      </div>
-
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/" class="footer-logo">
