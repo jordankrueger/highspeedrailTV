@@ -7,6 +7,7 @@ let queue = [];
 let categories = [];
 let presets = [];
 let publishedVideos = [];
+let blocklist = { channels: [], keywords: [] };
 let currentVideoForModal = null;
 let viewMode = 'grid';
 let editingCategorySlug = null;
@@ -82,6 +83,36 @@ function setupEventListeners() {
   // Modal actions
   document.getElementById('modal-reject-btn').addEventListener('click', handleReject);
 
+  // Blocklist
+  document.getElementById('add-channel-btn').addEventListener('click', () => {
+    const input = document.getElementById('add-channel-input');
+    const channel = input.value.trim();
+    if (channel) {
+      blockChannel(channel);
+      input.value = '';
+    }
+  });
+  document.getElementById('add-keyword-btn').addEventListener('click', () => {
+    const input = document.getElementById('add-keyword-input');
+    const keyword = input.value.trim();
+    if (keyword) {
+      blockKeyword(keyword);
+      input.value = '';
+    }
+  });
+  document.getElementById('add-channel-input').addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('add-channel-btn').click();
+    }
+  });
+  document.getElementById('add-keyword-input').addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('add-keyword-btn').click();
+    }
+  });
+
   // Close modal on backdrop click
   document.querySelectorAll('.modal').forEach(modal => {
     modal.addEventListener('click', e => {
@@ -130,7 +161,8 @@ async function loadInitialData() {
     loadQueue(),
     loadCategories(),
     loadPresets(),
-    loadPublishedVideos()
+    loadPublishedVideos(),
+    loadBlocklist()
   ]);
   populatePresetSelect();
   populateCategorySelect();
@@ -153,6 +185,7 @@ function getFilters() {
   const order = document.getElementById('filter-order').value;
   const duration = document.getElementById('filter-duration').value;
   const minViews = document.getElementById('filter-views').value;
+  const language = document.getElementById('filter-language').value;
   const hidePublished = document.getElementById('filter-hide-published').checked;
 
   // Calculate publishedAfter date based on selection
@@ -174,12 +207,17 @@ function getFilters() {
     order,
     videoDuration: duration,
     minViews: parseInt(minViews),
+    language,
     hidePublished
   };
 }
 
 async function handleSearch() {
-  const query = document.getElementById('search-input').value.trim();
+  let query = document.getElementById('search-input').value.trim();
+  // If no query provided, use default HSR search terms
+  if (!query) {
+    query = 'high speed rail OR bullet train OR HSR';
+  }
   currentSearchQuery = query;
   nextPageToken = null;
   await performSearch(query);
@@ -224,6 +262,7 @@ async function performSearch(query, maxResults = 20, pageToken = null) {
     params.append('order', filters.order);
     params.append('videoDuration', filters.videoDuration);
     if (filters.minViews > 0) params.append('minViews', filters.minViews);
+    if (filters.language) params.append('relevanceLanguage', filters.language);
     if (pageToken) params.append('pageToken', pageToken);
 
     const res = await fetch(`/api/youtube/search?${params}`);
@@ -242,14 +281,34 @@ async function performSearch(query, maxResults = 20, pageToken = null) {
   }
 }
 
+function isBlocklisted(video) {
+  // Check if channel is blocked
+  if (blocklist.channels.includes(video.channelTitle)) {
+    return true;
+  }
+
+  // Check if title contains blocked keywords (case-insensitive)
+  const titleUpper = video.title.toUpperCase();
+  for (const keyword of blocklist.keywords) {
+    if (titleUpper.includes(keyword)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function renderSearchResults() {
   const container = document.getElementById('search-results');
   const hidePublished = document.getElementById('filter-hide-published').checked;
 
-  // Filter out published/queued videos if checkbox is checked
-  let videosToShow = searchResults;
+  // Filter out blocklisted videos first
+  let videosToShow = searchResults.filter(video => !isBlocklisted(video));
+  const blockedCount = searchResults.length - videosToShow.length;
+
+  // Then filter out published/queued videos if checkbox is checked
   if (hidePublished) {
-    videosToShow = searchResults.filter(video => {
+    videosToShow = videosToShow.filter(video => {
       const isQueued = queue.some(q => q.id === video.id);
       const isPublished = publishedVideos.some(v => v.id === video.id);
       return !isQueued && !isPublished;
@@ -289,18 +348,26 @@ function renderSearchResults() {
             `<button class="btn-add" onclick="addToQueue('${video.id}')">Add to Queue</button>` :
             `<button class="btn-view" onclick="openVideoModal('${video.id}', 'search')">View</button>`
           }
+          <button class="btn-block" onclick="blockChannel('${escapeHtml(video.channelTitle).replace(/'/g, "\\'")}')">Block Channel</button>
         </div>
       </div>
     `;
   }).join('');
 
   // Show count of hidden videos
-  const hiddenCount = searchResults.length - videosToShow.length;
-  const hiddenNote = hiddenCount > 0 ? `<p class="hidden-count">${hiddenCount} already in your library (hidden)</p>` : '';
+  const afterBlocklist = searchResults.length - blockedCount;
+  const hiddenCount = afterBlocklist - videosToShow.length;
+  let notes = '';
+  if (blockedCount > 0) {
+    notes += `<p class="hidden-count">${blockedCount} blocked by filters</p>`;
+  }
+  if (hiddenCount > 0) {
+    notes += `<p class="hidden-count">${hiddenCount} already in your library</p>`;
+  }
 
   // Pagination
   const pagination = document.getElementById('search-pagination');
-  pagination.innerHTML = hiddenNote + (nextPageToken ?
+  pagination.innerHTML = notes + (nextPageToken ?
     `<button onclick="loadMoreResults()">Load More Results</button>` : '');
 }
 
@@ -810,4 +877,111 @@ function formatDate(dateStr) {
     month: 'short',
     day: 'numeric'
   });
+}
+
+// Blocklist Management
+async function loadBlocklist() {
+  try {
+    const res = await fetch('/api/blocklist');
+    blocklist = await res.json();
+    renderBlocklist();
+  } catch (e) {
+    console.error('Failed to load blocklist:', e);
+  }
+}
+
+function renderBlocklist() {
+  // Render blocked channels
+  const channelsContainer = document.getElementById('blocked-channels-list');
+  if (blocklist.channels.length === 0) {
+    channelsContainer.innerHTML = '<p class="empty-list">No blocked channels</p>';
+  } else {
+    channelsContainer.innerHTML = blocklist.channels.map(channel => `
+      <div class="blocklist-item">
+        <span>${escapeHtml(channel)}</span>
+        <button class="btn-remove-small" onclick="unblockChannel('${escapeHtml(channel)}')">&times;</button>
+      </div>
+    `).join('');
+  }
+
+  // Render blocked keywords
+  const keywordsContainer = document.getElementById('blocked-keywords-list');
+  if (blocklist.keywords.length === 0) {
+    keywordsContainer.innerHTML = '<p class="empty-list">No blocked keywords</p>';
+  } else {
+    keywordsContainer.innerHTML = blocklist.keywords.map(keyword => `
+      <div class="blocklist-item">
+        <span>${escapeHtml(keyword)}</span>
+        <button class="btn-remove-small" onclick="unblockKeyword('${escapeHtml(keyword)}')">&times;</button>
+      </div>
+    `).join('');
+  }
+}
+
+async function blockChannel(channel) {
+  if (!channel) return;
+
+  try {
+    const res = await fetch('/api/blocklist/channel', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ channel })
+    });
+
+    const data = await res.json();
+    if (data.error) {
+      showToast(data.error, 'error');
+    } else {
+      showToast(`Blocked channel: ${channel}`, 'success');
+      await loadBlocklist();
+      if (searchResults.length > 0) renderSearchResults();
+    }
+  } catch (e) {
+    showToast('Failed to block channel', 'error');
+  }
+}
+
+async function unblockChannel(channel) {
+  try {
+    await fetch(`/api/blocklist/channel/${encodeURIComponent(channel)}`, { method: 'DELETE' });
+    showToast(`Unblocked channel: ${channel}`, 'success');
+    await loadBlocklist();
+    if (searchResults.length > 0) renderSearchResults();
+  } catch (e) {
+    showToast('Failed to unblock channel', 'error');
+  }
+}
+
+async function blockKeyword(keyword) {
+  if (!keyword) return;
+
+  try {
+    const res = await fetch('/api/blocklist/keyword', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ keyword: keyword.toUpperCase() })
+    });
+
+    const data = await res.json();
+    if (data.error) {
+      showToast(data.error, 'error');
+    } else {
+      showToast(`Blocked keyword: ${keyword.toUpperCase()}`, 'success');
+      await loadBlocklist();
+      if (searchResults.length > 0) renderSearchResults();
+    }
+  } catch (e) {
+    showToast('Failed to block keyword', 'error');
+  }
+}
+
+async function unblockKeyword(keyword) {
+  try {
+    await fetch(`/api/blocklist/keyword/${encodeURIComponent(keyword)}`, { method: 'DELETE' });
+    showToast(`Unblocked keyword: ${keyword}`, 'success');
+    await loadBlocklist();
+    if (searchResults.length > 0) renderSearchResults();
+  } catch (e) {
+    showToast('Failed to unblock keyword', 'error');
+  }
 }

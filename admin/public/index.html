@@ -33,6 +33,7 @@
           <button class="nav-btn" data-tab="published">Published</button>
           <button class="nav-btn" data-tab="categories">Categories</button>
           <button class="nav-btn" data-tab="presets">Presets</button>
+          <button class="nav-btn" data-tab="blocklist">Blocklist</button>
         </nav>
         <button id="logout-btn" class="logout-btn">Sign Out</button>
       </header>
@@ -90,6 +91,19 @@
                   <option value="10000">10K+</option>
                   <option value="100000">100K+</option>
                   <option value="1000000">1M+</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label>Language:</label>
+                <select id="filter-language">
+                  <option value="en" selected>English</option>
+                  <option value="es">Spanish</option>
+                  <option value="fr">French</option>
+                  <option value="de">German</option>
+                  <option value="ja">Japanese</option>
+                  <option value="zh">Chinese</option>
+                  <option value="">Any language</option>
                 </select>
               </div>
 
@@ -151,6 +165,36 @@
             <button id="add-preset-btn" class="btn-primary">+ Add Preset</button>
           </div>
           <div id="presets-content" class="presets-list"></div>
+        </section>
+
+        <!-- Blocklist Tab -->
+        <section id="blocklist-tab" class="tab-content">
+          <div class="tab-header">
+            <h2>Blocklist</h2>
+            <p class="subtitle">Filter out clickbait and unwanted content</p>
+          </div>
+
+          <div class="blocklist-sections">
+            <div class="blocklist-section">
+              <h3>Blocked Channels</h3>
+              <p class="section-desc">Videos from these channels will be hidden from search results</p>
+              <div class="add-form">
+                <input type="text" id="add-channel-input" placeholder="Channel name (exact match)">
+                <button id="add-channel-btn" class="btn-primary">Block Channel</button>
+              </div>
+              <div id="blocked-channels-list" class="blocklist-items"></div>
+            </div>
+
+            <div class="blocklist-section">
+              <h3>Blocked Keywords</h3>
+              <p class="section-desc">Videos with these words in the title will be hidden (case-insensitive)</p>
+              <div class="add-form">
+                <input type="text" id="add-keyword-input" placeholder="Keyword to block">
+                <button id="add-keyword-btn" class="btn-primary">Block Keyword</button>
+              </div>
+              <div id="blocked-keywords-list" class="blocklist-items"></div>
+            </div>
+          </div>
         </section>
       </main>
     </div>

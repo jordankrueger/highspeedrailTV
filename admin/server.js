@@ -28,6 +28,7 @@ const VIDEOS_PATH = path.join(__dirname, '..', 'src', '_data', 'videos.json');
 const QUEUE_PATH = path.join(__dirname, 'data', 'queue.json');
 const PRESETS_PATH = path.join(__dirname, 'data', 'presets.json');
 const CATEGORIES_PATH = path.join(__dirname, 'data', 'categories.json');
+const BLOCKLIST_PATH = path.join(__dirname, 'data', 'blocklist.json');
 
 // Ensure data directory exists
 async function ensureDataDir() {
@@ -77,6 +78,20 @@ async function initDataFiles() {
       { slug: 'rides-tours', name: 'Rides & Tours', description: 'First-person experiences riding HSR' }
     ];
     await fs.writeFile(CATEGORIES_PATH, JSON.stringify(defaultCategories, null, 2));
+  }
+
+  // Initialize blocklist
+  try {
+    await fs.access(BLOCKLIST_PATH);
+  } catch {
+    const defaultBlocklist = {
+      channels: [],
+      keywords: [
+        'EXPOSED', 'PANICS', 'SLAMMED', 'DESTROYS', 'DEMOLISHED',
+        'HUMILIATED', 'OWNED', 'TRIGGERED', 'MELTDOWN', 'BOMBSHELL'
+      ]
+    };
+    await fs.writeFile(BLOCKLIST_PATH, JSON.stringify(defaultBlocklist, null, 2));
   }
 }
 
@@ -129,7 +144,8 @@ app.get('/api/youtube/search', requireAuth, async (req, res) => {
     publishedBefore,
     order = 'date',
     videoDuration = 'medium',
-    minViews = 0
+    minViews = 0,
+    relevanceLanguage = 'en'
   } = req.query;
   const apiKey = process.env.YOUTUBE_API_KEY;
 
@@ -158,6 +174,11 @@ app.get('/api/youtube/search', requireAuth, async (req, res) => {
     }
     if (publishedBefore) {
       params.append('publishedBefore', publishedBefore);
+    }
+
+    // Language filter
+    if (relevanceLanguage) {
+      params.append('relevanceLanguage', relevanceLanguage);
     }
 
     if (pageToken) {
@@ -429,6 +450,57 @@ app.delete('/api/categories/:slug', requireAuth, async (req, res) => {
   categories = categories.filter(c => c.slug !== slug);
   await writeJSON(CATEGORIES_PATH, categories);
   res.json({ success: true });
+});
+
+// Blocklist routes
+app.get('/api/blocklist', requireAuth, async (req, res) => {
+  const blocklist = await readJSON(BLOCKLIST_PATH);
+  res.json(blocklist);
+});
+
+app.post('/api/blocklist/channel', requireAuth, async (req, res) => {
+  const { channel } = req.body;
+  const blocklist = await readJSON(BLOCKLIST_PATH);
+
+  if (!blocklist.channels.includes(channel)) {
+    blocklist.channels.push(channel);
+    await writeJSON(BLOCKLIST_PATH, blocklist);
+  }
+
+  res.json(blocklist);
+});
+
+app.delete('/api/blocklist/channel/:channel', requireAuth, async (req, res) => {
+  const { channel } = req.params;
+  const blocklist = await readJSON(BLOCKLIST_PATH);
+
+  blocklist.channels = blocklist.channels.filter(c => c !== channel);
+  await writeJSON(BLOCKLIST_PATH, blocklist);
+
+  res.json(blocklist);
+});
+
+app.post('/api/blocklist/keyword', requireAuth, async (req, res) => {
+  const { keyword } = req.body;
+  const blocklist = await readJSON(BLOCKLIST_PATH);
+
+  const upperKeyword = keyword.toUpperCase();
+  if (!blocklist.keywords.includes(upperKeyword)) {
+    blocklist.keywords.push(upperKeyword);
+    await writeJSON(BLOCKLIST_PATH, blocklist);
+  }
+
+  res.json(blocklist);
+});
+
+app.delete('/api/blocklist/keyword/:keyword', requireAuth, async (req, res) => {
+  const { keyword } = req.params;
+  const blocklist = await readJSON(BLOCKLIST_PATH);
+
+  blocklist.keywords = blocklist.keywords.filter(k => k !== keyword);
+  await writeJSON(BLOCKLIST_PATH, blocklist);
+
+  res.json(blocklist);
 });
 
 // Published videos routes
