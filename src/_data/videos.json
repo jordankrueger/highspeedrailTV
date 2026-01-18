@@ -1,5 +1,501 @@
 [
   {
+    "id": "bbALyNVRYbo",
+    "title": "New Acela from a Highrise - Feb 26 2024 [Xtra: 016]",
+    "description": "A new Avelia Liberty trainset makes it's way from Philadelphia to Boston where it will undergo further testing. \n\n---------------\n▶️Please Subscribe: https://www.youtube.com/@RailWeekly \n-------------",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "xzdKDIrBeAM",
+    "title": "Visualizing High Speed Rail From Chicago To Detroit",
+    "description": "Using advanced visualization to imagine what high-speed rail would look like connecting Chicago and Detroit, exploring practical routing and implementation possibilities.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "H_CT2fol8Mo",
+    "title": "New Acela Test Extra through NRO. March 1st 2024 #amtrak #newacela #avelialiberty #acela",
+    "description": "",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "TQRE5jsWhAo",
+    "title": "Stew's March 2024 High Speed Rail U.S. News",
+    "description": "Monthly roundup of high-speed rail developments across the US, covering California HSR, Brightline West, Acela, and other major rail projects.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "dLt7mqn1Lfw",
+    "title": "California High Speed Rail: A Park & Ride Nightmare | CAHSR",
+    "description": "Critical analysis of California High Speed Rail's Central Valley station designs and parking plans, examining the implications for transit-oriented development.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Y9ptdKsFUaM",
+    "title": "I Took The OTHER High Speed Train From Brussels to Paris...",
+    "description": "Testing France's TGV as an alternative high-speed connection between Belgium and France, comparing this service to other options for international rail travel.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "p6eKIxFRF28",
+    "title": "Sweden's Iconic High-Speed Train! Is the X2000 Still Good 25 Years Later?",
+    "description": "A first-class journey aboard Sweden's experimental X2000 high-speed train with tilting technology, evaluating its performance after 25 years of service from Stockholm to Göteborg.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "XcFYw2Mwcx8",
+    "title": "Venice to Rome on Italy's Frecciarossa 1000 High Speed Train",
+    "description": "Experience business class on Italy's revolutionary Frecciarossa 1000 high-speed train, capable of 400km/h, on the scenic Venice to Rome route.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "cffEpsJ51KA",
+    "title": "The Northern New England High Speed Rail Corridor Concept",
+    "description": "Analyzing the potential for a true high-speed rail network centered around Boston and extending throughout New England and French Canada.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "x_yq_4QvjCA",
+    "title": "Japan's Unique 800 Series Shinkansen High-Speed Commuter Trains",
+    "description": "Exploring the rare 800 series Shinkansen trains on the Kyushu line, featuring their unique characteristics and performance from Hakata to Kumamoto.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "yUEaa_jZi00",
+    "title": "London to Berlin by Eurostar High Speed & European Sleeper Train",
+    "description": "A complete rail journey from London to Berlin using Eurostar high-speed service and Europe's newest night train operator, European Sleeper.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "w2UDrNr5wX8",
+    "title": "Testing Britain's Controversial Class 221 Super Voyager High-Speed Train",
+    "description": "A comprehensive review of Avanti West Coast's Class 221 Super Voyager on the route from Holyhead to London Euston, examining whether the criticism is justified.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "pRmP0ax5YKs",
+    "title": "California Legislators Get Close-Up View of High-Speed Rail Progress",
+    "description": "California State Legislature members tour Cal Expo to preview high-speed rail trainset designs and Central Valley construction progress.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ehenJsq8szI",
+    "title": "U.S. High Speed Rail News April 2024",
+    "description": "Monthly roundup of progress and developments across major U.S. high-speed rail projects including Brightline West, California HSR, and Northeast Corridor improvements.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ApRxjMp50JY",
+    "title": "Testing Switzerland's SBB Astoro High-Speed Tilting Train",
+    "description": "A detailed review of SBB's Astoro high-speed trains on the international route from Munich to Zurich, examining their reputation and performance.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "p7AklyBXmjw",
+    "title": "The Fastest High-Speed Train in the World",
+    "description": "Exploring Japan's Chuo Shinkansen maglev project, designed to be the fastest and most technologically advanced high-speed rail line ever built.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "hXF_g_aq8vc",
+    "title": "The Brightline West HSR Route Rendered With Unreal Engine 5",
+    "description": "A stunning 3D visualization of the proposed Brightline West high-speed rail route from Los Angeles to Las Vegas using cutting-edge rendering technology.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "RlbNzjVFDHo",
+    "title": "A Chinese Maglev Revolution is Coming",
+    "description": "Exploring China's revolutionary maglev technology developments and their potential impact on high-speed rail.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ECoYfURxZkU",
+    "title": "Riding Slovenia's Tilting Pendolino High-Speed Train from Ljubljana to Maribor",
+    "description": "Experience Slovenia's flagship InterCity Slovenija Pendolino train connecting the country's two major cities on this 155km journey.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "0Uva5-rdiYQ",
+    "title": "Europe's Newest High Speed Train: ÖBB Railjet through the Alps",
+    "description": "Experience Austria's brand new Railjet high-speed train from Munich to Bologna via the stunning Brenner Pass through the Alps.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "-cfzVdSSN_w",
+    "title": "Japan's Underwater Bullet Train: Tokyo to Hokkaido on E5 Shinkansen",
+    "description": "Experience Japan's fastest Shinkansen service from Tokyo to Hokkaido at 320 km/h, including the incredible underwater tunnel journey.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "bP-mZWBIF54",
+    "title": "Extending Northeast Corridor & Acela Service to Virginia",
+    "description": "Exploring plans to extend electrified high-speed rail service from Washington D.C. to Richmond, Virginia as part of the Southeast High Speed Rail Corridor.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "WaAPl-E1_Bs",
+    "title": "Global Best Practices for Cutting the Cost of Building High Speed Rail",
+    "description": "The historic investment in intercity passenger rail is an opportunity to significantly expand and improve the rail network around the country. However, one of the biggest barriers to this investment’s",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "4cPwMkKujBA",
+    "title": "Chicago Milwaukee High-Speed Rail Potential: Taking Back The Rails",
+    "description": "Examining the potential for high-speed rail between Chicago and Milwaukee on existing freight rail corridors and necessary infrastructure improvements.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "kq_y_jika_8",
+    "title": "Why Germany's Railway Declined: DB ICE Velaro D Experience",
+    "description": "A journey on Germany's ICE Velaro D high-speed train while examining the challenges facing the once-excellent German railway system.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "wr0NJZP3g7Q",
+    "title": "Exploring Amtrak's High-Speed Rail Future and Expansion Plans",
+    "description": "Amtrak explores the challenges and opportunities for expanding high-speed rail across America, featuring insights from transportation leaders.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "5G0s1sEnSFs",
+    "title": "High Speed Rail News May 2024: Brightline West, Texas Central & More",
+    "description": "Monthly roundup of US high-speed rail developments including Brightline West groundbreaking and California HSR progress.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "L1puLVgvFO8",
+    "title": "Frankfurt to Paris on 320km/h DB ICE High Speed Train",
+    "description": "Experience the premium DB ICE service from Germany to France, reaching 320km/h on the LGV Est high-speed line.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "JRbnBc-97Ps",
+    "title": "What is the Correct Speed Limit? Transportation Safety Analysis",
+    "description": "An in-depth analysis of speed limits, traffic safety, and transportation infrastructure design principles from an urban planning perspective.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "3LmWmRINzq4",
+    "title": "Riding Japan's Bullet Train: KOMACHI Green Car Tokyo to Akita",
+    "description": "A detailed journey on the Shinkansen Komachi from Tokyo to Morioka and Akita, featuring the comfortable Green Car experience and local attractions.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "UBiSqyTSKH0",
+    "title": "Cascadia High-Speed Rail: Pacific Northwest Corridor Analysis",
+    "description": "Exploring the potential for true high-speed rail in the Pacific Northwest, analyzing routes connecting Vancouver, Seattle, Portland, and Eugene in the Cascadia region.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "7Vbwmasez9E",
+    "title": "Japan's Classic 700 Series Shinkansen: High-Speed Rail Experience",
+    "description": "Riding one of the remaining original 700 series Shinkansen trains, exploring the proven high-speed rail technology that inspired modern Japanese bullet trains.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "tUYUoBG6mOk",
+    "title": "US High-Speed Rail News June 2024: Brightline West Progress and More",
+    "description": "Monthly roundup of high-speed rail developments across America including Brightline West trainset selection, CAHSR updates, and Northeast Corridor improvements.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "8iN6fV4Q1BQ",
+    "title": "Brightline West: America's $12 Billion High-Speed Railway Project",
+    "description": "Exploring Brightline West's groundbreaking $12 billion high-speed railway between Los Angeles and Las Vegas, America's first true high-speed rail project under construction.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "BZVmYC73G8k",
+    "title": "Britain's New Class 805 Evero High-Speed Train: Inaugural Ride Experience",
+    "description": "Experiencing Avanti West Coast's brand-new Class 805 'Evero' train on its very first day in passenger service, featuring the latest in British high-speed rail technology.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "JnmrxVX1PCQ",
+    "title": "CAHSR Road Trip Part 1: Anaheim to Bakersfield Route Exploration",
+    "description": "First episode exploring California High Speed Rail's planned route from Anaheim through Los Angeles to Bakersfield, visiting future station sites and planned alignments.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "t6AEr2aBGNw",
+    "title": "Netherlands' New ICNG High-Speed Train: First Class Experience",
+    "description": "Experiencing the future of Dutch railways aboard the brand-new ICNG high-speed train in first class from Breda to Amsterdam via Rotterdam.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "H3ERUP3B8H0",
+    "title": "Germany's Troubled BR 102 High-Speed Regional Express: A Ride Experience",
+    "description": "Riding Germany's notorious BR 102 trains on the München-Nürnberg Express, exploring the challenges and quirks of this modern high-speed regional service.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "lFCGf-1hYHo",
+    "title": "CAHSR Central Valley Construction Progress: Bakersfield to Merced Road Trip",
+    "description": "Exploring California High Speed Rail construction progress through the Central Valley, visiting active construction sites, viaducts, and future station locations.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ya7CkUUEhbY",
+    "title": "High Speed Rail in America: It's Finally Happening",
+    "description": "Comprehensive overview of high-speed rail projects across America, from Brightline West to California HSR, showing how HSR is becoming reality in the United States.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "usEtGFQmBHc",
+    "title": "CAHSR Road Trip: Silicon Valley to San Francisco - Station Sites and Route Planning",
+    "description": "A detailed road trip exploring California High Speed Rail's planned route from Merced through Silicon Valley to San Francisco, investigating future station locations and infrastructure plans.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "7Nj6ikOO_yc",
+    "title": "I rode Spain's crazy TRACK CHANGING high-speed train!",
+    "description": "Riding Spain's innovative Talgo 250 track-changing high-speed train in premium class from Alicante to Barcelona, showcasing this unique railway technology.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "tZhhGTLDHZY",
+    "title": "Stew's July U.S. High Speed Rail News 2024",
+    "description": "Monthly roundup of high-speed rail developments across the United States, covering California HSR, Brightline West, Dallas-Fort Worth HST, and Northeast Corridor projects.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "1OUUcNU6xig",
+    "title": "The ONLY Bullet Train in Africa - 320km/h Across Morocco",
+    "description": "Experiencing Morocco's Al Boraq, Africa's first and only high-speed train, traveling at 320km/h from Tangier to Casablanca on this groundbreaking railway system.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "BW4cgQImH9k",
+    "title": "I Tried the Horrible \"NEW\" High-Speed Trains the UK Won't Stop Ordering",
+    "description": "Testing the controversial UK Class 800 family of trains to see if they're really as bad as everyone claims on this journey across the UK and Wales.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "4eag8tNd7X8",
+    "title": "Africa Needs More Railways Like THIS! Morocco's First High-Speed Train Surprised Me",
+    "description": "An adventure at 320 km/h through Morocco on Africa's first high-speed train, exploring the excellent Al Boraq service five years after its introduction.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "QsATH5-bpTQ",
+    "title": "How YOU Would Improve the Northeast Corridor For Acela High Speed Rail Service",
+    "description": "Exploring viewer suggestions and ideas for improving high-speed rail service on the Northeast Corridor, including infrastructure upgrades and route optimizations.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "akm5ukdCuUg",
+    "title": "High-Speed Rail Media Day at the 2024 California State Fair",
+    "description": "Members of the media tour the California High-Speed Rail Authority exhibit at the state fair, showcasing progress on America's first high-speed rail system.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "gLowUjTF6Og",
+    "title": "Why I Love This INCREDIBLE Brand-New Czech High-Speed Train",
+    "description": "A detailed review of the brand-new ČD ComfortJet carriages in the Czech Republic, showcasing the amazing onboard features of this revolutionary international rail service.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "dUzM3h2f40A",
+    "title": "High Speed Rail From Los Angeles to Phoenix? What Would It Look Like?",
+    "description": "An in-depth analysis of a hypothetical high-speed rail route between Los Angeles and Phoenix, featuring route analysis, travel time estimates, and cost projections with Unreal Engine visualizations.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "xEsX6wiUKx4",
+    "title": "How California High-Speed Rail Will Transform Tourism",
+    "description": "Exploring the tourist destinations and travel opportunities that will be accessible once California's high-speed rail system connects major cities and attractions across the state.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "Eb9wDS9r_v8",
+    "title": "Texas' $30BN High-Speed Railway Project Explained",
+    "description": "An in-depth look at Texas Central's ambitious high-speed rail project connecting Dallas and Houston, examining the Japanese Shinkansen technology and potential benefits for Texas.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "aU2IasAB55g",
+    "title": "California High-Speed Rail's First Ever State Fair Exhibit",
+    "description": "California High-Speed Rail Authority's inaugural interactive exhibit at the 2024 California State Fair, featuring life-size train mockups and station models to engage the public.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "gzH0njPx0-4",
+    "title": "US High Speed Rail News August 2024 - Project Updates",
+    "description": "Latest updates on American high-speed rail projects including Brightline West construction progress, California HSR developments, Northeast Corridor improvements, and Dallas-Fort Worth HSR studies.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "ylz8Xx0UT_Q",
+    "title": "Riding Spain's NEW Talgo Avril High Speed Train - AVE Service Review",
+    "description": "A detailed review of Spain's newest high-speed train, the Talgo Avril, on an AVE service from Madrid to Gijón, examining the features and performance of this latest HSR technology.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "wY8Y_4QZLBs",
+    "title": "What Would High Speed Rail Between Denver and Kansas City Look Like?",
+    "description": "Exploring a hypothetical high-speed rail connection between Denver and Kansas City with route analysis, travel time estimates, and stunning 3D visualizations of trains crossing the High Plains.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "bpbGMJc0r_k",
+    "title": "A DC to Boston Maglev Would Be Awesome (and you know it)",
+    "description": "Exploring the potential for maglev technology on the Northeast Corridor, examining the benefits of ultra-high-speed rail connections between major East Coast cities.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "9eKTcjre_IA",
+    "title": "I rode Business Class on Malaysia's BULLET TRAIN!",
+    "description": "A business class journey on Malaysia's ETS Platinum service from Kuala Lumpur to Butterworth, experiencing the country's fastest and most premium train.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "UyAiPpRr0yE",
+    "title": "Germany's BRAND NEW Regional High Speed Train is a Game Changer!",
+    "description": "Experience Germany's new RE29 Franken-Thuringen Express service with 190km/h Siemens Desiro trains connecting Erfurt and Nuremberg via high-speed rail infrastructure.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "1FP3024UXLg",
+    "title": "US High Speed Rail News - September 2024 Updates",
+    "description": "Latest developments in California High Speed Rail, Brightline West, Texas Central, Northeast Corridor, and other US high-speed rail projects with new CEO appointments and funding updates.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "h1h042xnw9c",
+    "title": "Traveling on the World's DEEPEST High-Speed Train - SBB Giruno Zürich to Milan",
+    "description": "A first-class journey on Switzerland's Giruno high-speed train through the remarkable 57km Gotthard Base Tunnel, the world's longest and deepest railway tunnel.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
+    "id": "CWTif5WS1mM",
+    "title": "High Speed Rail In Texas and Oklahoma? South Central HSR Corridor Analysis",
+    "description": "Exploring what a high-speed rail line from San Antonio to Tulsa could look like, with route analysis, travel times, and cost estimates for this portion of the South Central High Speed Rail Corridor.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-01-18"
+  },
+  {
     "id": "vrV6wap3Dck",
     "title": "South Korea's NEWEST High Speed Train - The 320km/h KTX Cheong-Ryong",
     "description": "First ride on South Korea's newest high-speed train, the KTX Cheong-Ryong, capable of 320km/h speeds on the Seoul to Busan route.",
