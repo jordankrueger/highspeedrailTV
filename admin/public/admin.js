@@ -214,9 +214,9 @@ function getFilters() {
 
 async function handleSearch() {
   let query = document.getElementById('search-input').value.trim();
-  // If no query provided, use default HSR search terms
+  // If no query provided, use default HSR search terms focused on English-speaking content
   if (!query) {
-    query = 'high speed rail OR bullet train OR HSR';
+    query = '"high speed rail" OR "bullet train" OR Amtrak OR HS2 OR TGV OR Eurostar OR "California high speed"';
   }
   currentSearchQuery = query;
   nextPageToken = null;
@@ -227,7 +227,7 @@ async function browseRecent() {
   // Search with HSR-related terms but sorted by date
   document.getElementById('search-input').value = '';
   document.getElementById('filter-order').value = 'date';
-  currentSearchQuery = 'high speed rail OR bullet train OR HSR';
+  currentSearchQuery = '"high speed rail" OR "bullet train" OR Amtrak OR HS2 OR TGV OR Eurostar OR "California high speed"';
   nextPageToken = null;
   await performSearch(currentSearchQuery);
 }

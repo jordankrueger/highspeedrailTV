@@ -176,7 +176,7 @@ app.get('/api/youtube/search', requireAuth, async (req, res) => {
       params.append('publishedBefore', publishedBefore);
     }
 
-    // Language filter
+    // Language filter - relevanceLanguage helps prioritize but doesn't strictly filter
     if (relevanceLanguage) {
       params.append('relevanceLanguage', relevanceLanguage);
     }
