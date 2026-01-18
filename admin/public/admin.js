@@ -1559,7 +1559,6 @@ async function loadTrackingSettings() {
     const res = await fetch('/api/settings/tracking');
     const data = await res.json();
     document.getElementById('ga-measurement-id').value = data.googleAnalyticsId || '';
-    document.getElementById('gsc-verification').value = data.googleSearchConsoleCode || '';
   } catch (e) {
     console.error('Failed to load tracking settings:', e);
   }
@@ -1570,7 +1569,6 @@ async function saveTrackingSettings() {
   const status = document.getElementById('tracking-status');
 
   const googleAnalyticsId = document.getElementById('ga-measurement-id').value.trim();
-  const googleSearchConsoleCode = document.getElementById('gsc-verification').value.trim();
 
   btn.disabled = true;
   btn.textContent = 'Saving...';
@@ -1580,7 +1578,7 @@ async function saveTrackingSettings() {
     const res = await fetch('/api/settings/tracking', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ googleAnalyticsId, googleSearchConsoleCode })
+      body: JSON.stringify({ googleAnalyticsId })
     });
 
     if (!res.ok) {

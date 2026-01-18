@@ -257,21 +257,15 @@ https://youtube.com/shorts/def456"></textarea>
             <!-- Analytics & Tracking Section -->
             <div class="settings-section">
               <h3>Analytics & Tracking</h3>
-              <p class="section-desc">Add Google Analytics and Search Console to track your site's performance</p>
+              <p class="section-desc">Add Google Analytics to track your site's performance</p>
 
               <div class="form-group">
                 <label for="ga-measurement-id">Google Analytics Measurement ID</label>
-                <input type="text" id="ga-measurement-id" placeholder="G-XXXXXXXXXX">
+                <input type="text" id="ga-measurement-id" placeholder="e.g. G-9BX8DMYS12" autocomplete="off">
                 <small>Find this in Google Analytics → Admin → Data Streams → Your stream</small>
               </div>
 
-              <div class="form-group">
-                <label for="gsc-verification">Google Search Console Verification Code</label>
-                <input type="text" id="gsc-verification" placeholder="google-site-verification=XXXX...">
-                <small>Or just the code part (without the meta tag). Get this from Search Console → Settings → Ownership verification</small>
-              </div>
-
-              <button id="save-tracking-btn" class="btn-primary">Save Tracking Settings</button>
+              <button type="button" id="save-tracking-btn" class="btn-primary">Save Tracking Settings</button>
               <p id="tracking-status" class="build-status"></p>
             </div>
 

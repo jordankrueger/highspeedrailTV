@@ -674,27 +674,18 @@ app.put('/api/settings/footer-links/:id', requireAuth, async (req, res) => {
 app.get('/api/settings/tracking', requireAuth, async (req, res) => {
   const settings = await readJSON(SETTINGS_PATH);
   res.json({
-    googleAnalyticsId: settings.googleAnalyticsId || '',
-    googleSearchConsoleCode: settings.googleSearchConsoleCode || ''
+    googleAnalyticsId: settings.googleAnalyticsId || ''
   });
 });
 
 app.post('/api/settings/tracking', requireAuth, async (req, res) => {
-  const { googleAnalyticsId, googleSearchConsoleCode } = req.body;
+  const { googleAnalyticsId } = req.body;
   const settings = await readJSON(SETTINGS_PATH);
 
-  // Clean up the Google Search Console code - extract just the verification code if full meta tag is provided
-  let cleanedGSCCode = googleSearchConsoleCode || '';
-  const gscMatch = cleanedGSCCode.match(/content=["']?([^"'\s>]+)/);
-  if (gscMatch) {
-    cleanedGSCCode = gscMatch[1];
-  }
-
   settings.googleAnalyticsId = googleAnalyticsId || '';
-  settings.googleSearchConsoleCode = cleanedGSCCode;
 
   await writeJSON(SETTINGS_PATH, settings);
-  res.json({ success: true, googleAnalyticsId: settings.googleAnalyticsId, googleSearchConsoleCode: settings.googleSearchConsoleCode });
+  res.json({ success: true, googleAnalyticsId: settings.googleAnalyticsId });
 });
 
 // Build site endpoint
