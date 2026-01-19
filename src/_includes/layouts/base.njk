@@ -54,18 +54,16 @@
     <div class="subscribe-cta-content">
       <h2>Stay on track</h2>
       <p>Get new videos in your inbox. No spam, just trains.</p>
-      <form
-        action="https://embeds.beehiiv.com/subscribe"
-        method="POST"
-        class="subscribe-cta-form"
-        target="_blank"
-      >
-        <input type="hidden" name="publication_id" value="pub_2c161570-34a5-4b92-a94d-0446aed324fb">
-        <input type="hidden" name="utm_source" value="highspeedrail.tv">
-        <input type="hidden" name="utm_medium" value="website">
-        <input type="email" name="email" placeholder="Enter your email" required class="subscribe-cta-input">
-        <button type="submit" class="subscribe-cta-btn">Subscribe</button>
-      </form>
+      <div class="beehiiv-form-wrapper">
+        <iframe
+          src="https://subscribe-forms.beehiiv.com/af64cba0-fd01-4a8e-9726-88bfe5392f5e"
+          class="beehiiv-embed"
+          data-test-id="beehiiv-embed"
+          frameborder="0"
+          scrolling="no"
+          style="width: 100%; max-width: 560px; height: 207px; margin: 0; border-radius: 0px; background-color: transparent;"
+        ></iframe>
+      </div>
       <a href="/feed.xml" class="subscribe-cta-rss">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -76,6 +74,7 @@
       </a>
     </div>
   </section>
+  <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
 
   <footer class="site-footer">
     <div class="container">
