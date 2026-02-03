@@ -1,5 +1,101 @@
 [
   {
+    "id": "ofIz2H7Krpg",
+    "title": "Toledo to Madrid by AVANT: Spain's High-Speed Regional Service Explained",
+    "description": "Riding Spain's AVANT regional high-speed service from Toledo to Madrid, exploring one of Europe's most socially important train connections.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "4-GKZqUggiU",
+    "title": "Riding the OUIGO High-Speed Train from Lyon to Paris",
+    "description": "Budget high-speed rail experience on France's OUIGO service from Lyon Perrache to Paris CDG2 TGV station.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "y9u2iUJzFhE",
+    "title": "Tokyo to Hiroshima on the Shinkansen | Japan High-Speed Train Experience",
+    "description": "First-person ride on Japan's Shinkansen bullet train from Tokyo to Hiroshima, showcasing one of the world's most iconic HSR systems.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "VtmyhZwjXKs",
+    "title": "How China Built Europe's First High-Speed Rail | Hungary-Serbia Railway",
+    "description": "How the new Budapest-Belgrade high-speed railway came together, cutting travel time dramatically between Hungary and Serbia.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "8w-kGlkKN8M",
+    "title": "What's Next for Brightline's Expansion - Is Tampa Finally Happening?",
+    "description": "Breaking down the latest on Brightline's planned expansion to Tampa and what it means for Florida's intercity rail future.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "FHzB1TRos4I",
+    "title": "Why Florida's 'Killer Train' Isn't What You Think",
+    "description": "Debunking the 'killer train' label applied to Brightline, examining the real safety data and context behind the headlines.",
+    "category": "myth-busting",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "siJ2-Ei2pSo",
+    "title": "What Dallas-Houston High-Speed Rail Could Mean for DFW Real Estate",
+    "description": "Exploring the real estate and economic impact of the proposed Dallas-Houston high-speed rail connection on the DFW metroplex.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "tBlg7rvesw0",
+    "title": "This Route Could Finally Make U.S. High-Speed Rail Real",
+    "description": "Examining a promising US high-speed rail route with the potential to kickstart real HSR development in America.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "XQ29In4Svxw",
+    "title": "U.S. High Speed Rail News Roundup - January 2026",
+    "description": "Monthly roundup covering California HSR, Brightline West, Northeast Corridor Acela, and Cascadia developments.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "JUPYroi_6jE",
+    "title": "You Were Told California High-Speed Rail Doesn't Exist. That Was a Lie.",
+    "description": "Countering the narrative that California HSR is a boondoggle by showing the real construction progress happening on the ground.",
+    "category": "myth-busting",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "abPgiiMpwAc",
+    "title": "Major Changes Coming to California Bullet Train in 2026",
+    "description": "Overview of significant changes planned for California's high-speed rail project in 2026, including new team members and updated construction plans.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
+    "id": "CH1MhAcFB7Y",
+    "title": "Winter 2026 California High-Speed Rail Progress Report",
+    "description": "Official progress report from the California High-Speed Rail Authority highlighting major construction milestones and latest updates on the nation's first high-speed rail project.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-02-03"
+  },
+  {
     "id": "bUIsZNjVC0I",
     "title": "Is Australia Ready for Its First High-Speed Rail Line?",
     "description": "Get Our E-Book! We're thrilled to announce the upcoming release of our first-ever e-book: a curated compilation of 100 Railways ...",
