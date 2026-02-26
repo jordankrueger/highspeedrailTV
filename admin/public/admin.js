@@ -1,196 +1,238 @@
 // State
-let currentTab = 'search';
-let searchResults = [];
-let nextPageToken = null;
-let currentSearchQuery = '';
-let queue = [];
-let categories = [];
-let presets = [];
-let publishedVideos = [];
-let blocklist = { channels: [], keywords: [] };
-let footerLinks = [];
-let currentVideoForModal = null;
-let viewMode = 'grid';
-let editingCategorySlug = null;
-let editingPresetId = null;
-let aiReviewResults = null;
+let currentTab = 'search'
+let searchResults = []
+let nextPageToken = null
+let currentSearchQuery = ''
+let queue = []
+let categories = []
+let presets = []
+let publishedVideos = []
+let blocklist = { channels: [], keywords: [] }
+let footerLinks = []
+let currentVideoForModal = null
+let viewMode = 'grid'
+let editingCategorySlug = null
+let editingPresetId = null
+let aiReviewResults = null
 
 // DOM Elements
-const loginScreen = document.getElementById('login-screen');
-const adminPanel = document.getElementById('admin-panel');
-const loginForm = document.getElementById('login-form');
-const loginError = document.getElementById('login-error');
-const logoutBtn = document.getElementById('logout-btn');
+const loginScreen = document.getElementById('login-screen')
+const adminPanel = document.getElementById('admin-panel')
+const loginForm = document.getElementById('login-form')
+const loginError = document.getElementById('login-error')
+const logoutBtn = document.getElementById('logout-btn')
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  checkAuth();
-  setupEventListeners();
-});
+  checkAuth()
+  setupEventListeners()
+})
 
 async function checkAuth() {
   try {
-    const res = await fetch('/api/auth-status');
-    const data = await res.json();
+    const res = await fetch('/api/auth-status')
+    const data = await res.json()
     if (data.authenticated) {
-      showAdminPanel();
+      showAdminPanel()
     }
   } catch (e) {
-    console.error('Auth check failed:', e);
+    console.error('Auth check failed:', e)
   }
 }
 
 function setupEventListeners() {
   // Login
-  loginForm.addEventListener('submit', handleLogin);
-  logoutBtn.addEventListener('click', handleLogout);
+  loginForm.addEventListener('submit', handleLogin)
+  logoutBtn.addEventListener('click', handleLogout)
 
   // Navigation
-  document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
-  });
+  document.querySelectorAll('.nav-btn').forEach((btn) => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab))
+  })
 
   // Search
-  document.getElementById('search-btn').addEventListener('click', handleSearch);
-  document.getElementById('search-input').addEventListener('keypress', e => {
-    if (e.key === 'Enter') handleSearch();
-  });
-  document.getElementById('run-preset-btn').addEventListener('click', runPreset);
-  document.getElementById('browse-recent-btn').addEventListener('click', browseRecent);
+  document.getElementById('search-btn').addEventListener('click', handleSearch)
+  document.getElementById('search-input').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSearch()
+  })
+  document.getElementById('run-preset-btn').addEventListener('click', runPreset)
+  document
+    .getElementById('browse-recent-btn')
+    .addEventListener('click', browseRecent)
 
   // Filter change - re-render results when hide toggle changes
-  document.getElementById('filter-hide-published').addEventListener('change', () => {
-    if (searchResults.length > 0) renderSearchResults();
-  });
+  document
+    .getElementById('filter-hide-published')
+    .addEventListener('change', () => {
+      if (searchResults.length > 0) renderSearchResults()
+    })
 
   // View toggle
-  document.querySelectorAll('.view-btn').forEach(btn => {
-    btn.addEventListener('click', () => setViewMode(btn.dataset.view));
-  });
+  document.querySelectorAll('.view-btn').forEach((btn) => {
+    btn.addEventListener('click', () => setViewMode(btn.dataset.view))
+  })
 
   // Modals
-  document.querySelectorAll('.modal-close, .modal-cancel').forEach(btn => {
-    btn.addEventListener('click', closeAllModals);
-  });
+  document.querySelectorAll('.modal-close, .modal-cancel').forEach((btn) => {
+    btn.addEventListener('click', closeAllModals)
+  })
 
   // Add buttons
-  document.getElementById('add-category-btn').addEventListener('click', () => openCategoryModal());
-  document.getElementById('add-preset-btn').addEventListener('click', () => openPresetModal());
+  document
+    .getElementById('add-category-btn')
+    .addEventListener('click', () => openCategoryModal())
+  document
+    .getElementById('add-preset-btn')
+    .addEventListener('click', () => openPresetModal())
 
   // Forms
-  document.getElementById('approve-form').addEventListener('submit', handleApprove);
-  document.getElementById('category-form').addEventListener('submit', handleCategorySave);
-  document.getElementById('preset-form').addEventListener('submit', handlePresetSave);
+  document
+    .getElementById('approve-form')
+    .addEventListener('submit', handleApprove)
+  document
+    .getElementById('category-form')
+    .addEventListener('submit', handleCategorySave)
+  document
+    .getElementById('preset-form')
+    .addEventListener('submit', handlePresetSave)
 
   // Modal actions
-  document.getElementById('modal-reject-btn').addEventListener('click', handleReject);
+  document
+    .getElementById('modal-reject-btn')
+    .addEventListener('click', handleReject)
 
   // Bulk Import
-  document.getElementById('bulk-import-btn').addEventListener('click', toggleBulkImport);
-  document.getElementById('bulk-cancel-btn').addEventListener('click', toggleBulkImport);
-  document.getElementById('bulk-submit-btn').addEventListener('click', handleBulkImport);
+  document
+    .getElementById('bulk-import-btn')
+    .addEventListener('click', toggleBulkImport)
+  document
+    .getElementById('bulk-cancel-btn')
+    .addEventListener('click', toggleBulkImport)
+  document
+    .getElementById('bulk-submit-btn')
+    .addEventListener('click', handleBulkImport)
 
   // AI Review
-  document.getElementById('ai-review-btn').addEventListener('click', startAIReview);
-  document.getElementById('ai-review-close').addEventListener('click', closeAIReview);
-  document.getElementById('ai-accept-all').addEventListener('click', acceptAllAIRecommendations);
-  document.getElementById('ai-approve-only').addEventListener('click', approveOnlyAIRecommendations);
+  document
+    .getElementById('ai-review-btn')
+    .addEventListener('click', startAIReview)
+  document
+    .getElementById('ai-review-close')
+    .addEventListener('click', closeAIReview)
+  document
+    .getElementById('ai-accept-all')
+    .addEventListener('click', acceptAllAIRecommendations)
+  document
+    .getElementById('ai-approve-only')
+    .addEventListener('click', approveOnlyAIRecommendations)
 
   // Clear Queue
-  document.getElementById('clear-queue-btn').addEventListener('click', clearQueue);
+  document
+    .getElementById('clear-queue-btn')
+    .addEventListener('click', clearQueue)
 
   // Blocklist
   document.getElementById('add-channel-btn').addEventListener('click', () => {
-    const input = document.getElementById('add-channel-input');
-    const channel = input.value.trim();
+    const input = document.getElementById('add-channel-input')
+    const channel = input.value.trim()
     if (channel) {
-      blockChannel(channel);
-      input.value = '';
+      blockChannel(channel)
+      input.value = ''
     }
-  });
+  })
   document.getElementById('add-keyword-btn').addEventListener('click', () => {
-    const input = document.getElementById('add-keyword-input');
-    const keyword = input.value.trim();
+    const input = document.getElementById('add-keyword-input')
+    const keyword = input.value.trim()
     if (keyword) {
-      blockKeyword(keyword);
-      input.value = '';
+      blockKeyword(keyword)
+      input.value = ''
     }
-  });
-  document.getElementById('add-channel-input').addEventListener('keypress', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      document.getElementById('add-channel-btn').click();
-    }
-  });
-  document.getElementById('add-keyword-input').addEventListener('keypress', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      document.getElementById('add-keyword-btn').click();
-    }
-  });
+  })
+  document
+    .getElementById('add-channel-input')
+    .addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        document.getElementById('add-channel-btn').click()
+      }
+    })
+  document
+    .getElementById('add-keyword-input')
+    .addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        document.getElementById('add-keyword-btn').click()
+      }
+    })
 
   // Settings - Footer Links
-  document.getElementById('add-footer-link-btn').addEventListener('click', addFooterLink);
-  document.getElementById('new-link-label').addEventListener('keypress', e => {
+  document
+    .getElementById('add-footer-link-btn')
+    .addEventListener('click', addFooterLink)
+  document
+    .getElementById('new-link-label')
+    .addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        document.getElementById('add-footer-link-btn').click()
+      }
+    })
+  document.getElementById('new-link-url').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-      e.preventDefault();
-      document.getElementById('add-footer-link-btn').click();
+      e.preventDefault()
+      document.getElementById('add-footer-link-btn').click()
     }
-  });
-  document.getElementById('new-link-url').addEventListener('keypress', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      document.getElementById('add-footer-link-btn').click();
-    }
-  });
+  })
 
   // Settings - Tracking
-  document.getElementById('save-tracking-btn').addEventListener('click', saveTrackingSettings);
+  document
+    .getElementById('save-tracking-btn')
+    .addEventListener('click', saveTrackingSettings)
 
   // Settings - Build Site
-  document.getElementById('build-site-btn').addEventListener('click', buildSite);
+  document.getElementById('build-site-btn').addEventListener('click', buildSite)
 
   // Close modal on backdrop click
-  document.querySelectorAll('.modal').forEach(modal => {
-    modal.addEventListener('click', e => {
-      if (e.target === modal) closeAllModals();
-    });
-  });
+  document.querySelectorAll('.modal').forEach((modal) => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeAllModals()
+    })
+  })
 }
 
 // Auth
 async function handleLogin(e) {
-  e.preventDefault();
-  const password = document.getElementById('password').value;
+  e.preventDefault()
+  const password = document.getElementById('password').value
 
   try {
     const res = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password })
-    });
+      body: JSON.stringify({ password }),
+    })
 
     if (res.ok) {
-      showAdminPanel();
+      showAdminPanel()
     } else {
-      loginError.textContent = 'Invalid password';
+      loginError.textContent = 'Invalid password'
     }
   } catch (e) {
-    loginError.textContent = 'Login failed';
+    loginError.textContent = 'Login failed'
   }
 }
 
 async function handleLogout() {
-  await fetch('/api/logout', { method: 'POST' });
-  adminPanel.classList.add('hidden');
-  loginScreen.classList.remove('hidden');
-  document.getElementById('password').value = '';
+  await fetch('/api/logout', { method: 'POST' })
+  adminPanel.classList.add('hidden')
+  loginScreen.classList.remove('hidden')
+  document.getElementById('password').value = ''
 }
 
 async function showAdminPanel() {
-  loginScreen.classList.add('hidden');
-  adminPanel.classList.remove('hidden');
-  await loadInitialData();
+  loginScreen.classList.add('hidden')
+  adminPanel.classList.remove('hidden')
+  await loadInitialData()
 }
 
 async function loadInitialData() {
@@ -201,44 +243,54 @@ async function loadInitialData() {
     loadPublishedVideos(),
     loadBlocklist(),
     loadFooterLinks(),
-    loadTrackingSettings()
-  ]);
-  populatePresetSelect();
-  populateCategorySelect();
+    loadTrackingSettings(),
+  ])
+  populatePresetSelect()
+  populateCategorySelect()
 }
 
 // Tab Navigation
 function switchTab(tab) {
-  currentTab = tab;
-  document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.tab === tab);
-  });
-  document.querySelectorAll('.tab-content').forEach(content => {
-    content.classList.toggle('active', content.id === `${tab}-tab`);
-  });
+  currentTab = tab
+  document.querySelectorAll('.nav-btn').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.tab === tab)
+  })
+  document.querySelectorAll('.tab-content').forEach((content) => {
+    content.classList.toggle('active', content.id === `${tab}-tab`)
+  })
 }
 
 // YouTube Search
 function getFilters() {
-  const dateFilter = document.getElementById('filter-date').value;
-  const order = document.getElementById('filter-order').value;
-  const duration = document.getElementById('filter-duration').value;
-  const minViews = document.getElementById('filter-views').value;
-  const language = document.getElementById('filter-language').value;
-  const hidePublished = document.getElementById('filter-hide-published').checked;
+  const dateFilter = document.getElementById('filter-date').value
+  const order = document.getElementById('filter-order').value
+  const duration = document.getElementById('filter-duration').value
+  const minViews = document.getElementById('filter-views').value
+  const language = document.getElementById('filter-language').value
+  const hidePublished = document.getElementById('filter-hide-published').checked
 
   // Calculate publishedAfter date based on selection
-  let publishedAfter = null;
+  let publishedAfter = null
   if (dateFilter !== 'all') {
-    const now = new Date();
+    const now = new Date()
     switch (dateFilter) {
-      case '2y': now.setFullYear(now.getFullYear() - 2); break;
-      case '1y': now.setFullYear(now.getFullYear() - 1); break;
-      case '6m': now.setMonth(now.getMonth() - 6); break;
-      case '3m': now.setMonth(now.getMonth() - 3); break;
-      case '1m': now.setMonth(now.getMonth() - 1); break;
+      case '2y':
+        now.setFullYear(now.getFullYear() - 2)
+        break
+      case '1y':
+        now.setFullYear(now.getFullYear() - 1)
+        break
+      case '6m':
+        now.setMonth(now.getMonth() - 6)
+        break
+      case '3m':
+        now.setMonth(now.getMonth() - 3)
+        break
+      case '1m':
+        now.setMonth(now.getMonth() - 1)
+        break
     }
-    publishedAfter = now.toISOString();
+    publishedAfter = now.toISOString()
   }
 
   return {
@@ -247,127 +299,134 @@ function getFilters() {
     videoDuration: duration,
     minViews: parseInt(minViews),
     language,
-    hidePublished
-  };
+    hidePublished,
+  }
 }
 
 async function handleSearch() {
-  let query = document.getElementById('search-input').value.trim();
+  let query = document.getElementById('search-input').value.trim()
   // If no query provided, use default HSR search terms focused on English-speaking content
   if (!query) {
-    query = 'high speed rail OR bullet train OR Amtrak OR HS2 OR TGV OR Eurostar';
+    query =
+      'high speed rail OR bullet train OR Amtrak OR HS2 OR TGV OR Eurostar'
   }
-  currentSearchQuery = query;
-  nextPageToken = null;
-  await performSearch(query);
+  currentSearchQuery = query
+  nextPageToken = null
+  await performSearch(query)
 }
 
 async function browseRecent() {
   // Search with HSR-related terms but sorted by date
-  document.getElementById('search-input').value = '';
-  document.getElementById('filter-order').value = 'date';
-  currentSearchQuery = 'high speed rail OR bullet train OR Amtrak OR HS2 OR TGV OR Eurostar';
-  nextPageToken = null;
-  await performSearch(currentSearchQuery);
+  document.getElementById('search-input').value = ''
+  document.getElementById('filter-order').value = 'date'
+  currentSearchQuery =
+    'high speed rail OR bullet train OR Amtrak OR HS2 OR TGV OR Eurostar'
+  nextPageToken = null
+  await performSearch(currentSearchQuery)
 }
 
 async function runPreset() {
-  const select = document.getElementById('preset-select');
-  const preset = presets.find(p => p.id === parseInt(select.value));
-  if (!preset) return;
+  const select = document.getElementById('preset-select')
+  const preset = presets.find((p) => p.id === parseInt(select.value))
+  if (!preset) return
 
-  document.getElementById('search-input').value = preset.query;
-  currentSearchQuery = preset.query;
-  nextPageToken = null;
-  await performSearch(preset.query, preset.maxResults);
+  document.getElementById('search-input').value = preset.query
+  currentSearchQuery = preset.query
+  nextPageToken = null
+  await performSearch(preset.query, preset.maxResults)
 }
 
 async function performSearch(query, maxResults = 20, pageToken = null) {
-  const resultsContainer = document.getElementById('search-results');
-  resultsContainer.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+  const resultsContainer = document.getElementById('search-results')
+  resultsContainer.innerHTML =
+    '<div class="loading"><div class="spinner"></div></div>'
 
-  const filters = getFilters();
+  const filters = getFilters()
 
   try {
-    const params = new URLSearchParams({ maxResults });
+    const params = new URLSearchParams({ maxResults })
 
     // Add query if provided
     if (query && query.trim()) {
-      params.append('q', query);
+      params.append('q', query)
     }
 
     // Add filters
-    if (filters.publishedAfter) params.append('publishedAfter', filters.publishedAfter);
-    params.append('order', filters.order);
-    params.append('videoDuration', filters.videoDuration);
-    if (filters.minViews > 0) params.append('minViews', filters.minViews);
-    if (filters.language) params.append('relevanceLanguage', filters.language);
-    if (pageToken) params.append('pageToken', pageToken);
+    if (filters.publishedAfter)
+      params.append('publishedAfter', filters.publishedAfter)
+    params.append('order', filters.order)
+    params.append('videoDuration', filters.videoDuration)
+    if (filters.minViews > 0) params.append('minViews', filters.minViews)
+    if (filters.language) params.append('relevanceLanguage', filters.language)
+    if (pageToken) params.append('pageToken', pageToken)
 
-    const res = await fetch(`/api/youtube/search?${params}`);
-    const data = await res.json();
+    const res = await fetch(`/api/youtube/search?${params}`)
+    const data = await res.json()
 
     if (data.error) {
-      resultsContainer.innerHTML = `<div class="empty-state"><h3>Error</h3><p>${data.error}</p></div>`;
-      return;
+      resultsContainer.innerHTML = `<div class="empty-state"><h3>Error</h3><p>${data.error}</p></div>`
+      return
     }
 
-    searchResults = data.videos;
-    nextPageToken = data.nextPageToken;
-    renderSearchResults();
+    searchResults = data.videos
+    nextPageToken = data.nextPageToken
+    renderSearchResults()
   } catch (e) {
-    resultsContainer.innerHTML = '<div class="empty-state"><h3>Search failed</h3><p>Please try again</p></div>';
+    resultsContainer.innerHTML =
+      '<div class="empty-state"><h3>Search failed</h3><p>Please try again</p></div>'
   }
 }
 
 function isBlocklisted(video) {
   // Check if channel is blocked
   if (blocklist.channels.includes(video.channelTitle)) {
-    return true;
+    return true
   }
 
   // Check if title contains blocked keywords (case-insensitive)
-  const titleUpper = video.title.toUpperCase();
+  const titleUpper = video.title.toUpperCase()
   for (const keyword of blocklist.keywords) {
     if (titleUpper.includes(keyword)) {
-      return true;
+      return true
     }
   }
 
-  return false;
+  return false
 }
 
 function renderSearchResults() {
-  const container = document.getElementById('search-results');
-  const hidePublished = document.getElementById('filter-hide-published').checked;
+  const container = document.getElementById('search-results')
+  const hidePublished = document.getElementById('filter-hide-published').checked
 
   // Filter out blocklisted videos first
-  let videosToShow = searchResults.filter(video => !isBlocklisted(video));
-  const blockedCount = searchResults.length - videosToShow.length;
+  let videosToShow = searchResults.filter((video) => !isBlocklisted(video))
+  const blockedCount = searchResults.length - videosToShow.length
 
   // Then filter out published/queued videos if checkbox is checked
   if (hidePublished) {
-    videosToShow = videosToShow.filter(video => {
-      const isQueued = queue.some(q => q.id === video.id);
-      const isPublished = publishedVideos.some(v => v.id === video.id);
-      return !isQueued && !isPublished;
-    });
+    videosToShow = videosToShow.filter((video) => {
+      const isQueued = queue.some((q) => q.id === video.id)
+      const isPublished = publishedVideos.some((v) => v.id === video.id)
+      return !isQueued && !isPublished
+    })
   }
 
   if (videosToShow.length === 0) {
-    const message = hidePublished && searchResults.length > 0
-      ? '<div class="empty-state"><h3>All results already in your library</h3><p>Uncheck "Hide published/queued" to see them, or try a different search</p></div>'
-      : '<div class="empty-state"><h3>No results found</h3><p>Try a different search term or adjust filters</p></div>';
-    container.innerHTML = message;
-    return;
+    const message =
+      hidePublished && searchResults.length > 0
+        ? '<div class="empty-state"><h3>All results already in your library</h3><p>Uncheck "Hide published/queued" to see them, or try a different search</p></div>'
+        : '<div class="empty-state"><h3>No results found</h3><p>Try a different search term or adjust filters</p></div>'
+    container.innerHTML = message
+    return
   }
 
-  container.innerHTML = videosToShow.map(video => {
-    const isQueued = queue.some(q => q.id === video.id);
-    const isPublished = publishedVideos.some(v => v.id === video.id);
-    const status = isPublished ? 'published' : (isQueued ? 'queued' : null);
+  container.innerHTML = videosToShow
+    .map((video) => {
+      const isQueued = queue.some((q) => q.id === video.id)
+      const isPublished = publishedVideos.some((v) => v.id === video.id)
+      const status = isPublished ? 'published' : isQueued ? 'queued' : null
 
-    return `
+      return `
       <div class="video-card" data-id="${video.id}">
         <div class="video-thumbnail">
           <img src="${video.thumbnail}" alt="${escapeHtml(video.title)}">
@@ -383,61 +442,117 @@ function renderSearchResults() {
           </div>
         </div>
         <div class="video-actions">
-          ${!isPublished && !isQueued ?
-            `<button class="btn-add" onclick="addToQueue('${video.id}')">Add to Queue</button>` :
-            `<button class="btn-view" onclick="openVideoModal('${video.id}', 'search')">View</button>`
+          ${
+            !isPublished && !isQueued
+              ? `<button class="btn-add" onclick="addToQueue('${video.id}')">Add to Queue</button>`
+              : `<button class="btn-view" onclick="openVideoModal('${video.id}', 'search')">View</button>`
           }
           <button class="btn-block" onclick="blockChannel('${escapeHtml(video.channelTitle).replace(/'/g, "\\'")}')">Block Channel</button>
         </div>
       </div>
-    `;
-  }).join('');
+    `
+    })
+    .join('')
 
   // Show count of hidden videos
-  const afterBlocklist = searchResults.length - blockedCount;
-  const hiddenCount = afterBlocklist - videosToShow.length;
-  let notes = '';
+  const afterBlocklist = searchResults.length - blockedCount
+  const hiddenCount = afterBlocklist - videosToShow.length
+  let notes = ''
   if (blockedCount > 0) {
-    notes += `<p class="hidden-count">${blockedCount} blocked by filters</p>`;
+    notes += `<p class="hidden-count">${blockedCount} blocked by filters</p>`
   }
   if (hiddenCount > 0) {
-    notes += `<p class="hidden-count">${hiddenCount} already in your library</p>`;
+    notes += `<p class="hidden-count">${hiddenCount} already in your library</p>`
   }
 
   // Pagination
-  const pagination = document.getElementById('search-pagination');
-  pagination.innerHTML = notes + (nextPageToken ?
-    `<button onclick="loadMoreResults()">Load More Results</button>` : '');
+  const pagination = document.getElementById('search-pagination')
+  pagination.innerHTML =
+    notes +
+    (nextPageToken
+      ? `<button onclick="loadMoreResults()">Load More Results</button>`
+      : '')
 }
 
 async function loadMoreResults() {
-  if (!nextPageToken || !currentSearchQuery) return;
-  await performSearch(currentSearchQuery, 10, nextPageToken);
+  if (!nextPageToken || !currentSearchQuery) return
+  await performSearch(currentSearchQuery, 10, nextPageToken)
 }
 
 // Queue Management
 async function loadQueue() {
   try {
-    const res = await fetch('/api/queue');
-    queue = await res.json();
-    document.getElementById('queue-count').textContent = queue.length;
-    renderQueue();
+    const res = await fetch('/api/queue')
+    queue = await res.json()
+    document.getElementById('queue-count').textContent = queue.length
+    renderQueue()
+    updateQueueButtons()
   } catch (e) {
-    console.error('Failed to load queue:', e);
+    console.error('Failed to load queue:', e)
+  }
+}
+
+function updateQueueButtons() {
+  const aiBtn = document.getElementById('ai-review-btn')
+  const publishAllBtn = document.getElementById('publish-all-btn')
+  const allReviewed = queue.length > 0 && queue.every((v) => v.aiReason)
+
+  if (aiBtn) {
+    if (allReviewed) {
+      aiBtn.disabled = true
+      aiBtn.title = 'AI review already completed for all queue items'
+    } else {
+      aiBtn.disabled = false
+      aiBtn.title = ''
+    }
+  }
+
+  if (publishAllBtn) {
+    publishAllBtn.style.display = queue.length > 0 ? '' : 'none'
+  }
+}
+
+async function publishAll() {
+  if (queue.length === 0) {
+    showToast('Queue is empty', 'error')
+    return
+  }
+
+  if (!confirm(`Publish all ${queue.length} videos to the site?`)) return
+
+  try {
+    const res = await fetch('/api/queue/publish-all', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    })
+    const data = await res.json()
+    if (data.error) {
+      showToast(data.error, 'error')
+    } else {
+      showToast(`Published ${data.published} videos`, 'success')
+      await loadQueue()
+      await loadPublishedVideos()
+    }
+  } catch (e) {
+    showToast('Failed to publish: ' + e.message, 'error')
   }
 }
 
 function renderQueue() {
-  const container = document.getElementById('queue-content');
+  const container = document.getElementById('queue-content')
 
   if (queue.length === 0) {
-    container.innerHTML = '<div class="empty-state"><h3>Queue is empty</h3><p>Search for videos and add them to the queue for review</p></div>';
-    return;
+    container.innerHTML =
+      '<div class="empty-state"><h3>Queue is empty</h3><p>Search for videos and add them to the queue for review</p></div>'
+    return
   }
 
-  container.className = viewMode === 'detail' ? 'video-grid detail-view' : 'video-grid';
+  container.className =
+    viewMode === 'detail' ? 'video-grid detail-view' : 'video-grid'
 
-  container.innerHTML = queue.map(video => `
+  container.innerHTML = queue
+    .map(
+      (video) => `
     <div class="video-card" data-id="${video.id}">
       <div class="video-thumbnail">
         <img src="${video.thumbnail}" alt="${escapeHtml(video.title)}">
@@ -457,99 +572,107 @@ function renderQueue() {
         <button class="btn-remove" onclick="removeFromQueue('${video.id}')">Remove</button>
       </div>
     </div>
-  `).join('');
+  `
+    )
+    .join('')
 }
 
 async function addToQueue(videoId) {
-  const video = searchResults.find(v => v.id === videoId);
-  if (!video) return;
+  const video = searchResults.find((v) => v.id === videoId)
+  if (!video) return
 
   try {
     const res = await fetch('/api/queue', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ video })
-    });
+      body: JSON.stringify({ video }),
+    })
 
-    const data = await res.json();
+    const data = await res.json()
     if (data.error) {
-      showToast(data.error, 'error');
+      showToast(data.error, 'error')
     } else {
-      showToast('Added to queue', 'success');
-      await loadQueue();
-      renderSearchResults(); // Update status badges
+      showToast('Added to queue', 'success')
+      await loadQueue()
+      renderSearchResults() // Update status badges
     }
   } catch (e) {
-    showToast('Failed to add to queue', 'error');
+    showToast('Failed to add to queue', 'error')
   }
 }
 
 async function removeFromQueue(videoId) {
   try {
-    await fetch(`/api/queue/${videoId}`, { method: 'DELETE' });
-    showToast('Removed from queue', 'success');
-    await loadQueue();
-    if (currentTab === 'search') renderSearchResults();
-    closeAllModals();
+    await fetch(`/api/queue/${videoId}`, { method: 'DELETE' })
+    showToast('Removed from queue', 'success')
+    await loadQueue()
+    if (currentTab === 'search') renderSearchResults()
+    closeAllModals()
   } catch (e) {
-    showToast('Failed to remove', 'error');
+    showToast('Failed to remove', 'error')
   }
 }
 
 async function clearQueue() {
   if (queue.length === 0) {
-    showToast('Queue is already empty', 'info');
-    return;
+    showToast('Queue is already empty', 'info')
+    return
   }
 
-  if (!confirm(`Are you sure you want to remove all ${queue.length} videos from the queue? This cannot be undone.`)) {
-    return;
+  if (
+    !confirm(
+      `Are you sure you want to remove all ${queue.length} videos from the queue? This cannot be undone.`
+    )
+  ) {
+    return
   }
 
   try {
-    const res = await fetch('/api/queue/clear', { method: 'POST' });
+    const res = await fetch('/api/queue/clear', { method: 'POST' })
     if (!res.ok) {
-      const error = await res.json();
-      throw new Error(error.error);
+      const error = await res.json()
+      throw new Error(error.error)
     }
-    showToast('Queue cleared', 'success');
-    await loadQueue();
-    if (currentTab === 'search') renderSearchResults();
+    showToast('Queue cleared', 'success')
+    await loadQueue()
+    if (currentTab === 'search') renderSearchResults()
   } catch (e) {
-    showToast('Failed to clear queue: ' + e.message, 'error');
+    showToast('Failed to clear queue: ' + e.message, 'error')
   }
 }
 
 // Published Videos
 async function loadPublishedVideos() {
   try {
-    const res = await fetch('/api/videos');
-    publishedVideos = await res.json();
-    document.getElementById('video-count').textContent = `${publishedVideos.length} videos`;
-    renderPublishedVideos();
+    const res = await fetch('/api/videos')
+    publishedVideos = await res.json()
+    document.getElementById('video-count').textContent =
+      `${publishedVideos.length} videos`
+    renderPublishedVideos()
   } catch (e) {
-    console.error('Failed to load videos:', e);
+    console.error('Failed to load videos:', e)
   }
 }
 
 function renderPublishedVideos() {
-  const container = document.getElementById('published-content');
-  const featuredSection = document.getElementById('featured-section');
-  const featuredCard = document.getElementById('featured-video-card');
+  const container = document.getElementById('published-content')
+  const featuredSection = document.getElementById('featured-section')
+  const featuredCard = document.getElementById('featured-video-card')
 
   if (publishedVideos.length === 0) {
-    container.innerHTML = '<div class="empty-state"><h3>No published videos</h3><p>Approve videos from the queue to add them to your site</p></div>';
-    featuredSection.classList.add('hidden');
-    return;
+    container.innerHTML =
+      '<div class="empty-state"><h3>No published videos</h3><p>Approve videos from the queue to add them to your site</p></div>'
+    featuredSection.classList.add('hidden')
+    return
   }
 
   // Find featured video
-  const featuredVideo = publishedVideos.find(v => v.featured);
-  const otherVideos = publishedVideos.filter(v => !v.featured);
+  const featuredVideo = publishedVideos.find((v) => v.featured)
+  const otherVideos = publishedVideos.filter((v) => !v.featured)
 
   // Render featured section
   if (featuredVideo) {
-    featuredSection.classList.remove('hidden');
+    featuredSection.classList.remove('hidden')
     featuredCard.innerHTML = `
       <div class="video-thumbnail">
         <img src="https://img.youtube.com/vi/${featuredVideo.id}/mqdefault.jpg" alt="${escapeHtml(featuredVideo.title)}">
@@ -562,13 +685,15 @@ function renderPublishedVideos() {
           <button class="btn-view" onclick="window.open('/video/${featuredVideo.id}/', '_blank')">View on Site</button>
         </div>
       </div>
-    `;
+    `
   } else {
-    featuredSection.classList.add('hidden');
+    featuredSection.classList.add('hidden')
   }
 
   // Render other videos with "Set as Featured" button
-  container.innerHTML = otherVideos.map(video => `
+  container.innerHTML = otherVideos
+    .map(
+      (video) => `
     <div class="video-card" data-id="${video.id}">
       <div class="video-thumbnail">
         <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" alt="${escapeHtml(video.title)}">
@@ -585,40 +710,47 @@ function renderPublishedVideos() {
         <button class="btn-view" onclick="window.open('/video/${video.id}/', '_blank')">View</button>
       </div>
     </div>
-  `).join('');
+  `
+    )
+    .join('')
 }
 
 async function setFeaturedVideo(videoId) {
   try {
-    const res = await fetch(`/api/videos/${videoId}/feature`, { method: 'POST' });
+    const res = await fetch(`/api/videos/${videoId}/feature`, {
+      method: 'POST',
+    })
     if (!res.ok) {
-      const error = await res.json();
-      throw new Error(error.error);
+      const error = await res.json()
+      throw new Error(error.error)
     }
-    showToast('Featured video updated!', 'success');
-    await loadPublishedVideos();
+    showToast('Featured video updated!', 'success')
+    await loadPublishedVideos()
   } catch (e) {
-    showToast('Failed to set featured: ' + e.message, 'error');
+    showToast('Failed to set featured: ' + e.message, 'error')
   }
 }
 
 // Categories
 async function loadCategories() {
   try {
-    const res = await fetch('/api/categories');
-    categories = await res.json();
-    renderCategories();
+    const res = await fetch('/api/categories')
+    categories = await res.json()
+    renderCategories()
   } catch (e) {
-    console.error('Failed to load categories:', e);
+    console.error('Failed to load categories:', e)
   }
 }
 
 function renderCategories() {
-  const container = document.getElementById('categories-content');
+  const container = document.getElementById('categories-content')
 
-  container.innerHTML = categories.map(cat => {
-    const videoCount = publishedVideos.filter(v => v.category === cat.slug).length;
-    return `
+  container.innerHTML = categories
+    .map((cat) => {
+      const videoCount = publishedVideos.filter(
+        (v) => v.category === cat.slug
+      ).length
+      return `
       <div class="category-item" data-slug="${cat.slug}">
         <div>
           <h3>${escapeHtml(cat.name)}</h3>
@@ -629,95 +761,100 @@ function renderCategories() {
           <button class="btn-delete" onclick="deleteCategory('${cat.slug}')" ${videoCount > 0 ? 'disabled title="Cannot delete category with videos"' : ''}>Delete</button>
         </div>
       </div>
-    `;
-  }).join('');
+    `
+    })
+    .join('')
 }
 
 function openCategoryModal(slug = null) {
-  editingCategorySlug = slug;
-  const modal = document.getElementById('category-modal');
-  const title = document.getElementById('category-modal-title');
-  const nameInput = document.getElementById('category-name');
-  const descInput = document.getElementById('category-description');
+  editingCategorySlug = slug
+  const modal = document.getElementById('category-modal')
+  const title = document.getElementById('category-modal-title')
+  const nameInput = document.getElementById('category-name')
+  const descInput = document.getElementById('category-description')
 
   if (slug) {
-    const cat = categories.find(c => c.slug === slug);
-    title.textContent = 'Edit Category';
-    nameInput.value = cat.name;
-    descInput.value = cat.description || '';
+    const cat = categories.find((c) => c.slug === slug)
+    title.textContent = 'Edit Category'
+    nameInput.value = cat.name
+    descInput.value = cat.description || ''
   } else {
-    title.textContent = 'Add Category';
-    nameInput.value = '';
-    descInput.value = '';
+    title.textContent = 'Add Category'
+    nameInput.value = ''
+    descInput.value = ''
   }
 
-  modal.classList.remove('hidden');
+  modal.classList.remove('hidden')
 }
 
 async function handleCategorySave(e) {
-  e.preventDefault();
-  const name = document.getElementById('category-name').value.trim();
-  const description = document.getElementById('category-description').value.trim();
+  e.preventDefault()
+  const name = document.getElementById('category-name').value.trim()
+  const description = document
+    .getElementById('category-description')
+    .value.trim()
 
   try {
     if (editingCategorySlug) {
       await fetch(`/api/categories/${editingCategorySlug}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, description })
-      });
-      showToast('Category updated', 'success');
+        body: JSON.stringify({ name, description }),
+      })
+      showToast('Category updated', 'success')
     } else {
       await fetch('/api/categories', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, description })
-      });
-      showToast('Category added', 'success');
+        body: JSON.stringify({ name, description }),
+      })
+      showToast('Category added', 'success')
     }
 
-    await loadCategories();
-    populateCategorySelect();
-    closeAllModals();
+    await loadCategories()
+    populateCategorySelect()
+    closeAllModals()
   } catch (e) {
-    showToast('Failed to save category', 'error');
+    showToast('Failed to save category', 'error')
   }
 }
 
 async function deleteCategory(slug) {
-  if (!confirm('Are you sure you want to delete this category?')) return;
+  if (!confirm('Are you sure you want to delete this category?')) return
 
   try {
-    const res = await fetch(`/api/categories/${slug}`, { method: 'DELETE' });
-    const data = await res.json();
+    const res = await fetch(`/api/categories/${slug}`, { method: 'DELETE' })
+    const data = await res.json()
 
     if (data.error) {
-      showToast(data.error, 'error');
+      showToast(data.error, 'error')
     } else {
-      showToast('Category deleted', 'success');
-      await loadCategories();
-      populateCategorySelect();
+      showToast('Category deleted', 'success')
+      await loadCategories()
+      populateCategorySelect()
     }
   } catch (e) {
-    showToast('Failed to delete category', 'error');
+    showToast('Failed to delete category', 'error')
   }
 }
 
 // Presets
 async function loadPresets() {
   try {
-    const res = await fetch('/api/presets');
-    presets = await res.json();
-    renderPresets();
+    const res = await fetch('/api/presets')
+    presets = await res.json()
+    renderPresets()
   } catch (e) {
-    console.error('Failed to load presets:', e);
+    console.error('Failed to load presets:', e)
   }
 }
 
 function renderPresets() {
-  const container = document.getElementById('presets-content');
+  const container = document.getElementById('presets-content')
 
-  container.innerHTML = presets.map(preset => `
+  container.innerHTML = presets
+    .map(
+      (preset) => `
     <div class="preset-item" data-id="${preset.id}">
       <div>
         <h3>${escapeHtml(preset.name)}</h3>
@@ -728,142 +865,154 @@ function renderPresets() {
         <button class="btn-delete" onclick="deletePreset(${preset.id})">Delete</button>
       </div>
     </div>
-  `).join('');
+  `
+    )
+    .join('')
 }
 
 function openPresetModal(id = null) {
-  editingPresetId = id;
-  const modal = document.getElementById('preset-modal');
-  const title = document.getElementById('preset-modal-title');
-  const nameInput = document.getElementById('preset-name');
-  const queryInput = document.getElementById('preset-query');
-  const maxInput = document.getElementById('preset-max-results');
+  editingPresetId = id
+  const modal = document.getElementById('preset-modal')
+  const title = document.getElementById('preset-modal-title')
+  const nameInput = document.getElementById('preset-name')
+  const queryInput = document.getElementById('preset-query')
+  const maxInput = document.getElementById('preset-max-results')
 
   if (id) {
-    const preset = presets.find(p => p.id === id);
-    title.textContent = 'Edit Search Preset';
-    nameInput.value = preset.name;
-    queryInput.value = preset.query;
-    maxInput.value = preset.maxResults;
+    const preset = presets.find((p) => p.id === id)
+    title.textContent = 'Edit Search Preset'
+    nameInput.value = preset.name
+    queryInput.value = preset.query
+    maxInput.value = preset.maxResults
   } else {
-    title.textContent = 'Add Search Preset';
-    nameInput.value = '';
-    queryInput.value = '';
-    maxInput.value = '10';
+    title.textContent = 'Add Search Preset'
+    nameInput.value = ''
+    queryInput.value = ''
+    maxInput.value = '10'
   }
 
-  modal.classList.remove('hidden');
+  modal.classList.remove('hidden')
 }
 
 async function handlePresetSave(e) {
-  e.preventDefault();
-  const name = document.getElementById('preset-name').value.trim();
-  const query = document.getElementById('preset-query').value.trim();
-  const maxResults = parseInt(document.getElementById('preset-max-results').value);
+  e.preventDefault()
+  const name = document.getElementById('preset-name').value.trim()
+  const query = document.getElementById('preset-query').value.trim()
+  const maxResults = parseInt(
+    document.getElementById('preset-max-results').value
+  )
 
   try {
     if (editingPresetId) {
       await fetch(`/api/presets/${editingPresetId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, query, maxResults })
-      });
-      showToast('Preset updated', 'success');
+        body: JSON.stringify({ name, query, maxResults }),
+      })
+      showToast('Preset updated', 'success')
     } else {
       await fetch('/api/presets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, query, maxResults })
-      });
-      showToast('Preset added', 'success');
+        body: JSON.stringify({ name, query, maxResults }),
+      })
+      showToast('Preset added', 'success')
     }
 
-    await loadPresets();
-    populatePresetSelect();
-    closeAllModals();
+    await loadPresets()
+    populatePresetSelect()
+    closeAllModals()
   } catch (e) {
-    showToast('Failed to save preset', 'error');
+    showToast('Failed to save preset', 'error')
   }
 }
 
 async function deletePreset(id) {
-  if (!confirm('Are you sure you want to delete this preset?')) return;
+  if (!confirm('Are you sure you want to delete this preset?')) return
 
   try {
-    await fetch(`/api/presets/${id}`, { method: 'DELETE' });
-    showToast('Preset deleted', 'success');
-    await loadPresets();
-    populatePresetSelect();
+    await fetch(`/api/presets/${id}`, { method: 'DELETE' })
+    showToast('Preset deleted', 'success')
+    await loadPresets()
+    populatePresetSelect()
   } catch (e) {
-    showToast('Failed to delete preset', 'error');
+    showToast('Failed to delete preset', 'error')
   }
 }
 
 // Video Modal
 async function openVideoModal(videoId, source) {
-  const modal = document.getElementById('video-modal');
-  let video;
+  const modal = document.getElementById('video-modal')
+  let video
 
   if (source === 'search') {
-    video = searchResults.find(v => v.id === videoId);
+    video = searchResults.find((v) => v.id === videoId)
   } else if (source === 'queue') {
-    video = queue.find(v => v.id === videoId);
+    video = queue.find((v) => v.id === videoId)
   }
 
-  if (!video) return;
+  if (!video) return
 
-  currentVideoForModal = video;
+  currentVideoForModal = video
 
   // Set iframe
-  document.getElementById('modal-iframe').src = `https://www.youtube-nocookie.com/embed/${video.id}`;
+  document.getElementById('modal-iframe').src =
+    `https://www.youtube-nocookie.com/embed/${video.id}`
 
   // Set info
-  document.getElementById('modal-title').textContent = video.title;
-  document.getElementById('modal-channel').textContent = video.channelTitle;
-  document.getElementById('modal-date').textContent = formatDate(video.publishedAt);
-  document.getElementById('modal-views').textContent = `${formatViews(video.viewCount)} views`;
-  document.getElementById('modal-description').textContent = video.description;
+  document.getElementById('modal-title').textContent = video.title
+  document.getElementById('modal-channel').textContent = video.channelTitle
+  document.getElementById('modal-date').textContent = formatDate(
+    video.publishedAt
+  )
+  document.getElementById('modal-views').textContent =
+    `${formatViews(video.viewCount)} views`
+  document.getElementById('modal-description').textContent = video.description
 
   // Set form defaults
-  document.getElementById('modal-edit-title').value = video.title;
-  document.getElementById('modal-edit-description').value = video.description.slice(0, 200);
-  document.getElementById('modal-featured').checked = false;
+  document.getElementById('modal-edit-title').value = video.title
+  document.getElementById('modal-edit-description').value =
+    video.description.slice(0, 200)
+  document.getElementById('modal-featured').checked = false
 
   // Show/hide reject button based on source
-  document.getElementById('modal-reject-btn').style.display = source === 'queue' ? 'block' : 'none';
+  document.getElementById('modal-reject-btn').style.display =
+    source === 'queue' ? 'block' : 'none'
 
-  modal.classList.remove('hidden');
+  modal.classList.remove('hidden')
 }
 
 async function handleApprove(e) {
-  e.preventDefault();
+  e.preventDefault()
 
-  if (!currentVideoForModal) return;
+  if (!currentVideoForModal) return
 
-  const title = document.getElementById('modal-edit-title').value.trim();
-  const description = document.getElementById('modal-edit-description').value.trim();
-  const category = document.getElementById('modal-category').value;
-  const featured = document.getElementById('modal-featured').checked;
+  const title = document.getElementById('modal-edit-title').value.trim()
+  const description = document
+    .getElementById('modal-edit-description')
+    .value.trim()
+  const category = document.getElementById('modal-category').value
+  const featured = document.getElementById('modal-featured').checked
 
   if (!category) {
-    showToast('Please select a category', 'error');
-    return;
+    showToast('Please select a category', 'error')
+    return
   }
 
   try {
     // If video is in queue, approve it
-    const inQueue = queue.some(v => v.id === currentVideoForModal.id);
+    const inQueue = queue.some((v) => v.id === currentVideoForModal.id)
 
     if (inQueue) {
       const res = await fetch(`/api/queue/${currentVideoForModal.id}/approve`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, description, category, featured })
-      });
+        body: JSON.stringify({ title, description, category, featured }),
+      })
 
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error);
+        const data = await res.json()
+        throw new Error(data.error)
       }
     } else {
       // Add directly from search
@@ -871,233 +1020,253 @@ async function handleApprove(e) {
       await fetch('/api/queue', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ video: currentVideoForModal })
-      });
+        body: JSON.stringify({ video: currentVideoForModal }),
+      })
 
       await fetch(`/api/queue/${currentVideoForModal.id}/approve`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, description, category, featured })
-      });
+        body: JSON.stringify({ title, description, category, featured }),
+      })
     }
 
-    showToast('Video published!', 'success');
-    await loadQueue();
-    await loadPublishedVideos();
-    if (currentTab === 'search') renderSearchResults();
-    closeAllModals();
+    showToast('Video published!', 'success')
+    await loadQueue()
+    await loadPublishedVideos()
+    if (currentTab === 'search') renderSearchResults()
+    closeAllModals()
   } catch (e) {
-    showToast(e.message || 'Failed to publish', 'error');
+    showToast(e.message || 'Failed to publish', 'error')
   }
 }
 
 async function handleReject() {
-  if (!currentVideoForModal) return;
-  await removeFromQueue(currentVideoForModal.id);
+  if (!currentVideoForModal) return
+  await removeFromQueue(currentVideoForModal.id)
 }
 
 // Helpers
 function populatePresetSelect() {
-  const select = document.getElementById('preset-select');
-  select.innerHTML = '<option value="">Select a preset...</option>' +
-    presets.map(p => `<option value="${p.id}">${escapeHtml(p.name)}</option>`).join('');
+  const select = document.getElementById('preset-select')
+  select.innerHTML =
+    '<option value="">Select a preset...</option>' +
+    presets
+      .map((p) => `<option value="${p.id}">${escapeHtml(p.name)}</option>`)
+      .join('')
 }
 
 function populateCategorySelect() {
-  const select = document.getElementById('modal-category');
-  select.innerHTML = '<option value="">Select a category...</option>' +
-    categories.map(c => `<option value="${c.slug}">${escapeHtml(c.name)}</option>`).join('');
+  const select = document.getElementById('modal-category')
+  select.innerHTML =
+    '<option value="">Select a category...</option>' +
+    categories
+      .map((c) => `<option value="${c.slug}">${escapeHtml(c.name)}</option>`)
+      .join('')
 }
 
 function getCategoryName(slug) {
-  const cat = categories.find(c => c.slug === slug);
-  return cat ? cat.name : slug;
+  const cat = categories.find((c) => c.slug === slug)
+  return cat ? cat.name : slug
 }
 
 function setViewMode(mode) {
-  viewMode = mode;
-  document.querySelectorAll('.view-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.view === mode);
-  });
-  renderQueue();
+  viewMode = mode
+  document.querySelectorAll('.view-btn').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.view === mode)
+  })
+  renderQueue()
 }
 
 function closeAllModals() {
-  document.querySelectorAll('.modal').forEach(modal => {
-    modal.classList.add('hidden');
-  });
-  document.getElementById('modal-iframe').src = '';
-  currentVideoForModal = null;
-  editingCategorySlug = null;
-  editingPresetId = null;
+  document.querySelectorAll('.modal').forEach((modal) => {
+    modal.classList.add('hidden')
+  })
+  document.getElementById('modal-iframe').src = ''
+  currentVideoForModal = null
+  editingCategorySlug = null
+  editingPresetId = null
 }
 
 function showToast(message, type = 'info') {
-  const container = document.getElementById('toast-container');
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.textContent = message;
-  container.appendChild(toast);
+  const container = document.getElementById('toast-container')
+  const toast = document.createElement('div')
+  toast.className = `toast ${type}`
+  toast.textContent = message
+  container.appendChild(toast)
 
   setTimeout(() => {
-    toast.remove();
-  }, 3000);
+    toast.remove()
+  }, 3000)
 }
 
 function escapeHtml(str) {
-  if (!str) return '';
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
+  if (!str) return ''
+  const div = document.createElement('div')
+  div.textContent = str
+  return div.innerHTML
 }
 
 function formatDuration(duration) {
   // Convert ISO 8601 duration to readable format
-  const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-  if (!match) return '';
+  const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/)
+  if (!match) return ''
 
-  const hours = match[1] ? parseInt(match[1]) : 0;
-  const minutes = match[2] ? parseInt(match[2]) : 0;
-  const seconds = match[3] ? parseInt(match[3]) : 0;
+  const hours = match[1] ? parseInt(match[1]) : 0
+  const minutes = match[2] ? parseInt(match[2]) : 0
+  const seconds = match[3] ? parseInt(match[3]) : 0
 
   if (hours > 0) {
-    return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
   }
-  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`
 }
 
 function formatViews(count) {
-  if (!count) return '0';
-  const num = parseInt(count);
-  if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-  if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
-  return num.toString();
+  if (!count) return '0'
+  const num = parseInt(count)
+  if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M'
+  if (num >= 1000) return (num / 1000).toFixed(1) + 'K'
+  return num.toString()
 }
 
 function formatDate(dateStr) {
-  if (!dateStr) return '';
-  const date = new Date(dateStr);
+  if (!dateStr) return ''
+  const date = new Date(dateStr)
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',
-    day: 'numeric'
-  });
+    day: 'numeric',
+  })
 }
 
 // Blocklist Management
 async function loadBlocklist() {
   try {
-    const res = await fetch('/api/blocklist');
-    blocklist = await res.json();
-    renderBlocklist();
+    const res = await fetch('/api/blocklist')
+    blocklist = await res.json()
+    renderBlocklist()
   } catch (e) {
-    console.error('Failed to load blocklist:', e);
+    console.error('Failed to load blocklist:', e)
   }
 }
 
 function renderBlocklist() {
   // Render blocked channels
-  const channelsContainer = document.getElementById('blocked-channels-list');
+  const channelsContainer = document.getElementById('blocked-channels-list')
   if (blocklist.channels.length === 0) {
-    channelsContainer.innerHTML = '<p class="empty-list">No blocked channels</p>';
+    channelsContainer.innerHTML =
+      '<p class="empty-list">No blocked channels</p>'
   } else {
-    channelsContainer.innerHTML = blocklist.channels.map(channel => `
+    channelsContainer.innerHTML = blocklist.channels
+      .map(
+        (channel) => `
       <div class="blocklist-item">
         <span>${escapeHtml(channel)}</span>
         <button class="btn-remove-small" onclick="unblockChannel('${escapeHtml(channel)}')">&times;</button>
       </div>
-    `).join('');
+    `
+      )
+      .join('')
   }
 
   // Render blocked keywords
-  const keywordsContainer = document.getElementById('blocked-keywords-list');
+  const keywordsContainer = document.getElementById('blocked-keywords-list')
   if (blocklist.keywords.length === 0) {
-    keywordsContainer.innerHTML = '<p class="empty-list">No blocked keywords</p>';
+    keywordsContainer.innerHTML =
+      '<p class="empty-list">No blocked keywords</p>'
   } else {
-    keywordsContainer.innerHTML = blocklist.keywords.map(keyword => `
+    keywordsContainer.innerHTML = blocklist.keywords
+      .map(
+        (keyword) => `
       <div class="blocklist-item">
         <span>${escapeHtml(keyword)}</span>
         <button class="btn-remove-small" onclick="unblockKeyword('${escapeHtml(keyword)}')">&times;</button>
       </div>
-    `).join('');
+    `
+      )
+      .join('')
   }
 }
 
 async function blockChannel(channel) {
-  if (!channel) return;
+  if (!channel) return
 
   try {
     const res = await fetch('/api/blocklist/channel', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ channel })
-    });
+      body: JSON.stringify({ channel }),
+    })
 
-    const data = await res.json();
+    const data = await res.json()
     if (data.error) {
-      showToast(data.error, 'error');
+      showToast(data.error, 'error')
     } else {
-      showToast(`Blocked channel: ${channel}`, 'success');
-      await loadBlocklist();
-      if (searchResults.length > 0) renderSearchResults();
+      showToast(`Blocked channel: ${channel}`, 'success')
+      await loadBlocklist()
+      if (searchResults.length > 0) renderSearchResults()
     }
   } catch (e) {
-    showToast('Failed to block channel', 'error');
+    showToast('Failed to block channel', 'error')
   }
 }
 
 async function unblockChannel(channel) {
   try {
-    await fetch(`/api/blocklist/channel/${encodeURIComponent(channel)}`, { method: 'DELETE' });
-    showToast(`Unblocked channel: ${channel}`, 'success');
-    await loadBlocklist();
-    if (searchResults.length > 0) renderSearchResults();
+    await fetch(`/api/blocklist/channel/${encodeURIComponent(channel)}`, {
+      method: 'DELETE',
+    })
+    showToast(`Unblocked channel: ${channel}`, 'success')
+    await loadBlocklist()
+    if (searchResults.length > 0) renderSearchResults()
   } catch (e) {
-    showToast('Failed to unblock channel', 'error');
+    showToast('Failed to unblock channel', 'error')
   }
 }
 
 async function blockKeyword(keyword) {
-  if (!keyword) return;
+  if (!keyword) return
 
   try {
     const res = await fetch('/api/blocklist/keyword', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ keyword: keyword.toUpperCase() })
-    });
+      body: JSON.stringify({ keyword: keyword.toUpperCase() }),
+    })
 
-    const data = await res.json();
+    const data = await res.json()
     if (data.error) {
-      showToast(data.error, 'error');
+      showToast(data.error, 'error')
     } else {
-      showToast(`Blocked keyword: ${keyword.toUpperCase()}`, 'success');
-      await loadBlocklist();
-      if (searchResults.length > 0) renderSearchResults();
+      showToast(`Blocked keyword: ${keyword.toUpperCase()}`, 'success')
+      await loadBlocklist()
+      if (searchResults.length > 0) renderSearchResults()
     }
   } catch (e) {
-    showToast('Failed to block keyword', 'error');
+    showToast('Failed to block keyword', 'error')
   }
 }
 
 async function unblockKeyword(keyword) {
   try {
-    await fetch(`/api/blocklist/keyword/${encodeURIComponent(keyword)}`, { method: 'DELETE' });
-    showToast(`Unblocked keyword: ${keyword}`, 'success');
-    await loadBlocklist();
-    if (searchResults.length > 0) renderSearchResults();
+    await fetch(`/api/blocklist/keyword/${encodeURIComponent(keyword)}`, {
+      method: 'DELETE',
+    })
+    showToast(`Unblocked keyword: ${keyword}`, 'success')
+    await loadBlocklist()
+    if (searchResults.length > 0) renderSearchResults()
   } catch (e) {
-    showToast('Failed to unblock keyword', 'error');
+    showToast('Failed to unblock keyword', 'error')
   }
 }
 
 // Bulk Import
 function toggleBulkImport() {
-  const panel = document.getElementById('bulk-import-panel');
-  panel.classList.toggle('hidden');
+  const panel = document.getElementById('bulk-import-panel')
+  panel.classList.toggle('hidden')
   if (!panel.classList.contains('hidden')) {
-    document.getElementById('bulk-urls').value = '';
-    document.getElementById('bulk-import-status').innerHTML = '';
+    document.getElementById('bulk-urls').value = ''
+    document.getElementById('bulk-import-status').innerHTML = ''
   }
 }
 
@@ -1105,204 +1274,207 @@ function extractVideoId(url) {
   // Handle various YouTube URL formats
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/v\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/,
-    /^([a-zA-Z0-9_-]{11})$/ // Just the ID itself
-  ];
+    /^([a-zA-Z0-9_-]{11})$/, // Just the ID itself
+  ]
 
   for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match) return match[1];
+    const match = url.match(pattern)
+    if (match) return match[1]
   }
-  return null;
+  return null
 }
 
 async function handleBulkImport() {
-  const textarea = document.getElementById('bulk-urls');
-  const statusDiv = document.getElementById('bulk-import-status');
-  const submitBtn = document.getElementById('bulk-submit-btn');
+  const textarea = document.getElementById('bulk-urls')
+  const statusDiv = document.getElementById('bulk-import-status')
+  const submitBtn = document.getElementById('bulk-submit-btn')
 
   // Parse URLs - split by newlines, commas, or spaces
-  const input = textarea.value.trim();
+  const input = textarea.value.trim()
   if (!input) {
-    showToast('Please enter some YouTube URLs', 'error');
-    return;
+    showToast('Please enter some YouTube URLs', 'error')
+    return
   }
 
-  const urls = input.split(/[\n,\s]+/).filter(u => u.trim());
-  const videoIds = [...new Set(urls.map(extractVideoId).filter(Boolean))]; // Dedupe
+  const urls = input.split(/[\n,\s]+/).filter((u) => u.trim())
+  const videoIds = [...new Set(urls.map(extractVideoId).filter(Boolean))] // Dedupe
 
   if (videoIds.length === 0) {
-    showToast('No valid YouTube URLs found', 'error');
-    return;
+    showToast('No valid YouTube URLs found', 'error')
+    return
   }
 
-  submitBtn.disabled = true;
-  statusDiv.innerHTML = `<p class="pending">Processing ${videoIds.length} video(s)...</p>`;
+  submitBtn.disabled = true
+  statusDiv.innerHTML = `<p class="pending">Processing ${videoIds.length} video(s)...</p>`
 
-  const results = { success: [], failed: [], skipped: [] };
+  const results = { success: [], failed: [], skipped: [] }
 
   for (const videoId of videoIds) {
     // Check if already in queue or published
-    if (queue.some(v => v.id === videoId)) {
-      results.skipped.push({ id: videoId, reason: 'Already in queue' });
-      continue;
+    if (queue.some((v) => v.id === videoId)) {
+      results.skipped.push({ id: videoId, reason: 'Already in queue' })
+      continue
     }
-    if (publishedVideos.some(v => v.id === videoId)) {
-      results.skipped.push({ id: videoId, reason: 'Already published' });
-      continue;
+    if (publishedVideos.some((v) => v.id === videoId)) {
+      results.skipped.push({ id: videoId, reason: 'Already published' })
+      continue
     }
 
     try {
       // Fetch video details
-      const res = await fetch(`/api/youtube/video/${videoId}`);
+      const res = await fetch(`/api/youtube/video/${videoId}`)
       if (!res.ok) {
-        const error = await res.json();
-        results.failed.push({ id: videoId, reason: error.error || 'Not found' });
-        continue;
+        const error = await res.json()
+        results.failed.push({ id: videoId, reason: error.error || 'Not found' })
+        continue
       }
 
-      const video = await res.json();
+      const video = await res.json()
 
       // Add to queue
       const queueRes = await fetch('/api/queue', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ video })
-      });
+        body: JSON.stringify({ video }),
+      })
 
       if (queueRes.ok) {
-        results.success.push({ id: videoId, title: video.title });
+        results.success.push({ id: videoId, title: video.title })
       } else {
-        const error = await queueRes.json();
-        results.failed.push({ id: videoId, reason: error.error });
+        const error = await queueRes.json()
+        results.failed.push({ id: videoId, reason: error.error })
       }
     } catch (e) {
-      results.failed.push({ id: videoId, reason: 'Network error' });
+      results.failed.push({ id: videoId, reason: 'Network error' })
     }
 
     // Update status as we go
     statusDiv.innerHTML = `
       <p class="pending">Processing... ${results.success.length + results.failed.length + results.skipped.length}/${videoIds.length}</p>
-    `;
+    `
   }
 
   // Show final results
-  let html = '';
+  let html = ''
   if (results.success.length > 0) {
-    html += `<p class="success">✓ Added ${results.success.length} video(s) to queue</p>`;
+    html += `<p class="success">✓ Added ${results.success.length} video(s) to queue</p>`
   }
   if (results.skipped.length > 0) {
-    html += `<p class="pending">⊘ Skipped ${results.skipped.length} (already in queue/published)</p>`;
+    html += `<p class="pending">⊘ Skipped ${results.skipped.length} (already in queue/published)</p>`
   }
   if (results.failed.length > 0) {
-    html += `<p class="error">✗ Failed: ${results.failed.map(f => f.id).join(', ')}</p>`;
+    html += `<p class="error">✗ Failed: ${results.failed.map((f) => f.id).join(', ')}</p>`
   }
-  statusDiv.innerHTML = html;
+  statusDiv.innerHTML = html
 
-  submitBtn.disabled = false;
+  submitBtn.disabled = false
 
   // Refresh queue
   if (results.success.length > 0) {
-    await loadQueue();
-    showToast(`Added ${results.success.length} video(s) to queue`, 'success');
+    await loadQueue()
+    showToast(`Added ${results.success.length} video(s) to queue`, 'success')
   }
 }
 
 // AI Review Functions
 async function startAIReview() {
   if (queue.length === 0) {
-    showToast('Queue is empty - add some videos first', 'error');
-    return;
+    showToast('Queue is empty - add some videos first', 'error')
+    return
   }
 
-  const panel = document.getElementById('ai-review-panel');
-  const loading = document.getElementById('ai-review-loading');
-  const results = document.getElementById('ai-review-results');
-  const errorDiv = document.getElementById('ai-review-error');
-  const loadingText = loading.querySelector('p');
+  const panel = document.getElementById('ai-review-panel')
+  const loading = document.getElementById('ai-review-loading')
+  const results = document.getElementById('ai-review-results')
+  const errorDiv = document.getElementById('ai-review-error')
+  const loadingText = loading.querySelector('p')
 
   // Show panel and loading state
-  panel.classList.remove('hidden');
-  loading.classList.remove('hidden');
-  results.classList.add('hidden');
-  errorDiv.classList.add('hidden');
+  panel.classList.remove('hidden')
+  loading.classList.remove('hidden')
+  results.classList.add('hidden')
+  errorDiv.classList.add('hidden')
 
   // Hide the queue content while reviewing
-  document.getElementById('queue-content').classList.add('hidden');
+  document.getElementById('queue-content').classList.add('hidden')
 
   // Update initial loading text
-  loadingText.textContent = `Claude is reviewing ${queue.length} videos...`;
+  loadingText.textContent = `Claude is reviewing ${queue.length} videos...`
 
   try {
     const res = await fetch('/api/ai-review', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' }
-    });
+      headers: { 'Content-Type': 'application/json' },
+    })
 
     // Handle SSE stream
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = '';
+    const reader = res.body.getReader()
+    const decoder = new TextDecoder()
+    let buffer = ''
 
     while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
+      const { done, value } = await reader.read()
+      if (done) break
 
-      buffer += decoder.decode(value, { stream: true });
+      buffer += decoder.decode(value, { stream: true })
 
       // Process complete SSE messages
-      const lines = buffer.split('\n\n');
-      buffer = lines.pop(); // Keep incomplete message in buffer
+      const lines = buffer.split('\n\n')
+      buffer = lines.pop() // Keep incomplete message in buffer
 
       for (const line of lines) {
         if (line.startsWith('data: ')) {
           try {
-            const data = JSON.parse(line.slice(6));
+            const data = JSON.parse(line.slice(6))
 
             if (data.type === 'progress') {
               // Update loading text with progress
-              loadingText.textContent = `Claude is reviewing your queue... Batch ${data.batch} of ${data.totalBatches} (${data.processed}/${data.total} videos)`;
+              loadingText.textContent = `Claude is reviewing your queue... Batch ${data.batch} of ${data.totalBatches} (${data.processed}/${data.total} videos)`
             } else if (data.type === 'complete') {
-              aiReviewResults = data.reviews || [];
-              renderAIReviewResults();
-              return;
+              aiReviewResults = data.reviews || []
+              renderAIReviewResults()
+              return
             } else if (data.type === 'error') {
-              throw new Error(data.error);
+              throw new Error(data.error)
             }
           } catch (parseError) {
-            console.error('Failed to parse SSE message:', parseError);
+            console.error('Failed to parse SSE message:', parseError)
           }
         }
       }
     }
   } catch (e) {
-    loading.classList.add('hidden');
-    errorDiv.classList.remove('hidden');
-    errorDiv.innerHTML = `<p>AI Review failed: ${e.message}</p><button class="btn-secondary" onclick="closeAIReview()">Close</button>`;
+    loading.classList.add('hidden')
+    errorDiv.classList.remove('hidden')
+    errorDiv.innerHTML = `<p>AI Review failed: ${e.message}</p><button class="btn-secondary" onclick="closeAIReview()">Close</button>`
   }
 }
 
 function renderAIReviewResults() {
-  const loading = document.getElementById('ai-review-loading');
-  const results = document.getElementById('ai-review-results');
-  const listContainer = document.getElementById('ai-review-list');
+  const loading = document.getElementById('ai-review-loading')
+  const results = document.getElementById('ai-review-results')
+  const listContainer = document.getElementById('ai-review-list')
 
-  loading.classList.add('hidden');
-  results.classList.remove('hidden');
+  loading.classList.add('hidden')
+  results.classList.remove('hidden')
 
-  const approvals = aiReviewResults.filter(r => r.action === 'approve');
-  const rejections = aiReviewResults.filter(r => r.action === 'reject');
+  const approvals = aiReviewResults.filter((r) => r.action === 'approve')
+  const rejections = aiReviewResults.filter((r) => r.action === 'reject')
 
-  document.getElementById('ai-approve-count').textContent = `${approvals.length} to approve`;
-  document.getElementById('ai-reject-count').textContent = `${rejections.length} to reject`;
+  document.getElementById('ai-approve-count').textContent =
+    `${approvals.length} to approve`
+  document.getElementById('ai-reject-count').textContent =
+    `${rejections.length} to reject`
 
   // Render the review list
-  let html = '';
+  let html = ''
 
   if (approvals.length > 0) {
-    html += '<div class="ai-review-section"><h4>✓ Recommended to Approve</h4>';
-    html += approvals.map(review => {
-      const video = queue.find(v => v.id === review.id);
-      return `
+    html += '<div class="ai-review-section"><h4>✓ Recommended to Approve</h4>'
+    html += approvals
+      .map((review) => {
+        const video = queue.find((v) => v.id === review.id)
+        return `
         <div class="ai-review-item approve" data-id="${review.id}">
           <div class="ai-review-item-header">
             <img src="${video?.thumbnail || `https://img.youtube.com/vi/${review.id}/mqdefault.jpg`}" alt="">
@@ -1316,16 +1488,18 @@ function renderAIReviewResults() {
             </div>
           </div>
         </div>
-      `;
-    }).join('');
-    html += '</div>';
+      `
+      })
+      .join('')
+    html += '</div>'
   }
 
   if (rejections.length > 0) {
-    html += '<div class="ai-review-section"><h4>✗ Recommended to Reject</h4>';
-    html += rejections.map(review => {
-      const video = queue.find(v => v.id === review.id);
-      return `
+    html += '<div class="ai-review-section"><h4>✗ Recommended to Reject</h4>'
+    html += rejections
+      .map((review) => {
+        const video = queue.find((v) => v.id === review.id)
+        return `
         <div class="ai-review-item reject" data-id="${review.id}">
           <div class="ai-review-item-header">
             <img src="${video?.thumbnail || `https://img.youtube.com/vi/${review.id}/mqdefault.jpg`}" alt="">
@@ -1338,166 +1512,175 @@ function renderAIReviewResults() {
             </div>
           </div>
         </div>
-      `;
-    }).join('');
-    html += '</div>';
+      `
+      })
+      .join('')
+    html += '</div>'
   }
 
-  listContainer.innerHTML = html;
+  listContainer.innerHTML = html
 }
 
 function toggleAIReviewItem(videoId, newAction) {
-  const review = aiReviewResults.find(r => r.id === videoId);
-  if (!review) return;
+  const review = aiReviewResults.find((r) => r.id === videoId)
+  if (!review) return
 
   if (newAction === 'approve' && review.action === 'reject') {
     // Need to pick a category - use first available
-    review.action = 'approve';
-    review.category = review.category || categories[0]?.slug || 'explainers';
-    const video = queue.find(v => v.id === videoId);
-    review.suggestedTitle = video?.title || '';
-    review.suggestedDescription = video?.description?.slice(0, 200) || '';
-    review.reason = 'Manually changed to approve';
+    review.action = 'approve'
+    review.category = review.category || categories[0]?.slug || 'explainers'
+    const video = queue.find((v) => v.id === videoId)
+    review.suggestedTitle = video?.title || ''
+    review.suggestedDescription = video?.description?.slice(0, 200) || ''
+    review.reason = 'Manually changed to approve'
   } else if (newAction === 'reject' && review.action === 'approve') {
-    review.action = 'reject';
-    review.reason = 'Manually changed to reject';
+    review.action = 'reject'
+    review.reason = 'Manually changed to reject'
   }
 
-  renderAIReviewResults();
+  renderAIReviewResults()
 }
 
 async function acceptAllAIRecommendations() {
-  const approvals = aiReviewResults.filter(r => r.action === 'approve');
-  const rejections = aiReviewResults.filter(r => r.action === 'reject');
+  const approvals = aiReviewResults.filter((r) => r.action === 'approve')
+  const rejections = aiReviewResults.filter((r) => r.action === 'reject')
 
   if (approvals.length === 0 && rejections.length === 0) {
-    showToast('No recommendations to apply', 'error');
-    return;
+    showToast('No recommendations to apply', 'error')
+    return
   }
 
-  const btn = document.getElementById('ai-accept-all');
-  btn.disabled = true;
-  btn.textContent = 'Applying...';
+  const btn = document.getElementById('ai-accept-all')
+  btn.disabled = true
+  btn.textContent = 'Applying...'
 
   try {
     // Apply approvals
     if (approvals.length > 0) {
-      const approvalData = approvals.map(r => ({
+      const approvalData = approvals.map((r) => ({
         id: r.id,
         category: r.category,
         title: r.suggestedTitle,
-        description: r.suggestedDescription
-      }));
+        description: r.suggestedDescription,
+      }))
 
       const res = await fetch('/api/ai-review/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ approvals: approvalData })
-      });
+        body: JSON.stringify({ approvals: approvalData }),
+      })
 
       if (!res.ok) {
-        const error = await res.json();
-        throw new Error(error.error);
+        const error = await res.json()
+        throw new Error(error.error)
       }
     }
 
     // Apply rejections
     if (rejections.length > 0) {
-      const rejectionIds = rejections.map(r => r.id);
+      const rejectionIds = rejections.map((r) => r.id)
 
       const res = await fetch('/api/ai-review/reject', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ rejections: rejectionIds })
-      });
+        body: JSON.stringify({ rejections: rejectionIds }),
+      })
 
       if (!res.ok) {
-        const error = await res.json();
-        throw new Error(error.error);
+        const error = await res.json()
+        throw new Error(error.error)
       }
     }
 
-    showToast(`Applied: ${approvals.length} approved, ${rejections.length} rejected`, 'success');
-    closeAIReview();
-    await loadQueue();
-    await loadPublishedVideos();
+    showToast(
+      `Applied: ${approvals.length} approved, ${rejections.length} rejected`,
+      'success'
+    )
+    closeAIReview()
+    await loadQueue()
+    await loadPublishedVideos()
   } catch (e) {
-    showToast('Failed to apply recommendations: ' + e.message, 'error');
+    showToast('Failed to apply recommendations: ' + e.message, 'error')
   } finally {
-    btn.disabled = false;
-    btn.textContent = '✓ Accept All Recommendations';
+    btn.disabled = false
+    btn.textContent = '✓ Accept All Recommendations'
   }
 }
 
 async function approveOnlyAIRecommendations() {
-  const approvals = aiReviewResults.filter(r => r.action === 'approve');
+  const approvals = aiReviewResults.filter((r) => r.action === 'approve')
 
   if (approvals.length === 0) {
-    showToast('No videos to approve', 'error');
-    return;
+    showToast('No videos to approve', 'error')
+    return
   }
 
-  const btn = document.getElementById('ai-approve-only');
-  btn.disabled = true;
-  btn.textContent = 'Approving...';
+  const btn = document.getElementById('ai-approve-only')
+  btn.disabled = true
+  btn.textContent = 'Approving...'
 
   try {
-    const approvalData = approvals.map(r => ({
+    const approvalData = approvals.map((r) => ({
       id: r.id,
       category: r.category,
       title: r.suggestedTitle,
-      description: r.suggestedDescription
-    }));
+      description: r.suggestedDescription,
+    }))
 
     const res = await fetch('/api/ai-review/apply', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ approvals: approvalData })
-    });
+      body: JSON.stringify({ approvals: approvalData }),
+    })
 
     if (!res.ok) {
-      const error = await res.json();
-      throw new Error(error.error);
+      const error = await res.json()
+      throw new Error(error.error)
     }
 
-    showToast(`Approved ${approvals.length} videos (rejections left in queue)`, 'success');
-    closeAIReview();
-    await loadQueue();
-    await loadPublishedVideos();
+    showToast(
+      `Approved ${approvals.length} videos (rejections left in queue)`,
+      'success'
+    )
+    closeAIReview()
+    await loadQueue()
+    await loadPublishedVideos()
   } catch (e) {
-    showToast('Failed to apply approvals: ' + e.message, 'error');
+    showToast('Failed to apply approvals: ' + e.message, 'error')
   } finally {
-    btn.disabled = false;
-    btn.textContent = 'Approve Only (skip rejections)';
+    btn.disabled = false
+    btn.textContent = 'Approve Only (skip rejections)'
   }
 }
 
 function closeAIReview() {
-  document.getElementById('ai-review-panel').classList.add('hidden');
-  document.getElementById('queue-content').classList.remove('hidden');
-  aiReviewResults = null;
+  document.getElementById('ai-review-panel').classList.add('hidden')
+  document.getElementById('queue-content').classList.remove('hidden')
+  aiReviewResults = null
 }
 
 // Footer Links Management
 async function loadFooterLinks() {
   try {
-    const res = await fetch('/api/settings/footer-links');
-    footerLinks = await res.json();
-    renderFooterLinks();
+    const res = await fetch('/api/settings/footer-links')
+    footerLinks = await res.json()
+    renderFooterLinks()
   } catch (e) {
-    console.error('Failed to load footer links:', e);
+    console.error('Failed to load footer links:', e)
   }
 }
 
 function renderFooterLinks() {
-  const container = document.getElementById('footer-links-list');
+  const container = document.getElementById('footer-links-list')
 
   if (footerLinks.length === 0) {
-    container.innerHTML = '<p class="empty-list">No footer links configured</p>';
-    return;
+    container.innerHTML = '<p class="empty-list">No footer links configured</p>'
+    return
   }
 
-  container.innerHTML = footerLinks.map(link => `
+  container.innerHTML = footerLinks
+    .map(
+      (link) => `
     <div class="footer-link-item" data-id="${link.id}">
       <div class="link-info">
         <span class="link-label">${escapeHtml(link.label)}</span>
@@ -1507,125 +1690,131 @@ function renderFooterLinks() {
         <button class="btn-remove-small" onclick="deleteFooterLink(${link.id})">&times;</button>
       </div>
     </div>
-  `).join('');
+  `
+    )
+    .join('')
 }
 
 async function addFooterLink() {
-  const labelInput = document.getElementById('new-link-label');
-  const urlInput = document.getElementById('new-link-url');
+  const labelInput = document.getElementById('new-link-label')
+  const urlInput = document.getElementById('new-link-url')
 
-  const label = labelInput.value.trim();
-  const url = urlInput.value.trim();
+  const label = labelInput.value.trim()
+  const url = urlInput.value.trim()
 
   if (!label || !url) {
-    showToast('Please enter both label and URL', 'error');
-    return;
+    showToast('Please enter both label and URL', 'error')
+    return
   }
 
   try {
     const res = await fetch('/api/settings/footer-links', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ label, url })
-    });
+      body: JSON.stringify({ label, url }),
+    })
 
     if (!res.ok) {
-      const error = await res.json();
-      throw new Error(error.error);
+      const error = await res.json()
+      throw new Error(error.error)
     }
 
-    showToast('Footer link added', 'success');
-    labelInput.value = '';
-    urlInput.value = '';
-    await loadFooterLinks();
+    showToast('Footer link added', 'success')
+    labelInput.value = ''
+    urlInput.value = ''
+    await loadFooterLinks()
   } catch (e) {
-    showToast('Failed to add link: ' + e.message, 'error');
+    showToast('Failed to add link: ' + e.message, 'error')
   }
 }
 
 async function deleteFooterLink(id) {
   try {
-    await fetch(`/api/settings/footer-links/${id}`, { method: 'DELETE' });
-    showToast('Footer link removed', 'success');
-    await loadFooterLinks();
+    await fetch(`/api/settings/footer-links/${id}`, { method: 'DELETE' })
+    showToast('Footer link removed', 'success')
+    await loadFooterLinks()
   } catch (e) {
-    showToast('Failed to remove link: ' + e.message, 'error');
+    showToast('Failed to remove link: ' + e.message, 'error')
   }
 }
 
 // Tracking Settings
 async function loadTrackingSettings() {
   try {
-    const res = await fetch('/api/settings/tracking');
-    const data = await res.json();
-    document.getElementById('ga-measurement-id').value = data.googleAnalyticsId || '';
+    const res = await fetch('/api/settings/tracking')
+    const data = await res.json()
+    document.getElementById('ga-measurement-id').value =
+      data.googleAnalyticsId || ''
   } catch (e) {
-    console.error('Failed to load tracking settings:', e);
+    console.error('Failed to load tracking settings:', e)
   }
 }
 
 async function saveTrackingSettings() {
-  const btn = document.getElementById('save-tracking-btn');
-  const status = document.getElementById('tracking-status');
+  const btn = document.getElementById('save-tracking-btn')
+  const status = document.getElementById('tracking-status')
 
-  const googleAnalyticsId = document.getElementById('ga-measurement-id').value.trim();
+  const googleAnalyticsId = document
+    .getElementById('ga-measurement-id')
+    .value.trim()
 
-  btn.disabled = true;
-  btn.textContent = 'Saving...';
-  status.textContent = '';
+  btn.disabled = true
+  btn.textContent = 'Saving...'
+  status.textContent = ''
 
   try {
     const res = await fetch('/api/settings/tracking', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ googleAnalyticsId })
-    });
+      body: JSON.stringify({ googleAnalyticsId }),
+    })
 
     if (!res.ok) {
-      const error = await res.json();
-      throw new Error(error.error);
+      const error = await res.json()
+      throw new Error(error.error)
     }
 
-    status.textContent = '✓ Tracking settings saved! Remember to rebuild the site.';
-    status.className = 'build-status success';
-    showToast('Tracking settings saved', 'success');
+    status.textContent =
+      '✓ Tracking settings saved! Remember to rebuild the site.'
+    status.className = 'build-status success'
+    showToast('Tracking settings saved', 'success')
   } catch (e) {
-    status.textContent = '✗ Failed to save: ' + e.message;
-    status.className = 'build-status error';
-    showToast('Failed to save tracking settings: ' + e.message, 'error');
+    status.textContent = '✗ Failed to save: ' + e.message
+    status.className = 'build-status error'
+    showToast('Failed to save tracking settings: ' + e.message, 'error')
   } finally {
-    btn.disabled = false;
-    btn.textContent = 'Save Tracking Settings';
+    btn.disabled = false
+    btn.textContent = 'Save Tracking Settings'
   }
 }
 
 // Build Site
 async function buildSite() {
-  const btn = document.getElementById('build-site-btn');
-  const status = document.getElementById('build-status');
+  const btn = document.getElementById('build-site-btn')
+  const status = document.getElementById('build-status')
 
-  btn.disabled = true;
-  btn.textContent = '🔨 Building...';
-  status.textContent = 'Building site...';
-  status.className = 'build-status pending';
+  btn.disabled = true
+  btn.textContent = '🔨 Building...'
+  status.textContent = 'Building site...'
+  status.className = 'build-status pending'
 
   try {
-    const res = await fetch('/api/build', { method: 'POST' });
-    const data = await res.json();
+    const res = await fetch('/api/build', { method: 'POST' })
+    const data = await res.json()
 
     if (!res.ok) {
-      throw new Error(data.error || 'Build failed');
+      throw new Error(data.error || 'Build failed')
     }
 
-    status.textContent = '✓ Site rebuilt successfully!';
-    status.className = 'build-status success';
-    showToast('Site rebuilt successfully!', 'success');
+    status.textContent = '✓ Site rebuilt successfully!'
+    status.className = 'build-status success'
+    showToast('Site rebuilt successfully!', 'success')
   } catch (e) {
-    status.textContent = '✗ Build failed: ' + e.message;
-    status.className = 'build-status error';
-    showToast('Build failed: ' + e.message, 'error');
+    status.textContent = '✗ Build failed: ' + e.message
+    status.className = 'build-status error'
+    showToast('Build failed: ' + e.message, 'error')
   } finally {
-    btn.disabled = false;
-    btn.textContent = '🔨 Rebuild Site';
+    btn.disabled = false
+    btn.textContent = '🔨 Rebuild Site'
   }
 }

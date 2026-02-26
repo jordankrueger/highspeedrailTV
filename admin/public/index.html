@@ -1,409 +1,535 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin | HighSpeedRail.tv</title>
-  <link rel="stylesheet" href="/admin.css">
-</head>
-<body>
-  <div id="app">
-    <!-- Login Screen -->
-    <div id="login-screen" class="login-container">
-      <div class="login-box">
-        <h1>🚄 HighSpeedRail.tv</h1>
-        <h2>Admin Panel</h2>
-        <form id="login-form">
-          <input type="password" id="password" placeholder="Enter admin password" required>
-          <button type="submit">Sign In</button>
-        </form>
-        <p id="login-error" class="error"></p>
-      </div>
-    </div>
-
-    <!-- Main Admin Panel -->
-    <div id="admin-panel" class="hidden">
-      <header class="admin-header">
-        <div class="header-left">
-          <h1>🚄 HighSpeedRail.tv Admin</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | HighSpeedRail.tv</title>
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Login Screen -->
+      <div id="login-screen" class="login-container">
+        <div class="login-box">
+          <h1>🚄 HighSpeedRail.tv</h1>
+          <h2>Admin Panel</h2>
+          <form id="login-form">
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter admin password"
+              required
+            />
+            <button type="submit">Sign In</button>
+          </form>
+          <p id="login-error" class="error"></p>
         </div>
-        <nav class="header-nav">
-          <button class="nav-btn active" data-tab="search">Search</button>
-          <button class="nav-btn" data-tab="queue">Queue <span id="queue-count" class="badge">0</span></button>
-          <button class="nav-btn" data-tab="published">Published</button>
-          <button class="nav-btn" data-tab="categories">Categories</button>
-          <button class="nav-btn" data-tab="presets">Presets</button>
-          <button class="nav-btn" data-tab="blocklist">Blocklist</button>
-          <button class="nav-btn" data-tab="settings">Settings</button>
-        </nav>
-        <button id="logout-btn" class="logout-btn">Sign Out</button>
-      </header>
+      </div>
 
-      <main class="admin-main">
-        <!-- Search Tab -->
-        <section id="search-tab" class="tab-content active">
-          <div class="search-header">
-            <div class="search-row">
-              <div class="search-box">
-                <input type="text" id="search-input" placeholder="Search YouTube (leave empty to browse recent HSR videos)...">
-                <button id="search-btn">Search</button>
+      <!-- Main Admin Panel -->
+      <div id="admin-panel" class="hidden">
+        <header class="admin-header">
+          <div class="header-left">
+            <h1>🚄 HighSpeedRail.tv Admin</h1>
+          </div>
+          <nav class="header-nav">
+            <button class="nav-btn active" data-tab="search">Search</button>
+            <button class="nav-btn" data-tab="queue">
+              Queue <span id="queue-count" class="badge">0</span>
+            </button>
+            <button class="nav-btn" data-tab="published">Published</button>
+            <button class="nav-btn" data-tab="categories">Categories</button>
+            <button class="nav-btn" data-tab="presets">Presets</button>
+            <button class="nav-btn" data-tab="blocklist">Blocklist</button>
+            <button class="nav-btn" data-tab="settings">Settings</button>
+          </nav>
+          <button id="logout-btn" class="logout-btn">Sign Out</button>
+        </header>
+
+        <main class="admin-main">
+          <!-- Search Tab -->
+          <section id="search-tab" class="tab-content active">
+            <div class="search-header">
+              <div class="search-row">
+                <div class="search-box">
+                  <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search YouTube (leave empty to browse recent HSR videos)..."
+                  />
+                  <button id="search-btn">Search</button>
+                </div>
+                <button id="browse-recent-btn" class="btn-secondary">
+                  Browse Recent
+                </button>
               </div>
-              <button id="browse-recent-btn" class="btn-secondary">Browse Recent</button>
-            </div>
 
-            <div class="filters-row">
-              <div class="filter-group">
-                <label>Time Period:</label>
-                <select id="filter-date">
-                  <option value="2y" selected>Last 2 years</option>
-                  <option value="1y">Last year</option>
-                  <option value="6m">Last 6 months</option>
-                  <option value="3m">Last 3 months</option>
-                  <option value="1m">Last month</option>
-                  <option value="all">All time</option>
+              <div class="filters-row">
+                <div class="filter-group">
+                  <label>Time Period:</label>
+                  <select id="filter-date">
+                    <option value="2y" selected>Last 2 years</option>
+                    <option value="1y">Last year</option>
+                    <option value="6m">Last 6 months</option>
+                    <option value="3m">Last 3 months</option>
+                    <option value="1m">Last month</option>
+                    <option value="all">All time</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label>Sort by:</label>
+                  <select id="filter-order">
+                    <option value="date" selected>Newest first</option>
+                    <option value="viewCount">Most viewed</option>
+                    <option value="relevance">Relevance</option>
+                    <option value="rating">Top rated</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label>Duration:</label>
+                  <select id="filter-duration">
+                    <option value="medium" selected>4-20 min</option>
+                    <option value="short">Under 4 min</option>
+                    <option value="long">Over 20 min</option>
+                    <option value="any">Any length</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label>Min views:</label>
+                  <select id="filter-views">
+                    <option value="0">Any</option>
+                    <option value="1000" selected>1K+</option>
+                    <option value="10000">10K+</option>
+                    <option value="100000">100K+</option>
+                    <option value="1000000">1M+</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label>Language:</label>
+                  <select id="filter-language">
+                    <option value="en" selected>English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="ja">Japanese</option>
+                    <option value="zh">Chinese</option>
+                    <option value="">Any language</option>
+                  </select>
+                </div>
+
+                <div class="filter-group checkbox">
+                  <label>
+                    <input type="checkbox" id="filter-hide-published" checked />
+                    Hide published/queued
+                  </label>
+                </div>
+              </div>
+
+              <div class="preset-selector">
+                <label>Quick Search:</label>
+                <select id="preset-select">
+                  <option value="">Select a preset...</option>
                 </select>
-              </div>
-
-              <div class="filter-group">
-                <label>Sort by:</label>
-                <select id="filter-order">
-                  <option value="date" selected>Newest first</option>
-                  <option value="viewCount">Most viewed</option>
-                  <option value="relevance">Relevance</option>
-                  <option value="rating">Top rated</option>
-                </select>
-              </div>
-
-              <div class="filter-group">
-                <label>Duration:</label>
-                <select id="filter-duration">
-                  <option value="medium" selected>4-20 min</option>
-                  <option value="short">Under 4 min</option>
-                  <option value="long">Over 20 min</option>
-                  <option value="any">Any length</option>
-                </select>
-              </div>
-
-              <div class="filter-group">
-                <label>Min views:</label>
-                <select id="filter-views">
-                  <option value="0">Any</option>
-                  <option value="1000" selected>1K+</option>
-                  <option value="10000">10K+</option>
-                  <option value="100000">100K+</option>
-                  <option value="1000000">1M+</option>
-                </select>
-              </div>
-
-              <div class="filter-group">
-                <label>Language:</label>
-                <select id="filter-language">
-                  <option value="en" selected>English</option>
-                  <option value="es">Spanish</option>
-                  <option value="fr">French</option>
-                  <option value="de">German</option>
-                  <option value="ja">Japanese</option>
-                  <option value="zh">Chinese</option>
-                  <option value="">Any language</option>
-                </select>
-              </div>
-
-              <div class="filter-group checkbox">
-                <label>
-                  <input type="checkbox" id="filter-hide-published" checked>
-                  Hide published/queued
-                </label>
+                <button id="run-preset-btn">Run</button>
               </div>
             </div>
 
-            <div class="preset-selector">
-              <label>Quick Search:</label>
-              <select id="preset-select">
-                <option value="">Select a preset...</option>
-              </select>
-              <button id="run-preset-btn">Run</button>
-            </div>
-          </div>
+            <div id="search-results" class="video-grid"></div>
+            <div id="search-pagination" class="pagination"></div>
+          </section>
 
-          <div id="search-results" class="video-grid"></div>
-          <div id="search-pagination" class="pagination"></div>
-        </section>
-
-        <!-- Queue Tab -->
-        <section id="queue-tab" class="tab-content">
-          <div class="tab-header">
-            <h2>Review Queue</h2>
-            <div class="header-actions">
-              <button id="ai-review-btn" class="btn-primary">🤖 AI Review</button>
-              <button id="bulk-import-btn" class="btn-secondary">+ Bulk Import</button>
-              <button id="clear-queue-btn" class="btn-danger">Clear Queue</button>
-              <div class="view-toggle">
-                <button class="view-btn active" data-view="grid">Grid</button>
-                <button class="view-btn" data-view="detail">Detail</button>
-              </div>
-            </div>
-          </div>
-          <div id="bulk-import-panel" class="bulk-import-panel hidden">
-            <h3>Bulk Import Videos</h3>
-            <p class="section-desc">Paste YouTube URLs (one per line, or comma-separated). Supports youtube.com/watch, youtu.be, and youtube.com/shorts links.</p>
-            <textarea id="bulk-urls" rows="6" placeholder="https://www.youtube.com/watch?v=abc123
-https://youtu.be/xyz789
-https://youtube.com/shorts/def456"></textarea>
-            <div class="bulk-import-actions">
-              <button id="bulk-cancel-btn" class="btn-secondary">Cancel</button>
-              <button id="bulk-submit-btn" class="btn-primary">Import Videos</button>
-            </div>
-            <div id="bulk-import-status"></div>
-          </div>
-          <!-- AI Review Panel -->
-          <div id="ai-review-panel" class="ai-review-panel hidden">
-            <div class="ai-review-header">
-              <h3>🤖 AI Review Results</h3>
-              <button id="ai-review-close" class="btn-secondary">Close</button>
-            </div>
-            <div id="ai-review-loading" class="ai-review-loading hidden">
-              <div class="spinner"></div>
-              <p>Claude is reviewing your queue...</p>
-            </div>
-            <div id="ai-review-results" class="ai-review-results hidden">
-              <div class="ai-review-summary">
-                <span id="ai-approve-count" class="approve-count">0 to approve</span>
-                <span id="ai-reject-count" class="reject-count">0 to reject</span>
-              </div>
-              <div class="ai-review-actions">
-                <button id="ai-accept-all" class="btn-primary">✓ Accept All Recommendations</button>
-                <button id="ai-approve-only" class="btn-secondary">Approve Only (skip rejections)</button>
-              </div>
-              <div id="ai-review-list" class="ai-review-list"></div>
-            </div>
-            <div id="ai-review-error" class="ai-review-error hidden"></div>
-          </div>
-          <div id="queue-content" class="video-grid"></div>
-        </section>
-
-        <!-- Published Tab -->
-        <section id="published-tab" class="tab-content">
-          <div class="tab-header">
-            <h2>Published Videos</h2>
-            <p class="subtitle" id="video-count">0 videos</p>
-          </div>
-
-          <!-- Featured Video Section -->
-          <div id="featured-section" class="featured-section hidden">
-            <div class="featured-header-bar">
-              <h3>⭐ Staff Pick (Featured on Homepage)</h3>
-            </div>
-            <div id="featured-video-card" class="featured-video-card"></div>
-          </div>
-
-          <div id="published-content" class="video-grid"></div>
-        </section>
-
-        <!-- Categories Tab -->
-        <section id="categories-tab" class="tab-content">
-          <div class="tab-header">
-            <h2>Manage Categories</h2>
-            <button id="add-category-btn" class="btn-primary">+ Add Category</button>
-          </div>
-          <div id="categories-content" class="categories-list"></div>
-        </section>
-
-        <!-- Presets Tab -->
-        <section id="presets-tab" class="tab-content">
-          <div class="tab-header">
-            <h2>Search Presets</h2>
-            <button id="add-preset-btn" class="btn-primary">+ Add Preset</button>
-          </div>
-          <div id="presets-content" class="presets-list"></div>
-        </section>
-
-        <!-- Blocklist Tab -->
-        <section id="blocklist-tab" class="tab-content">
-          <div class="tab-header">
-            <h2>Blocklist</h2>
-            <p class="subtitle">Filter out clickbait and unwanted content</p>
-          </div>
-
-          <div class="blocklist-sections">
-            <div class="blocklist-section">
-              <h3>Blocked Channels</h3>
-              <p class="section-desc">Videos from these channels will be hidden from search results</p>
-              <div class="add-form">
-                <input type="text" id="add-channel-input" placeholder="Channel name (exact match)">
-                <button id="add-channel-btn" class="btn-primary">Block Channel</button>
-              </div>
-              <div id="blocked-channels-list" class="blocklist-items"></div>
-            </div>
-
-            <div class="blocklist-section">
-              <h3>Blocked Keywords</h3>
-              <p class="section-desc">Videos with these words in the title will be hidden (case-insensitive)</p>
-              <div class="add-form">
-                <input type="text" id="add-keyword-input" placeholder="Keyword to block">
-                <button id="add-keyword-btn" class="btn-primary">Block Keyword</button>
-              </div>
-              <div id="blocked-keywords-list" class="blocklist-items"></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Settings Tab -->
-        <section id="settings-tab" class="tab-content">
-          <div class="tab-header">
-            <h2>Site Settings</h2>
-          </div>
-
-          <div class="settings-sections">
-            <!-- Analytics & Tracking Section -->
-            <div class="settings-section">
-              <h3>Analytics & Tracking</h3>
-              <p class="section-desc">Add Google Analytics to track your site's performance</p>
-
-              <div class="form-group">
-                <label for="ga-measurement-id">Google Analytics Measurement ID</label>
-                <input type="text" id="ga-measurement-id" placeholder="e.g. G-9BX8DMYS12" autocomplete="off">
-                <small>Find this in Google Analytics → Admin → Data Streams → Your stream</small>
-              </div>
-
-              <button type="button" id="save-tracking-btn" class="btn-primary">Save Tracking Settings</button>
-              <p id="tracking-status" class="build-status"></p>
-            </div>
-
-            <!-- Footer Links Section -->
-            <div class="settings-section">
-              <h3>Footer Links</h3>
-              <p class="section-desc">Manage the links that appear in the footer "Network" column</p>
-
-              <div id="footer-links-list" class="footer-links-list"></div>
-
-              <div class="add-footer-link-form">
-                <h4>Add New Link</h4>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="new-link-label">Label</label>
-                    <input type="text" id="new-link-label" placeholder="e.g. HSR Alliance">
-                  </div>
-                  <div class="form-group">
-                    <label for="new-link-url">URL</label>
-                    <input type="url" id="new-link-url" placeholder="https://example.com">
-                  </div>
-                  <button id="add-footer-link-btn" class="btn-primary">Add Link</button>
+          <!-- Queue Tab -->
+          <section id="queue-tab" class="tab-content">
+            <div class="tab-header">
+              <h2>Review Queue</h2>
+              <div class="header-actions">
+                <button id="ai-review-btn" class="btn-primary">
+                  🤖 AI Review
+                </button>
+                <button
+                  id="publish-all-btn"
+                  class="btn-primary"
+                  style="display: none"
+                  onclick="publishAll()"
+                >
+                  Publish All
+                </button>
+                <button id="bulk-import-btn" class="btn-secondary">
+                  + Bulk Import
+                </button>
+                <button id="clear-queue-btn" class="btn-danger">
+                  Clear Queue
+                </button>
+                <div class="view-toggle">
+                  <button class="view-btn active" data-view="grid">Grid</button>
+                  <button class="view-btn" data-view="detail">Detail</button>
                 </div>
               </div>
             </div>
-
-            <!-- Build Section -->
-            <div class="settings-section">
-              <h3>Build Site</h3>
-              <p class="section-desc">Rebuild the site to apply changes (new videos, footer links, etc.)</p>
-              <button id="build-site-btn" class="btn-primary">🔨 Rebuild Site</button>
-              <p id="build-status" class="build-status"></p>
+            <div id="bulk-import-panel" class="bulk-import-panel hidden">
+              <h3>Bulk Import Videos</h3>
+              <p class="section-desc">
+                Paste YouTube URLs (one per line, or comma-separated). Supports
+                youtube.com/watch, youtu.be, and youtube.com/shorts links.
+              </p>
+              <textarea
+                id="bulk-urls"
+                rows="6"
+                placeholder="https://www.youtube.com/watch?v=abc123
+https://youtu.be/xyz789
+https://youtube.com/shorts/def456"
+              ></textarea>
+              <div class="bulk-import-actions">
+                <button id="bulk-cancel-btn" class="btn-secondary">
+                  Cancel
+                </button>
+                <button id="bulk-submit-btn" class="btn-primary">
+                  Import Videos
+                </button>
+              </div>
+              <div id="bulk-import-status"></div>
             </div>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <!-- Video Detail Modal -->
-    <div id="video-modal" class="modal hidden">
-      <div class="modal-content">
-        <button class="modal-close">&times;</button>
-        <div class="modal-body">
-          <div class="video-preview">
-            <iframe id="modal-iframe" src="" allowfullscreen></iframe>
-          </div>
-          <div class="video-details">
-            <h2 id="modal-title"></h2>
-            <div class="video-meta">
-              <span id="modal-channel"></span>
-              <span id="modal-date"></span>
-              <span id="modal-views"></span>
+            <!-- AI Review Panel -->
+            <div id="ai-review-panel" class="ai-review-panel hidden">
+              <div class="ai-review-header">
+                <h3>🤖 AI Review Results</h3>
+                <button id="ai-review-close" class="btn-secondary">
+                  Close
+                </button>
+              </div>
+              <div id="ai-review-loading" class="ai-review-loading hidden">
+                <div class="spinner"></div>
+                <p>Claude is reviewing your queue...</p>
+              </div>
+              <div id="ai-review-results" class="ai-review-results hidden">
+                <div class="ai-review-summary">
+                  <span id="ai-approve-count" class="approve-count"
+                    >0 to approve</span
+                  >
+                  <span id="ai-reject-count" class="reject-count"
+                    >0 to reject</span
+                  >
+                </div>
+                <div class="ai-review-actions">
+                  <button id="ai-accept-all" class="btn-primary">
+                    ✓ Accept All Recommendations
+                  </button>
+                  <button id="ai-approve-only" class="btn-secondary">
+                    Approve Only (skip rejections)
+                  </button>
+                </div>
+                <div id="ai-review-list" class="ai-review-list"></div>
+              </div>
+              <div id="ai-review-error" class="ai-review-error hidden"></div>
             </div>
-            <p id="modal-description"></p>
+            <div id="queue-content" class="video-grid"></div>
+          </section>
 
-            <form id="approve-form" class="approve-form">
-              <h3>Add to Site</h3>
-              <div class="form-group">
-                <label for="modal-edit-title">Title</label>
-                <input type="text" id="modal-edit-title" required>
+          <!-- Published Tab -->
+          <section id="published-tab" class="tab-content">
+            <div class="tab-header">
+              <h2>Published Videos</h2>
+              <p class="subtitle" id="video-count">0 videos</p>
+            </div>
+
+            <!-- Featured Video Section -->
+            <div id="featured-section" class="featured-section hidden">
+              <div class="featured-header-bar">
+                <h3>⭐ Staff Pick (Featured on Homepage)</h3>
               </div>
-              <div class="form-group">
-                <label for="modal-edit-description">Description</label>
-                <textarea id="modal-edit-description" rows="3" required></textarea>
+              <div id="featured-video-card" class="featured-video-card"></div>
+            </div>
+
+            <div id="published-content" class="video-grid"></div>
+          </section>
+
+          <!-- Categories Tab -->
+          <section id="categories-tab" class="tab-content">
+            <div class="tab-header">
+              <h2>Manage Categories</h2>
+              <button id="add-category-btn" class="btn-primary">
+                + Add Category
+              </button>
+            </div>
+            <div id="categories-content" class="categories-list"></div>
+          </section>
+
+          <!-- Presets Tab -->
+          <section id="presets-tab" class="tab-content">
+            <div class="tab-header">
+              <h2>Search Presets</h2>
+              <button id="add-preset-btn" class="btn-primary">
+                + Add Preset
+              </button>
+            </div>
+            <div id="presets-content" class="presets-list"></div>
+          </section>
+
+          <!-- Blocklist Tab -->
+          <section id="blocklist-tab" class="tab-content">
+            <div class="tab-header">
+              <h2>Blocklist</h2>
+              <p class="subtitle">Filter out clickbait and unwanted content</p>
+            </div>
+
+            <div class="blocklist-sections">
+              <div class="blocklist-section">
+                <h3>Blocked Channels</h3>
+                <p class="section-desc">
+                  Videos from these channels will be hidden from search results
+                </p>
+                <div class="add-form">
+                  <input
+                    type="text"
+                    id="add-channel-input"
+                    placeholder="Channel name (exact match)"
+                  />
+                  <button id="add-channel-btn" class="btn-primary">
+                    Block Channel
+                  </button>
+                </div>
+                <div id="blocked-channels-list" class="blocklist-items"></div>
               </div>
-              <div class="form-group">
-                <label for="modal-category">Category</label>
-                <select id="modal-category" required></select>
+
+              <div class="blocklist-section">
+                <h3>Blocked Keywords</h3>
+                <p class="section-desc">
+                  Videos with these words in the title will be hidden
+                  (case-insensitive)
+                </p>
+                <div class="add-form">
+                  <input
+                    type="text"
+                    id="add-keyword-input"
+                    placeholder="Keyword to block"
+                  />
+                  <button id="add-keyword-btn" class="btn-primary">
+                    Block Keyword
+                  </button>
+                </div>
+                <div id="blocked-keywords-list" class="blocklist-items"></div>
               </div>
-              <div class="form-group checkbox">
-                <label>
-                  <input type="checkbox" id="modal-featured">
-                  Feature on homepage
-                </label>
+            </div>
+          </section>
+
+          <!-- Settings Tab -->
+          <section id="settings-tab" class="tab-content">
+            <div class="tab-header">
+              <h2>Site Settings</h2>
+            </div>
+
+            <div class="settings-sections">
+              <!-- Analytics & Tracking Section -->
+              <div class="settings-section">
+                <h3>Analytics & Tracking</h3>
+                <p class="section-desc">
+                  Add Google Analytics to track your site's performance
+                </p>
+
+                <div class="form-group">
+                  <label for="ga-measurement-id"
+                    >Google Analytics Measurement ID</label
+                  >
+                  <input
+                    type="text"
+                    id="ga-measurement-id"
+                    placeholder="e.g. G-9BX8DMYS12"
+                    autocomplete="off"
+                  />
+                  <small
+                    >Find this in Google Analytics → Admin → Data Streams → Your
+                    stream</small
+                  >
+                </div>
+
+                <button
+                  type="button"
+                  id="save-tracking-btn"
+                  class="btn-primary"
+                >
+                  Save Tracking Settings
+                </button>
+                <p id="tracking-status" class="build-status"></p>
               </div>
-              <div class="form-actions">
-                <button type="button" id="modal-reject-btn" class="btn-secondary">Remove from Queue</button>
-                <button type="submit" class="btn-primary">Approve & Publish</button>
+
+              <!-- Footer Links Section -->
+              <div class="settings-section">
+                <h3>Footer Links</h3>
+                <p class="section-desc">
+                  Manage the links that appear in the footer "Network" column
+                </p>
+
+                <div id="footer-links-list" class="footer-links-list"></div>
+
+                <div class="add-footer-link-form">
+                  <h4>Add New Link</h4>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="new-link-label">Label</label>
+                      <input
+                        type="text"
+                        id="new-link-label"
+                        placeholder="e.g. HSR Alliance"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="new-link-url">URL</label>
+                      <input
+                        type="url"
+                        id="new-link-url"
+                        placeholder="https://example.com"
+                      />
+                    </div>
+                    <button id="add-footer-link-btn" class="btn-primary">
+                      Add Link
+                    </button>
+                  </div>
+                </div>
               </div>
-            </form>
+
+              <!-- Build Section -->
+              <div class="settings-section">
+                <h3>Build Site</h3>
+                <p class="section-desc">
+                  Rebuild the site to apply changes (new videos, footer links,
+                  etc.)
+                </p>
+                <button id="build-site-btn" class="btn-primary">
+                  🔨 Rebuild Site
+                </button>
+                <p id="build-status" class="build-status"></p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <!-- Video Detail Modal -->
+      <div id="video-modal" class="modal hidden">
+        <div class="modal-content">
+          <button class="modal-close">&times;</button>
+          <div class="modal-body">
+            <div class="video-preview">
+              <iframe id="modal-iframe" src="" allowfullscreen></iframe>
+            </div>
+            <div class="video-details">
+              <h2 id="modal-title"></h2>
+              <div class="video-meta">
+                <span id="modal-channel"></span>
+                <span id="modal-date"></span>
+                <span id="modal-views"></span>
+              </div>
+              <p id="modal-description"></p>
+
+              <form id="approve-form" class="approve-form">
+                <h3>Add to Site</h3>
+                <div class="form-group">
+                  <label for="modal-edit-title">Title</label>
+                  <input type="text" id="modal-edit-title" required />
+                </div>
+                <div class="form-group">
+                  <label for="modal-edit-description">Description</label>
+                  <textarea
+                    id="modal-edit-description"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="modal-category">Category</label>
+                  <select id="modal-category" required></select>
+                </div>
+                <div class="form-group checkbox">
+                  <label>
+                    <input type="checkbox" id="modal-featured" />
+                    Feature on homepage
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button
+                    type="button"
+                    id="modal-reject-btn"
+                    class="btn-secondary"
+                  >
+                    Remove from Queue
+                  </button>
+                  <button type="submit" class="btn-primary">
+                    Approve & Publish
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Category Modal -->
-    <div id="category-modal" class="modal hidden">
-      <div class="modal-content small">
-        <button class="modal-close">&times;</button>
-        <h2 id="category-modal-title">Add Category</h2>
-        <form id="category-form">
-          <div class="form-group">
-            <label for="category-name">Name</label>
-            <input type="text" id="category-name" required>
-          </div>
-          <div class="form-group">
-            <label for="category-description">Description</label>
-            <textarea id="category-description" rows="2"></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="button" class="btn-secondary modal-cancel">Cancel</button>
-            <button type="submit" class="btn-primary">Save</button>
-          </div>
-        </form>
+      <!-- Category Modal -->
+      <div id="category-modal" class="modal hidden">
+        <div class="modal-content small">
+          <button class="modal-close">&times;</button>
+          <h2 id="category-modal-title">Add Category</h2>
+          <form id="category-form">
+            <div class="form-group">
+              <label for="category-name">Name</label>
+              <input type="text" id="category-name" required />
+            </div>
+            <div class="form-group">
+              <label for="category-description">Description</label>
+              <textarea id="category-description" rows="2"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-secondary modal-cancel">
+                Cancel
+              </button>
+              <button type="submit" class="btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <!-- Preset Modal -->
-    <div id="preset-modal" class="modal hidden">
-      <div class="modal-content small">
-        <button class="modal-close">&times;</button>
-        <h2 id="preset-modal-title">Add Search Preset</h2>
-        <form id="preset-form">
-          <div class="form-group">
-            <label for="preset-name">Name</label>
-            <input type="text" id="preset-name" required>
-          </div>
-          <div class="form-group">
-            <label for="preset-query">Search Query</label>
-            <input type="text" id="preset-query" required>
-            <small>Use OR for alternatives, quotes for exact phrases</small>
-          </div>
-          <div class="form-group">
-            <label for="preset-max-results">Max Results</label>
-            <input type="number" id="preset-max-results" value="10" min="1" max="50">
-          </div>
-          <div class="form-actions">
-            <button type="button" class="btn-secondary modal-cancel">Cancel</button>
-            <button type="submit" class="btn-primary">Save</button>
-          </div>
-        </form>
+      <!-- Preset Modal -->
+      <div id="preset-modal" class="modal hidden">
+        <div class="modal-content small">
+          <button class="modal-close">&times;</button>
+          <h2 id="preset-modal-title">Add Search Preset</h2>
+          <form id="preset-form">
+            <div class="form-group">
+              <label for="preset-name">Name</label>
+              <input type="text" id="preset-name" required />
+            </div>
+            <div class="form-group">
+              <label for="preset-query">Search Query</label>
+              <input type="text" id="preset-query" required />
+              <small>Use OR for alternatives, quotes for exact phrases</small>
+            </div>
+            <div class="form-group">
+              <label for="preset-max-results">Max Results</label>
+              <input
+                type="number"
+                id="preset-max-results"
+                value="10"
+                min="1"
+                max="50"
+              />
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-secondary modal-cancel">
+                Cancel
+              </button>
+              <button type="submit" class="btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
       </div>
+
+      <!-- Toast Notifications -->
+      <div id="toast-container"></div>
     </div>
 
-    <!-- Toast Notifications -->
-    <div id="toast-container"></div>
-  </div>
-
-  <script src="/admin.js"></script>
-</body>
+    <script src="/admin.js"></script>
+  </body>
 </html>
