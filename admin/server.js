@@ -2,7 +2,65 @@ const express = require('express')
 const session = require('express-session')
 const path = require('path')
 const fs = require('fs').promises
+const { execSync } = require('child_process')
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') })
+
+// Git helpers — repo root is one level up from admin/
+const REPO_ROOT = path.join(__dirname, '..')
+
+let lastPullTime = 0
+function gitPull() {
+  const now = Date.now()
+  if (now - lastPullTime < 30_000) return true // debounce: max once per 30s
+  lastPullTime = now
+  try {
+    execSync('git pull --ff-only', {
+      cwd: REPO_ROOT,
+      timeout: 10_000,
+      stdio: 'pipe',
+    })
+    console.log('[git] pull succeeded')
+    return true
+  } catch (err) {
+    console.error('[git] pull failed:', err.message)
+    return false
+  }
+}
+
+function gitPushFiles(files, message) {
+  try {
+    execSync(`git add ${files.join(' ')}`, {
+      cwd: REPO_ROOT,
+      timeout: 10_000,
+      stdio: 'pipe',
+    })
+
+    // Check if there are staged changes before committing
+    try {
+      execSync('git diff --cached --quiet', {
+        cwd: REPO_ROOT,
+        timeout: 5_000,
+        stdio: 'pipe',
+      })
+      console.log('[git] no changes to commit')
+      return true // nothing to commit is fine
+    } catch {
+      // diff --cached --quiet exits non-zero when there ARE changes — that's what we want
+    }
+
+    execSync(`git commit -m "${message}"`, {
+      cwd: REPO_ROOT,
+      timeout: 10_000,
+      stdio: 'pipe',
+    })
+    execSync('git push', { cwd: REPO_ROOT, timeout: 30_000, stdio: 'pipe' })
+    console.log(`[git] pushed: ${message}`)
+    return true
+  } catch (err) {
+    console.error('[git] push failed:', err.message)
+    return false
+  }
+}
 
 // Anthropic API helper (using native fetch instead of SDK)
 async function callClaude(messages, maxTokens = 4096) {
@@ -406,6 +464,7 @@ app.get('/api/youtube/video/:id', requireAuth, async (req, res) => {
 
 // Queue routes
 app.get('/api/queue', requireAuth, async (req, res) => {
+  gitPull()
   const queue = await readJSON(QUEUE_PATH)
   res.json(queue)
 })
@@ -483,7 +542,11 @@ app.post('/api/queue/:id/approve', requireAuth, async (req, res) => {
   await writeJSON(QUEUE_PATH, queue)
   await writeJSON(VIDEOS_PATH, videos)
 
-  res.json({ success: true })
+  const deployed = gitPushFiles(
+    ['src/_data/videos.json', 'admin/data/queue.json'],
+    `Approve video: ${(title || queueItem.title).slice(0, 50)}`
+  )
+  res.json({ success: true, deployed })
 })
 
 // Publish all queue items at once
@@ -511,7 +574,11 @@ app.post('/api/queue/publish-all', requireAuth, async (req, res) => {
   await writeJSON(QUEUE_PATH, [])
   await writeJSON(VIDEOS_PATH, videos)
 
-  res.json({ success: true, published: publishedCount })
+  const deployed = gitPushFiles(
+    ['src/_data/videos.json', 'admin/data/queue.json'],
+    `Publish ${publishedCount} videos from queue`
+  )
+  res.json({ success: true, published: publishedCount, deployed })
 })
 
 // Search presets routes
@@ -698,7 +765,8 @@ app.delete('/api/videos/:id', requireAuth, async (req, res) => {
   let videos = await readJSON(VIDEOS_PATH)
   videos = videos.filter((v) => v.id !== id)
   await writeJSON(VIDEOS_PATH, videos)
-  res.json({ success: true })
+  const deployed = gitPushFiles(['src/_data/videos.json'], `Remove video ${id}`)
+  res.json({ success: true, deployed })
 })
 
 // Set featured video
@@ -816,12 +884,10 @@ app.post('/api/build', requireAuth, async (req, res) => {
 // AI Review endpoint with streaming progress
 app.post('/api/ai-review', requireAuth, async (req, res) => {
   if (!process.env.ANTHROPIC_API_KEY) {
-    return res
-      .status(500)
-      .json({
-        error:
-          'Anthropic API key not configured. Add ANTHROPIC_API_KEY to your .env file.',
-      })
+    return res.status(500).json({
+      error:
+        'Anthropic API key not configured. Add ANTHROPIC_API_KEY to your .env file.',
+    })
   }
 
   try {
@@ -978,7 +1044,11 @@ app.post('/api/ai-review/apply', requireAuth, async (req, res) => {
     await writeJSON(QUEUE_PATH, queue)
     await writeJSON(VIDEOS_PATH, videos)
 
-    res.json({ success: true, approved })
+    const deployed = gitPushFiles(
+      ['src/_data/videos.json', 'admin/data/queue.json'],
+      `Bulk approve ${approved} videos via AI review`
+    )
+    res.json({ success: true, approved, deployed })
   } catch (error) {
     console.error('Bulk approve error:', error)
     res.status(500).json({ error: 'Failed to apply approvals' })
@@ -1008,8 +1078,12 @@ app.post('/api/ai-review/reject', requireAuth, async (req, res) => {
   }
 })
 
-// Serve admin page
-app.get('/admin*', (req, res) => {
+// Serve admin page — git pull only on initial page load (exact /admin)
+app.get('/admin', (req, res) => {
+  gitPull()
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
+app.get('/admin/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
