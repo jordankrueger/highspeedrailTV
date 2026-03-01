@@ -4,5 +4,6 @@ _site/
 *.log
 .env
 
-# Admin data (queue, presets stored locally)
-admin/data/
+# Admin data (machine-specific only)
+admin/data/presets.json
+admin/data/settings.json

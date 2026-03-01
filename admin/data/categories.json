@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "explainers",
+    "name": "Explainers",
+    "description": "Educational content explaining HSR concepts"
+  },
+  {
+    "slug": "myth-busting",
+    "name": "Myth Busting",
+    "description": "Debunking common misconceptions about rail"
+  },
+  {
+    "slug": "international-hsr",
+    "name": "International HSR",
+    "description": "High-speed rail systems around the world"
+  },
+  {
+    "slug": "construction-progress",
+    "name": "Construction Progress",
+    "description": "Updates on HSR projects being built"
+  },
+  {
+    "slug": "advocacy-speeches",
+    "name": "Advocacy & Speeches",
+    "description": "Pro-rail advocacy and public talks"
+  },
+  {
+    "slug": "rides-tours",
+    "name": "Rides & Tours",
+    "description": "First-person experiences riding HSR"
+  }
+]
