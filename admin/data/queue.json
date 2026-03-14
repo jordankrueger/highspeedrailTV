@@ -236,5 +236,20 @@
     "aiReason": "Educational content about Amtrak's coast-to-coast service proposals",
     "addedToQueue": "2026-03-08T17:00:59.913Z",
     "status": "pending"
+  },
+  {
+    "id": "3bsius731n0",
+    "title": "Moving to a New City in China by High-Speed Train",
+    "description": "Follow a journey from Shenzhen to Guangzhou via China's high-speed rail system as part of relocating to a new city. Shows the practical use of HSR for intercity travel.",
+    "thumbnail": "https://i.ytimg.com/vi/3bsius731n0/hqdefault.jpg",
+    "channelTitle": "Zaza in China",
+    "publishedAt": "2026-03-12T14:47:58Z",
+    "duration": "PT31M52S",
+    "viewCount": "196853",
+    "likeCount": "9871",
+    "category": "rides-tours",
+    "aiReason": "Shows high-speed rail travel experience as part of moving between Chinese cities",
+    "addedToQueue": "2026-03-14T14:03:47.537Z",
+    "status": "pending"
   }
 ]
