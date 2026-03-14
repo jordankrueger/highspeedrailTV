@@ -4,23 +4,24 @@
 
 :root {
   /* Primary colors - matching hsr.fyi */
-  --coral: #E07A5F;
+  --coral: #e07a5f;
   --coral-dark: #c96a52;
   --coral-light: #fdf0ed;
-  --teal: #1B4D4A;
-  --teal-light: #2A6B67;
-  --cream: #FFFBF7;
-  --cream-dark: #F5EDE6;
+  --teal: #1b4d4a;
+  --teal-light: #2a6b67;
+  --cream: #fffbf7;
+  --cream-dark: #f5ede6;
 
   /* Neutrals */
-  --text-primary: #2D3436;
-  --text-secondary: #636E72;
-  --text-light: #B2BEC3;
-  --border: #E8E0D8;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-light: #b2bec3;
+  --border: #e8e0d8;
   --white: #ffffff;
 
   /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   /* Layout */
@@ -44,7 +45,9 @@
 }
 
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -345,7 +348,9 @@ img {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .video-card:hover {
@@ -650,7 +655,9 @@ img {
 
 .subscribe-cta-input:focus {
   outline: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(224, 122, 95, 0.4);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 0 0 3px rgba(224, 122, 95, 0.4);
 }
 
 .subscribe-cta-btn {
@@ -663,7 +670,9 @@ img {
   font-weight: 600;
   font-family: var(--font-sans);
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -806,6 +815,10 @@ img {
   opacity: 0.8;
 }
 
+.footer-support-link {
+  color: var(--coral) !important;
+}
+
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -858,7 +871,6 @@ img {
 .network-banner-icon svg {
   display: block;
 }
-
 
 /* Utility Classes */
 .text-center {
