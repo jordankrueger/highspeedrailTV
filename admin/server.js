@@ -77,7 +77,7 @@ async function callClaude(messages, maxTokens = 4096) {
       'anthropic-version': '2023-06-01',
     },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-5-20250514',
       max_tokens: maxTokens,
       messages: messages,
     }),
@@ -525,6 +525,11 @@ app.post('/api/queue/:id/approve', requireAuth, async (req, res) => {
   // Add to videos.json
   const videos = await readJSON(VIDEOS_PATH)
 
+  // Dedup guard: skip if already published
+  if (videos.some((v) => v.id === id)) {
+    return res.status(409).json({ error: 'Video already published', id })
+  }
+
   // If this is marked as featured, unfeatured any existing featured video
   if (featured) {
     videos.forEach((v) => (v.featured = false))
@@ -559,7 +564,15 @@ app.post('/api/queue/publish-all', requireAuth, async (req, res) => {
 
   const videos = await readJSON(VIDEOS_PATH)
 
+  const publishedIds = new Set(videos.map((v) => v.id))
+  let skipped = 0
+
   for (const item of queue) {
+    if (publishedIds.has(item.id)) {
+      skipped++
+      continue
+    }
+    publishedIds.add(item.id)
     videos.unshift({
       id: item.id,
       title: item.title,
@@ -570,7 +583,7 @@ app.post('/api/queue/publish-all', requireAuth, async (req, res) => {
     })
   }
 
-  const publishedCount = queue.length
+  const publishedCount = queue.length - skipped
   await writeJSON(QUEUE_PATH, [])
   await writeJSON(VIDEOS_PATH, videos)
 
@@ -1020,9 +1033,15 @@ app.post('/api/ai-review/apply', requireAuth, async (req, res) => {
     const videos = await readJSON(VIDEOS_PATH)
     let approved = 0
 
+    const publishedIds = new Set(videos.map((v) => v.id))
+
     for (const approval of approvals) {
       const queueItem = queue.find((v) => v.id === approval.id)
       if (!queueItem) continue
+
+      // Skip if already published
+      if (publishedIds.has(approval.id)) continue
+      publishedIds.add(approval.id)
 
       // Remove from queue
       queue = queue.filter((v) => v.id !== approval.id)
