@@ -1,13 +1,5 @@
 [
   {
-    "id": "6nt72H7CNGs",
-    "title": "Riding Japan's Snowiest Bullet Train on a Heavy Snow Day: Tokaido Shinkansen",
-    "description": "Experience a journey on Japan's famous Tokaido Shinkansen bullet train from Kyoto to Maibara during heavy snowfall.",
-    "category": "rides-tours",
-    "addedToQueue": "2026-03-08T14:01:00.000Z",
-    "status": "approved"
-  },
-  {
     "id": "Xav6nrN6D5M",
     "title": "California's High-Speed Rail: Analysis of Project Challenges and Cost Overruns",
     "description": "A detailed examination of California's High-Speed Rail project, analyzing the cost increases, delays, and management issues.",
@@ -26,37 +18,13 @@
     "aiReason": "Railway museum capsule trains, not actual HSR content"
   },
   {
-    "id": "87yc31-yUqA",
-    "title": "Post-Chinese New Year Journey: High-Speed Train from Small Town to Big City",
-    "description": "Follow a 1500km journey back to Shenzhen after Chinese New Year, including a high-speed train ride.",
-    "category": "rides-tours",
-    "addedToQueue": "2026-03-08T14:01:00.000Z",
-    "status": "approved"
-  },
-  {
-    "id": "kE4_nbeJ53o",
-    "title": "Why Japan Sprays Water on 300 km/h Bullet Trains",
-    "description": "Learn about the engineering solution behind Japan's Shinkansen maintenance.",
-    "category": "explainers",
-    "addedToQueue": "2026-03-08T14:01:00.000Z",
-    "status": "approved"
-  },
-  {
     "id": "QZup4Zqt2iA",
     "title": "China's High-Speed Rail System: Performance and Financial Challenges",
     "description": "An investigation into China's high-speed rail network examining speed limitations, structural issues, and financial sustainability.",
     "category": "myth-busting",
     "addedToQueue": "2026-03-08T14:01:00.000Z",
     "status": "rejected",
-    "aiReason": "Financial challenges framing — borderline anti-rail"
-  },
-  {
-    "id": "E2OBZpXCNDQ",
-    "title": "Taking China's High-Speed Train During Spring Festival",
-    "description": "Experience traveling on China's high-speed rail network during the busiest travel period of the year.",
-    "category": "rides-tours",
-    "addedToQueue": "2026-03-08T14:01:00.000Z",
-    "status": "approved"
+    "aiReason": "Financial challenges framing \u2014 borderline anti-rail"
   },
   {
     "id": "a6ajajj4bZ8",
@@ -68,14 +36,6 @@
     "aiReason": "Anti-rail propaganda about China HSR failing"
   },
   {
-    "id": "xJJk-YebBkg",
-    "title": "US High Speed Rail News March 2026: CAHSR, Brightline West, Texas Central Updates",
-    "description": "Monthly roundup of developments in US high-speed rail projects.",
-    "category": "construction-progress",
-    "addedToQueue": "2026-03-08T14:01:00.000Z",
-    "status": "approved"
-  },
-  {
     "id": "QjI71ClXh18",
     "title": "China's High-Speed Rail: Investigating Wheel Technology and Safety Concerns",
     "description": "Investigates reports of vibration problems and safety concerns in China's high-speed rail system.",
@@ -83,44 +43,6 @@
     "addedToQueue": "2026-03-08T14:01:00.000Z",
     "status": "rejected",
     "aiReason": "Anti-China propaganda about HSR collapse"
-  },
-  {
-    "id": "1xApiIS4kNw",
-    "title": "What Is Happening With EU's Rail Megaprojects",
-    "description": "Comprehensive overview of the European Union's major railway infrastructure projects.",
-    "category": "construction-progress",
-    "addedToQueue": "2026-03-08T14:01:00.000Z",
-    "status": "approved"
-  },
-  {
-    "id": "yR_taldM9S8",
-    "title": "Riding China's High-Speed Rail Near the Russian Border in Winter",
-    "description": "Travel experience on China's high-speed rail system in the coldest northern regions, from the Russian border to Harbin.",
-    "thumbnail": "https://i.ytimg.com/vi/yR_taldM9S8/hqdefault.jpg",
-    "channelTitle": "Lisa The Russian",
-    "publishedAt": "2026-02-16T03:20:29Z",
-    "duration": "PT23M40S",
-    "viewCount": "30949",
-    "likeCount": "2586",
-    "category": "rides-tours",
-    "aiReason": "First-person experience on high-speed rail in northern China near Russian border",
-    "addedToQueue": "2026-03-08T17:00:59.912Z",
-    "status": "approved"
-  },
-  {
-    "id": "JWHROiz61mc",
-    "title": "Brightline High-Speed Rail Review: Orlando to Miami",
-    "description": "Complete review of Florida's Brightline high-speed rail service, including the travel experience and practical tips for cruise passengers.",
-    "thumbnail": "https://i.ytimg.com/vi/JWHROiz61mc/hqdefault.jpg",
-    "channelTitle": "Solo Cruise & Travel",
-    "publishedAt": "2026-02-26T20:35:53Z",
-    "duration": "PT22M5S",
-    "viewCount": "29241",
-    "likeCount": "961",
-    "category": "rides-tours",
-    "aiReason": "Review of Brightline high-speed rail service from Orlando to Miami",
-    "addedToQueue": "2026-03-08T17:00:59.912Z",
-    "status": "approved"
   },
   {
     "id": "VGcDop-EVNY",
@@ -138,21 +60,6 @@
     "status": "rejected"
   },
   {
-    "id": "2nHmhin7fEQ",
-    "title": "First Time Riding China's High-Speed Train: Beijing to Shanghai",
-    "description": "Complete travel experience on China's bullet train covering the 1,300km journey from Beijing to Shanghai at over 300km/h.",
-    "thumbnail": "https://i.ytimg.com/vi/2nHmhin7fEQ/hqdefault.jpg",
-    "channelTitle": "Rhea Shanika",
-    "publishedAt": "2026-03-01T02:45:02Z",
-    "duration": "PT20M32S",
-    "viewCount": "23719",
-    "likeCount": "1051",
-    "category": "rides-tours",
-    "aiReason": "First-person experience on China's high-speed rail from Beijing to Shanghai",
-    "addedToQueue": "2026-03-08T17:00:59.912Z",
-    "status": "approved"
-  },
-  {
     "id": "znPyHajQgYQ",
     "title": "USA's 10 Major Infrastructure Megaprojects Worth $10 Trillion",
     "description": "Overview of major infrastructure projects planned for the United States, including transportation and rail initiatives.",
@@ -166,21 +73,6 @@
     "aiReason": "General megaprojects, not rail-focused",
     "addedToQueue": "2026-03-08T17:00:59.913Z",
     "status": "rejected"
-  },
-  {
-    "id": "lpcugLaa2Uw",
-    "title": "Vietnam's $67 Billion High-Speed Railway Project: China vs Japan Competition",
-    "description": "Analysis of Vietnam's massive railway infrastructure project and the competition between Chinese and Japanese companies to build it.",
-    "thumbnail": "https://i.ytimg.com/vi/lpcugLaa2Uw/hqdefault.jpg",
-    "channelTitle": "Railways Explained",
-    "publishedAt": "2026-02-28T10:45:10Z",
-    "duration": "PT12M16S",
-    "viewCount": "14404",
-    "likeCount": "655",
-    "category": "construction-progress",
-    "aiReason": "Educational content about Vietnam's major railway project and international competition",
-    "addedToQueue": "2026-03-08T17:00:59.913Z",
-    "status": "approved"
   },
   {
     "id": "pi2PoVarJ38",
@@ -211,51 +103,6 @@
     "aiReason": "Only 70 seconds, CGTN state media clip",
     "addedToQueue": "2026-03-08T17:00:59.913Z",
     "status": "rejected"
-  },
-  {
-    "id": "cDOQX9jEsE0",
-    "title": "India's 7 New High-Speed Rail Corridors Explained",
-    "description": "Detailed explanation of India's plans for seven new bullet train corridors following the Mumbai-Ahmedabad project.",
-    "thumbnail": "https://i.ytimg.com/vi/cDOQX9jEsE0/hqdefault.jpg",
-    "channelTitle": "Indian Rail Dynamics",
-    "publishedAt": "2026-02-07T17:25:21Z",
-    "duration": "PT9M40S",
-    "viewCount": "10814",
-    "likeCount": "434",
-    "category": "explainers",
-    "aiReason": "Educational content explaining India's new bullet train corridor plans",
-    "addedToQueue": "2026-03-08T17:00:59.913Z",
-    "status": "approved"
-  },
-  {
-    "id": "kOYc9Qjy8Yw",
-    "title": "Amtrak's Proposed Coast-to-Coast Rail Service",
-    "description": "Analysis of Amtrak's historical attempts and proposals for direct coast-to-coast passenger rail service in the United States.",
-    "thumbnail": "https://i.ytimg.com/vi/kOYc9Qjy8Yw/hqdefault.jpg",
-    "channelTitle": "Ruairidh MacVeigh",
-    "publishedAt": "2026-03-07T08:00:49Z",
-    "duration": "PT16M50S",
-    "viewCount": "9814",
-    "likeCount": "567",
-    "category": "explainers",
-    "aiReason": "Educational content about Amtrak's coast-to-coast service proposals",
-    "addedToQueue": "2026-03-08T17:00:59.913Z",
-    "status": "approved"
-  },
-  {
-    "id": "3bsius731n0",
-    "title": "Moving to a New City in China by High-Speed Train",
-    "description": "Follow a journey from Shenzhen to Guangzhou via China's high-speed rail system as part of relocating to a new city. Shows the practical use of HSR for intercity travel.",
-    "thumbnail": "https://i.ytimg.com/vi/3bsius731n0/hqdefault.jpg",
-    "channelTitle": "Zaza in China",
-    "publishedAt": "2026-03-12T14:47:58Z",
-    "duration": "PT31M52S",
-    "viewCount": "196853",
-    "likeCount": "9871",
-    "category": "rides-tours",
-    "aiReason": "Shows high-speed rail travel experience as part of moving between Chinese cities",
-    "addedToQueue": "2026-03-14T14:03:47.537Z",
-    "status": "approved"
   },
   {
     "id": "tfcEib3NTPU",
@@ -396,126 +243,6 @@
     "aiReason": "Off-topic: Indonesia travel vlog, not HSR",
     "addedToQueue": "2026-03-14T20:00:00.000Z",
     "status": "rejected"
-  },
-  {
-    "id": "v03ePunroVw",
-    "title": "How China's High-Speed Rail Transformed a 12-Hour Journey into 2 Hours",
-    "description": "A personal account of witnessing China's rapid development through the transformation of a train journey from a 12-hour sleeper train to a 2-hour bullet train at 300+ km/h.",
-    "thumbnail": "https://i.ytimg.com/vi/v03ePunroVw/hqdefault.jpg",
-    "channelTitle": "The Fisher-Zhangs in China",
-    "publishedAt": "2026-03-18T10:17:32Z",
-    "duration": "PT3M",
-    "viewCount": "139310",
-    "likeCount": "7989",
-    "category": "rides-tours",
-    "aiReason": "Personal experience comparing traditional vs high-speed rail journey in China, showing transformation benefits",
-    "addedToQueue": "2026-03-20T17:00:25.846Z",
-    "status": "pending"
-  },
-  {
-    "id": "SYvD64HckSc",
-    "title": "How Japan Lost Indonesia's High-Speed Rail Project to China",
-    "description": "An analysis of how China secured Indonesia's first high-speed rail contract over Japan in 2015, and the financial challenges the 'Whoosh' train now faces in 2026.",
-    "thumbnail": "https://i.ytimg.com/vi/SYvD64HckSc/hqdefault.jpg",
-    "channelTitle": "Behind Asia",
-    "publishedAt": "2026-02-26T09:16:57Z",
-    "duration": "PT20M39S",
-    "viewCount": "95032",
-    "likeCount": "1769",
-    "category": "international-hsr",
-    "aiReason": "Detailed analysis of Indonesia's high-speed rail project, Japan vs China competition, and project outcomes",
-    "addedToQueue": "2026-03-20T17:00:25.846Z",
-    "status": "pending"
-  },
-  {
-    "id": "PPHM5XsqSTQ",
-    "title": "Riding Britain's Fastest Commuter Train: Cambridge to London",
-    "description": "A detailed ride experience on the Class 387 Electrostar from Cambridge to London King's Cross, evaluating whether this high-speed commuter service is worth the premium fare.",
-    "thumbnail": "https://i.ytimg.com/vi/PPHM5XsqSTQ/hqdefault.jpg",
-    "channelTitle": "Superalbs Travels",
-    "publishedAt": "2026-02-25T17:30:00Z",
-    "duration": "PT11M54S",
-    "viewCount": "45291",
-    "likeCount": "1627",
-    "category": "rides-tours",
-    "aiReason": "First-person journey on UK's fastest commuter train, evaluating service and value",
-    "addedToQueue": "2026-03-20T17:00:25.847Z",
-    "status": "pending"
-  },
-  {
-    "id": "pYs_GebMgV0",
-    "title": "Why Stuttgart 21 is Controversial: Germany's €10+ Billion Rail Project",
-    "description": "An in-depth explanation of Stuttgart 21, Germany's massive and controversial rail infrastructure project, covering the technical challenges and public opposition.",
-    "thumbnail": "https://i.ytimg.com/vi/pYs_GebMgV0/hqdefault.jpg",
-    "channelTitle": "Railways Explained",
-    "publishedAt": "2026-03-14T11:45:05Z",
-    "duration": "PT19M56S",
-    "viewCount": "30590",
-    "likeCount": "1298",
-    "category": "explainers",
-    "aiReason": "Educational content explaining Germany's controversial €10+ billion rail infrastructure project",
-    "addedToQueue": "2026-03-20T17:00:25.847Z",
-    "status": "pending"
-  },
-  {
-    "id": "kBQv-PkMp4E",
-    "title": "India's Bullet Train Project: The Truth About Japan's Support",
-    "description": "Debunking the myth that Japan is giving India free bullet trains, explaining the actual low-interest loan agreement and Shinkansen technology transfer.",
-    "thumbnail": "https://i.ytimg.com/vi/kBQv-PkMp4E/hqdefault.jpg",
-    "channelTitle": "FactXplain",
-    "publishedAt": "2026-03-20T04:48:26Z",
-    "duration": "PT1M5S",
-    "viewCount": "16550",
-    "likeCount": "0",
-    "category": "myth-busting",
-    "aiReason": "Clarifies misconceptions about Japan 'giving free' bullet trains to India, explains the actual loan structure",
-    "addedToQueue": "2026-03-20T17:00:25.847Z",
-    "status": "pending"
-  },
-  {
-    "id": "nmy2X05FL8I",
-    "title": "California High Speed Rail Pushes Opening to 2040",
-    "description": "Analysis of California High Speed Rail Authority's 2026 Draft Business Plan, examining the shifted timeline to 2040 and which sections will open first.",
-    "thumbnail": "https://i.ytimg.com/vi/nmy2X05FL8I/hqdefault.jpg",
-    "channelTitle": "Lucid Stew",
-    "publishedAt": "2026-03-16T15:11:46Z",
-    "duration": "PT28M27S",
-    "viewCount": "15023",
-    "likeCount": "979",
-    "category": "construction-progress",
-    "aiReason": "Detailed analysis of California HSR's updated timeline and business plan, covering project phases",
-    "addedToQueue": "2026-03-20T17:00:25.847Z",
-    "status": "pending"
-  },
-  {
-    "id": "3bGwqW8-7gc",
-    "title": "Taking China's Slow Train Instead of High-Speed Rail",
-    "description": "A solo traveler's experience choosing traditional Chinese trains over high-speed rail, offering insights into everyday railway life in China.",
-    "thumbnail": "https://i.ytimg.com/vi/3bGwqW8-7gc/hqdefault.jpg",
-    "channelTitle": "VAGA VAGABOND",
-    "publishedAt": "2026-03-13T16:00:06Z",
-    "duration": "PT15M59S",
-    "viewCount": "12660",
-    "likeCount": "778",
-    "category": "rides-tours",
-    "aiReason": "Travel experience comparing slow vs high-speed rail in China, offers perspective on rail travel options",
-    "addedToQueue": "2026-03-20T17:00:25.847Z",
-    "status": "pending"
-  },
-  {
-    "id": "Vhz70SDxczE",
-    "title": "Comparing China's and Japan's High-Speed Rail Systems",
-    "description": "A detailed comparison of Chinese and Japanese high-speed rail systems, examining China's massive scale versus Japan's superior integration and efficiency.",
-    "thumbnail": "https://i.ytimg.com/vi/Vhz70SDxczE/hqdefault.jpg",
-    "channelTitle": "Behind Asia",
-    "publishedAt": "2026-03-19T08:21:05Z",
-    "duration": "PT22M29S",
-    "viewCount": "12160",
-    "likeCount": "295",
-    "category": "international-hsr",
-    "aiReason": "Comparative analysis of Chinese vs Japanese high-speed rail systems, covering scale vs integration",
-    "addedToQueue": "2026-03-20T17:00:25.847Z",
-    "status": "pending"
   },
   {
     "id": "otJnVLgaq7k",
