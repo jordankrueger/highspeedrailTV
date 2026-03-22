@@ -79,3 +79,7 @@ The story of how China outmaneuvered Japan for Indonesia's first bullet train an
 The latest timeline update on the most watched (and most delayed) HSR project in the US.
 
 Browse all 296 videos at [highspeedrail.tv](https://highspeedrail.tv)
+
+---
+
+_A free weekly newsletter curated by [Jordan Krueger](https://jordankrueger.com)._
