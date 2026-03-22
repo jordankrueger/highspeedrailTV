@@ -66,14 +66,22 @@ The Trump DOT cancelled a $64 million federal planning grant for the Dallas-Hous
 
 New videos added this week:
 
+[![Comparing China's and Japan's HSR](https://img.youtube.com/vi/Vhz70SDxczE/mqdefault.jpg)](/video/Vhz70SDxczE/)
+
 **[Comparing China's and Japan's High-Speed Rail Systems](/video/Vhz70SDxczE/)**
 Two approaches to the same problem. How do the world's two biggest HSR networks actually stack up?
+
+[![Stuttgart 21](https://img.youtube.com/vi/pYs_GebMgV0/mqdefault.jpg)](/video/pYs_GebMgV0/)
 
 **[Why Stuttgart 21 is Controversial: Germany's €10+ Billion Rail Project](/video/pYs_GebMgV0/)**
 One of Europe's most expensive and contested infrastructure projects, explained.
 
+[![Japan Lost Indonesia HSR](https://img.youtube.com/vi/SYvD64HckSc/mqdefault.jpg)](/video/SYvD64HckSc/)
+
 **[How Japan Lost Indonesia's High-Speed Rail Project to China](/video/SYvD64HckSc/)**
 The story of how China outmaneuvered Japan for Indonesia's first bullet train and what it means for HSR geopolitics.
+
+[![California HSR 2040](https://img.youtube.com/vi/nmy2X05FL8I/mqdefault.jpg)](/video/nmy2X05FL8I/)
 
 **[California High Speed Rail Pushes Opening to 2040](/video/nmy2X05FL8I/)**
 The latest timeline update on the most watched (and most delayed) HSR project in the US.
