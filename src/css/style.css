@@ -881,6 +881,225 @@ img {
   margin-top: var(--spacing-lg);
 }
 
+/* Newsletter */
+.newsletter-hero {
+  text-align: center;
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+}
+
+.newsletter-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--teal);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.newsletter-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.newsletter-issues {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.newsletter-issue-card {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.newsletter-issue-card:hover {
+  border-color: var(--coral);
+  box-shadow: var(--shadow-md);
+}
+
+.newsletter-issue-number {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.newsletter-issue-date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-issue-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.newsletter-subscribe-cta {
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+}
+
+.newsletter-subscribe-cta h2 {
+  font-family: var(--font-serif);
+  color: var(--teal);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.subscribe-inline-form {
+  display: flex;
+  gap: var(--spacing-xs);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.subscribe-inline-form input[type='email'] {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+}
+
+.subscribe-inline-form button {
+  background: var(--coral);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.subscribe-inline-form button:hover {
+  background: var(--coral-dark);
+}
+
+/* Newsletter issue page */
+.newsletter-issue {
+  padding: var(--spacing-xl) 0;
+}
+
+.newsletter-issue-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.newsletter-back {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.newsletter-issue-header h1 {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: var(--teal);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.newsletter-issue-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.newsletter-issue-badge {
+  background: var(--coral-light);
+  color: var(--coral-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.newsletter-issue-body {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.newsletter-issue-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--teal);
+  margin: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+.newsletter-issue-body h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: var(--spacing-md) 0 var(--spacing-xs);
+}
+
+.newsletter-issue-body p {
+  color: var(--text-secondary);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.newsletter-issue-body a {
+  color: var(--coral);
+}
+
+.newsletter-issue-body a:hover {
+  color: var(--coral-dark);
+}
+
+.newsletter-issue-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--spacing-lg) 0;
+}
+
+.newsletter-issue-footer {
+  max-width: 680px;
+  margin: var(--spacing-xl) auto 0;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.newsletter-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.newsletter-footer-links a {
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.newsletter-issue-footer p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 var(--spacing-xs);
+}
+
+.newsletter-footer-byline {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
