@@ -4,6 +4,7 @@ let searchResults = []
 let nextPageToken = null
 let currentSearchQuery = ''
 let queue = []
+let showRejected = false
 let categories = []
 let presets = []
 let publishedVideos = []
@@ -484,7 +485,8 @@ async function loadQueue() {
   try {
     const res = await fetch('/api/queue')
     queue = await res.json()
-    document.getElementById('queue-count').textContent = queue.length
+    const pendingCount = queue.filter((v) => v.status !== 'rejected').length
+    document.getElementById('queue-count').textContent = pendingCount
     renderQueue()
     updateQueueButtons()
   } catch (e) {
@@ -495,7 +497,8 @@ async function loadQueue() {
 function updateQueueButtons() {
   const aiBtn = document.getElementById('ai-review-btn')
   const publishAllBtn = document.getElementById('publish-all-btn')
-  const allReviewed = queue.length > 0 && queue.every((v) => v.aiReason)
+  const pending = queue.filter((v) => v.status !== 'rejected')
+  const allReviewed = pending.length > 0 && pending.every((v) => v.aiReason)
 
   if (aiBtn) {
     if (allReviewed) {
@@ -508,17 +511,18 @@ function updateQueueButtons() {
   }
 
   if (publishAllBtn) {
-    publishAllBtn.style.display = queue.length > 0 ? '' : 'none'
+    publishAllBtn.style.display = pending.length > 0 ? '' : 'none'
   }
 }
 
 async function publishAll() {
-  if (queue.length === 0) {
-    showToast('Queue is empty', 'error')
+  const pending = queue.filter((v) => v.status !== 'rejected')
+  if (pending.length === 0) {
+    showToast('No pending videos to publish', 'error')
     return
   }
 
-  if (!confirm(`Publish all ${queue.length} videos to the site?`)) return
+  if (!confirm(`Publish all ${pending.length} videos to the site?`)) return
 
   try {
     const res = await fetch('/api/queue/publish-all', {
@@ -538,19 +542,37 @@ async function publishAll() {
   }
 }
 
+function toggleRejected() {
+  showRejected = !showRejected
+  renderQueue()
+}
+
 function renderQueue() {
   const container = document.getElementById('queue-content')
+  const filtered = showRejected
+    ? queue
+    : queue.filter((v) => v.status !== 'rejected')
+  const rejectedCount = queue.filter((v) => v.status === 'rejected').length
 
-  if (queue.length === 0) {
-    container.innerHTML =
-      '<div class="empty-state"><h3>Queue is empty</h3><p>Search for videos and add them to the queue for review</p></div>'
+  const toggleBtn = document.getElementById('toggle-rejected-btn')
+  if (toggleBtn) {
+    toggleBtn.textContent = showRejected
+      ? `Hide Rejected (${rejectedCount})`
+      : `Show Rejected (${rejectedCount})`
+    toggleBtn.style.display = rejectedCount > 0 ? '' : 'none'
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = showRejected
+      ? '<div class="empty-state"><h3>Queue is empty</h3><p>Search for videos and add them to the queue for review</p></div>'
+      : '<div class="empty-state"><h3>No pending videos</h3><p>Search for videos and add them to the queue, or show rejected items</p></div>'
     return
   }
 
   container.className =
     viewMode === 'detail' ? 'video-grid detail-view' : 'video-grid'
 
-  container.innerHTML = queue
+  container.innerHTML = filtered
     .map(
       (video) => `
     <div class="video-card" data-id="${video.id}">

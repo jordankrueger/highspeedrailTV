@@ -565,9 +565,11 @@ app.post('/api/queue/publish-all', requireAuth, async (req, res) => {
   const videos = await readJSON(VIDEOS_PATH)
 
   const publishedIds = new Set(videos.map((v) => v.id))
+  const pending = queue.filter((v) => v.status !== 'rejected')
+  const rejected = queue.filter((v) => v.status === 'rejected')
   let skipped = 0
 
-  for (const item of queue) {
+  for (const item of pending) {
     if (publishedIds.has(item.id)) {
       skipped++
       continue
@@ -583,8 +585,8 @@ app.post('/api/queue/publish-all', requireAuth, async (req, res) => {
     })
   }
 
-  const publishedCount = queue.length - skipped
-  await writeJSON(QUEUE_PATH, [])
+  const publishedCount = pending.length - skipped
+  await writeJSON(QUEUE_PATH, rejected)
   await writeJSON(VIDEOS_PATH, videos)
 
   const deployed = gitPushFiles(
