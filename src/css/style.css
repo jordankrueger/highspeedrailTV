@@ -4,9 +4,10 @@
 
 :root {
   /* Primary colors - matching hsr.fyi */
-  --coral: #e07a5f;
-  --coral-dark: #c96a52;
+  --coral: #b34e33;
+  --coral-dark: #994228;
   --coral-light: #fdf0ed;
+  --coral-on-dark: #f4a58e;
   --teal: #1b4d4a;
   --teal-light: #2a6b67;
   --cream: #fffbf7;
@@ -126,13 +127,13 @@ img {
 }
 
 .logo-tv {
-  color: var(--coral);
+  color: var(--coral-on-dark);
 }
 
 .logo-arrow {
   display: flex;
   align-items: center;
-  color: var(--coral);
+  color: var(--coral-on-dark);
   margin-left: 0.25rem;
 }
 
@@ -657,7 +658,7 @@ img {
   outline: none;
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.15),
-    0 0 0 3px rgba(224, 122, 95, 0.4);
+    0 0 0 3px rgba(179, 78, 51, 0.4);
 }
 
 .subscribe-cta-btn {
@@ -816,7 +817,7 @@ img {
 }
 
 .footer-support-link {
-  color: var(--coral) !important;
+  color: var(--coral-on-dark) !important;
 }
 
 @media (max-width: 900px) {

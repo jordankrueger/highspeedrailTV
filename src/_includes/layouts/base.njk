@@ -61,7 +61,7 @@
         <button type="submit" class="subscribe-cta-btn">Subscribe</button>
       </form>
       <p class="subscribe-cta-confirm" id="newsletter-confirm" style="display: none; color: rgba(255,255,255,0.9); font-size: 1rem;">You're subscribed! Welcome aboard.</p>
-      <p class="subscribe-cta-error" id="newsletter-error" style="display: none; color: #E07A5F; font-size: 0.9rem;">Something went wrong. Please try again.</p>
+      <p class="subscribe-cta-error" id="newsletter-error" style="display: none; color: #f4a58e; font-size: 0.9rem;">Something went wrong. Please try again.</p>
       <a href="/feed.xml" class="subscribe-cta-rss">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -174,6 +174,7 @@
               placeholder.addEventListener('click', function() {
                 const iframe = document.createElement('iframe');
                 iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+                iframe.title = card.querySelector('.video-title') ? card.querySelector('.video-title').textContent.trim() : 'YouTube video player';
                 iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
                 iframe.allowFullscreen = true;
                 placeholder.innerHTML = '';
