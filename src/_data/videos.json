@@ -1,5 +1,37 @@
 [
   {
+    "id": "zKgpvH6jDbA",
+    "title": "Why 200mph Trains Don't Fly Off the Tracks",
+    "description": "An in-depth explanation of the physics and engineering principles that keep high-speed trains stable on tracks at extreme speeds, covering forces, design, and safety systems.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-04-10"
+  },
+  {
+    "id": "s_OGwNQmyeI",
+    "title": "Guangzhou to Chongqing China High Speed Train Business Class Experience",
+    "description": "A travel vlog showcasing the business class experience on China's high-speed rail, demonstrating the speed, comfort, and efficiency of bullet train travel across long distances.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-04-10"
+  },
+  {
+    "id": "JD6z4YlajGI",
+    "title": "China Builds High-Speed Rail Tunnel Beneath the Yangtze River",
+    "description": "Coverage of China's ambitious underwater high-speed rail tunnel project using the world's largest tunneling machine to create a 14km passage beneath the Yangtze River.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-04-10"
+  },
+  {
+    "id": "jyc1o3ktzO4",
+    "title": "Riding China's High-Speed Rail at 398 km/h",
+    "description": "A first-person experience riding China's bullet trains at incredible speeds, showcasing the engineering capabilities of the world's fastest rail system.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-04-10"
+  },
+  {
     "id": "ixCvUtf1M-c",
     "title": "India's First 180kmph High-Speed Rail Trials on DDU-Howrah Route",
     "description": "Analysis of India's Mission Raftaar high-speed rail trials reaching 180kmph on the DDU-Howrah route. Technical explanation of India's progress toward higher-speed passenger rail service.",
