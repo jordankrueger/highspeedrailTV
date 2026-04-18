@@ -792,9 +792,9 @@
     "viewCount": "111071",
     "likeCount": "6037",
     "category": "rides-tours",
-    "aiReason": "First-person experience riding Brightline with cost analysis",
+    "aiReason": "Redundant premise with existing JWHROiz61mc (Brightline Orlando-Miami cruise review, Mar 1)",
     "addedToQueue": "2026-04-17T17:00:26.038Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "BpS4q6wKctg",
@@ -806,10 +806,10 @@
     "duration": "PT15M33S",
     "viewCount": "77451",
     "likeCount": "1164",
-    "category": "advocacy-speeches",
+    "category": "construction-progress",
     "aiReason": "Political discussion about California HSR project future with multiple candidate perspectives",
     "addedToQueue": "2026-04-17T17:00:26.038Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "XUwbRb4308o",
@@ -824,7 +824,7 @@
     "category": "international-hsr",
     "aiReason": "Direct comparison between Japanese Shinkansen and Chinese high-speed rail systems",
     "addedToQueue": "2026-04-17T17:00:26.038Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "N4VhuoMGulU",
@@ -837,9 +837,9 @@
     "viewCount": "22001",
     "likeCount": "218",
     "category": "rides-tours",
-    "aiReason": "17-minute detailed travel experience on Chinese high-speed rail in business class",
+    "aiReason": "Third VirtCam Travel China ride; redundant with already-approved Guangzhou-Chongqing",
     "addedToQueue": "2026-04-17T17:00:26.038Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "35dx5suLLD8",
@@ -854,7 +854,7 @@
     "category": "rides-tours",
     "aiReason": "Detailed experience riding Hong Kong's high-speed rail connection to mainland China",
     "addedToQueue": "2026-04-17T17:00:26.038Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "LZ6MplpY-PM",
@@ -867,9 +867,9 @@
     "viewCount": "12638",
     "likeCount": "350",
     "category": "explainers",
-    "aiReason": "Educational content explaining pantograph technology for continuous power in high-speed trains",
+    "aiReason": "36-second short, not substantive educational content",
     "addedToQueue": "2026-04-17T17:00:26.038Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "Dn5QkwN8a5s",
@@ -884,11 +884,11 @@
     "category": "construction-progress",
     "aiReason": "In-depth analysis of Japan's maglev construction project and its challenges",
     "addedToQueue": "2026-04-17T17:00:26.038Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "VkRQRpMr2Nc",
-    "title": "MOM FINALLY LET ME GO OUT! 🔓| Schoolboy Runaway",
+    "title": "MOM FINALLY LET ME GO OUT! \ud83d\udd13| Schoolboy Runaway",
     "channelTitle": "yoshigogame",
     "category": "",
     "aiReason": "Gaming content completely unrelated to rail or transit",
@@ -907,7 +907,7 @@
   {
     "id": "zQ_wqe70IFo",
     "title": "China just completed solar-powered highspeed railway - 2,800 km of track from Beijing to Guangzhou.",
-    "channelTitle": "Borgatv Studio 📺",
+    "channelTitle": "Borgatv Studio \ud83d\udcfa",
     "category": "",
     "aiReason": "Only 9 seconds long and appears to be unverified clickbait claim",
     "addedToQueue": "2026-04-17T17:00:26.039Z",
@@ -924,7 +924,7 @@
   },
   {
     "id": "WWZlpSzghHk",
-    "title": "Where California’s High-Speed Rail Billions Actually Went",
+    "title": "Where California\u2019s High-Speed Rail Billions Actually Went",
     "channelTitle": "Wes Austin",
     "category": "",
     "aiReason": "Too short at 59 seconds and appears to be comedy/clickbait rather than substantive analysis",
@@ -933,7 +933,7 @@
   },
   {
     "id": "zcPrkXnSn84",
-    "title": "Mumbai Ahmedabad Bullet Train 🚄 India’s Fastest Train Project Explained! #BulletTrain #India",
+    "title": "Mumbai Ahmedabad Bullet Train \ud83d\ude84 India\u2019s Fastest Train Project Explained! #BulletTrain #India",
     "channelTitle": "Vishal Verma",
     "category": "",
     "aiReason": "Too short at 22 seconds and under 30K views threshold for short-form content",
@@ -942,7 +942,7 @@
   },
   {
     "id": "cP5P4UGpjYo",
-    "title": "The Brilliant Engineering Behind Maglev Train Lock! 🤯⚙️",
+    "title": "The Brilliant Engineering Behind Maglev Train Lock! \ud83e\udd2f\u2699\ufe0f",
     "channelTitle": "KF Labs",
     "category": "",
     "aiReason": "Only 5 seconds long, too short for meaningful content",
@@ -951,7 +951,7 @@
   },
   {
     "id": "831wMe9GCNQ",
-    "title": "India’s First Bullet Train Explained | Mumbai–Ahmedabad Bullet Train Latest Update!",
+    "title": "India\u2019s First Bullet Train Explained | Mumbai\u2013Ahmedabad Bullet Train Latest Update!",
     "channelTitle": "Dailylearn Official",
     "category": "",
     "aiReason": "Only 41 seconds long and under view threshold for meaningful content",

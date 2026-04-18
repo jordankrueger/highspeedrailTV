@@ -2494,5 +2494,37 @@
     "category": "construction-progress",
     "featured": false,
     "dateAdded": "2026-04-17"
+  },
+  {
+    "id": "XUwbRb4308o",
+    "title": "Japan's Shinkansen vs China's High-Speed Rail: A Direct Comparison",
+    "description": "An honest comparison of riding Japan's bullet trains versus China's high-speed rail network, covering stations, ticketing, comfort, speed, and overall experience.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-04-17"
+  },
+  {
+    "id": "35dx5suLLD8",
+    "title": "Hong Kong's High-Speed Train to Guangzhou: MTR Vibrant Express First Class",
+    "description": "An in-depth look at riding the CRH380A bullet train on Hong Kong's only high-speed railway, connecting West Kowloon to Guangzhou South in first class.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-04-17"
+  },
+  {
+    "id": "Dn5QkwN8a5s",
+    "title": "Japan's $73 Billion Maglev Train Project: Engineering Challenges and Progress",
+    "description": "An examination of Japan's ambitious 374 MPH maglev railway project, exploring the technical achievements and construction challenges facing this massive infrastructure investment.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-04-17"
+  },
+  {
+    "id": "BpS4q6wKctg",
+    "title": "California Governor Candidates on High-Speed Rail Future",
+    "description": "California gubernatorial candidates share their positions on whether to continue, scale back, or reconsider the state's $14 billion high-speed rail project.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-04-17"
   }
 ]
