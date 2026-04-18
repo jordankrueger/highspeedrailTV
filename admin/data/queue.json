@@ -24,7 +24,7 @@
     "category": "myth-busting",
     "addedToQueue": "2026-03-08T14:01:00.000Z",
     "status": "rejected",
-    "aiReason": "Financial challenges framing — borderline anti-rail"
+    "aiReason": "Financial challenges framing \u2014 borderline anti-rail"
   },
   {
     "id": "a6ajajj4bZ8",
@@ -243,7 +243,7 @@
   },
   {
     "id": "tA2lz-gzc2c",
-    "title": "How To Make Koolickles 😮",
+    "title": "How To Make Koolickles \ud83d\ude2e",
     "channelTitle": "Zack D. Films",
     "category": "",
     "aiReason": "About making pickles, completely unrelated to rail/transit",
@@ -435,7 +435,7 @@
   },
   {
     "id": "qKfw2m4dtwA",
-    "title": "Why Standing Still Hurts More Than Walking 🤔",
+    "title": "Why Standing Still Hurts More Than Walking \ud83e\udd14",
     "channelTitle": "Zack D. Films",
     "category": "",
     "aiReason": "Not related to high-speed rail, trains, or transit infrastructure - appears to be about human physiology",
@@ -444,8 +444,8 @@
   },
   {
     "id": "dKPiTCniN-M",
-    "title": "長江水下高鐵「2.3兆豪賭」恐成噩夢！ 習近平「誤信基建」加速中國經濟危機！？【關鍵時刻】20260402-4 張炤和 黃世聰 呂國禎 姚惠珍 張禹宣",
-    "channelTitle": "關鍵時刻",
+    "title": "\u9577\u6c5f\u6c34\u4e0b\u9ad8\u9435\u300c2.3\u5146\u8c6a\u8ced\u300d\u6050\u6210\u5669\u5922\uff01 \u7fd2\u8fd1\u5e73\u300c\u8aa4\u4fe1\u57fa\u5efa\u300d\u52a0\u901f\u4e2d\u570b\u7d93\u6fdf\u5371\u6a5f\uff01\uff1f\u3010\u95dc\u9375\u6642\u523b\u301120260402-4 \u5f35\u70a4\u548c \u9ec3\u4e16\u8070 \u5442\u570b\u798e \u59da\u60e0\u73cd \u5f35\u79b9\u5ba3",
+    "channelTitle": "\u95dc\u9375\u6642\u523b",
     "category": "",
     "aiReason": "Chinese-language political commentary that appears to be critical analysis of infrastructure spending rather than educational HSR content",
     "addedToQueue": "2026-04-03T17:00:28.463Z",
@@ -453,7 +453,7 @@
   },
   {
     "id": "b3YuAHSSTM0",
-    "title": "China’s DEADLY High-Speed Train! Roof Pierced, 5-Hour Power Cut, Passengers Forbidden to Escape",
+    "title": "China\u2019s DEADLY High-Speed Train! Roof Pierced, 5-Hour Power Cut, Passengers Forbidden to Escape",
     "channelTitle": "China Observer",
     "category": "",
     "aiReason": "Anti-China propaganda content focused on fear-mongering rather than educational rail content",
@@ -462,7 +462,7 @@
   },
   {
     "id": "MNnJ8XDh2LQ",
-    "title": "Failed to Copy Japan! China’s High-Speed Rail Collapses from Core, Passengers Flee in Terror!",
+    "title": "Failed to Copy Japan! China\u2019s High-Speed Rail Collapses from Core, Passengers Flee in Terror!",
     "channelTitle": "Decoding China",
     "category": "",
     "aiReason": "Anti-China propaganda content focused on spreading negative narratives rather than educational rail content",
@@ -491,7 +491,7 @@
     "category": "international-hsr",
     "aiReason": "Comprehensive coverage of Vietnam's major high-speed rail project by reputable infrastructure channel",
     "addedToQueue": "2026-04-10T18:27:47.968Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "9Hm0_-bOB4Y",
@@ -506,7 +506,7 @@
     "category": "explainers",
     "aiReason": "Serious investigative journalism examining the state of HSR in the US by credible news organization",
     "addedToQueue": "2026-04-10T18:27:47.975Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "CcCKCR-l2Hc",
@@ -519,9 +519,9 @@
     "viewCount": "457535",
     "likeCount": "296",
     "category": "rides-tours",
-    "aiReason": "First-person experience riding China's high-speed rail in business class",
+    "aiReason": "New China TV is Chinese state media \u2014 prefer independent creators for rides-tours",
     "addedToQueue": "2026-04-10T18:27:47.975Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "M9XloGtIUec",
@@ -536,7 +536,7 @@
     "category": "rides-tours",
     "aiReason": "Detailed first-person experience exploring multiple classes on China's high-speed trains",
     "addedToQueue": "2026-04-10T18:27:47.979Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "AHckZ9rF01U",
@@ -549,9 +549,9 @@
     "viewCount": "35391",
     "likeCount": "376",
     "category": "rides-tours",
-    "aiReason": "Live rail cam showing transit operations, though not high-speed it's relevant transit content",
+    "aiReason": "24/7 Miami commuter rail livecam, not HSR and not curated content",
     "addedToQueue": "2026-04-10T18:27:47.980Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "rOT0BfaRJcE",
@@ -566,7 +566,7 @@
     "category": "rides-tours",
     "aiReason": "First-person experience on France's high-speed rail service",
     "addedToQueue": "2026-04-10T18:27:47.982Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "7FibaGlszls",
@@ -581,7 +581,7 @@
     "category": "construction-progress",
     "aiReason": "Updates on Brightline's operational expansion with longer train sets",
     "addedToQueue": "2026-04-10T18:27:47.982Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "-vmQb706bBA",
@@ -594,9 +594,9 @@
     "viewCount": "22339",
     "likeCount": "233",
     "category": "explainers",
-    "aiReason": "Brief but informative comparison of global HSR development by credible news source",
+    "aiReason": "Redundant 30-second clip of the full 13-min 60 Minutes piece already approved",
     "addedToQueue": "2026-04-10T18:27:47.982Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "lYhIUvCjFLc",
@@ -611,7 +611,7 @@
     "category": "international-hsr",
     "aiReason": "Educational content about European high-speed rail networks from established rail channel",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "VlnLv8LCZ90",
@@ -624,9 +624,9 @@
     "viewCount": "19476",
     "likeCount": "857",
     "category": "rides-tours",
-    "aiReason": "First-person experience of first-class HSR travel in China",
+    "aiReason": "59-second short, redundant with existing China HSR rides content",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "btVyY0__elk",
@@ -641,7 +641,7 @@
     "category": "construction-progress",
     "aiReason": "Comprehensive monthly update on multiple US high-speed rail projects",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "approved"
   },
   {
     "id": "PlVPKOJRS3I",
@@ -654,9 +654,9 @@
     "viewCount": "17370",
     "likeCount": "371",
     "category": "construction-progress",
-    "aiReason": "Factual reporting on California HSR challenges by credible news source",
+    "aiReason": "Redundant 1:13 clip of the full 60 Minutes US HSR piece already approved",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "vwghtUZQ6kE",
@@ -669,9 +669,9 @@
     "viewCount": "16757",
     "likeCount": "263",
     "category": "construction-progress",
-    "aiReason": "News coverage of federal funding issues for California HSR project",
+    "aiReason": "Redundant 1:07 clip from the 60 Minutes US HSR coverage already approved",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "gfJTlWqD31E",
@@ -684,9 +684,9 @@
     "viewCount": "12120",
     "likeCount": "361",
     "category": "international-hsr",
-    "aiReason": "Technical content about world's fastest bullet train testing and development",
+    "aiReason": "New China TV state media + short-form; Yangtze tunnel CGTN piece already covers China HSR",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "RRzeoePSImM",
@@ -699,9 +699,9 @@
     "viewCount": "11253",
     "likeCount": "175",
     "category": "rides-tours",
-    "aiReason": "First-person travel experience on China's high-speed rail network",
+    "aiReason": "Redundant with last week's approved VirtCam Travel Guangzhou-Chongqing ride (same channel/format)",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "QfzmpI8HEd0",
@@ -714,9 +714,9 @@
     "viewCount": "10129",
     "likeCount": "402",
     "category": "construction-progress",
-    "aiReason": "Important technical update about California HSR infrastructure planning",
+    "aiReason": "Redundant 45-second Lucid Stew short; full monthly roundup already approved this week",
     "addedToQueue": "2026-04-10T18:27:47.983Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "1BU5hqbU1z4",
@@ -729,7 +729,7 @@
   },
   {
     "id": "4D3vQNPq0CU",
-    "title": "California’s High-Speed Rail Gets a DISASTROUS Update",
+    "title": "California\u2019s High-Speed Rail Gets a DISASTROUS Update",
     "channelTitle": "Adam Carolla",
     "category": "",
     "aiReason": "Anti-rail propaganda/clickbait drama from entertainment personality, not constructive coverage",
@@ -774,7 +774,7 @@
   },
   {
     "id": "2glqrfNxJJI",
-    "title": "Free snacks on China’s high-speed trains? #chinatravel #tourguide #highspeedtrain #foodie #travel",
+    "title": "Free snacks on China\u2019s high-speed trains? #chinatravel #tourguide #highspeedtrain #foodie #travel",
     "channelTitle": "Emily in China ",
     "category": "",
     "aiReason": "Under 10K views threshold and very short food-focused content",
