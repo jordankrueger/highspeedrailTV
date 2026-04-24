@@ -959,36 +959,6 @@
     "status": "rejected"
   },
   {
-    "id": "OITBl7oTwqc",
-    "title": "How Japan Prevents Ice and Heat on Bullet Trains",
-    "description": "Technical explanation of the engineering solutions Japan uses to protect Shinkansen trains from extreme weather conditions. Short but informative look at HSR climate adaptations.",
-    "thumbnail": "https://i.ytimg.com/vi/OITBl7oTwqc/hqdefault.jpg",
-    "channelTitle": "Small World",
-    "publishedAt": "2026-04-11T22:00:21Z",
-    "duration": "PT29S",
-    "viewCount": "743589",
-    "likeCount": "12843",
-    "category": "explainers",
-    "aiReason": "Educational content explaining technical aspects of bullet train engineering",
-    "addedToQueue": "2026-04-24T17:00:30.160Z",
-    "status": "pending"
-  },
-  {
-    "id": "D-Oa2vEr8Rs",
-    "title": "The Biggest Train Station in the World is Now Open",
-    "description": "In-depth look at Chongqing East Station, exploring China's massive infrastructure projects and the engineering behind this unprecedented rail facility. The B1M provides detailed analysis of the world's largest train station.",
-    "thumbnail": "https://i.ytimg.com/vi/D-Oa2vEr8Rs/hqdefault.jpg",
-    "channelTitle": "The B1M",
-    "publishedAt": "2026-04-22T14:00:11Z",
-    "duration": "PT19M34S",
-    "viewCount": "509054",
-    "likeCount": "17506",
-    "category": "international-hsr",
-    "aiReason": "High-quality documentary about major HSR infrastructure project by reputable channel",
-    "addedToQueue": "2026-04-24T17:00:30.160Z",
-    "status": "pending"
-  },
-  {
     "id": "tou0uMrTFiA",
     "title": "How 4 Trains Can Cross at Once Safely",
     "description": "Explanation of railway signaling systems, track switching, and timing coordination that allows multiple trains to cross simultaneously without collision. Educational look at rail safety engineering.",
@@ -1001,7 +971,7 @@
     "category": "explainers",
     "aiReason": "Educational content explaining railway signaling and engineering systems",
     "addedToQueue": "2026-04-24T17:00:30.160Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "39S4aTuw1JU",
@@ -1016,37 +986,7 @@
     "category": "international-hsr",
     "aiReason": "Shows innovative HSR seat automation technology, relevant to rail engineering",
     "addedToQueue": "2026-04-24T17:00:30.160Z",
-    "status": "pending"
-  },
-  {
-    "id": "WYFWueIVJsk",
-    "title": "China's High-Speed Rail Business Class Experience",
-    "description": "First-hand experience traveling business class on China's bullet trains from Zhangjiajie to Chongqing. Detailed walkthrough of the boarding process, amenities, and journey on Chinese HSR.",
-    "thumbnail": "https://i.ytimg.com/vi/WYFWueIVJsk/hqdefault.jpg",
-    "channelTitle": "Bevetravels",
-    "publishedAt": "2026-04-23T02:04:32Z",
-    "duration": "PT27M50S",
-    "viewCount": "22102",
-    "likeCount": "1134",
-    "category": "rides-tours",
-    "aiReason": "First-person experience riding China's high-speed rail business class",
-    "addedToQueue": "2026-04-24T17:00:30.160Z",
-    "status": "pending"
-  },
-  {
-    "id": "bUfjdkNL6k0",
-    "title": "Siemens Charger Locomotives: 10 Year History and Variants",
-    "description": "Comprehensive overview of the Siemens Charger locomotive series, covering the history and different model variants used in passenger rail service across North America over the past decade.",
-    "thumbnail": "https://i.ytimg.com/vi/bUfjdkNL6k0/hqdefault.jpg",
-    "channelTitle": "CoasterFan2105",
-    "publishedAt": "2026-04-17T16:01:07Z",
-    "duration": "PT20M11S",
-    "viewCount": "21297",
-    "likeCount": "694",
-    "category": "explainers",
-    "aiReason": "Educational content about modern passenger rail locomotives, relevant to rail infrastructure",
-    "addedToQueue": "2026-04-24T17:00:30.160Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "bA4r8VcokKs",
@@ -1061,37 +1001,7 @@
     "category": "international-hsr",
     "aiReason": "Educational content about India's bullet train adaptations and modifications",
     "addedToQueue": "2026-04-24T17:00:30.161Z",
-    "status": "pending"
-  },
-  {
-    "id": "pw8WIS7dvh0",
-    "title": "Riding China's Fastest Bullet Train: Dandong to Beijing",
-    "description": "Travel experience on China's CR400 high-speed train covering nearly 1,000 kilometers from Dandong to Beijing. Four-hour journey showcasing the speed and efficiency of Chinese HSR.",
-    "thumbnail": "https://i.ytimg.com/vi/pw8WIS7dvh0/hqdefault.jpg",
-    "channelTitle": "Cori Ander ",
-    "publishedAt": "2026-04-17T13:01:39Z",
-    "duration": "PT15M26S",
-    "viewCount": "15921",
-    "likeCount": "734",
-    "category": "rides-tours",
-    "aiReason": "First-person travel experience on China's high-speed rail system",
-    "addedToQueue": "2026-04-24T17:00:30.161Z",
-    "status": "pending"
-  },
-  {
-    "id": "b-Ajv8rByfs",
-    "title": "How Spain Built Its First High-Speed Railway: Madrid-Seville AVE",
-    "description": "Historical look at the development of Spain's first high-speed rail line, the Madrid-Seville AVE corridor. Railways Explained covers the engineering and planning behind this pioneering European HSR project.",
-    "thumbnail": "https://i.ytimg.com/vi/b-Ajv8rByfs/hqdefault.jpg",
-    "channelTitle": "Railways Explained",
-    "publishedAt": "2026-04-18T09:45:02Z",
-    "duration": "PT15M1S",
-    "viewCount": "15216",
-    "likeCount": "669",
-    "category": "international-hsr",
-    "aiReason": "Educational documentary about Spain's first high-speed railway development",
-    "addedToQueue": "2026-04-24T17:00:30.161Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "1SbEK4t3jxI",
@@ -1106,7 +1016,7 @@
     "category": "construction-progress",
     "aiReason": "Coverage of India's planned high-speed rail corridors and development timeline",
     "addedToQueue": "2026-04-24T17:00:30.161Z",
-    "status": "pending"
+    "status": "rejected"
   },
   {
     "id": "Oa-lYnlh10I",

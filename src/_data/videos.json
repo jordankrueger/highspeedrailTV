@@ -1,5 +1,53 @@
 [
   {
+    "id": "OITBl7oTwqc",
+    "title": "How Japan Prevents Ice and Heat on Bullet Trains",
+    "description": "Technical explanation of the engineering solutions Japan uses to protect Shinkansen trains from extreme weather conditions. Short but informative look at HSR climate adaptations.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-04-24"
+  },
+  {
+    "id": "D-Oa2vEr8Rs",
+    "title": "The Biggest Train Station in the World is Now Open",
+    "description": "In-depth look at Chongqing East Station, exploring China's massive infrastructure projects and the engineering behind this unprecedented rail facility. The B1M provides detailed analysis of the world's largest train station.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-04-24"
+  },
+  {
+    "id": "WYFWueIVJsk",
+    "title": "China's High-Speed Rail Business Class Experience",
+    "description": "First-hand experience traveling business class on China's bullet trains from Zhangjiajie to Chongqing. Detailed walkthrough of the boarding process, amenities, and journey on Chinese HSR.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-04-24"
+  },
+  {
+    "id": "pw8WIS7dvh0",
+    "title": "Riding China's Fastest Bullet Train: Dandong to Beijing",
+    "description": "Travel experience on China's CR400 high-speed train covering nearly 1,000 kilometers from Dandong to Beijing. Four-hour journey showcasing the speed and efficiency of Chinese HSR.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-04-24"
+  },
+  {
+    "id": "b-Ajv8rByfs",
+    "title": "How Spain Built Its First High-Speed Railway: Madrid-Seville AVE",
+    "description": "Historical look at the development of Spain's first high-speed rail line, the Madrid-Seville AVE corridor. Railways Explained covers the engineering and planning behind this pioneering European HSR project.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-04-24"
+  },
+  {
+    "id": "bUfjdkNL6k0",
+    "title": "Siemens Charger Locomotives: 10 Year History and Variants",
+    "description": "Comprehensive overview of the Siemens Charger locomotive series, covering the history and different model variants used in passenger rail service across North America over the past decade.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-04-24"
+  },
+  {
     "id": "zKgpvH6jDbA",
     "title": "Why 200mph Trains Don't Fly Off the Tracks",
     "description": "An in-depth explanation of the physics and engineering principles that keep high-speed trains stable on tracks at extreme speeds, covering forces, design, and safety systems.",
@@ -105,7 +153,7 @@
   },
   {
     "id": "pYs_GebMgV0",
-    "title": "Why Stuttgart 21 is Controversial: Germany's \u20ac10+ Billion Rail Project",
+    "title": "Why Stuttgart 21 is Controversial: Germany's €10+ Billion Rail Project",
     "description": "An in-depth explanation of Stuttgart 21, Germany's massive and controversial rail infrastructure project, covering the technical challenges and public opposition.",
     "category": "explainers",
     "featured": false,
@@ -426,23 +474,23 @@
   {
     "id": "PcA-Rcka69A",
     "title": "BULLET TRAIN vs PLANE across JAPAN! Which is Faster?",
-    "description": "A race across Japan comparing Shinkansen bullet train vs domestic flight \u2014 which gets you there first? Great production quality and fun format.",
+    "description": "A race across Japan comparing Shinkansen bullet train vs domestic flight — which gets you there first? Great production quality and fun format.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-02-20"
   },
   {
     "id": "lCNtDe83tuE",
-    "title": "Brightline Orlando 2.5 Years Later \u2014 Was It Worth It?",
-    "description": "An honest review of Brightline's Orlando service after 2.5 years of operation \u2014 ridership, experience, and whether it lives up to the hype.",
+    "title": "Brightline Orlando 2.5 Years Later — Was It Worth It?",
+    "description": "An honest review of Brightline's Orlando service after 2.5 years of operation — ridership, experience, and whether it lives up to the hype.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-02-20"
   },
   {
     "id": "NaDq_wjOGk4",
-    "title": "First Class on Germany's High Speed ICE Train \u2014 Premium Experience or Overrated",
-    "description": "A walkthrough of Deutsche Bahn's ICE high-speed train first class from Frankfurt \u2014 is the premium experience worth it?",
+    "title": "First Class on Germany's High Speed ICE Train — Premium Experience or Overrated",
+    "description": "A walkthrough of Deutsche Bahn's ICE high-speed train first class from Frankfurt — is the premium experience worth it?",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-02-20"
@@ -457,7 +505,7 @@
   },
   {
     "id": "TVdtJUtePNM",
-    "title": "Germany Just Built Europe's BEST Ever High-Speed Train \u2014 Here's Why!",
+    "title": "Germany Just Built Europe's BEST Ever High-Speed Train — Here's Why!",
     "description": "Germany's new high-speed ICE train and what makes it stand out from the competition across Europe.",
     "category": "international-hsr",
     "featured": false,
@@ -466,7 +514,7 @@
   {
     "id": "Dkiu7FpSB4Y",
     "title": "America's First High Speed Train was a Failure... But What If it Wasn't?",
-    "description": "The history of the Budd Metroliner and America's first attempt at high-speed rail \u2014 what went wrong and what could have been.",
+    "description": "The history of the Budd Metroliner and America's first attempt at high-speed rail — what went wrong and what could have been.",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2026-02-20"
@@ -474,7 +522,7 @@
   {
     "id": "F0JFyIh_1Zk",
     "title": "The Infrastructure War America Already Lost",
-    "description": "How China built 20,000+ miles of high-speed rail while America wasn't looking \u2014 a comparison of infrastructure investment strategies.",
+    "description": "How China built 20,000+ miles of high-speed rail while America wasn't looking — a comparison of infrastructure investment strategies.",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2026-02-20"
@@ -490,7 +538,7 @@
   {
     "id": "HNVwmpCnrms",
     "title": "New Portal Bridge in N.J. is nearing completion",
-    "description": "CBS News coverage of the Portal Bridge replacement project on the Northeast Corridor \u2014 a major infrastructure upgrade nearing completion.",
+    "description": "CBS News coverage of the Portal Bridge replacement project on the Northeast Corridor — a major infrastructure upgrade nearing completion.",
     "category": "construction-progress",
     "featured": false,
     "dateAdded": "2026-02-20"
@@ -498,7 +546,7 @@
   {
     "id": "mjCiu1o7BQw",
     "title": "Inside Amtrak's New Airo Train | A First Look at the Future of Passenger Rail",
-    "description": "Official Amtrak first look at the new Airo fleet \u2014 the next generation of passenger rail in America.",
+    "description": "Official Amtrak first look at the new Airo fleet — the next generation of passenger rail in America.",
     "category": "construction-progress",
     "featured": false,
     "dateAdded": "2026-02-20"
@@ -506,7 +554,7 @@
   {
     "id": "3iNdYRkrDl8",
     "title": "California Wants to Seal Records on Its Most Expensive Mistake",
-    "description": "California's high-speed rail went from $33B to an estimated $128B \u2014 and now a bill could shield project records from public scrutiny.",
+    "description": "California's high-speed rail went from $33B to an estimated $128B — and now a bill could shield project records from public scrutiny.",
     "category": "advocacy-speeches",
     "featured": false,
     "dateAdded": "2026-02-20"
@@ -514,7 +562,7 @@
   {
     "id": "RmKV0_9_o68",
     "title": "How Punctual Are Trains Across Europe's Major Rail Networks?",
-    "description": "Data-driven comparison of on-time performance across European rail systems \u2014 who's actually running on schedule?",
+    "description": "Data-driven comparison of on-time performance across European rail systems — who's actually running on schedule?",
     "category": "international-hsr",
     "featured": false,
     "dateAdded": "2026-02-20"
@@ -538,7 +586,7 @@
   {
     "id": "jktlZ8706Bc",
     "title": "Amtrak's New High Speed Train is Great, But...",
-    "description": "Alan Fisher's smart analysis of the new Acela trainsets \u2014 what they get right, where they fall short, and what it means for US high-speed rail.",
+    "description": "Alan Fisher's smart analysis of the new Acela trainsets — what they get right, where they fall short, and what it means for US high-speed rail.",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2026-02-12"
@@ -721,15 +769,15 @@
   },
   {
     "id": "nxHrwhVN--k",
-    "title": "India\u2019s First Bullet Train Explained | Mumbai\u2013Ahmedabad Bullet Train Latest Update!",
-    "description": "India's First Bullet Train Explained | Mumbai\u2013Ahmedabad Bullet Train Latest Update | Mumbai Ahmedabad High-Speed Rail ...",
+    "title": "India’s First Bullet Train Explained | Mumbai–Ahmedabad Bullet Train Latest Update!",
+    "description": "India's First Bullet Train Explained | Mumbai–Ahmedabad Bullet Train Latest Update | Mumbai Ahmedabad High-Speed Rail ...",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2026-01-27"
   },
   {
     "id": "iXl4loDNXjw",
-    "title": "Z\u00fcrich to Paris at 320km/h on the AMAZING HIGH SPEED TGV Lyria in First Class!",
+    "title": "Zürich to Paris at 320km/h on the AMAZING HIGH SPEED TGV Lyria in First Class!",
     "description": "The TGV Lyria has been providing high speed rail links between France and Switzerland for over 30 years and is by far the best ...",
     "category": "rides-tours",
     "featured": false,
@@ -738,7 +786,7 @@
   {
     "id": "bbALyNVRYbo",
     "title": "New Acela from a Highrise - Feb 26 2024 [Xtra: 016]",
-    "description": "A new Avelia Liberty trainset makes it's way from Philadelphia to Boston where it will undergo further testing. \n\n---------------\n\u25b6\ufe0fPlease Subscribe: https://www.youtube.com/@RailWeekly \n-------------",
+    "description": "A new Avelia Liberty trainset makes it's way from Philadelphia to Boston where it will undergo further testing. \n\n---------------\n▶️Please Subscribe: https://www.youtube.com/@RailWeekly \n-------------",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -786,7 +834,7 @@
   {
     "id": "p6eKIxFRF28",
     "title": "Sweden's Iconic High-Speed Train! Is the X2000 Still Good 25 Years Later?",
-    "description": "A first-class journey aboard Sweden's experimental X2000 high-speed train with tilting technology, evaluating its performance after 25 years of service from Stockholm to G\u00f6teborg.",
+    "description": "A first-class journey aboard Sweden's experimental X2000 high-speed train with tilting technology, evaluating its performance after 25 years of service from Stockholm to Göteborg.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -889,7 +937,7 @@
   },
   {
     "id": "0Uva5-rdiYQ",
-    "title": "Europe's Newest High Speed Train: \u00d6BB Railjet through the Alps",
+    "title": "Europe's Newest High Speed Train: ÖBB Railjet through the Alps",
     "description": "Experience Austria's brand new Railjet high-speed train from Munich to Bologna via the stunning Brenner Pass through the Alps.",
     "category": "rides-tours",
     "featured": false,
@@ -914,7 +962,7 @@
   {
     "id": "WaAPl-E1_Bs",
     "title": "Global Best Practices for Cutting the Cost of Building High Speed Rail",
-    "description": "The historic investment in intercity passenger rail is an opportunity to significantly expand and improve the rail network around the country. However, one of the biggest barriers to this investment\u2019s",
+    "description": "The historic investment in intercity passenger rail is an opportunity to significantly expand and improve the rail network around the country. However, one of the biggest barriers to this investment’s",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -1034,7 +1082,7 @@
   {
     "id": "H3ERUP3B8H0",
     "title": "Germany's Troubled BR 102 High-Speed Regional Express: A Ride Experience",
-    "description": "Riding Germany's notorious BR 102 trains on the M\u00fcnchen-N\u00fcrnberg Express, exploring the challenges and quirks of this modern high-speed regional service.",
+    "description": "Riding Germany's notorious BR 102 trains on the München-Nürnberg Express, exploring the challenges and quirks of this modern high-speed regional service.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -1122,7 +1170,7 @@
   {
     "id": "gLowUjTF6Og",
     "title": "Why I Love This INCREDIBLE Brand-New Czech High-Speed Train",
-    "description": "A detailed review of the brand-new \u010cD ComfortJet carriages in the Czech Republic, showcasing the amazing onboard features of this revolutionary international rail service.",
+    "description": "A detailed review of the brand-new ČD ComfortJet carriages in the Czech Republic, showcasing the amazing onboard features of this revolutionary international rail service.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -1170,7 +1218,7 @@
   {
     "id": "ylz8Xx0UT_Q",
     "title": "Riding Spain's NEW Talgo Avril High Speed Train - AVE Service Review",
-    "description": "A detailed review of Spain's newest high-speed train, the Talgo Avril, on an AVE service from Madrid to Gij\u00f3n, examining the features and performance of this latest HSR technology.",
+    "description": "A detailed review of Spain's newest high-speed train, the Talgo Avril, on an AVE service from Madrid to Gijón, examining the features and performance of this latest HSR technology.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -1217,7 +1265,7 @@
   },
   {
     "id": "h1h042xnw9c",
-    "title": "Traveling on the World's DEEPEST High-Speed Train - SBB Giruno Z\u00fcrich to Milan",
+    "title": "Traveling on the World's DEEPEST High-Speed Train - SBB Giruno Zürich to Milan",
     "description": "A first-class journey on Switzerland's Giruno high-speed train through the remarkable 57km Gotthard Base Tunnel, the world's longest and deepest railway tunnel.",
     "category": "rides-tours",
     "featured": false,
@@ -1658,7 +1706,7 @@
   {
     "id": "JPB-M_0RcbE",
     "title": "Egypt's Ambitious Plan to Introduce High Speed Rail",
-    "description": "Egypt's \u20ac8 billion partnership with Siemens to build what will become the world's sixth largest high-speed rail system.",
+    "description": "Egypt's €8 billion partnership with Siemens to build what will become the world's sixth largest high-speed rail system.",
     "category": "construction-progress",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -1977,7 +2025,7 @@
   },
   {
     "id": "rCIUYt2u8xc",
-    "title": "Velaro Novo \u2013 The most economically efficient high-speed train",
+    "title": "Velaro Novo – The most economically efficient high-speed train",
     "description": "3The Velaro Novo is the most economically efficient high-speed train available in the market. In this interview, Michael Kopp, Program Director for the entire platform, tells us how Siemens Mobility m",
     "category": "explainers",
     "featured": false,
@@ -2217,7 +2265,7 @@
   },
   {
     "id": "HqeVrXTqLOM",
-    "title": "India's First High-Speed Railway: Mumbai\u2013Ahmedabad Bullet Train Project",
+    "title": "India's First High-Speed Railway: Mumbai–Ahmedabad Bullet Train Project",
     "description": "Overview of India's ambitious Mumbai-Ahmedabad high-speed rail corridor project, covering alignment, financing, and environmental considerations.",
     "category": "construction-progress",
     "featured": false,
@@ -2226,7 +2274,7 @@
   {
     "id": "nPaoKwzS4NY",
     "title": "I Will Ride - A High-Speed Rail Student Program",
-    "description": "I Will Ride is designed to inform, engage, inspire and connect students to the nation\u2019s first high-speed rail system currently under construction. Want to be a part of it? Learn more at https://hsr.ca",
+    "description": "I Will Ride is designed to inform, engage, inspire and connect students to the nation’s first high-speed rail system currently under construction. Want to be a part of it? Learn more at https://hsr.ca",
     "category": "explainers",
     "featured": false,
     "dateAdded": "2026-01-18"
@@ -2434,7 +2482,7 @@
   {
     "id": "E2OBZpXCNDQ",
     "title": "Taking China's High-Speed Train During Spring Festival",
-    "description": "Riding China's high-speed rail during the world's largest annual human migration \u2014 the Spring Festival travel rush.",
+    "description": "Riding China's high-speed rail during the world's largest annual human migration — the Spring Festival travel rush.",
     "category": "rides-tours",
     "featured": false,
     "dateAdded": "2026-03-14"
