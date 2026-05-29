@@ -1662,5 +1662,83 @@
     "aiReason": "Political content about war budgets, not specifically about rail infrastructure",
     "addedToQueue": "2026-05-22T17:00:28.276Z",
     "status": "rejected"
+  },
+  {
+    "id": "4gsnvjXiGyw",
+    "title": "Why Japan Is Building India's Bullet Train: The Strategic Story Behind the Mumbai-Ahmedabad HSR Project",
+    "description": "An analysis of the geopolitical and economic factors behind Japan's massive investment in India's first bullet train line. Explores the strategic partnership and what it means for the future of HSR in India.",
+    "thumbnail": "https://i.ytimg.com/vi/4gsnvjXiGyw/hqdefault.jpg",
+    "channelTitle": "upGrad",
+    "publishedAt": "2026-05-28T14:30:07Z",
+    "duration": "PT11M49S",
+    "viewCount": "220640",
+    "likeCount": "7561",
+    "category": "international-hsr",
+    "aiReason": "Educational content about India's bullet train project and Japan's strategic involvement",
+    "addedToQueue": "2026-05-29T17:00:23.743Z",
+    "status": "pending"
+  },
+  {
+    "id": "ORFZeWP4Xjo",
+    "title": "The Three Things Stopping Amtrak from Expanding",
+    "description": "Despite record ridership and strong public support, Amtrak's expansion remains limited. This video examines the key obstacles preventing faster growth of passenger rail in America.",
+    "thumbnail": "https://i.ytimg.com/vi/ORFZeWP4Xjo/hqdefault.jpg",
+    "channelTitle": "Car Free Keith",
+    "publishedAt": "2026-05-16T16:16:34Z",
+    "duration": "PT25M40S",
+    "viewCount": "60217",
+    "likeCount": "2463",
+    "category": "explainers",
+    "aiReason": "Educational analysis of barriers to passenger rail expansion in the US",
+    "addedToQueue": "2026-05-29T17:00:23.743Z",
+    "status": "pending"
+  },
+  {
+    "id": "Wq5A3cUi2Vs",
+    "title": "Spring 2026 California High Speed Rail Construction Update",
+    "description": "Recent construction progress on California's HSR project including updates on the Houston Ave, Conejo Viaduct, and SR-43 Jersey Ave sections. Shows significant changes from previous months.",
+    "thumbnail": "https://i.ytimg.com/vi/Wq5A3cUi2Vs/hqdefault.jpg",
+    "channelTitle": "mateosssss",
+    "publishedAt": "2026-05-21T03:51:23Z",
+    "duration": "PT6M44S",
+    "viewCount": "36410",
+    "likeCount": "1385",
+    "category": "construction-progress",
+    "aiReason": "Construction update on California High Speed Rail project with recent footage",
+    "addedToQueue": "2026-05-29T17:00:23.743Z",
+    "status": "pending"
+  },
+  {
+    "id": "5YjMq8aNJRc",
+    "title": "The Remarkable Transformation of Poland's Railway System",
+    "description": "How Poland went from decades of railway decline to becoming one of Europe's most dynamic rail markets. Covers infrastructure modernization, ridership growth, and ambitious high-speed rail plans.",
+    "thumbnail": "https://i.ytimg.com/vi/5YjMq8aNJRc/hqdefault.jpg",
+    "channelTitle": "Railways Explained",
+    "publishedAt": "2026-05-23T11:45:19Z",
+    "duration": "PT19M15S",
+    "viewCount": "14544",
+    "likeCount": "804",
+    "category": "international-hsr",
+    "aiReason": "In-depth analysis of Poland's railway transformation and HSR plans",
+    "addedToQueue": "2026-05-29T17:00:23.744Z",
+    "status": "pending"
+  },
+  {
+    "id": "2D-_QSIGE1M",
+    "title": "Why Japan’s Bullet Train Is So Fast 🏎️😳",
+    "channelTitle": "CosmicIn60",
+    "category": "explainers",
+    "aiReason": "Video is only 5 seconds long, too short to provide meaningful educational content",
+    "addedToQueue": "2026-05-29T17:00:23.744Z",
+    "status": "rejected"
+  },
+  {
+    "id": "Z3pKoSyIlYI",
+    "title": "2 dead after Brightline train collides with vehicle in West Palm Beach",
+    "channelTitle": "WPTV News - FL Palm Beaches and Treasure Coast",
+    "category": "construction-progress",
+    "aiReason": "News report about fatal accident, not educational or constructive content about rail infrastructure",
+    "addedToQueue": "2026-05-29T17:00:23.744Z",
+    "status": "rejected"
   }
 ]
