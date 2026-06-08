@@ -4,10 +4,13 @@ pagination:
   data: videos
   size: 1
   alias: video
+  addAllPagesToCollections: true
 permalink: /video/{{ video.id }}/
 eleventyComputed:
   title: "{{ video.title }}"
   description: "{{ video.description }}"
+  ogType: video.other
+  ogImage: "https://img.youtube.com/vi/{{ video.id }}/maxresdefault.jpg"
 ---
 
 <section class="section">
@@ -35,6 +38,19 @@ eleventyComputed:
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": {{ video.title | dump | safe }},
+  "description": {{ video.description | dump | safe }},
+  "thumbnailUrl": "https://img.youtube.com/vi/{{ video.id }}/maxresdefault.jpg",
+  "uploadDate": "{{ video.dateAdded }}",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/{{ video.id }}",
+  "contentUrl": "https://www.youtube.com/watch?v={{ video.id }}"
+}
+</script>
 
 {% set relatedVideos = videos | filterByCategory(video.category) %}
 {% if relatedVideos.length > 1 %}

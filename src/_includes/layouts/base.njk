@@ -5,6 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title | default("HighSpeedRail.TV") }} | HighSpeedRail.TV</title>
   <meta name="description" content="{{ description | default("Curated videos about high-speed rail in America and around the world.") }}">
+  {% if ogImage and ogImage.startsWith('http') %}
+    {% set ogCardImage = ogImage %}
+  {% else %}
+    {% set ogCardImage = site.siteUrl + "/images/og-image.png" %}
+  {% endif %}
+  <link rel="canonical" href="{{ site.siteUrl }}{{ page.url }}">
+  <link rel="icon" href="/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon-16.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1B4D4A">
+  <meta property="og:site_name" content="HighSpeedRail.TV">
+  <meta property="og:type" content="{{ ogType | default('website') }}">
+  <meta property="og:title" content="{{ title | default('HighSpeedRail.TV') }} | HighSpeedRail.TV">
+  <meta property="og:description" content="{{ description | default('Curated videos about high-speed rail in America and around the world.') }}">
+  <meta property="og:url" content="{{ site.siteUrl }}{{ page.url }}">
+  <meta property="og:image" content="{{ ogCardImage }}">
+  {% if not ogImage %}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title | default('HighSpeedRail.TV') }} | HighSpeedRail.TV">
+  <meta name="twitter:description" content="{{ description | default('Curated videos about high-speed rail in America and around the world.') }}">
+  <meta name="twitter:image" content="{{ ogCardImage }}">
+  {% if page.url == '/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "HighSpeedRail.TV",
+        "url": "https://highspeedrail.tv",
+        "description": "Curated videos about high-speed rail in America and around the world."
+      },
+      {
+        "@type": "Organization",
+        "name": "HighSpeedRail.TV",
+        "url": "https://highspeedrail.tv",
+        "description": "Curated videos about high-speed rail in America and around the world.",
+        "logo": "https://highspeedrail.tv/images/icon-512.png"
+      }
+    ]
+  }
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="/css/style.css">
   <link rel="alternate" type="application/atom+xml" title="HighSpeedRail.TV Feed" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,6 +202,7 @@
       </div>
       <div class="footer-bottom">
         <p>© 2026 HighSpeedRail.TV · Curated by <a href="https://jordankrueger.com">Jordan</a> · <a href="https://ko-fi.com/highspeedrail" class="footer-support-link" target="_blank" rel="noopener">Support this project</a></p>
+        <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/accessibility">Accessibility</a></p>
       </div>
     </div>
   </footer>

@@ -2,6 +2,10 @@ module.exports = function(eleventyConfig) {
   // Pass through CSS and images to output directory
   eleventyConfig.addPassthroughCopy({"src/css": "css"});
   eleventyConfig.addPassthroughCopy({"src/images": "images"});
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
+  eleventyConfig.addPassthroughCopy({ "src/site.webmanifest": "site.webmanifest" });
+  eleventyConfig.addPassthroughCopy({ "src/images/favicon.ico": "favicon.ico" });
+  eleventyConfig.addPassthroughCopy({ "src/images/apple-touch-icon.png": "apple-touch-icon.png" });
 
   // Add date filter for formatting
   eleventyConfig.addFilter("dateFormat", (dateString) => {
