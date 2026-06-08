@@ -565,8 +565,11 @@ app.post('/api/queue/publish-all', requireAuth, async (req, res) => {
   const videos = await readJSON(VIDEOS_PATH)
 
   const publishedIds = new Set(videos.map((v) => v.id))
-  const pending = queue.filter((v) => v.status !== 'rejected')
-  const rejected = queue.filter((v) => v.status === 'rejected')
+  const pending = []
+  const rejected = []
+  for (const item of queue) {
+    ;(item.status === 'rejected' ? rejected : pending).push(item)
+  }
   let skipped = 0
 
   for (const item of pending) {

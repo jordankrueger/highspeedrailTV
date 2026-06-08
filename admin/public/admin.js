@@ -5,6 +5,15 @@ let nextPageToken = null
 let currentSearchQuery = ''
 let queue = []
 let showRejected = false
+
+function getPendingAndRejected() {
+  const pending = []
+  const rejected = []
+  for (const v of queue) {
+    ;(v.status === 'rejected' ? rejected : pending).push(v)
+  }
+  return { pending, rejected }
+}
 let categories = []
 let presets = []
 let publishedVideos = []
@@ -485,8 +494,8 @@ async function loadQueue() {
   try {
     const res = await fetch('/api/queue')
     queue = await res.json()
-    const pendingCount = queue.filter((v) => v.status !== 'rejected').length
-    document.getElementById('queue-count').textContent = pendingCount
+    const { pending } = getPendingAndRejected()
+    document.getElementById('queue-count').textContent = pending.length
     renderQueue()
     updateQueueButtons()
   } catch (e) {
@@ -497,7 +506,7 @@ async function loadQueue() {
 function updateQueueButtons() {
   const aiBtn = document.getElementById('ai-review-btn')
   const publishAllBtn = document.getElementById('publish-all-btn')
-  const pending = queue.filter((v) => v.status !== 'rejected')
+  const { pending } = getPendingAndRejected()
   const allReviewed = pending.length > 0 && pending.every((v) => v.aiReason)
 
   if (aiBtn) {
@@ -516,7 +525,7 @@ function updateQueueButtons() {
 }
 
 async function publishAll() {
-  const pending = queue.filter((v) => v.status !== 'rejected')
+  const { pending } = getPendingAndRejected()
   if (pending.length === 0) {
     showToast('No pending videos to publish', 'error')
     return
@@ -549,17 +558,15 @@ function toggleRejected() {
 
 function renderQueue() {
   const container = document.getElementById('queue-content')
-  const filtered = showRejected
-    ? queue
-    : queue.filter((v) => v.status !== 'rejected')
-  const rejectedCount = queue.filter((v) => v.status === 'rejected').length
+  const { pending, rejected } = getPendingAndRejected()
+  const filtered = showRejected ? queue : pending
 
   const toggleBtn = document.getElementById('toggle-rejected-btn')
   if (toggleBtn) {
     toggleBtn.textContent = showRejected
-      ? `Hide Rejected (${rejectedCount})`
-      : `Show Rejected (${rejectedCount})`
-    toggleBtn.style.display = rejectedCount > 0 ? '' : 'none'
+      ? `Hide Rejected (${rejected.length})`
+      : `Show Rejected (${rejected.length})`
+    toggleBtn.style.display = rejected.length > 0 ? '' : 'none'
   }
 
   if (filtered.length === 0) {
