@@ -46,7 +46,7 @@ eleventyComputed:
   "name": {{ video.title | dump | safe }},
   "description": {{ video.description | dump | safe }},
   "thumbnailUrl": "https://img.youtube.com/vi/{{ video.id }}/maxresdefault.jpg",
-  "uploadDate": "{{ video.dateAdded }}",
+  "uploadDate": "{{ video.dateAdded }}T12:00:00Z",
   "embedUrl": "https://www.youtube-nocookie.com/embed/{{ video.id }}",
   "contentUrl": "https://www.youtube.com/watch?v={{ video.id }}"
 }
