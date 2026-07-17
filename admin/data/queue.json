@@ -2532,5 +2532,104 @@
     "aiReason": "This is about airport flight capacity expansion at Narita, not high-speed rail. The train capacity increase mentioned is incidental to the airport story and is not HSR.",
     "addedToQueue": "2026-07-10T17:00:44.930Z",
     "status": "rejected"
+  },
+  {
+    "id": "K8pDbcjzIvU",
+    "title": "China's 603 km/h High-Speed Train: The Coin Balance Test",
+    "description": "A viral demonstration of how smooth China's experimental 603 km/h high-speed train is, using the classic coin-balancing test. A visually compelling showcase of Chinese HSR engineering.",
+    "thumbnail": "https://i.ytimg.com/vi/K8pDbcjzIvU/hqdefault.jpg",
+    "channelTitle": "China Trends",
+    "publishedAt": "2026-07-13T09:26:40Z",
+    "duration": "PT2M14S",
+    "viewCount": "1047953",
+    "likeCount": "28840",
+    "category": "international-hsr",
+    "aiReason": "Viral demonstration of Chinese HSR smoothness and speed, over 1M views, directly relevant to high-speed rail",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "pending"
+  },
+  {
+    "id": "08K-1qmYEwQ",
+    "title": "Chinese High-Speed Rail in Action: 350 km/h Bullet Trains at Suzhou North Station",
+    "description": "An extended trainspotting session at Suzhou North Station capturing China's Fuxing and Hexie high-speed trains operating at up to 350 km/h. A great visual introduction to one of the world's busiest and most impressive HSR networks.",
+    "thumbnail": "https://i.ytimg.com/vi/08K-1qmYEwQ/hqdefault.jpg",
+    "channelTitle": "ZRH Trainspotter",
+    "publishedAt": "2026-07-08T09:52:03Z",
+    "duration": "PT28M46S",
+    "viewCount": "61251",
+    "likeCount": "802",
+    "category": "international-hsr",
+    "aiReason": "Nearly 30-minute trainspotting video at a major Chinese HSR station featuring 350 km/h operations; substantive and well-viewed",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "pending"
+  },
+  {
+    "id": "We5mxaigt2w",
+    "title": "Riding China's High-Speed Rail: Beijing to Shanghai in 4 Hours",
+    "description": "A first-person travel account of the 1,200 km Beijing to Shanghai journey aboard China's high-speed rail network. Covers the booking process, onboard experience, and why the route makes a compelling case for train travel over flying.",
+    "thumbnail": "https://i.ytimg.com/vi/We5mxaigt2w/hqdefault.jpg",
+    "channelTitle": "Wandering Minds",
+    "publishedAt": "2026-07-15T03:30:34Z",
+    "duration": "PT17M43S",
+    "viewCount": "60944",
+    "likeCount": "1343",
+    "category": "rides-tours",
+    "aiReason": "First-person ride experience on the Beijing-Shanghai HSR corridor with practical travel detail; solid view count",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "pending"
+  },
+  {
+    "id": "P93SMvXB488",
+    "title": "Most powerful Wag12 Leads High speed Freight Train Crossing Throughout at Railgate ",
+    "channelTitle": "Train o Pedia ",
+    "category": "international-hsr",
+    "aiReason": "Freight train crossing video with no HSR relevance; found via Texas Central which is unrelated; low editorial value",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "rejected"
+  },
+  {
+    "id": "SeZ40NYTIFw",
+    "title": "The Viral Map Changing How We Talk About Trains In America",
+    "channelTitle": "LintTheCat",
+    "category": "myth-busting",
+    "aiReason": "Only 6 seconds long — far too short to be meaningful content regardless of topic relevance",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "rejected"
+  },
+  {
+    "id": "EV2-zV9zYhs",
+    "title": "How High Speed Trains Stop at Stations | Indian Railways Signals Explained #shorts",
+    "channelTitle": "VSG Railfan",
+    "category": "explainers",
+    "aiReason": "Only 36 seconds long and focused on Indian Railways signals rather than high-speed rail specifically; too brief for meaningful educational value",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "rejected"
+  },
+  {
+    "id": "JunkV0HUPDc",
+    "title": "China now leads the world in trade, high speed rail, shipbuilding, robotics, batteries, electric",
+    "channelTitle": "jake explains ",
+    "category": "international-hsr",
+    "aiReason": "Only 74 seconds of shallow geopolitical talking points; HSR is one bullet point among many unrelated topics; low editorial value and engagement-bait comment mechanic",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "rejected"
+  },
+  {
+    "id": "rVDGU946ukw",
+    "title": "The Secret Behind Train Wheels 🚆",
+    "channelTitle": "Science Wale Bhaiya",
+    "category": "explainers",
+    "aiReason": "Only 21 seconds long; while the engineering concept is legitimate, the video is too short to meet a meaningful content threshold",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "rejected"
+  },
+  {
+    "id": "6qGDbzJt7uQ",
+    "title": "Hemant Atri on Ex Japan Minister Raps India as Bullet Train Project Delays",
+    "channelTitle": "The Public India",
+    "category": "construction-progress",
+    "aiReason": "News anchor-style panel discussion reading from teleprompter about political commentary on project delays; low views and does not meet editorial standards for substantive rail content",
+    "addedToQueue": "2026-07-17T17:00:24.091Z",
+    "status": "rejected"
   }
 ]
