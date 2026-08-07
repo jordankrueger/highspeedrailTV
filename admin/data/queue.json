@@ -2961,5 +2961,152 @@
     "aiReason": "Only 41 seconds long with no meaningful description, appears to be a low-effort aggregator short with a misleading title questioning whether Shinkansen is the world's fastest train",
     "addedToQueue": "2026-07-31T17:00:46.405Z",
     "status": "rejected"
+  },
+  {
+    "id": "yllpHMU6mgk",
+    "title": "Beijing to Guangzhou: 2,400 km in 7 Hours on China's Fastest Bullet Train",
+    "description": "A traveler rides the world's longest high-speed rail route from Beijing to Guangzhou aboard China's fastest bullet train, experiencing Business Class comfort at up to 400 km/h. The video covers the onboard experience, ticket pricing, and fascinating details about China's HSR network.",
+    "thumbnail": "https://i.ytimg.com/vi/yllpHMU6mgk/hqdefault.jpg",
+    "channelTitle": "Travel with AK",
+    "publishedAt": "2026-08-01T06:05:42Z",
+    "duration": "PT32M33S",
+    "viewCount": "1103882",
+    "likeCount": "28798",
+    "category": "rides-tours",
+    "aiReason": "First-person ride experience on China's Beijing-Guangzhou HSR route with strong viewership and substantial runtime covering speed, luxury, and onboard experience.",
+    "addedToQueue": "2026-08-07T17:00:48.769Z",
+    "status": "pending"
+  },
+  {
+    "id": "QDdAzVApWIs",
+    "title": "Alto Train: Canada's $90 Billion High-Speed Rail Plan Explained",
+    "description": "Canada is the only G7 nation without high-speed rail, and this video traces the country's rail history from the TurboTrain era through VIA Rail to the new Alto Train proposal connecting Toronto and Quebec City at 300 km/h. A thorough look at what could become Canada's largest infrastructure project ever.",
+    "thumbnail": "https://i.ytimg.com/vi/QDdAzVApWIs/hqdefault.jpg",
+    "channelTitle": "Andriyas Redel",
+    "publishedAt": "2026-07-31T18:06:17Z",
+    "duration": "PT19M32S",
+    "viewCount": "68992",
+    "likeCount": "1856",
+    "category": "international-hsr",
+    "aiReason": "Solid explainer on Canada's Alto Train HSR proposal with good runtime, historical context from TurboTrain through VIA Rail, and strong view count for a niche infrastructure topic.",
+    "addedToQueue": "2026-08-07T17:00:48.769Z",
+    "status": "pending"
+  },
+  {
+    "id": "HWPGmbQ0yoI",
+    "title": "US High-Speed Rail News: Brightline West, NEC, CAHSR, and Chicago Hub – August 2026",
+    "description": "Rail commentator Lucid Stew covers the latest developments across major American passenger rail projects for August 2026, including updates on Brightline West's precarious status, Northeast Corridor progress, and a relatively quiet month for California High-Speed Rail. A reliable monthly roundup for US HSR watchers.",
+    "thumbnail": "https://i.ytimg.com/vi/HWPGmbQ0yoI/hqdefault.jpg",
+    "channelTitle": "Lucid Stew",
+    "publishedAt": "2026-08-04T21:20:49Z",
+    "duration": "PT22M4S",
+    "viewCount": "14239",
+    "likeCount": "975",
+    "category": "construction-progress",
+    "aiReason": "Lucid Stew is a well-known and credible HSR enthusiast commentator. This monthly news roundup covering Brightline West, NEC improvements, CAHSR, and Chicago Hub is exactly the kind of informed, dedicated rail coverage the site should feature.",
+    "addedToQueue": "2026-08-07T17:00:48.769Z",
+    "status": "pending"
+  },
+  {
+    "id": "7JzI7fGcmoM",
+    "title": "Why India's First Bullet Train Is 6 Years Late: The Land Acquisition Problem",
+    "description": "India's Mumbai-Ahmedabad High-Speed Rail project, built on Japanese Shinkansen technology with a $24 billion price tag, was originally due to open in 2023 but has been delayed for years by a land acquisition dispute involving just four hectares. This video examines how a small parcel of land stalled one of Asia's most ambitious infrastructure projects.",
+    "thumbnail": "https://i.ytimg.com/vi/7JzI7fGcmoM/hqdefault.jpg",
+    "channelTitle": "Unthinkable Build",
+    "publishedAt": "2026-08-05T13:00:25Z",
+    "duration": "PT9M59S",
+    "viewCount": "14129",
+    "likeCount": "234",
+    "category": "international-hsr",
+    "aiReason": "Well-structured explainer on India's Mumbai-Ahmedabad bullet train project and its land acquisition delays. Good runtime, clear chapter structure, and covers an underreported HSR story.",
+    "addedToQueue": "2026-08-07T17:00:48.769Z",
+    "status": "pending"
+  },
+  {
+    "id": "jvSg3yJTjpI",
+    "title": "How to Ride China's High-Speed Rail as a Foreigner: A Step-by-Step Guide",
+    "description": "A practical walkthrough for first-time foreign travelers navigating China's high-speed rail system, from booking tickets on the 12306 app to arriving at massive stations and boarding the train from Shanghai to Suzhou. An accessible guide that demystifies one of the world's best rail networks for international visitors.",
+    "thumbnail": "https://i.ytimg.com/vi/jvSg3yJTjpI/hqdefault.jpg",
+    "channelTitle": "Vickipedia_China",
+    "publishedAt": "2026-07-18T16:18:43Z",
+    "duration": "PT13M36S",
+    "viewCount": "13643",
+    "likeCount": "593",
+    "category": "rides-tours",
+    "aiReason": "Practical, step-by-step guide to riding China's HSR as a foreigner, covering ticket booking, station navigation, and the actual journey. Useful and well-produced content for international audiences curious about Chinese HSR.",
+    "addedToQueue": "2026-08-07T17:00:48.769Z",
+    "status": "pending"
+  },
+  {
+    "id": "C8w--jV_7y8",
+    "title": "603 kmh! China’s High Speed Train Is Faster Than You Think 🚅",
+    "channelTitle": "Motor Vibe Talks",
+    "category": "international-hsr",
+    "aiReason": "Only 76 seconds long and appears to be a short-form clickbait video. Insufficient depth for the site despite the subject matter being relevant.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
+  },
+  {
+    "id": "dh9I21CyCoc",
+    "title": "“$4 Billion Later” - CBS Exposes Newsom High Speed Rail FAILURE",
+    "channelTitle": "Valuetainment",
+    "category": "myth-busting",
+    "aiReason": "Produced by Valuetainment, a politically partisan channel. The framing is anti-rail drama and criticism rather than balanced infrastructure analysis or genuine myth-busting. Not appropriate for a pro-rail curation site.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
+  },
+  {
+    "id": "5u6Z2PjMIn8",
+    "title": "Why Sitting Between Two Moving Trains Can Save Your Life! 😱 The Science Explained",
+    "channelTitle": "Khan vai shorts ",
+    "category": "explainers",
+    "aiReason": "Only 47 seconds long and the subject matter — surviving between two passing trains — is tangentially related to rail physics but is fundamentally a viral safety/curiosity short rather than meaningful HSR content.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
+  },
+  {
+    "id": "YiswXoXH7XM",
+    "title": "How Train Wheels Stay Stable at High Speed Railway Bogie Explained.#Train #Railway #wheelforce",
+    "channelTitle": "J.I.T. .ট্রেন  লাভার",
+    "category": "explainers",
+    "aiReason": "Only 14 seconds long. While the bogie/wheel stability topic is legitimately relevant to HSR, the video is too short to offer any real educational value.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
+  },
+  {
+    "id": "_oZwnyp_pG4",
+    "title": "How Many Hours Does a Loco Pilot Really Work? The Truth Explained #indian #railway #locopilot #duty",
+    "channelTitle": "The Railway Story",
+    "category": "explainers",
+    "aiReason": "Only 28 seconds long, low view count, and the topic — Indian locomotive pilot working hours — is only loosely related to HSR infrastructure. Does not meet content depth or view threshold requirements.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
+  },
+  {
+    "id": "_3QIRvFm-sQ",
+    "title": "Japan’s New Maglev Train Cruising At 600 KM/H! 🚄⚡ #Tech #Engineering #Speed",
+    "channelTitle": "Bia Lan",
+    "category": "international-hsr",
+    "aiReason": "Only 10 seconds long. Regardless of subject relevance, a 10-second short offers no substantive content about Japan's Maglev program.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
+  },
+  {
+    "id": "KDAQ9lSo0hA",
+    "title": "From dusty to spotless: Watch China's high-speed train get washed!",
+    "channelTitle": "New China TV",
+    "category": "international-hsr",
+    "aiReason": "Only 20 seconds long and under the 10K view threshold consideration for quality. A novelty clip rather than substantive rail content, and it appears to be state media promotional filler.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
+  },
+  {
+    "id": "DXCdrlgMLpo",
+    "title": "Taiwan Boosts High Speed Rail Fleet With New Japanese N700ST Trains｜TaiwanPlus News",
+    "channelTitle": "TaiwanPlus News",
+    "category": "international-hsr",
+    "aiReason": "Under 2 minutes and appears to be a straightforward news anchor teleprompter read about Taiwan HSR fleet expansion. Lacks depth or original footage to justify inclusion.",
+    "addedToQueue": "2026-08-07T17:00:48.770Z",
+    "status": "rejected"
   }
 ]
