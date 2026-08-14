@@ -3108,5 +3108,59 @@
     "aiReason": "Under 2 minutes and appears to be a straightforward news anchor teleprompter read about Taiwan HSR fleet expansion. Lacks depth or original footage to justify inclusion.",
     "addedToQueue": "2026-08-07T17:00:48.770Z",
     "status": "rejected"
+  },
+  {
+    "id": "pGKl0F6JQKE",
+    "title": "Australia's $135BN HIGH SPEED Railway Explained",
+    "channelTitle": "The B1M",
+    "category": "explainers",
+    "aiReason": "Only 90 seconds long with no description — likely a shallow overview or short-form teaser rather than substantive educational content. Insufficient depth for an explainer.",
+    "addedToQueue": "2026-08-14T12:00:41.386Z",
+    "status": "rejected"
+  },
+  {
+    "id": "XiYcriEvhRg",
+    "title": "TAXPAYERS FLEECED: Newsom under fire for 'DESTRUCTION' of rail project",
+    "channelTitle": "Fox Business",
+    "category": "myth-busting",
+    "aiReason": "Fox Business opinion segment framing California HSR purely as a political scandal. Anchors editorializing rather than providing balanced infrastructure analysis. Anti-rail propaganda framing disqualifies it.",
+    "addedToQueue": "2026-08-14T12:00:41.386Z",
+    "status": "rejected"
+  },
+  {
+    "id": "xx4w8yZXsMU",
+    "title": "600 km/h. Not a plane.",
+    "channelTitle": "SoarZoom",
+    "category": "international-hsr",
+    "aiReason": "Only 64 seconds long and appears to be viral social media short content with hashtag-driven descriptions. Likely contains unverified claims (600 km/h operational maglev, 2.5-hour Beijing-Shanghai journey are not currently accurate figures). Too shallow and potentially misleading.",
+    "addedToQueue": "2026-08-14T12:00:41.386Z",
+    "status": "rejected"
+  },
+  {
+    "id": "Py8u6vFB7y8",
+    "title": "🚨 Trump Cancels $175 Million in California Rail Funding – Does He Have Your Support? 🇺🇸 #BreakingNew",
+    "channelTitle": "Trump Trending Today",
+    "category": "explainers",
+    "aiReason": "Six-second video from a partisan news aggregator channel. No substantive content whatsoever. Pure clickbait with political framing.",
+    "addedToQueue": "2026-08-14T12:00:41.386Z",
+    "status": "rejected"
+  },
+  {
+    "id": "fuvWruAxOis",
+    "title": "Japan Ki Shinkansen vs China Ki Maglev! Kaun Jeetega?  #shorts #trending #viral #train",
+    "channelTitle": "LocoWorld",
+    "category": "international-hsr",
+    "aiReason": "Only 20 seconds long, non-English viral Shorts content with no substantive information beyond a headline comparison. Insufficient content depth for the site.",
+    "addedToQueue": "2026-08-14T12:00:41.386Z",
+    "status": "rejected"
+  },
+  {
+    "id": "P6YDlwwOa7U",
+    "title": "California high-speed rail faces renewed criticism over delays, soaring costs, and limited progress.",
+    "channelTitle": "1 News Today",
+    "category": "myth-busting",
+    "aiReason": "Seven-second video with purely negative editorial framing comparing California HSR to a toddler's wooden train set. No substantive content, anti-rail propaganda tone, and negligible runtime.",
+    "addedToQueue": "2026-08-14T12:00:41.386Z",
+    "status": "rejected"
   }
 ]
