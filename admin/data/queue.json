@@ -3162,5 +3162,86 @@
     "aiReason": "Seven-second video with purely negative editorial framing comparing California HSR to a toddler's wooden train set. No substantive content, anti-rail propaganda tone, and negligible runtime.",
     "addedToQueue": "2026-08-14T12:00:41.386Z",
     "status": "rejected"
+  },
+  {
+    "id": "vTjOu88Auf4",
+    "title": "4 workers killed by express train in Japan",
+    "channelTitle": "CNA",
+    "category": "international-hsr",
+    "aiReason": "A 33-second news clip of a tragic workplace accident. While rail-related, it is not educational, advocacy-driven, or infrastructurally substantive — it is a breaking news bulletin.",
+    "addedToQueue": "2026-08-21T12:00:55.162Z",
+    "status": "rejected"
+  },
+  {
+    "id": "y17kP01GSx8",
+    "title": "800 KM/H in Just 5.3 Seconds! China’s Super Train Stuns the World | 24 News HD",
+    "channelTitle": "24 News HD",
+    "category": "international-hsr",
+    "aiReason": "Clickbait title with exaggerated claims (800 km/h in 5.3 seconds is not a real operational figure), produced by a Pakistani news channel with no rail expertise, and under 50K views with low credibility signals.",
+    "addedToQueue": "2026-08-21T12:00:55.162Z",
+    "status": "rejected"
+  },
+  {
+    "id": "bnswO7EQLRA",
+    "title": "Gavin Newsom can't run a railroad, but he wants to run for president, GOP lawmaker says",
+    "channelTitle": "Fox Business",
+    "category": "myth-busting",
+    "aiReason": "Anti-rail political content from Fox Business framing California HSR purely as a political attack on Gavin Newsom. Not substantive rail analysis — this is partisan commentary.",
+    "addedToQueue": "2026-08-21T12:00:55.162Z",
+    "status": "rejected"
+  },
+  {
+    "id": "S6Tk0YsoVHs",
+    "title": "Taiwan Welcomes First Japan-Made N700ST Bullet Train｜TaiwanPlus News",
+    "channelTitle": "TaiwanPlus News",
+    "category": "international-hsr",
+    "aiReason": "Only 42 seconds long — a news clip, not a substantive video. Interesting subject matter but far too brief to be useful content for the site.",
+    "addedToQueue": "2026-08-21T12:00:55.162Z",
+    "status": "rejected"
+  },
+  {
+    "id": "You652jCGEs",
+    "title": "ఇటు రోడ్డు.. అటు రైల్వే లైన్‌ || Hyderabad-Amaravati-Chennai High-Speed Rail Explained || ABN",
+    "channelTitle": "ABN Telugu ",
+    "category": "international-hsr",
+    "aiReason": "Video is in Telugu with no English subtitles indicated, making it inaccessible to the site's likely primary audience. Also under the view threshold for a regional-language explainer.",
+    "addedToQueue": "2026-08-21T12:00:55.162Z",
+    "status": "rejected"
+  },
+  {
+    "id": "KLjuGJLJ28U",
+    "title": "Feds announce plan to reuse billions cut from Gavin Newsom's high-speed rail project",
+    "channelTitle": "California Post",
+    "category": "construction-progress",
+    "aiReason": "Only 85 seconds of a news anchor reading a teleprompter about federal rail funding reallocation. Not substantive enough and primarily framed as anti-California HSR political news.",
+    "addedToQueue": "2026-08-21T12:00:55.162Z",
+    "status": "rejected"
+  },
+  {
+    "id": "bCszsAR6QGI",
+    "title": "Final trainsj🇨🇳 China CR400 vs 🇯🇵 Japan E5 Shinkansen | Speed Showdown 🚄 #shorts #trending #viral",
+    "channelTitle": "InfoSpark",
+    "category": "international-hsr",
+    "aiReason": "Seven-second short. No meaningful content despite the interesting CR400 vs E5 comparison topic. Not suitable for a curated video library.",
+    "addedToQueue": "2026-08-21T12:00:55.163Z",
+    "status": "rejected"
+  },
+  {
+    "id": "GJjOfP0EMrc",
+    "title": "Caught on Tape! Newsom Admits High Speed Rail is a SCAM!",
+    "channelTitle": "Carl DeMaio / Reform California",
+    "category": "myth-busting",
+    "aiReason": "Explicitly anti-rail political attack content from a California GOP advocacy organization. The framing as 'scam' and focus on discrediting HSR rather than informing makes this inappropriate for a pro-rail platform regardless of legitimate criticisms it may contain.",
+    "addedToQueue": "2026-08-21T12:00:55.163Z",
+    "status": "rejected"
+  },
+  {
+    "id": "rCyUtaz2eQ8",
+    "title": "Caught on Tape! Newsom Admits High Speed Rail is a SCAM!",
+    "channelTitle": "Carl DeMaio / Reform California",
+    "category": "myth-busting",
+    "aiReason": "Duplicate of the above video from the same channel, only 62 seconds long, anti-rail in framing, and under 10K views. Rejected on multiple grounds.",
+    "addedToQueue": "2026-08-21T12:00:55.163Z",
+    "status": "rejected"
   }
 ]
