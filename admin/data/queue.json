@@ -3243,5 +3243,41 @@
     "aiReason": "Duplicate of the above video from the same channel, only 62 seconds long, anti-rail in framing, and under 10K views. Rejected on multiple grounds.",
     "addedToQueue": "2026-08-21T12:00:55.163Z",
     "status": "rejected"
+  },
+  {
+    "id": "D2NuuKkRmOw",
+    "title": "How China Is Building a Railway Above the Clouds",
+    "channelTitle": "Colossal Worlds",
+    "category": "construction-progress",
+    "aiReason": "Only 51 seconds long — far too short to be substantive educational or documentary content. Not enough depth to be useful for viewers.",
+    "addedToQueue": "2026-08-28T12:00:43.242Z",
+    "status": "rejected"
+  },
+  {
+    "id": "SVbo1a-t1TE",
+    "title": "China’s Broke! World’s Highest Highway Unfinished, High-Speed Rail Projects Abandoned Nationwide",
+    "channelTitle": "China Observer",
+    "category": "international-hsr",
+    "aiReason": "Anti-rail propaganda framed as news. 'China's Broke!' framing and focus on abandoned projects and failures positions this as politically motivated doom content rather than genuine rail coverage. China Observer is a known anti-CCP commentary channel, not a rail or infrastructure source.",
+    "addedToQueue": "2026-08-28T12:00:43.242Z",
+    "status": "rejected"
+  },
+  {
+    "id": "MeWPVJs1Nyw",
+    "title": "California high-speed rail project faces delays, rising costs, and criticism",
+    "channelTitle": "KCRA 3",
+    "category": "construction-progress",
+    "aiReason": "Local TV news segment with a reporter reading to camera. Lacks depth or original analysis. This format — news anchor teleprompter delivery — is explicitly called out in the rejection guidelines.",
+    "addedToQueue": "2026-08-28T12:00:43.242Z",
+    "status": "rejected"
+  },
+  {
+    "id": "XnrWCKHSkcQ",
+    "title": "California's $35.7 billion rail plan faces new funding concerns",
+    "channelTitle": "ABC10",
+    "category": "construction-progress",
+    "aiReason": "Short local TV news format (under 4 minutes) with a reporter reading funding concerns from a report. Adds little beyond the headline. Similar coverage is better handled by the approved Lucid Stew video on the same topic.",
+    "addedToQueue": "2026-08-28T12:00:43.242Z",
+    "status": "rejected"
   }
 ]
