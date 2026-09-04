@@ -1,5 +1,69 @@
 [
   {
+    "id": "jpnoZGyt80I",
+    "title": "Every Major European High-Speed Train Explained",
+    "description": "A systematic guide to the high-speed trains operating across Europe, covering the key characteristics of each rolling stock type and the networks they serve. A useful reference for anyone wanting to understand the diversity of European rail.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
+    "id": "GihHwdpHfgE",
+    "title": "How India's Bullet Train Costs Compare to Japan, Indonesia, and the U.S.",
+    "description": "A data-driven look at the cost per kilometer of India's Mumbai-Ahmedabad high-speed rail corridor compared to major projects around the world. The numbers challenge common assumptions and put India's construction economics in global context.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
+    "id": "mg_21YAq2Gc",
+    "title": "Bullet Trains in the Mountains: Beijing-Zhangjiakou High-Speed Railway",
+    "description": "The Beijing-Zhangjiakou intercity railway runs through northern Hebei's mountains with specially designed cold- and sandstorm-resistant trains and infrastructure. This video captures CR400BF-G and CRH series trains on one of China's more challenging high-speed corridors.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
+    "id": "GG6XvBAsIRw",
+    "title": "U.S. High-Speed Rail News: Brightline West, California HSR, Northeast Corridor, and More — September 2026",
+    "description": "Lucid Stew's monthly rail news digest covers the financial outlook for Brightline West, construction updates on California High-Speed Rail, Amtrak's Northeast Corridor improvements, and emerging projects in Texas and Canada.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
+    "id": "r_0ClbL6DGA",
+    "title": "Trainspotting the World's Busiest High-Speed Rail Corridor: Shanghai to Nanjing",
+    "description": "Over 630 bullet trains per day run between Shanghai and Nanjing through one of the world's most densely populated megalopolises. This video captures the relentless frequency of CR400 and CRH services on the corridor up close.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
+    "id": "jdhyPQwvHq4",
+    "title": "How a Kingfisher's Beak Shaped the Shinkansen 500 Series",
+    "description": "Engineer Eiji Nakatsu solved the tunnel boom problem plaguing Japan's 500 Series bullet train by modeling its nose on the beak of a kingfisher. This short explains the elegant biomimicry behind one of the Shinkansen's most iconic designs.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
+    "id": "uzoCokVQe-8",
+    "title": "1,300 km Across China by High-Speed Train: Kunming to Guangzhou",
+    "description": "A travel vlog following an 8-hour high-speed rail journey through tunnels, mountains, and countryside from Kunming to the Guangzhou region. Offers a genuine ground-level look at China's rail network and surrounding cities.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
+    "id": "oU6lyoibfKI",
+    "title": "The Engineering Behind China's Famously Smooth High-Speed Rail",
+    "description": "The viral coin-standing-on-edge clip gets a real explanation: China's seamless track is the result of continuous welded rail fused into 500-meter ribbons with joints ground to 0.3mm tolerances. A concise and satisfying breakdown of precision rail engineering.",
+    "category": "myth-busting",
+    "featured": false,
+    "dateAdded": "2026-09-04"
+  },
+  {
     "id": "iDcKeD9wEx8",
     "title": "California High-Speed Rail Funding Crisis: What the Inspector General Report Actually Says",
     "description": "An in-depth look at the California High-Speed Rail Inspector General's review of the 2026 Business Plan, cutting through media sensationalism to explain what the funding concerns actually mean for the project's future.",

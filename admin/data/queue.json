@@ -3279,5 +3279,50 @@
     "aiReason": "Short local TV news format (under 4 minutes) with a reporter reading funding concerns from a report. Adds little beyond the headline. Similar coverage is better handled by the approved Lucid Stew video on the same topic.",
     "addedToQueue": "2026-08-28T12:00:43.242Z",
     "status": "rejected"
+  },
+  {
+    "id": "KcrD_f4XnCk",
+    "title": "Is it a bold plan or a $231B boondoggle?",
+    "channelTitle": "California Curated",
+    "category": "construction-progress",
+    "aiReason": "Framed as a 'boondoggle' with sensationalist language; primarily opinion-driven rather than informational, and also contains a factual error in the description claiming no track has been laid when track installation has in fact begun.",
+    "addedToQueue": "2026-09-04T12:00:51.231Z",
+    "status": "rejected"
+  },
+  {
+    "id": "AtJhxS0TRGU",
+    "title": "‘FROM BAD TO WORSE: California's $231B rail NIGHTMARE",
+    "channelTitle": "Fox Business",
+    "category": "myth-busting",
+    "aiReason": "Fox Business news segment that is anti-rail in framing, teleprompter-driven, and functions as political commentary rather than informative rail content.",
+    "addedToQueue": "2026-09-04T12:00:51.231Z",
+    "status": "rejected"
+  },
+  {
+    "id": "e29_w1AMKBw",
+    "title": "This Device Reveals Invisible Energy Around Railway Tracks! 🤯🔬",
+    "channelTitle": "Perigee Tech",
+    "category": "explainers",
+    "aiReason": "Five-second video with no substantive content; appears to be a gimmick or engagement-bait clip with no educational value about rail.",
+    "addedToQueue": "2026-09-04T12:00:51.231Z",
+    "status": "rejected"
+  },
+  {
+    "id": "gpE--KXwArY",
+    "title": "1 Hour of Urban Hell in America",
+    "channelTitle": "Worldspire",
+    "category": "explainers",
+    "aiReason": "Unrelated to rail or transit infrastructure in any meaningful way; a general urban design/America content compilation with no HSR relevance.",
+    "addedToQueue": "2026-09-04T12:00:51.231Z",
+    "status": "rejected"
+  },
+  {
+    "id": "rUDy4hgxfLw",
+    "title": "Last Bullet Train In Japan 🫣😫 ಇನ್ಮೇಲೆ ಬುಲೆಟ್ ಟ್ರೈನ್ ಇರಲ್ಲ 😫",
+    "channelTitle": "Kithadi Kiran",
+    "category": "rides-tours",
+    "aiReason": "Below the 10K view threshold is not the issue here — it clears that — but the description is entirely devoid of informational content about the Shinkansen ride itself, functioning purely as a personal vlog with no clear rail focus.",
+    "addedToQueue": "2026-09-04T12:00:51.231Z",
+    "status": "rejected"
   }
 ]
