@@ -1,5 +1,37 @@
 [
   {
+    "id": "jjGvkUN2dxg",
+    "title": "California High-Speed Rail Construction Update: Fresno Right-of-Way Progress (August 2026)",
+    "description": "A ground-level walkthrough of active California High-Speed Rail construction sites across Fresno, covering formwork removal at Church Ave, rebar work at Shaw Ave, the expanding Fresno Trench, and vertical progress at McKinley Ave. Essential viewing for anyone following the Central Valley segment's progress.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-09-11"
+  },
+  {
+    "id": "hEMvInRnyp8",
+    "title": "Why Texas Shinkansen Still Isn't Running: The Real Barriers Beyond Technology",
+    "description": "Despite the U.S. adapting regulations to accommodate Japan's N700 Shinkansen for the Texas Central project, the line remains unfinished. This Japanese-language explainer digs into the non-technical obstacles — land acquisition, regulatory frameworks, and financing — that have stalled the project.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-09-11"
+  },
+  {
+    "id": "473X8wQ-Ajk",
+    "title": "Japan's New Golden Route by Rail: Tokyo to Kanazawa by Bullet Train",
+    "description": "BBC presenter Paul Carter travels Japan's scenic Golden Route by Shinkansen, journeying from Tokyo northward through the mountain springs of Unazuki Onsen and the gold leaf culture of Kanazawa. A beautifully produced introduction to Japan's bullet train network and the destinations it connects.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-09-11"
+  },
+  {
+    "id": "72CxdL-5wvA",
+    "title": "World's Largest High-Speed Rail Shield Tunneling Machine Resumes Work on Chongtai Yangtze River Tunnel",
+    "description": "China's self-developed 'Linghang' tunneling machine, with a 15.4-meter cutter head weighing 4,000 tonnes, has resumed excavation of the Chongtai Yangtze River Tunnel after maintenance. The project is expected to set a world record for ultra-long single tunneling upon its planned completion in late 2026.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-09-11"
+  },
+  {
     "id": "jpnoZGyt80I",
     "title": "Every Major European High-Speed Train Explained",
     "description": "A systematic guide to the high-speed trains operating across Europe, covering the key characteristics of each rolling stock type and the networks they serve. A useful reference for anyone wanting to understand the diversity of European rail.",

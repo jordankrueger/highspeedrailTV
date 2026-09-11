@@ -3324,5 +3324,41 @@
     "aiReason": "Below the 10K view threshold is not the issue here — it clears that — but the description is entirely devoid of informational content about the Shinkansen ride itself, functioning purely as a personal vlog with no clear rail focus.",
     "addedToQueue": "2026-09-04T12:00:51.231Z",
     "status": "rejected"
+  },
+  {
+    "id": "KoOHXfaxGoc",
+    "title": "🇺🇸 Do You Support Trump's Decision on California High-Speed Rail Funding? 🤔 #BreakingNews #USNews #N",
+    "channelTitle": "America News Today",
+    "category": "myth-busting",
+    "aiReason": "Only 6 seconds long, framed as a political opinion poll rather than substantive content, and functions as clickbait news content with no educational value about rail.",
+    "addedToQueue": "2026-09-11T12:00:34.730Z",
+    "status": "rejected"
+  },
+  {
+    "id": "WgXznsfu8UY",
+    "title": "Salt Lake City LIVE: Where the Streets Have No Name",
+    "channelTitle": "Road Guy Rob",
+    "category": "rides-tours",
+    "aiReason": "Primarily a street-walking video about Salt Lake City's urban grid, convention center, and a temple renovation. Rail is only a passing mention and the content is not substantively about transit or HSR. Also below the view threshold.",
+    "addedToQueue": "2026-09-11T12:00:34.730Z",
+    "status": "rejected"
+  },
+  {
+    "id": "oxlK9HGwsyY",
+    "title": "How Does a Double-Decker High-Speed Train Stay on the Tracks? 🚄",
+    "channelTitle": "AiEngineer",
+    "category": "explainers",
+    "aiReason": "Only 66 seconds long and appears to be AI-generated content. While the topic is relevant, the duration is too short to provide meaningful educational value and the channel raises quality concerns.",
+    "addedToQueue": "2026-09-11T12:00:34.730Z",
+    "status": "rejected"
+  },
+  {
+    "id": "4uL26VSZKy4",
+    "title": "Malaysia's ECRL vs China HSR: The Real Difference",
+    "channelTitle": "Exploring Walk",
+    "category": "international-hsr",
+    "aiReason": "Relevant and interesting topic comparing Malaysia's ECRL to Chinese HSR, but falls below the 10K view threshold at 12,624 — wait, this exceeds 10K. However, on closer review the content is borderline as ECRL is not strictly high-speed rail. Approving given lenient guidelines and clear rail infrastructure focus.",
+    "addedToQueue": "2026-09-11T12:00:34.730Z",
+    "status": "rejected"
   }
 ]
