@@ -3360,5 +3360,122 @@
     "aiReason": "Relevant and interesting topic comparing Malaysia's ECRL to Chinese HSR, but falls below the 10K view threshold at 12,624 — wait, this exceeds 10K. However, on closer review the content is borderline as ECRL is not strictly high-speed rail. Approving given lenient guidelines and clear rail infrastructure focus.",
     "addedToQueue": "2026-09-11T12:00:34.730Z",
     "status": "rejected"
+  },
+  {
+    "id": "Ujha6LtRj2c",
+    "title": "China Is Building a 1,000 km/h Vacuum Train That Could Change Travel Forever! 🤯🚄 | #Shorts",
+    "channelTitle": "World Facts",
+    "category": "international-hsr",
+    "aiReason": "37-second YouTube Short with clickbait framing about speculative vacuum train technology. Too shallow to be educational, and the subject is not yet real HSR.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "U83r2vy5SAQ",
+    "title": "🇯🇵 Japan vs 🇨🇳 China — 450 KM/H Train Race! 🚄😱 Who Wins?",
+    "channelTitle": "Global_Country",
+    "category": "international-hsr",
+    "aiReason": "Only 6 seconds long — not a real video, pure engagement-bait Short with no informational value.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "5aCgrxXkPbc",
+    "title": "China’s High-Speed Rail Falling Apart: Without Japan-Germany Wheels, Rides Feel Terrifying",
+    "channelTitle": "China Observer",
+    "category": "international-hsr",
+    "aiReason": "Title and framing are sensationalized anti-China propaganda. 'China Observer' is a known political commentary channel, not a rail journalism outlet. The content uses isolated passenger footage to push a narrative rather than provide balanced rail coverage.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "USpBHtcaTPc",
+    "title": "California High-Speed Rail Paid for an Escape Room?",
+    "channelTitle": "Wes Austin",
+    "category": "explainers",
+    "aiReason": "52-second comedy Short by a stand-up comedian mocking California HSR. Not substantive rail content.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "nYU2p5JB2n8",
+    "title": "🇯🇵 Japan’s 500 KM/H Maglev - How Does This Train Fly Without Normal Wheels?!😳",
+    "channelTitle": "WorldInfraX",
+    "category": "international-hsr",
+    "aiReason": "Only 21 seconds long and uses AI-generated visuals. No substantive content despite the interesting topic.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "JqQAFUN3aoo",
+    "title": "California rail authority reimbursed consultants for gym trips, premium flights report finds",
+    "channelTitle": "KTLA 5",
+    "category": "explainers",
+    "aiReason": "Under 3-minute local TV news segment of a news anchor reading teleprompter about the California HSR consultant expense report. No original analysis or rail content.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "wBVnRZc_8bM",
+    "title": "California High Speed Rail Authority responds to questionable spending of funds",
+    "channelTitle": "FOX40 News",
+    "category": "explainers",
+    "aiReason": "Under 3-minute local TV news clip. News anchor reading about the inspector general report. No substantive rail content.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "9O5O-XMfV6s",
+    "title": "High-Speed Rail Authority used taxpayer money on questionable travel for consultants, report finds",
+    "channelTitle": "KCRA 3",
+    "category": "explainers",
+    "aiReason": "Local TV news segment about the California HSR consultant travel expense report. While slightly longer at 5 minutes, it is still a teleprompter news read without original analysis.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "1XI2Lt3_vm0",
+    "title": "1,857 km, 11.5 hours: Ride China's 'red high-speed rail' #coolchina #longmarch",
+    "channelTitle": "CGTN",
+    "category": "international-hsr",
+    "aiReason": "43-second CGTN state media promotional Short. Too short for meaningful content and is essentially government marketing material.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "gdxgBMmkkCA",
+    "title": "California’s high-speed rail project faces criticism over delays, costs, and questions",
+    "channelTitle": "US Daily News",
+    "category": "explainers",
+    "aiReason": "Only 7 seconds long. The description reveals overtly partisan anti-HSR political commentary. Rejected on both duration and editorial grounds.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "w2g-vgGVxqw",
+    "title": "California high-speed rail consultants face scrutiny over travel expenses",
+    "channelTitle": "ABC10",
+    "category": "explainers",
+    "aiReason": "3-minute local TV news segment about the consultant expense audit. Teleprompter news read with no original rail content.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "wVV6sJwJvsE",
+    "title": "Japan vs China: The High-Speed Rail Safety Lesson That Changed Everything 🤯",
+    "channelTitle": "Perigee Tech",
+    "category": "international-hsr",
+    "aiReason": "Only 6 seconds long. Cannot convey meaningful content about Japan vs China rail safety in that duration regardless of topic quality.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
+  },
+  {
+    "id": "eC0o3pEbpQ8",
+    "title": "'OFF THE RAILS': California's high-speed rail spending draws scrutiny",
+    "channelTitle": "Fox Business",
+    "category": "explainers",
+    "aiReason": "Fox Business opinion segment with sensationalized framing designed to mock California HSR. Partisan cable news commentary, not rail journalism.",
+    "addedToQueue": "2026-09-18T12:01:04.311Z",
+    "status": "rejected"
   }
 ]
