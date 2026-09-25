@@ -3477,5 +3477,77 @@
     "aiReason": "Fox Business opinion segment with sensationalized framing designed to mock California HSR. Partisan cable news commentary, not rail journalism.",
     "addedToQueue": "2026-09-18T12:01:04.311Z",
     "status": "rejected"
+  },
+  {
+    "id": "ZpzExTfyugU",
+    "title": "Experience the speed of China's high-speed rail! It is simply incredible",
+    "channelTitle": "China Trends",
+    "category": "international-hsr",
+    "aiReason": "Only 1m24s long with no description — likely a short-form clip with minimal educational value. Clickbait title with no substance.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
+  },
+  {
+    "id": "HJIWa4rksNk",
+    "title": "From Ordinary Trains to 505 KM/H—China’s Rail Technology Is Insane!",
+    "channelTitle": "China Trends",
+    "category": "international-hsr",
+    "aiReason": "Only 1m1s long with no description. Extremely short, likely a Shorts-style clip with no depth. Clickbait title.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
+  },
+  {
+    "id": "jSZLrxvphv8",
+    "title": "Nick Shirley Asks Where California High-Speed Rail Money Went",
+    "channelTitle": "The Common Ledger",
+    "category": "construction-progress",
+    "aiReason": "Only 48 seconds long — essentially a news anchor clip. Framing suggests skepticism about the project's finances without meaningful analysis. Too short and too close to anti-rail framing.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
+  },
+  {
+    "id": "9LkJ5cryskY",
+    "title": "China’s High-Speed Rail Hits 402 KM/H—Gone in Seconds!",
+    "channelTitle": "China Trends",
+    "category": "international-hsr",
+    "aiReason": "Only 1m27s with no description. Another short-form clip from the same channel with a clickbait title. Insufficient depth for the site.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
+  },
+  {
+    "id": "2SchKF3u1Oo",
+    "title": "CHINA VISIT: ANWAR TAKES FIRST HIGH-SPEED TRAIN RIDE IN CHINA",
+    "channelTitle": "BERNAMA TV",
+    "category": "international-hsr",
+    "aiReason": "Only 1m11s and is a news broadcast clip of a politician riding a train. Minimal rail content, essentially a political news item.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
+  },
+  {
+    "id": "Ve186iY2FkA",
+    "title": "Farmer EXPOSES California High Speed Rail 👀",
+    "channelTitle": "Nick Shirley",
+    "category": "construction-progress",
+    "aiReason": "Only 1m9s with no description. Title framing ('EXPOSES') suggests anti-rail or drama-driven content rather than balanced coverage. Too short.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
+  },
+  {
+    "id": "cXnwj6coFe4",
+    "title": "California High-Speed Rail Authority receives cease-and-desist letter over 2026 business plan",
+    "channelTitle": "KCRA 3",
+    "category": "construction-progress",
+    "aiReason": "Only 36 seconds long — a news anchor reading a teleprompter about a cease-and-desist letter. No depth or visual content.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
+  },
+  {
+    "id": "chWi9kRyiGU",
+    "title": "UAE High-Speed Rail: The Six Planned Stations Explained",
+    "channelTitle": "OTO Drive ",
+    "category": "international-hsr",
+    "aiReason": "Only 22 seconds long — far too short. A teaser clip rather than a full explainer. Under 10K views threshold is also borderline (just over), but duration alone disqualifies it.",
+    "addedToQueue": "2026-09-25T12:01:07.926Z",
+    "status": "rejected"
   }
 ]
