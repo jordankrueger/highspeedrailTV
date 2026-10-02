@@ -1,5 +1,69 @@
 [
   {
+    "id": "wSZXZ8DMfKM",
+    "title": "California High-Speed Rail Progress: A 2-Minute Update",
+    "description": "A quick but informative summary of the current state of California's high-speed rail project, hitting the key milestones and ongoing construction activity for viewers who want the essentials fast.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
+    "id": "zhVdSKDIshE",
+    "title": "California High-Speed Rail: Construction Progress Update",
+    "description": "An overview of where California's high-speed rail project currently stands, focusing on active construction in the Central Valley including bridges and grade separations, while placing the work in the context of the project's long history and remaining challenges.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
+    "id": "8RYxL7mRzTc",
+    "title": "Spain's Affordable First Class High-Speed Train: Málaga to Madrid on Iryo",
+    "description": "A detailed ride review of Iryo's Frecciarossa 1000 in its top-tier Infinita Bistro first class, traveling from Málaga to Madrid at 300 km/h. Covers seating, service, and the Spanish high-speed rail experience.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
+    "id": "al9lG1wHBlY",
+    "title": "A Family's Private Business Class Carriage on China's High-Speed Train",
+    "description": "A British-Chinese family documents their high-speed rail journey in northeast China, finding themselves with an entire business class carriage to themselves. A warm, personal look at everyday HSR travel in China.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
+    "id": "cvzxYlSAHaE",
+    "title": "How Israel Built a $2 Billion High-Speed Railway Through the Mountains",
+    "description": "An engineering deep-dive into Israel's Tel Aviv to Jerusalem high-speed rail project, exploring the tunnels, bridges, and extreme construction challenges involved in linking two major cities through mountainous terrain.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
+    "id": "zqNqO3WA2Lk",
+    "title": "Ordering Food Delivery to Your Seat on a Chinese High-Speed Train",
+    "description": "A short experiential video showing how passengers can order food delivery directly to their seat on a Chinese bullet train. A charming illustration of the convenience built into China's modern high-speed rail network.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
+    "id": "RXRYve0yG7E",
+    "title": "Japan's Overnight Shinkansen: 8-Hour Night Bullet Train from Kyoto to Tokyo",
+    "description": "A full ride-along on Japan's first overnight Shinkansen service, covering the journey from Kyoto through Shin-Osaka to Tokyo. An in-depth look at a unique and rarely documented high-speed rail experience.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
+    "id": "KPJyYv3oR2I",
+    "title": "China's $840 Luxury First Class High-Speed Train: Shanghai to Beijing",
+    "description": "A first-person look at China's premium first class cabin aboard the G22 Fuxing high-speed train between Shanghai Hongqiao and Beijing South. Features an intimate 5-seat cabin with electrically adjustable, rotating seats on one of the world's fastest rail corridors.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-10-02"
+  },
+  {
     "id": "Q4-4UfDbwAg",
     "title": "Inside China's 350 km/h High-Speed Rail: Report from Shandong",
     "description": "A special report from a railway station in Shandong Province exploring China's 350 km/h high-speed rail network, including the technology behind the trains, the passenger experience, and what makes China's system a global benchmark for high-speed rail.",

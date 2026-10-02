@@ -3549,5 +3549,68 @@
     "aiReason": "Only 22 seconds long — far too short. A teaser clip rather than a full explainer. Under 10K views threshold is also borderline (just over), but duration alone disqualifies it.",
     "addedToQueue": "2026-09-25T12:01:07.926Z",
     "status": "rejected"
+  },
+  {
+    "id": "ERW2gkPBjek",
+    "title": "China High-Speed Rail: Don't Blink or You'll Miss the Wow",
+    "channelTitle": "CNStories",
+    "category": "international-hsr",
+    "aiReason": "Very short (1m37s), essentially a scenic mood video with no substantive educational or experiential content. More of a promotional clip than a useful video for viewers.",
+    "addedToQueue": "2026-10-02T12:01:02.208Z",
+    "status": "rejected"
+  },
+  {
+    "id": "BhEgkFoxzJM",
+    "title": "High‑Speed Chinese Bullet Train Speeding Down the Track #chinavlog",
+    "channelTitle": "China Vitality",
+    "category": "international-hsr",
+    "aiReason": "Only 21 seconds long — far too short to be useful or engaging content for the site. Essentially a social media clip.",
+    "addedToQueue": "2026-10-02T12:01:02.208Z",
+    "status": "rejected"
+  },
+  {
+    "id": "gstI-aPvL-4",
+    "title": "Report: Brightline expected to file for bankruptcy",
+    "channelTitle": "WESH 2 News",
+    "category": "construction-progress",
+    "aiReason": "News anchor reading a teleprompter report about Brightline's bankruptcy. No original analysis, footage, or depth. Not appropriate for a curated video site.",
+    "addedToQueue": "2026-10-02T12:01:02.208Z",
+    "status": "rejected"
+  },
+  {
+    "id": "_4cNh1bqHpw",
+    "title": "China’s High-Speed Rail Collapse: No Pay, Female Crew Quit In Mass, Turnover Hits 50%",
+    "channelTitle": "China Observer",
+    "category": "international-hsr",
+    "aiReason": "Framed as negative exposé content about labor issues at China Rail, with a sensationalist title. While labor issues are legitimate news, this channel (China Observer) is known for anti-China advocacy content rather than balanced rail journalism. Not appropriate for a pro-rail curation site.",
+    "addedToQueue": "2026-10-02T12:01:02.208Z",
+    "status": "rejected"
+  },
+  {
+    "id": "4pl30Ujioes",
+    "title": "Brightline FILES FOR BANKRUPTCY",
+    "channelTitle": "Bennyboi",
+    "category": "rides-tours",
+    "aiReason": "Only 27 seconds long and appears to be a low-effort short capitalizing on the Brightline bankruptcy news. No substantive content.",
+    "addedToQueue": "2026-10-02T12:01:02.208Z",
+    "status": "rejected"
+  },
+  {
+    "id": "nL8BW8baybk",
+    "title": "this city in china has the most advanced transport system EP. 6",
+    "channelTitle": "Steven Ndukwu",
+    "category": "international-hsr",
+    "aiReason": "Trains are only one element of a broader city transport vlog covering eVTOLs and driverless cars. Not focused enough on rail to warrant inclusion, and views are below threshold.",
+    "addedToQueue": "2026-10-02T12:01:02.208Z",
+    "status": "rejected"
+  },
+  {
+    "id": "zmFDdd-jct4",
+    "title": "New California High Speed Rail \"Bakersfield\" Station #bakersfield #fresno #transit #highspeedrail",
+    "channelTitle": "Lucid Stew",
+    "category": "construction-progress",
+    "aiReason": "Under 10K views and only 1m25s — a very short location scouting clip with minimal context or production value. Does not meet the bar for inclusion.",
+    "addedToQueue": "2026-10-02T12:01:02.208Z",
+    "status": "rejected"
   }
 ]
