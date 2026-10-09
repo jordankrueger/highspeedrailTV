@@ -3612,5 +3612,86 @@
     "aiReason": "Under 10K views and only 1m25s — a very short location scouting clip with minimal context or production value. Does not meet the bar for inclusion.",
     "addedToQueue": "2026-10-02T12:01:02.208Z",
     "status": "rejected"
+  },
+  {
+    "id": "s2mXm2NW0-g",
+    "title": "China High‑Speed Rail: Hexiehao Meets Fuxinghao in Heavy Rain #chinatravel #chinavlog",
+    "channelTitle": "China Vitality",
+    "category": "international-hsr",
+    "aiReason": "Only 25 seconds long — essentially a short clip, not substantive content. Too brief to be meaningful educational or experiential video.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "AVHtB7fRWMs",
+    "title": "America's New Train Is Faster Than a Plane",
+    "channelTitle": "Hidden Globe",
+    "category": "explainers",
+    "aiReason": "Clickbait title with a dubious claim (712 mph train in Nevada desert), appears to be an AI-generated or sensationalized countdown video, and promotes an ebook. The core claim is not credible and the format is low-quality aggregation content.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "R-DjXsnEi8U",
+    "title": "15 Years, Not One Passenger! China’s High-Speed Rail Disaster: $1T Debt, Dozens of Stations in Ruins",
+    "channelTitle": "China Observer",
+    "category": "international-hsr",
+    "aiReason": "China Observer is a known anti-China propaganda channel with a strong political agenda. This video presents a misleading and heavily slanted picture of China's HSR network designed to discredit rather than inform. Not appropriate for a balanced rail information site.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "KRKwRXHVxP0",
+    "title": "California's High-Speed Rail: $15 Billion Spent, No Track, No Trains",
+    "channelTitle": "Priced Out",
+    "category": "construction-progress",
+    "aiReason": "Only 71 seconds long and appears to be a short-form critical take on California HSR spending framed as a breakdown. Too brief to be substantive, and the framing leans toward anti-project advocacy rather than balanced reporting.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "v0lAd7hCLYE",
+    "title": "'Pretty outrageous:' Newsom speaks on high speed rail expenses",
+    "channelTitle": "FOX40 News",
+    "category": "construction-progress",
+    "aiReason": "Local TV news clip of a politician commenting on contractor expenses. Primarily a news anchor segment, not substantive rail content, and only 3 minutes of talking-head coverage.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "kO2Vr_HbEa4",
+    "title": "China’s high-speed trains race through stations as holiday ends",
+    "channelTitle": "CGTN Europe",
+    "category": "international-hsr",
+    "aiReason": "Only 30 seconds long and essentially a viral clip package from state media CGTN. No substantive information beyond footage of trains passing through stations.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "cyOx__dlxfM",
+    "title": "Why America is Shocked China’s New 249 MPH High Speed Rail!",
+    "channelTitle": "Pasted Realities",
+    "category": "international-hsr",
+    "aiReason": "Only 39 seconds long and framed as a nationalistic reaction video. No substantive content beyond a brief description of the Chengdu-Chongqing line. Too short and shallow for inclusion.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "A7uugKKzx8A",
+    "title": "China's Northernmost High-Speed Railway Starts Service",
+    "channelTitle": "CCTV Video News Agency",
+    "category": "international-hsr",
+    "aiReason": "Under the 10K view threshold minimum and is a brief 68-second state media news clip from CCTV with minimal editorial content beyond announcing a new line opening.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
+  },
+  {
+    "id": "NSn9BTGQMZg",
+    "title": "Curved Bridge For California High Speed Rail Is DONE #fresno #bakersfield #losangeles #sanfrancisco",
+    "channelTitle": "Lucid Stew",
+    "category": "construction-progress",
+    "aiReason": "Only 55 seconds of dashcam footage with a hashtag-heavy title. While the subject matter is relevant, the content is too short and lacks narration or context to be meaningfully informative.",
+    "addedToQueue": "2026-10-09T12:00:56.976Z",
+    "status": "rejected"
   }
 ]
