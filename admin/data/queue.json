@@ -3693,5 +3693,50 @@
     "aiReason": "Only 55 seconds of dashcam footage with a hashtag-heavy title. While the subject matter is relevant, the content is too short and lacks narration or context to be meaningfully informative.",
     "addedToQueue": "2026-10-09T12:00:56.976Z",
     "status": "rejected"
+  },
+  {
+    "id": "g6T4hZ_1Tdo",
+    "title": "California High-Speed Rail CEO refuses to answer questions over waste of taxpayer funds",
+    "channelTitle": "KCRA 3",
+    "category": "construction-progress",
+    "aiReason": "News anchor segment focused on political scandal and CEO controversy rather than rail content. Framing is adversarial and not educational.",
+    "addedToQueue": "2026-10-16T12:00:39.670Z",
+    "status": "rejected"
+  },
+  {
+    "id": "xQBHXmTorpU",
+    "title": "China's 350 km/h Fuxing Bullet Train Speeding Through the Greenery!  #shorts #bullettrain #railway",
+    "channelTitle": "Zenith Glide",
+    "category": "international-hsr",
+    "aiReason": "Only 12 seconds long — a Shorts clip with no substantive content. Not appropriate for a curated educational platform.",
+    "addedToQueue": "2026-10-16T12:00:39.670Z",
+    "status": "rejected"
+  },
+  {
+    "id": "ayDD4G1ISz4",
+    "title": "California High Speed Rail Is Getting Shaftered #bakersfield #fresno #transition #highspeedrail",
+    "channelTitle": "Lucid Stew",
+    "category": "construction-progress",
+    "aiReason": "Under 30K views is fine, but the title and framing ('Getting Shaftered') is clickbait, and at only 2 minutes it appears to be a shallow take on project problems rather than substantive construction reporting. Also found via the same low-effort channel as other short clips.",
+    "addedToQueue": "2026-10-16T12:00:39.670Z",
+    "status": "rejected"
+  },
+  {
+    "id": "5K0jqLRME7M",
+    "title": "China’s High-Speed Train Hits 251 MPH—65 MPH Faster Than Germany’s ICE 3!",
+    "channelTitle": "China Trends",
+    "category": "international-hsr",
+    "aiReason": "Only 1 minute 18 seconds with an empty description — likely a Shorts-style clip with no substantive content. Not appropriate for curation.",
+    "addedToQueue": "2026-10-16T12:00:39.670Z",
+    "status": "rejected"
+  },
+  {
+    "id": "JsF6eAH5u2A",
+    "title": "California high-speed rail consultants expensed late-night Lyft rides to CEO’s home",
+    "channelTitle": "CBS LA",
+    "category": "construction-progress",
+    "aiReason": "Investigative news segment focused on scandal and wasteful spending drama. Not educational rail content — closer to anti-rail political coverage.",
+    "addedToQueue": "2026-10-16T12:00:39.670Z",
+    "status": "rejected"
   }
 ]
