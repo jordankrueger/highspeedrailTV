@@ -1,5 +1,69 @@
 [
   {
+    "id": "TY1K5mEsD3Y",
+    "title": "Riding the Beijing to Shanghai Bullet Train: A First-Timer's Guide",
+    "description": "John Mac Travels documents his journey aboard China's Fuxing-class bullet train between Beijing and Shanghai, covering everything a first-time rider needs to know, from booking tickets to the on-board experience at 350 km/h.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
+    "id": "pJcSITwDdGQ",
+    "title": "California High-Speed Rail Selects Siemens American Pioneer 220 Trainsets",
+    "description": "A concise update on California High-Speed Rail's pending contract vote to adopt Siemens' American Pioneer 220 trainsets, a significant equipment procurement milestone for the project.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
+    "id": "iVMAGrqyjBw",
+    "title": "Istanbul's New Northern Rail Crossing: Linking Europe and Asia by Train",
+    "description": "Railways Explained examines INRAIL, Istanbul's ambitious Northern Rail Crossing project designed to create a new rail connection across the Bosphorus, set in the context of Turkey's broader two-decade railway transformation.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
+    "id": "cWUgnosU0eY",
+    "title": "What Brightline's Bankruptcy Means for Private Rail in America",
+    "description": "Transit Tangents breaks down the implications of Brightline's bankruptcy for the future of passenger rail in the United States, examining whether fully private rail is viable and what role open-access or government-led models might play instead.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
+    "id": "Vrpg2jV8xIo",
+    "title": "Australia's Newcastle–Sydney High-Speed Rail: How Close Is It Really?",
+    "description": "A clear-eyed look at Australia's most advanced high-speed rail proposal, the Newcastle–Sydney corridor, examining what the project involves, how it compares to early HSR development in Japan and France, and what 'funded for planning' actually means in practice.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
+    "id": "-rzaxGObKAs",
+    "title": "Riding China's High-Speed Rail: From a 12-Hour Sleeper Train to a Modern Bullet Train",
+    "description": "A British-Chinese family documents their experience riding high-speed rail in Northeast China, offering a personal before-and-after comparison with the slow overnight train journeys that used to be the only option. An everyday traveler's perspective on how HSR has transformed life in smaller Chinese cities.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
+    "id": "u95CuvuRzW4",
+    "title": "China's AI-Driven Tunnel Boring Machine Beneath the Yangtze River",
+    "description": "An in-depth look at the Chongtai Tunnel, where China is deploying Linghang, an AI-driven boring machine capable of geological forecasting and autonomous operation. The video also examines questions raised by a covered-up disaster at a nearby tunnel project.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
+    "id": "zPiJKJuQ7i0",
+    "title": "Why California's High-Speed Rail Cost Has Ballooned to $126 Billion | WSJ Investigation",
+    "description": "The Wall Street Journal visits active construction sites and analyzes satellite imagery to examine why California's high-speed rail project, approved by voters in 2008, still has no finished track and now carries a price tag far exceeding original estimates. A thorough look at the land acquisition and regulatory hurdles threatening America's largest active infrastructure project.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-10-23"
+  },
+  {
     "id": "DhdjEaG56e4",
     "title": "What Happened to Texas's Houston–Dallas Bullet Train?",
     "description": "A full-length investigative episode tracing the long, complicated history of the proposed Houston-to-Dallas high-speed rail line, including legal battles, shifting partnerships, and unresolved questions about funding and land. Talks to supporters and opponents along the proposed route.",

@@ -3738,5 +3738,68 @@
     "aiReason": "Investigative news segment focused on scandal and wasteful spending drama. Not educational rail content — closer to anti-rail political coverage.",
     "addedToQueue": "2026-10-16T12:00:39.670Z",
     "status": "rejected"
+  },
+  {
+    "id": "vR-8T0pQS5I",
+    "title": "China Bullet Train — World's Largest & Fastest Network 🚄🇨🇳*",
+    "channelTitle": "Sadqa Sabeel",
+    "category": "international-hsr",
+    "aiReason": "Only 11 seconds long — essentially a social media post, not a substantive video. No meaningful content to offer viewers.",
+    "addedToQueue": "2026-10-23T12:00:58.133Z",
+    "status": "rejected"
+  },
+  {
+    "id": "9g021VxZSEU",
+    "title": "China’s $10T Local Debt Bomb Explodes! All High-Speed Rail Work Stops, Projects Abandoned En Masse",
+    "channelTitle": "China Observer",
+    "category": "international-hsr",
+    "aiReason": "China Observer is a known anti-China propaganda channel. Framing is alarmist and politically motivated rather than substantive infrastructure journalism. Not appropriate for a rail-focused platform.",
+    "addedToQueue": "2026-10-23T12:00:58.133Z",
+    "status": "rejected"
+  },
+  {
+    "id": "PNuTYF43Aq0",
+    "title": "China’s High-Speed Train Hits 603 KM/H — Speed That Rivals an Airplane! ✈️🚄",
+    "channelTitle": "China Trends",
+    "category": "international-hsr",
+    "aiReason": "Only 2 minutes and 21 seconds with no description — almost certainly a shallow clickbait clip. Insufficient depth for the platform.",
+    "addedToQueue": "2026-10-23T12:00:58.133Z",
+    "status": "rejected"
+  },
+  {
+    "id": "OrY2NiyVEgU",
+    "title": "How China Built the World’s Largest High Speed Rail Network",
+    "channelTitle": "Civil Engineering Easy",
+    "category": "international-hsr",
+    "aiReason": "Only 3 minutes long with a generic hashtag-heavy description. Likely a low-effort summary video without meaningful depth. Insufficient for the platform's standards.",
+    "addedToQueue": "2026-10-23T12:00:58.133Z",
+    "status": "rejected"
+  },
+  {
+    "id": "f0ZsVwpPk94",
+    "title": "10 Most Advanced Trains in the World That Look Unreal [Hindi]",
+    "channelTitle": "Secret King",
+    "category": "international-hsr",
+    "aiReason": "Generic listicle in Hindi with no description. Broad 'top 10 trains' framing is not focused enough on HSR, and production quality is unclear. Not a strong fit.",
+    "addedToQueue": "2026-10-23T12:00:58.133Z",
+    "status": "rejected"
+  },
+  {
+    "id": "jWFZ1H3iNYs",
+    "title": "California High Speed Rail SUED!",
+    "channelTitle": "Lucid Stew",
+    "category": "construction-progress",
+    "aiReason": "Only 1 minute and 24 seconds — too short to provide meaningful context or analysis. Functions more as a news alert than a substantive video.",
+    "addedToQueue": "2026-10-23T12:00:58.133Z",
+    "status": "rejected"
+  },
+  {
+    "id": "NB46pVJMH0g",
+    "title": "Report says California High-Speed Rail Authority has over $500k in questionable expenses",
+    "channelTitle": "FOX40 News",
+    "category": "construction-progress",
+    "aiReason": "Local TV news anchor reading a watchdog report about contractor expenses. Shallow teleprompter journalism under 10K views. Not appropriate for the platform.",
+    "addedToQueue": "2026-10-23T12:00:58.133Z",
+    "status": "rejected"
   }
 ]
