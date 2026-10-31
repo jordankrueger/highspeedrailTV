@@ -3801,5 +3801,221 @@
     "aiReason": "Local TV news anchor reading a watchdog report about contractor expenses. Shallow teleprompter journalism under 10K views. Not appropriate for the platform.",
     "addedToQueue": "2026-10-23T12:00:58.133Z",
     "status": "rejected"
+  },
+  {
+    "id": "I00J_beSLZE",
+    "title": "California rail CEO resigns after investigation flags $800,000 in travel expenses",
+    "channelTitle": "ABC10",
+    "category": "construction-progress",
+    "aiReason": "Short news clip (45 seconds) of an anchor reading a teleprompter about executive resignation. No substantive rail content.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "geH1DRc3a1U",
+    "title": "Train crash kills at least 68 in Spain",
+    "channelTitle": "NBC News",
+    "category": "international-hsr",
+    "aiReason": "Short news clip (1m46s) of a news anchor reporting breaking news. Minimal rail-specific content or analysis.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "VQpODd-caOk",
+    "title": "Clashes ERUPT in Spain After High-Speed Train Crash Kills 69 People",
+    "channelTitle": "New York Post",
+    "category": "international-hsr",
+    "aiReason": "Clickbait framing focused on political protests rather than rail content. New York Post sensationalism not suitable for a rail education platform.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "K4gawvqMbSs",
+    "title": "Dozens killed in high-speed train collision in Spain",
+    "channelTitle": "CBS News",
+    "category": "international-hsr",
+    "aiReason": "Short news clip (3m17s) of a correspondent reporting from a studio. No substantive technical or rail-specific analysis.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "wLZ58wkz_tY",
+    "title": "High Speed Rail Is FINALLY Getting Finished",
+    "channelTitle": "Steve Hilton",
+    "category": "myth-busting",
+    "aiReason": "Anti-rail propaganda from a political commentator. Description reveals the video advocates canceling HSR and mocking it as a 'Government Failures National Monument.' Very short (1m14s).",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "-uWVrjkBu0c",
+    "title": "Leaked audio sheds light on possible cause of deadly Spanish train collision",
+    "channelTitle": "ABC News",
+    "category": "international-hsr",
+    "aiReason": "Very short clip (1m22s) of a news anchor reading breaking news about leaked audio. No substantive analysis of rail systems or safety.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "gMFb2YwG0Zw",
+    "title": "Spain investigates deadly collision between two high-speed trains | October 29, 2026",
+    "channelTitle": "CNN 10",
+    "category": "international-hsr",
+    "aiReason": "CNN 10 is a student news digest format — the train crash is one of multiple unrelated topics covered briefly. Not focused rail content.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "mj1ghRHh2d0",
+    "title": "At least 30 dead as high-speed train crashes into stopped train in Spain, authorities say",
+    "channelTitle": "CBS News",
+    "category": "international-hsr",
+    "aiReason": "Very short clip (1m38s) capturing early breaking news with an outdated death toll. Superseded by better, more complete coverage.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "PzBHowq7_LM",
+    "title": "Deadly high-speed train collision in Spain kills at least 68 | KTVU",
+    "channelTitle": "KTVU FOX 2 San Francisco",
+    "category": "international-hsr",
+    "aiReason": "Very short clip (1m12s) of a local TV news anchor reading a teleprompter. No substantive rail content.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "5iWFKOrrjs0",
+    "title": "Death Toll of High-Speed Train Crash in Spain Rises to 69",
+    "channelTitle": "TODAY",
+    "category": "international-hsr",
+    "aiReason": "Short news clip (2m20s) of a correspondent delivering a standard breaking news update. No analytical or educational rail content.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "Kji3An8v6z8",
+    "title": "Deadly Spain train crash: Dozens of people killed | FOX 7 Austin",
+    "channelTitle": "FOX 7 Austin",
+    "category": "international-hsr",
+    "aiReason": "Short local news clip (1m44s) from FOX 7 Austin with no substantive rail analysis. Local station with no connection to the story.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "hhMSMA-XBFg",
+    "title": "At least 68 killed in high-speed train accident in Spain",
+    "channelTitle": "CBS News",
+    "category": "international-hsr",
+    "aiReason": "Short news clip (2m48s) of a news anchor reporting breaking news. Under 50K views and no substantive rail content.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "T4jVz1_8wsQ",
+    "title": "Spain: At least 64 dead in high-speed train crash • FRANCE 24 English",
+    "channelTitle": "FRANCE 24 English",
+    "category": "international-hsr",
+    "aiReason": "Very short clip (1m23s) of a correspondent with early, outdated death toll figures. Superseded by more complete coverage.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "vDIHtGOO1JI",
+    "title": "Spain high-speed train crash kills 68, injures over 100 • FRANCE 24 English",
+    "channelTitle": "FRANCE 24 English",
+    "category": "international-hsr",
+    "aiReason": "While slightly longer (6m31s) and includes field reporting, it is still primarily a news package without structured rail safety analysis. Under 40K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "ilHhmHlYxV0",
+    "title": "Deadly Spain high-speed train crash occurred after \"inexplicable\" controller decision, official says",
+    "channelTitle": "CBS News",
+    "category": "international-hsr",
+    "aiReason": "Short news clip (2m25s) of a news anchor with no substantive rail analysis. Under 40K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "Wn6LHXf5z7E",
+    "title": "High-speed train crash in Spain kills at least 68 people",
+    "channelTitle": "Associated Press",
+    "category": "international-hsr",
+    "aiReason": "Very short AP wire clip (1m17s) with no substantive rail content beyond basic facts. Under 40K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "vlM3M6aL8lo",
+    "title": "Spain's train crash kills 69 people: What exactly happened? • FRANCE 24 English",
+    "channelTitle": "FRANCE 24 English",
+    "category": "international-hsr",
+    "aiReason": "Very short clip (1m49s) repeating basic facts already covered in other videos. Under 40K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "SB8g09meJs0",
+    "title": "How a high-speed train crash unfolded in central Spain",
+    "channelTitle": "Reuters",
+    "category": "international-hsr",
+    "aiReason": "Short Reuters explainer clip (3m16s) covering similar ground to better approved videos. Under 40K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "zkIUzMYc6Hw",
+    "title": "Dozens dead in a high-speed train crash in Spain",
+    "channelTitle": "Associated Press",
+    "category": "international-hsr",
+    "aiReason": "Very short AP clip (1m3s) with early, outdated death toll figures. Superseded by more complete content. Under 40K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "qXEYwZCA6hg",
+    "title": "Spain: At least 10 dead in crash between 2 high-speed trains • FRANCE 24 English",
+    "channelTitle": "FRANCE 24 English",
+    "category": "international-hsr",
+    "aiReason": "Very short clip (2m2s) capturing early breaking news with a dramatically outdated death toll of 10. No substantive rail analysis. Under 25K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "ZocXg2dB3NM",
+    "title": "California High Speed Rail CEO Resigns Abruptly",
+    "channelTitle": "Lucid Stew",
+    "category": "construction-progress",
+    "aiReason": "Very short clip (1m56s) from a small creator with minimal content beyond the headline. Under 20K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "jYMpiR_tWz4",
+    "title": "Deadly high-speed train crash kills 68 in Spain | 7NEWS",
+    "channelTitle": "7NEWS Australia",
+    "category": "international-hsr",
+    "aiReason": "Short Australian local news clip (2m20s) with no rail-specific analysis. Under 15K views.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "FIpzTfXxY6c",
+    "title": "California High-Speed Rail Authority CEO resigns",
+    "channelTitle": "KTLA 5",
+    "category": "construction-progress",
+    "aiReason": "Very short clip (48 seconds) of a local news anchor reading a single sentence. Under 15K views. No substantive content.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
+  },
+  {
+    "id": "1XYKnF9yeLE",
+    "title": "Becerra vows to shake up High-Speed Rail if elected governor",
+    "channelTitle": "KCRA 3",
+    "category": "construction-progress",
+    "aiReason": "Short political clip (1m10s) about a gubernatorial candidate's position on HSR. Under 15K views and more political campaign content than rail content.",
+    "addedToQueue": "2026-10-31T11:37:03.531Z",
+    "status": "rejected"
   }
 ]

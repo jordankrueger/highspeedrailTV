@@ -1,5 +1,53 @@
 [
   {
+    "id": "8RPaP7lRBwU",
+    "title": "Brightline West: The Engineering Challenges Behind a 220-MPH Desert Railroad",
+    "description": "An engineering deep-dive into Brightline West's $21 billion Las Vegas to Rancho Cucamonga high-speed rail project, examining why building the 218-mile railroad through the Mojave Desert and mountain terrain is proving harder than designing trains capable of 220 mph.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-10-31"
+  },
+  {
+    "id": "s8FpxseRVGM",
+    "title": "California High-Speed Rail: Preparing for Track Laying",
+    "description": "The California High-Speed Rail Authority shares an update on ballast and cable trough work underway across more than 82 miles of completed guideway, as the project prepares for track laying.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-10-31"
+  },
+  {
+    "id": "Bq_OlTxq-8M",
+    "title": "Why Brightline Florida Failed: The Financial Crisis Behind the Ridership Numbers",
+    "description": "An in-depth look at how Brightline Florida — once seen as proof that private passenger rail could succeed in America — collapsed into bankruptcy despite carrying over three million passengers in 2025, examining what went wrong financially.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-10-31"
+  },
+  {
+    "id": "Ayk__UBphmU",
+    "title": "Spain Train Crash Explained: How the Safety Systems Failed",
+    "description": "A minute-by-minute reconstruction of the October 28, 2026 high-speed train collision near Urda, Toledo, tracing the sequence from the LZB system failure at 8:30 AM through each safety layer that failed to prevent the fatal impact.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-10-31"
+  },
+  {
+    "id": "akSp50z3vg4",
+    "title": "Did Human Error Cause Spain's Deadly High-Speed Train Crash?",
+    "description": "CBC News breaks down dispatcher audio recordings and Spain's railway signalling system to explain how a technical glitch may have contributed to the fatal October 2026 collision that killed 69 people.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-10-31"
+  },
+  {
+    "id": "8PIWIMfGz-U",
+    "title": "How Two Bullet Trains Collided in Spain: A Technical Breakdown",
+    "description": "A detailed 3D explainer covering how high-speed rail safety systems work, what is known about the October 2026 collision near Urda, Spain, and the key questions investigators must answer about the LZB automatic protection system failure.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-10-31"
+  },
+  {
     "id": "TY1K5mEsD3Y",
     "title": "Riding the Beijing to Shanghai Bullet Train: A First-Timer's Guide",
     "description": "John Mac Travels documents his journey aboard China's Fuxing-class bullet train between Beijing and Shanghai, covering everything a first-time rider needs to know, from booking tickets to the on-board experience at 350 km/h.",
