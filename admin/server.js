@@ -77,7 +77,7 @@ async function callClaude(messages, maxTokens = 4096) {
       'anthropic-version': '2023-06-01',
     },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-5-20250514',
+      model: 'claude-sonnet-5-5',
       max_tokens: maxTokens,
       messages: messages,
     }),
@@ -991,7 +991,7 @@ Respond ONLY with valid JSON, no additional text.`
       const message = await callClaude([{ role: 'user', content: prompt }])
 
       // Parse the response
-      const responseText = message.content[0].text
+      const responseText = message.content.find((b) => b.type === 'text')?.text ?? ''
       let batchReviews
 
       try {
