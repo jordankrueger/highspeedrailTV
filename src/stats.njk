@@ -1,0 +1,5 @@
+---
+permalink: /stats.json
+eleventyExcludeFromCollections: true
+---
+{"site": "highspeedrail.tv", "built": {{ '' | isoNow | dump | safe }}, "counts": {"videos": {{ videos | length }}}, "newest": {{ videos | maxDateAdded | dump | safe }}}

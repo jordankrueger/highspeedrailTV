@@ -25,6 +25,9 @@ module.exports = function(eleventyConfig) {
     return '2025-01-01T12:00:00Z';
   });
 
+  eleventyConfig.addFilter("maxDateAdded", (vs) => vs.reduce((m, v) => (/^\d{4}-\d{2}-\d{2}$/.test(v.dateAdded) && v.dateAdded.length === 10 && v.dateAdded > m ? v.dateAdded : m), ""));
+  eleventyConfig.addFilter("isoNow", () => new Date().toISOString().replace(/\.\d{3}Z$/, "Z"));
+
   // Filter videos by category
   eleventyConfig.addFilter("filterByCategory", (videos, category) => {
     return videos.filter(v => v.category === category);
