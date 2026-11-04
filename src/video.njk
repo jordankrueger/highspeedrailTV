@@ -34,6 +34,13 @@ eleventyComputed:
             Watch on YouTube →
           </a>
         </p>
+        {% if video.category == "myth-busting" or video.category == "explainers" %}
+        <p>
+          <a href="https://hsr.fyi{{ '/myths/' if video.category == 'myth-busting' else '/case/' }}" class="category-pill">
+            Read the facts on hsr.fyi →
+          </a>
+        </p>
+        {% endif %}
       </div>
     </div>
   </div>
