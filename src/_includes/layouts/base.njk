@@ -194,9 +194,13 @@
         <div class="footer-col">
           <h4>Network</h4>
           <ul>
-            {% for link in settings.footerLinks %}
+            {% for s in network %}{% if s.url != site.siteUrl %}
+            <li><a href="{{ s.url }}" title="{{ s.job }}">{{ s.name }}</a></li>
+            {% endif %}{% endfor %}
+            <li><a href="/newsletter/">Newsletter</a></li>
+            {% for link in settings.footerLinks %}{% if link.url != "https://hsr.fyi" %}
             <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a></li>
-            {% endfor %}
+            {% endif %}{% endfor %}
           </ul>
         </div>
       </div>
