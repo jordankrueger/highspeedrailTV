@@ -1,5 +1,93 @@
 [
   {
+    "id": "YRgCNV4Rotg",
+    "title": "California High-Speed Rail Shared Benefit Element Costs",
+    "description": "A brief look at how shared benefit element costs add roughly $11 billion to California HSR cost estimates.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "rLbAL62OTEM",
+    "title": "Will These Rail Projects Ever Actually Get Built?",
+    "description": "A railfan reviews the prospects of proposed rail projects, including Canada's ALTO high-speed rail, and what stands in their way.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "ACPCWAl22nc",
+    "title": "California High-Speed Rail Conejo Viaduct Complete",
+    "description": "A look at the finished Conejo Viaduct on the California HSR project, with a review of video from its construction history.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "7_E9fDbR1HU",
+    "title": "Spain Train Crash: 3D Reconstruction of How Two High-Speed Trains Collided",
+    "description": "A 3D reconstruction of the 17 minutes before the Renfe AVE and Iryo collision near Urda, examining how two trains ended up on the same track.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "tQf3vTc_nMY",
+    "title": "Family Trip in First Class on China's Bullet Train",
+    "description": "A British-Chinese family rides first class on a Chinese high-speed train and reviews whether the upgrade is worth it.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "7gKCVbalcT4",
+    "title": "China's New Railway Construction Methods",
+    "description": "Covers innovative Chinese rail construction, from a nine-hour track rebuild to permafrost engineering, bridge beam machines and factory-made railroads.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "CikpsCKeXeU",
+    "title": "China's High-Speed Rail Network Evolution (2003–2026) | Animated Map",
+    "description": "An animated map tracing every opening of China's high-speed rail network, from the Shanghai Maglev to roughly 50,000 km of track, plus lines under construction through 2030.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "XC8e0MwVYxs",
+    "title": "Spain Looks for Answers After Deadly Train Crash",
+    "description": "DW examines whether human error, flawed procedures or wider safety failures caused the Spanish high-speed collision, with input from a railway industry expert.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "QHWfRnygyms",
+    "title": "Rail Expert Analyzes the Deadly Spain Train Crash",
+    "description": "An engineering professor discusses the systemic safety failures likely behind the Madrid–Seville high-speed collision.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "_AbE5Be9suA",
+    "title": "India vs China: Who Really Built the Cheaper Bullet Train?",
+    "description": "Examines how headline cost comparisons between Chinese HSR, India's Mumbai–Ahmedabad line and Indonesia's Whoosh distort the real economics of mega-projects.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
+    "id": "80Dqfy7YhLc",
+    "title": "High-Speed Rail: China vs Europe vs the US",
+    "description": "A quick side-by-side map comparison of high-speed rail network sizes in China, Europe and the United States, using UIC data.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-06"
+  },
+  {
     "id": "8RPaP7lRBwU",
     "title": "Brightline West: The Engineering Challenges Behind a 220-MPH Desert Railroad",
     "description": "An engineering deep-dive into Brightline West's $21 billion Las Vegas to Rancho Cucamonga high-speed rail project, examining why building the 218-mile railroad through the Mojave Desert and mountain terrain is proving harder than designing trains capable of 220 mph.",
