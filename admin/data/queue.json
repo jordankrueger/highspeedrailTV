@@ -4152,5 +4152,32 @@
     "aiReason": "Under 15K views and a loaded 'BYE BOONDOGGLE' framing; a partisan cable-news Short that reads as anti-rail commentary rather than informative coverage.",
     "addedToQueue": "2026-11-06T13:00:39.276Z",
     "status": "rejected"
+  },
+  {
+    "id": "r97T0_Xhkyc",
+    "title": "We got (some of) the High-Speed Rail CEO receipts. Here's what they reveal.",
+    "channelTitle": "Julie Watts Investigates",
+    "category": "",
+    "aiReason": "Investigative TV news segment by a local news reporter focused on CEO spending scandal and records releases. Falls under news-anchor/drama content rather than educational or pro-rail material.",
+    "addedToQueue": "2026-11-13T13:00:23.532Z",
+    "status": "rejected"
+  },
+  {
+    "id": "qg0q05VMSl4",
+    "title": "7 INSANE Chinese Trains That Will SHOCK America in 2027!",
+    "channelTitle": "The Future Pulse",
+    "category": "",
+    "aiReason": "Clickbait-style listicle with sensational framing ('INSANE', 'SHOCK America') and likely low-depth, possibly AI-generated content. Does not meet quality standards despite related topic.",
+    "addedToQueue": "2026-11-13T13:00:23.532Z",
+    "status": "rejected"
+  },
+  {
+    "id": "FLZ_M_lukVY",
+    "title": "$13.8 Billion Spent, Yet Not One Train.",
+    "channelTitle": "Megaprojects Tracker",
+    "category": "",
+    "aiReason": "Very short, negatively framed 'no train yet' clip that reads as anti-rail messaging with minimal context, and just above the view threshold with low depth. Misleading framing on a project under construction.",
+    "addedToQueue": "2026-11-13T13:00:23.532Z",
+    "status": "rejected"
   }
 ]

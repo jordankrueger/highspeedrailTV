@@ -1,5 +1,77 @@
 [
   {
+    "id": "anfj5nvXFd8",
+    "title": "Why Brightline's Owners Filed for Bankruptcy While Ridership Grows",
+    "description": "Explains how America's only privately funded intercity railroad can have growing passenger numbers while its parent companies face bankruptcy. Offers insight into rail financing.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "btNPu_mlOrM",
+    "title": "Envisioning Alberta High-Speed Rail: Calgary-Edmonton Alignments and Stations",
+    "description": "Explores what high-speed rail between Calgary and Edmonton could look like following the release of Alberta's Rail Master Plan, including possible alignments, station locations and trainsets.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "DZVfzaxOTNs",
+    "title": "High Speed Rail News Roundup: November 2026",
+    "description": "Monthly update on US high-speed rail projects including California HSR, Brightline West and the Northeast Corridor. A convenient way to catch up on the month's developments.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "S3niGz5EmfQ",
+    "title": "How Japan's Bullet Trains Keep Delays to Seconds",
+    "description": "A quick look at the operational practices behind the Shinkansen's remarkable punctuality. A snapshot of what makes Japanese rail so reliable.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "nwK2kOUfbdg",
+    "title": "The Economics of High-Speed Rail: Why Most Lines Don't Pay for Themselves",
+    "description": "Examines why operating high-speed trains can be profitable while construction costs rarely are, using examples such as Paris-Lyon and Spain's network. Helps explain the real case for building HSR.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "InHG7mMZ8BE",
+    "title": "Spain High-Speed Train Collision: How the Incident Unfolded",
+    "description": "A reconstruction of the Madrid-Seville high-speed line incident, covering the LZB signaling failure and the radio instructions given to drivers. Useful for understanding how train control systems fail.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "rcvsR3SnfS0",
+    "title": "Riding the New TGV M on Its Inaugural Trip",
+    "description": "A first-person look at the inaugural journey of France's new-generation TGV M, with impressions of the crowded launch-day trip. A good early look before the creator's in-depth review.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "M22vaE6giE0",
+    "title": "Southern India Bullet Train Project: Why Costs Are Higher Than in China",
+    "description": "A Telugu-language explainer on the proposed bullet train linking Amaravati, Hyderabad, Bengaluru and Chennai, and why construction costs in India exceed China's.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
+    "id": "kGK2NBlRdkI",
+    "title": "How Japan's Bullet Trains Respond to Earthquakes",
+    "description": "A brief look at how Japan's Shinkansen detect earthquakes and stop automatically to protect passengers. A quick illustration of the safety engineering built into the network.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-13"
+  },
+  {
     "id": "YRgCNV4Rotg",
     "title": "California High-Speed Rail Shared Benefit Element Costs",
     "description": "A brief look at how shared benefit element costs add roughly $11 billion to California HSR cost estimates.",
