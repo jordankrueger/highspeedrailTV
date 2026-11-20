@@ -1,5 +1,77 @@
 [
   {
+    "id": "nR2dj3AIIKQ",
+    "title": "New CEO Discusses the Future of California's High-Speed Rail Project",
+    "description": "An interview with CEO Joe Stephenshaw on his vision for the project, including financial management, transparency, and overcoming challenges.",
+    "category": "advocacy-speeches",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "enfP-bAA_Ns",
+    "title": "2026 Summer Progress Report: Building Momentum Across the Central Valley",
+    "description": "The CHSRA's official progress report on Central Valley bridges, overpasses, and viaducts, including the completed Hanford Viaduct, the project's longest structure.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "zFi-eIjc5qM",
+    "title": "India's Complete Bullet Train Network: 7 New High-Speed Rail Corridors",
+    "description": "A Hindi map-based walkthrough of the Mumbai-Ahmedabad project and the seven new corridors announced in Union Budget 2026-27.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "lXPkcKln2IQ",
+    "title": "Can Serbia Turn Its Railway Potential into Reality?",
+    "description": "Explores the history, present condition, and future investment plans of Serbia's railway network at a key European crossroads.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "T9cY2Y177so",
+    "title": "Riding the Retiring 500 Series Shinkansen",
+    "description": "A farewell ride on the 500 Series, Japan's first 300 km/h bullet train, now on slower Kodama services.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "1PhFAz7_et0",
+    "title": "Fall 2026 California High-Speed Rail Construction Update",
+    "description": "A thorough look at progress on California HSR, including grade separations, girders, trench work, and guideway, with 70 structures now complete.",
+    "category": "construction-progress",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "qokXQ7xzg2s",
+    "title": "Why Can't a Normal Train Just Go Faster?",
+    "description": "A short explainer on why conventional trains can't simply run at bullet-train speeds, covering overhead wire limits and the 2007 French speed record.",
+    "category": "explainers",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "yuJSiuMUaKA",
+    "title": "How Is India Building Its High-Speed Rail Network?",
+    "description": "Covers the Mumbai-Ahmedabad bullet train project, construction delays, Japanese Shinkansen technology, and India's plans for a 4,000 km network.",
+    "category": "international-hsr",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
+    "id": "FxaoOHhVRTI",
+    "title": "Riding Germany's New ICE High-Speed Service to Denmark",
+    "description": "A first-person look at the new ICE service returning to Denmark after almost a decade, including what the unusual service is like to ride.",
+    "category": "rides-tours",
+    "featured": false,
+    "dateAdded": "2026-11-20"
+  },
+  {
     "id": "anfj5nvXFd8",
     "title": "Why Brightline's Owners Filed for Bankruptcy While Ridership Grows",
     "description": "Explains how America's only privately funded intercity railroad can have growing passenger numbers while its parent companies face bankruptcy. Offers insight into rail financing.",

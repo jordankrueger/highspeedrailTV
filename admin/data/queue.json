@@ -4179,5 +4179,86 @@
     "aiReason": "Very short, negatively framed 'no train yet' clip that reads as anti-rail messaging with minimal context, and just above the view threshold with low depth. Misleading framing on a project under construction.",
     "addedToQueue": "2026-11-13T13:00:23.532Z",
     "status": "rejected"
+  },
+  {
+    "id": "ml_J8kYBtWw",
+    "title": "A Spanish High Speed Train Crashed Into Another, Killing Dozens",
+    "channelTitle": "DeFranco News Clips",
+    "category": "international-hsr",
+    "aiReason": "Short breaking-news clip from a commentary channel about a fatal crash; sensationalized news rather than educational or curated HSR content.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "HYaavAO1Q2I",
+    "title": "The Little Engine That Couldn't: California's High-Speed Rail Nightmare",
+    "channelTitle": "John Stossel",
+    "category": "myth-busting",
+    "aiReason": "Anti-rail opinion piece from a known opponent, framing California HSR as a 'nightmare' with selective cost figures. Falls under anti-rail propaganda.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "9yuFN13riZo",
+    "title": "Leaked audio reveals possible cause of deadly train collision in Spain",
+    "channelTitle": "ABC News",
+    "category": "international-hsr",
+    "aiReason": "Short news-anchor segment about crash audio; speculative and not educational HSR content.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "3rDBcRLXriA",
+    "title": "At least 64 killed in train collision on high-speed line in Spain",
+    "channelTitle": "ABC News",
+    "category": "international-hsr",
+    "aiReason": "Short breaking-news segment about a crash; news reporting rather than curated educational HSR content.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "fpNigXc_e2Y",
+    "title": "India’s Vande Bharat vs World’s Fastest Trains! 🚄 Speed & Price Comparison #trainshorts #ytshorts",
+    "channelTitle": "Train Gyaan",
+    "category": "explainers",
+    "aiReason": "Very short YouTube Short with superficial speed and price comparisons and estimated costs; low educational value.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "E7mo6wFpwpc",
+    "title": "At least 64 killed as two high-speed trains collide in central Spain",
+    "channelTitle": "Al Jazeera English",
+    "category": "international-hsr",
+    "aiReason": "Breaking-news segment about a fatal crash; does not provide educational HSR content.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "o97FwUL-gcA",
+    "title": "VIDEO: Man saves senior whose walker gets stuck on train tracks as Brightline approaches",
+    "channelTitle": "WPBF 25 News",
+    "category": "rides-tours",
+    "aiReason": "Local news human-interest story about a pedestrian rescue; not about HSR infrastructure or riding experiences.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "Wm4Upx9owhk",
+    "title": "China vs Japan Bullet Trains: Which Country Has the World's Best Rail Network? 🇨🇳🇯🇵",
+    "channelTitle": "Dailylearn Official",
+    "category": "international-hsr",
+    "aiReason": "Under-one-minute, low-effort generic comparison with minimal substance and under 35K views of shallow content.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
+  },
+  {
+    "id": "oTnfF4Mj3tk",
+    "title": "California High Speed Rail Ribbon Cutting",
+    "channelTitle": "Lucid Stew",
+    "category": "construction-progress",
+    "aiReason": "One-minute clip with no context or substance in the description; unclear what event it shows and under 25K views with minimal informational value.",
+    "addedToQueue": "2026-11-20T13:00:28.669Z",
+    "status": "rejected"
   }
 ]
